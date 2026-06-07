@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+*.db
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Node / Expo / React Native
+node_modules/
+.expo/
+.expo-shared/
+expo-env.d.ts
+dist/
+web-build/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Azure
+.azure/

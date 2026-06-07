@@ -1,0 +1,9 @@
+project     = "christduell"
+environment = "production"
+location    = "westeurope"
+
+# Image to run on first deploy — the CD pipeline will update this on each push.
+container_image = "christduellproductionXXXXXXacr.azurecr.io/christduell-backend:latest"
+
+postgres_admin_username = "christduell_admin"
+postgres_admin_password = "change-me-to-a-strong-secret"
