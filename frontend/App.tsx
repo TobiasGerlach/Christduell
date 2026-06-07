@@ -2,11 +2,9 @@ import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import * as Notifications from "expo-notifications";
 
+import { CURRENT_PLAYER_ID } from "./src/currentPlayer";
 import { RootNavigator } from "./src/navigation/RootNavigator";
 import { registerForPushNotifications } from "./src/notifications/registerForPushNotifications";
-
-// TODO: replace with the authenticated player's id once login lands.
-const CURRENT_PLAYER_ID = 1;
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({

@@ -1,0 +1,79 @@
+[
+  {"category": "old_testament", "prompt": "Wer baute die Arche, um seine Familie und die Tiere vor der Sintflut zu retten?", "choices": ["Noah", "Abraham", "Mose", "David"], "correct_choice_index": 0},
+  {"category": "old_testament", "prompt": "Wie viele Tage und Nächte regnete es laut der Bibel während der Sintflut?", "choices": ["7", "40", "100", "12"], "correct_choice_index": 1},
+  {"category": "old_testament", "prompt": "Wer führte das Volk Israel aus der ägyptischen Sklaverei?", "choices": ["Josua", "Mose", "Aaron", "Abraham"], "correct_choice_index": 1},
+  {"category": "old_testament", "prompt": "Welcher König ließ den ersten Tempel in Jerusalem erbauen?", "choices": ["David", "Salomo", "Saul", "Hiskia"], "correct_choice_index": 1},
+  {"category": "old_testament", "prompt": "Wie hieß die erste Frau laut der Schöpfungsgeschichte?", "choices": ["Sara", "Eva", "Rahel", "Rebekka"], "correct_choice_index": 1},
+
+  {"category": "new_testament", "prompt": "In welcher Stadt wurde Jesus laut den Evangelien geboren?", "choices": ["Nazareth", "Jerusalem", "Bethlehem", "Kapernaum"], "correct_choice_index": 2},
+  {"category": "new_testament", "prompt": "Wie viele Jünger berief Jesus in seinen engsten Kreis?", "choices": ["7", "10", "12", "70"], "correct_choice_index": 2},
+  {"category": "new_testament", "prompt": "Wer verriet Jesus für 30 Silberlinge?", "choices": ["Petrus", "Judas Iskariot", "Thomas", "Pilatus"], "correct_choice_index": 1},
+  {"category": "new_testament", "prompt": "Wie wird die Rede Jesu genannt, in der die Seligpreisungen vorkommen?", "choices": ["Bergpredigt", "Abschiedsrede", "Gleichnisrede", "Endzeitrede"], "correct_choice_index": 0},
+  {"category": "new_testament", "prompt": "Wer schrieb die meisten Briefe im Neuen Testament?", "choices": ["Petrus", "Johannes", "Paulus", "Jakobus"], "correct_choice_index": 2},
+
+  {"category": "beyond_the_horizon", "prompt": "Welche drei Religionen werden zusammen als \"abrahamitische Religionen\" bezeichnet?", "choices": ["Judentum, Christentum, Islam", "Hinduismus, Buddhismus, Christentum", "Christentum, Islam, Sikhismus", "Judentum, Islam, Bahaitum"], "correct_choice_index": 0},
+  {"category": "beyond_the_horizon", "prompt": "In welcher Stadt befindet sich die Klagemauer, eine der heiligsten Stätten des Judentums?", "choices": ["Tel Aviv", "Jerusalem", "Bethlehem", "Nazareth"], "correct_choice_index": 1},
+  {"category": "beyond_the_horizon", "prompt": "Wie heißt das heilige Buch des Islam?", "choices": ["Tora", "Koran", "Talmud", "Veden"], "correct_choice_index": 1},
+  {"category": "beyond_the_horizon", "prompt": "Welche Stadt gilt für Christen, Juden und Muslime gleichermaßen als heilig?", "choices": ["Rom", "Mekka", "Jerusalem", "Athen"], "correct_choice_index": 2},
+  {"category": "beyond_the_horizon", "prompt": "Welches jüdische Fest erinnert an den Auszug aus Ägypten?", "choices": ["Jom Kippur", "Pessach", "Chanukka", "Sukkot"], "correct_choice_index": 1},
+
+  {"category": "ancient_languages", "prompt": "In welcher Sprache wurde der Großteil des Alten Testaments ursprünglich verfasst?", "choices": ["Griechisch", "Hebräisch", "Aramäisch", "Latein"], "correct_choice_index": 1},
+  {"category": "ancient_languages", "prompt": "In welcher Sprache wurde das Neue Testament ursprünglich verfasst?", "choices": ["Latein", "Hebräisch", "Griechisch", "Aramäisch"], "correct_choice_index": 2},
+  {"category": "ancient_languages", "prompt": "Welche Sprache sprach Jesus vermutlich im Alltag?", "choices": ["Hebräisch", "Aramäisch", "Griechisch", "Latein"], "correct_choice_index": 1},
+  {"category": "ancient_languages", "prompt": "Was bedeutet das hebräische Wort \"Amen\" sinngemäß?", "choices": ["\"So sei es\"", "\"Friede sei mit dir\"", "\"Gelobt sei Gott\"", "\"Auf Wiedersehen\""], "correct_choice_index": 0},
+  {"category": "ancient_languages", "prompt": "Aus welcher Sprache stammt das Wort \"Evangelium\" ursprünglich?", "choices": ["Latein", "Hebräisch", "Griechisch", "Aramäisch"], "correct_choice_index": 2},
+
+  {"category": "history", "prompt": "In welchem Jahrhundert begann die Reformation durch Martin Luther?", "choices": ["14. Jahrhundert", "15. Jahrhundert", "16. Jahrhundert", "17. Jahrhundert"], "correct_choice_index": 2},
+  {"category": "history", "prompt": "An welche Tür schlug Martin Luther der Überlieferung nach seine 95 Thesen?", "choices": ["Petersdom in Rom", "Schlosskirche zu Wittenberg", "Kölner Dom", "Frauenkirche Dresden"], "correct_choice_index": 1},
+  {"category": "history", "prompt": "Welcher römische Kaiser erklärte das Christentum 380 n. Chr. zur Staatsreligion?", "choices": ["Konstantin", "Nero", "Theodosius I.", "Augustus"], "correct_choice_index": 2},
+  {"category": "history", "prompt": "Wie wird die Spaltung zwischen West- und Ostkirche im Jahr 1054 genannt?", "choices": ["Reformation", "Großes Schisma", "Konzil von Nizäa", "Investiturstreit"], "correct_choice_index": 1},
+  {"category": "history", "prompt": "In welcher Stadt fand 325 n. Chr. das Konzil statt, das ein zentrales Glaubensbekenntnis formulierte?", "choices": ["Rom", "Konstantinopel", "Nizäa", "Jerusalem"], "correct_choice_index": 2},
+
+  {"category": "jesus_today", "prompt": "Wie wird ein Gottesdienst speziell für Jugendliche oft genannt?", "choices": ["Jugendgottesdienst", "Trauerfeier", "Beerdigung", "Bibelstunde für Senioren"], "correct_choice_index": 0},
+  {"category": "jesus_today", "prompt": "Wie nennt man das Engagement der Kirche für Arme und Benachteiligte in der Gesellschaft?", "choices": ["Liturgie", "Diakonie", "Exegese", "Apologetik"], "correct_choice_index": 1},
+  {"category": "jesus_today", "prompt": "Welche moderne Übertragungsform nutzen viele Gemeinden, um Gottesdienste auch online zugänglich zu machen?", "choices": ["Livestream-Übertragung", "Plakatwerbung", "Postwurfsendung", "Lautsprecherwagen"], "correct_choice_index": 0},
+  {"category": "jesus_today", "prompt": "Wie heißt das große Glaubensfest mit Gottesdiensten, Konzerten und Diskussionen, das die evangelische Kirche alle zwei Jahre veranstaltet?", "choices": ["Kirchentag", "Reformationstag", "Erntedankfest", "Bibeltag"], "correct_choice_index": 0},
+  {"category": "jesus_today", "prompt": "Was versteht man unter \"Schöpfungsverantwortung\" im modernen kirchlichen Sprachgebrauch?", "choices": ["Verantwortungsvoller Umgang mit der Umwelt", "Die Pflicht, Kinder zu bekommen", "Die Aufgabe, Kirchen zu bauen", "Die Organisation von Festen"], "correct_choice_index": 0},
+
+  {"category": "church_year_festivals", "prompt": "Welches Fest markiert den Beginn des Kirchenjahres?", "choices": ["Heiligabend", "Erster Advent", "Erntedankfest", "Aschermittwoch"], "correct_choice_index": 1},
+  {"category": "church_year_festivals", "prompt": "Wie viele Wochen dauert die Fastenzeit (Passionszeit) vor Ostern traditionell?", "choices": ["4 Wochen", "6 Wochen", "7 Wochen", "9 Wochen"], "correct_choice_index": 2},
+  {"category": "church_year_festivals", "prompt": "Wie heißt der Tag vor Ostersonntag, an dem der Kreuzestod Jesu im Mittelpunkt steht?", "choices": ["Gründonnerstag", "Karfreitag", "Karsamstag", "Palmsonntag"], "correct_choice_index": 1},
+  {"category": "church_year_festivals", "prompt": "Welches Fest erinnert an die Ausgießung des Heiligen Geistes?", "choices": ["Christi Himmelfahrt", "Pfingsten", "Erntedank", "Trinitatis"], "correct_choice_index": 1},
+  {"category": "church_year_festivals", "prompt": "Was wird traditionell am Erntedankfest in die Kirche gebracht?", "choices": ["Feld- und Gartenfrüchte", "Geschenke für Kinder", "Kerzen für Verstorbene", "Neue Glocken"], "correct_choice_index": 0},
+
+  {"category": "parables_miracles", "prompt": "In welchem Gleichnis hilft ein Mann einem Verletzten am Wegesrand, obwohl Respektspersonen vorbeigehen?", "choices": ["Der verlorene Sohn", "Der barmherzige Samariter", "Der reiche Kornbauer", "Das verlorene Schaf"], "correct_choice_index": 1},
+  {"category": "parables_miracles", "prompt": "Wie viele Brote und Fische sollen bei der Speisung der 5000 zur Verfügung gestanden haben?", "choices": ["3 Brote und 5 Fische", "5 Brote und 2 Fische", "7 Brote und 7 Fische", "2 Brote und 5 Fische"], "correct_choice_index": 1},
+  {"category": "parables_miracles", "prompt": "Welches Wunder gilt als das erste öffentliche Wunder Jesu, vollbracht in Kana?", "choices": ["Die Heilung eines Blinden", "Die Verwandlung von Wasser in Wein", "Das Gehen auf dem Wasser", "Die Auferweckung des Lazarus"], "correct_choice_index": 1},
+  {"category": "parables_miracles", "prompt": "Worüber freut sich der Vater im Gleichnis vom verlorenen Sohn am meisten?", "choices": ["Über eine reiche Ernte", "Über die Rückkehr seines Sohnes", "Über ein gewonnenes Fest", "Über einen neuen Knecht"], "correct_choice_index": 1},
+  {"category": "parables_miracles", "prompt": "Wen erweckte Jesus der Überlieferung nach vier Tage nach dessen Tod wieder zum Leben?", "choices": ["Lazarus", "Jairus' Tochter", "Den Sohn der Witwe von Nain", "Den römischen Hauptmann"], "correct_choice_index": 0},
+
+  {"category": "psalms_prayers", "prompt": "Welcher Psalm beginnt mit den Worten \"Der Herr ist mein Hirte\"?", "choices": ["Psalm 1", "Psalm 23", "Psalm 90", "Psalm 150"], "correct_choice_index": 1},
+  {"category": "psalms_prayers", "prompt": "Wie beginnt das Vaterunser?", "choices": ["\"Vater unser im Himmel\"", "\"Herr, erbarme dich\"", "\"Ehre sei Gott in der Höhe\"", "\"Heilig, heilig, heilig\""], "correct_choice_index": 0},
+  {"category": "psalms_prayers", "prompt": "Welches Buch der Bibel besteht vollständig aus Liedern und Gebeten?", "choices": ["Die Sprüche", "Die Psalmen", "Das Hohelied", "Die Klagelieder"], "correct_choice_index": 1},
+  {"category": "psalms_prayers", "prompt": "Mit welchem Lobruf enden viele Psalmen?", "choices": ["\"Amen\"", "\"Halleluja\"", "\"Hosianna\"", "\"Kyrie eleison\""], "correct_choice_index": 1},
+  {"category": "psalms_prayers", "prompt": "Welches Gebet wird traditionell als Bitte um Erbarmen zu Beginn vieler Gottesdienste gesprochen?", "choices": ["Gloria", "Kyrie", "Sanctus", "Agnus Dei"], "correct_choice_index": 1},
+
+  {"category": "symbols_customs", "prompt": "Welches Symbol steht zentral für das Christentum?", "choices": ["Der Fisch", "Das Kreuz", "Die Taube", "Der Anker"], "correct_choice_index": 1},
+  {"category": "symbols_customs", "prompt": "Welches Tier wird häufig als Symbol für den Heiligen Geist verwendet?", "choices": ["Das Lamm", "Die Taube", "Der Löwe", "Der Adler"], "correct_choice_index": 1},
+  {"category": "symbols_customs", "prompt": "Wofür steht das Lamm in der christlichen Kunst meist als Symbol?", "choices": ["Den Heiligen Geist", "Jesus Christus", "Den Apostel Petrus", "Die Kirche als Gemeinschaft"], "correct_choice_index": 1},
+  {"category": "symbols_customs", "prompt": "Welche liturgische Farbe tragen Geistliche in vielen Kirchen traditionell in der Fastenzeit?", "choices": ["Weiß", "Rot", "Violett", "Grün"], "correct_choice_index": 2},
+  {"category": "symbols_customs", "prompt": "Welches Element wird bei der christlichen Taufe verwendet?", "choices": ["Wein", "Öl", "Wasser", "Sand"], "correct_choice_index": 2},
+
+  {"category": "saints_role_models", "prompt": "Welcher Heilige wird oft dargestellt, wie er seinen Mantel mit einem frierenden Bettler teilt?", "choices": ["Franz von Assisi", "Martin von Tours", "Nikolaus von Myra", "Georg"], "correct_choice_index": 1},
+  {"category": "saints_role_models", "prompt": "Welcher Heilige gründete einen Orden, der sich besonders der Armut verschrieb und für seine Liebe zu Tieren bekannt ist?", "choices": ["Benedikt von Nursia", "Franz von Assisi", "Augustinus", "Bonifatius"], "correct_choice_index": 1},
+  {"category": "saints_role_models", "prompt": "Welche Frau wird als Mutter Jesu besonders verehrt?", "choices": ["Maria Magdalena", "Maria", "Martha", "Elisabeth"], "correct_choice_index": 1},
+  {"category": "saints_role_models", "prompt": "Welcher Apostel wird oft als \"der ungläubige Thomas\" bezeichnet, weil er an der Auferstehung zweifelte?", "choices": ["Petrus", "Thomas", "Andreas", "Bartholomäus"], "correct_choice_index": 1},
+  {"category": "saints_role_models", "prompt": "Welcher Bischof gilt als \"Apostel der Deutschen\" und brachte das Christentum zu den Germanen?", "choices": ["Bonifatius", "Ambrosius", "Patrick", "Martin von Tours"], "correct_choice_index": 0},
+
+  {"category": "facts_numbers_dates", "prompt": "Wie viele Bücher umfasst das Neue Testament?", "choices": ["24", "27", "39", "66"], "correct_choice_index": 1},
+  {"category": "facts_numbers_dates", "prompt": "Wie viele Bücher umfasst das Alte Testament in der evangelischen Zählung?", "choices": ["27", "39", "46", "73"], "correct_choice_index": 1},
+  {"category": "facts_numbers_dates", "prompt": "Wie viele Gebote umfasst der Dekalog (die Zehn Gebote)?", "choices": ["7", "10", "12", "13"], "correct_choice_index": 1},
+  {"category": "facts_numbers_dates", "prompt": "Wie viele Tage fastete Jesus laut der Überlieferung in der Wüste?", "choices": ["7", "12", "40", "100"], "correct_choice_index": 2},
+  {"category": "facts_numbers_dates", "prompt": "Wie oft soll man laut Jesu Antwort an Petrus seinem Bruder vergeben?", "choices": ["Siebenmal", "Siebzig mal siebenmal", "Zwölfmal", "Dreimal"], "correct_choice_index": 1},
+
+  {"category": "faith_pop_culture", "prompt": "In welcher bekannten Filmreihe spielt die Suche nach dem Heiligen Gral eine zentrale Rolle?", "choices": ["Star Wars", "Indiana Jones", "Der Herr der Ringe", "Jurassic Park"], "correct_choice_index": 1},
+  {"category": "faith_pop_culture", "prompt": "Welche Sängerin wurde unter anderem durch den Gospel-beeinflussten Hit \"Like a Prayer\" bekannt?", "choices": ["Madonna", "Whitney Houston", "Cher", "Beyoncé"], "correct_choice_index": 0},
+  {"category": "faith_pop_culture", "prompt": "In welchem Disney-Film singt die Hauptfigur das Lied \"Colors of the Wind\", das Themen von Schöpfung und Natur aufgreift?", "choices": ["Mulan", "Pocahontas", "Arielle", "Aladdin"], "correct_choice_index": 1},
+  {"category": "faith_pop_culture", "prompt": "Welche irische Band wird durch Sänger Bono oft mit spirituellen und glaubensbezogenen Songtexten in Verbindung gebracht?", "choices": ["U2", "Coldplay", "Snow Patrol", "The Script"], "correct_choice_index": 0},
+  {"category": "faith_pop_culture", "prompt": "In welchem weltberühmten Musical werden Jesu letzte Tage aus der Perspektive des Judas erzählt?", "choices": ["Joseph and the Amazing Technicolor Dreamcoat", "Jesus Christ Superstar", "Sister Act", "The Sound of Music"], "correct_choice_index": 1}
+]

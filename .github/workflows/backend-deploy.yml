@@ -16,10 +16,6 @@ name: Backend Deploy (Azure)
 #        AZURE_WEBAPP_NAME        - name of the target Web App
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "backend/**"
   workflow_dispatch:
 
 defaults:
