@@ -196,7 +196,17 @@ Terraform rejects it and the app refuses to boot with it outside local.
 ## 4. Before real users touch it (hardening)
 
 - [ ] **Rate-limit `/auth/login` and `/auth/register`.** Nothing currently slows down a
-      password-guessing loop. `slowapi` or an App Service / front-door rule.
+      password-guessing loop. `slowapi` or an App Service / front-door rule. Related: login
+      skips the password hash entirely for an unknown address, so response time still leaks
+      whether an account exists. Cheap fix once you touch this file: verify against a dummy
+      hash in the not-found branch.
+- [ ] **`GET /duels` runs a handful of queries per duel** (two display names, two score
+      aggregates). Fine at a few dozen duels per player, worth batching before it is thousands.
+- [ ] **The container runs as root.** Deliberate for now — App Service mounts `/home` as root,
+      and a non-root user would need the mount permissions sorted out first. Revisit with the
+      Postgres move, not before launch.
+- [ ] **The Notification Hub in Terraform is unused** — push goes through Expo. Free tier, so
+      it costs nothing, but delete it if you settle on Expo for good.
 - [ ] Sentry (or equivalent) in both backend and app — right now a crash in production is
       invisible.
 - [ ] Application Insights or at least an uptime check against `/health`.

@@ -50,6 +50,17 @@ def create_checkout(player: CurrentPlayer, session: SessionDep) -> CheckoutRespo
         raise HTTPException(status_code=409, detail="Du hast bereits ein aktives Abo")
 
     provider = get_provider()
+
+    # Changed your mind after cancelling: the subscription is still live at the
+    # provider, so resume it. Starting a checkout here would sell a *second*
+    # subscription and charge for both.
+    if is_subscription_active(player) and player.subscription_cancel_at_period_end:
+        try:
+            provider.resume(session, player)
+        except BillingError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        return CheckoutResponse(checkout_url=None, activated=True)
+
     try:
         result = provider.create_checkout(session, player)
     except BillingError as exc:

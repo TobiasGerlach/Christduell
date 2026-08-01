@@ -128,14 +128,41 @@ def test_no_questionnaire_before_minimum_games(session):
     assert get_due_questionnaire(session, player.id) is None
 
 
-def test_paid_tier_never_gets_questionnaires(session):
+def test_active_subscribers_never_get_questionnaires(session):
     player = make_player(session, "P", "p@example.com")
     player.subscription_tier = SubscriptionTier.PAID
+    player.subscription_valid_until = utcnow() + timedelta(days=20)
     session.add(player)
     session.add(ResearchConsent(player_id=player.id))
     make_finished_duels(session, player.id, GAMES_REQUIRED_BEFORE_QUESTIONNAIRE)
     session.commit()
     assert get_due_questionnaire(session, player.id) is None
+
+
+def test_lapsed_subscribers_owe_questionnaires_again(session):
+    """The stored tier is not entitlement: a subscription whose paid period ran
+    out still counts as free, even before the nightly downgrade notices."""
+    player = make_player(session, "P", "p@example.com")
+    player.subscription_tier = SubscriptionTier.PAID
+    player.subscription_valid_until = utcnow() - timedelta(days=1)
+    session.add(player)
+    session.add(ResearchConsent(player_id=player.id))
+    make_finished_duels(session, player.id, GAMES_REQUIRED_BEFORE_QUESTIONNAIRE)
+    session.commit()
+
+    assert get_due_questionnaire(session, player.id) == QuestionnaireType.FAITH_BACKGROUND
+
+
+def test_paid_tier_without_a_paid_through_date_is_not_entitlement(session):
+    player = make_player(session, "P", "p@example.com")
+    player.subscription_tier = SubscriptionTier.PAID
+    player.subscription_valid_until = None
+    session.add(player)
+    session.add(ResearchConsent(player_id=player.id))
+    make_finished_duels(session, player.id, GAMES_REQUIRED_BEFORE_QUESTIONNAIRE)
+    session.commit()
+
+    assert get_due_questionnaire(session, player.id) is not None
 
 
 def test_first_questionnaire_due_when_eligible(session):
@@ -206,7 +233,7 @@ def eligible_fixture(client, session):
 def test_submit_answers_requires_consent(participant):
     resp = participant.post(
         "/research/questionnaire/faith_background/answers",
-        json={"answers": {"denomination": "catholic"}},
+        json={"answers": {"age_range": "25–34"}},
     )
     assert resp.status_code == 403
 
@@ -214,7 +241,7 @@ def test_submit_answers_requires_consent(participant):
 def test_submit_answers_rejects_not_due_questionnaire(eligible):
     # ADHD is not due until faith_background is finished.
     resp = eligible.post(
-        "/research/questionnaire/adhd_screener/answers", json={"answers": {"asrs_q1": 2}}
+        "/research/questionnaire/adhd_screener/answers", json={"answers": {"asrs_a1": "Oft"}}
     )
     assert resp.status_code == 409
 
@@ -223,7 +250,7 @@ def test_submit_and_finish_questionnaire(eligible):
     # Save progress.
     save = eligible.post(
         "/research/questionnaire/faith_background/answers",
-        json={"answers": {"denomination": "catholic"}},
+        json={"answers": {"age_range": "25–34"}},
     )
     assert save.status_code == 200
     assert save.json()["status"] == "saved"
@@ -231,7 +258,7 @@ def test_submit_and_finish_questionnaire(eligible):
     # Finish it.
     finish = eligible.post(
         "/research/questionnaire/faith_background/answers",
-        json={"answers": {"hermeneutics": "literal"}, "finished": True},
+        json={"answers": {"gender": "Weiblich"}, "finished": True},
     )
     assert finish.status_code == 200
     assert finish.json()["status"] == "completed"
@@ -247,3 +274,13 @@ def test_current_questionnaire_returns_definition(eligible):
     body = resp.json()
     assert body["due_questionnaire"] == QuestionnaireType.FAITH_BACKGROUND.value
     assert body["questionnaire_definition"]["type"] == QuestionnaireType.FAITH_BACKGROUND.value
+
+
+def test_answers_must_belong_to_the_questionnaire(eligible):
+    """Without this check any client could write arbitrary rows into the dataset."""
+    resp = eligible.post(
+        "/research/questionnaire/faith_background/answers",
+        json={"answers": {"age_range": "25–34", "erfundener_schluessel": "x"}},
+    )
+    assert resp.status_code == 422
+    assert "erfundener_schluessel" in resp.text

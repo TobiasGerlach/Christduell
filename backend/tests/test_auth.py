@@ -176,3 +176,14 @@ def test_registration_rejects_reserved_tld_addresses(client):
         },
     )
     assert resp.status_code == 422
+
+
+def test_duplicate_registration_that_races_past_the_check_is_a_conflict(client, session):
+    """The unique index is the real guard; it must surface as 409, not a 500."""
+    make_player(session, "Erste", "race@example.com")
+
+    resp = client.post(
+        "/auth/register",
+        json={"display_name": "Zweite", "email": "race@example.com", "password": "password-1234"},
+    )
+    assert resp.status_code == 409

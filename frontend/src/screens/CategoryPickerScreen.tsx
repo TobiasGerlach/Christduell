@@ -12,13 +12,25 @@ export function CategoryPickerScreen({ route, navigation }: Props) {
   const [recommendations, setRecommendations] = useState<CategoryRecommendation[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [picking, setPicking] = useState<string | null>(null);
+  // Tracked separately from the list: "still loading" and "nothing to offer"
+  // look identical otherwise, and the empty case used to spin forever.
+  const [loading, setLoading] = useState(true);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      setRecommendations(await duelsApi.getRecommendations(duelId));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Kategorien konnten nicht geladen werden");
+    } finally {
+      setLoading(false);
+    }
+  }, [duelId]);
 
   useEffect(() => {
-    duelsApi
-      .getRecommendations(duelId)
-      .then(setRecommendations)
-      .catch((err) => setError(err instanceof Error ? err.message : "Failed to load categories"));
-  }, [duelId]);
+    load();
+  }, [load]);
 
   const pick = useCallback(
     async (category: string) => {
@@ -38,18 +50,26 @@ export function CategoryPickerScreen({ route, navigation }: Props) {
     [duelId, navigation, picking],
   );
 
-  if (error) {
+  if (loading) {
     return (
       <View style={styles.center}>
-        <Text style={styles.error}>{error}</Text>
+        <ActivityIndicator />
       </View>
     );
   }
 
-  if (recommendations.length === 0) {
+  if (error || recommendations.length === 0) {
     return (
       <View style={styles.center}>
-        <ActivityIndicator />
+        <Text style={styles.error}>
+          {error ?? "Zurzeit sind keine Kategorien verfügbar."}
+        </Text>
+        <Pressable style={styles.retry} onPress={load}>
+          <Text style={styles.retryLabel}>Erneut versuchen</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.goBack()}>
+          <Text style={styles.back}>Zurück zum Duell</Text>
+        </Pressable>
       </View>
     );
   }
@@ -77,7 +97,15 @@ export function CategoryPickerScreen({ route, navigation }: Props) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 24, gap: 16, justifyContent: "center" },
-  center: { flex: 1, alignItems: "center", justifyContent: "center" },
+  center: { flex: 1, alignItems: "center", justifyContent: "center", gap: 16, padding: 24 },
+  retry: {
+    backgroundColor: "#6750A4",
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+  },
+  retryLabel: { color: "#FFFFFF", fontWeight: "600" },
+  back: { color: "#6750A4" },
   heading: { fontSize: 18, fontWeight: "600", textAlign: "center", marginBottom: 8 },
   option: {
     backgroundColor: "#6750A4",
@@ -86,5 +114,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   optionLabel: { color: "#FFFFFF", fontWeight: "600", fontSize: 16 },
-  error: { color: "#B00020" },
+  error: { color: "#B00020", textAlign: "center" },
 });

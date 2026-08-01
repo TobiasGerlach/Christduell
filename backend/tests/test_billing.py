@@ -73,6 +73,28 @@ def test_cancel_keeps_access_until_the_period_ends(client, session, settings_ove
     assert body["tier"] == "paid"
 
 
+def test_resubscribing_after_cancelling_resumes_instead_of_buying_a_second(
+    client, session, settings_override
+):
+    """The subscription is still live at the provider — checking out again would
+    sell a second one and charge for both."""
+    settings_override(billing_provider="fake")
+    anna = make_player_client(session, client, "Anna", "anna@example.com")
+    anna.post("/billing/checkout")
+    first_valid_until = anna.get("/billing/status").json()["valid_until"]
+    anna.post("/billing/cancel")
+
+    resumed = anna.post("/billing/checkout")
+    assert resumed.status_code == 200
+    assert resumed.json() == {"checkout_url": None, "activated": True}
+
+    status = anna.get("/billing/status").json()
+    assert status["cancel_at_period_end"] is False
+    assert status["active"] is True
+    # Same period — resuming must not extend or restart the paid term.
+    assert status["valid_until"] == first_valid_until
+
+
 def test_cancel_without_a_subscription_is_rejected(client, session, settings_override):
     settings_override(billing_provider="fake")
     anna = make_player_client(session, client, "Anna", "anna@example.com")

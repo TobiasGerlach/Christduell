@@ -13,8 +13,8 @@ from app.models.domain import (
     QuestionnaireCompletion,
     QuestionnaireType,
     ResearchConsent,
-    SubscriptionTier,
 )
+from app.services.subscriptions import is_subscription_active
 
 FIXTURES_DIR = Path(__file__).parent.parent / "db" / "fixtures"
 
@@ -92,7 +92,11 @@ def get_due_questionnaire(
     - Months 2 & 3 require explicit health data consent.
     """
     player = session.get(Player, player_id)
-    if player is None or player.subscription_tier == SubscriptionTier.PAID:
+    if player is None:
+        return None
+    # Entitlement, not the stored tier: a subscription that lapsed before the
+    # nightly downgrade ran must not still buy questionnaire-free play.
+    if is_subscription_active(player):
         return None
 
     consent = get_active_consent(session, player_id)
@@ -121,6 +125,16 @@ def get_due_questionnaire(
         prev_completed_at = completion.completed_at
 
     return None  # all questionnaires completed
+
+
+def known_question_keys(q_type: QuestionnaireType) -> set[str]:
+    """Every question key the given questionnaire actually defines."""
+    definition = load_questionnaire_definition(q_type)
+    return {
+        question["key"]
+        for section in definition.get("sections", [])
+        for question in section.get("questions", [])
+    }
 
 
 def create_or_resume_completion(

@@ -8,9 +8,9 @@ import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Duel">;
 
-// Lightweight bridge until real push delivery lands (Phase 4): poll for
-// "it's your turn now" while we're sitting on the hub waiting for the
-// opponent. Explicitly throwaway — replace with a push-triggered refresh.
+// Lightweight bridge while a push notification is the real mechanism: refresh
+// the state while we are waiting on the opponent, so their move shows up
+// without the player pulling to refresh.
 const POLL_INTERVAL_MS = 8000;
 
 export function DuelScreen({ route, navigation }: Props) {
@@ -28,11 +28,21 @@ export function DuelScreen({ route, navigation }: Props) {
     }
   }, [duelId]);
 
+  // Only poll while the opponent could actually change something. On a finished
+  // duel, or while it is our own turn, nothing moves without us — polling then
+  // is battery and mobile data spent on an answer we already have.
+  const waitingForOpponent =
+    state !== null && state.action !== "finished" && state.acting_player_id !== account.id;
+
   useEffect(() => {
     load();
+  }, [load]);
+
+  useEffect(() => {
+    if (!waitingForOpponent) return;
     const interval = setInterval(load, POLL_INTERVAL_MS);
     return () => clearInterval(interval);
-  }, [load]);
+  }, [load, waitingForOpponent]);
 
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", load);

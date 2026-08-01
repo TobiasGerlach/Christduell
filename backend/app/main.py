@@ -39,6 +39,26 @@ def _check_production_config(settings: Settings) -> None:
         problems.append("SECRET_KEY is still the development default")
     if settings.billing_provider == "fake":
         problems.append("BILLING_PROVIDER=fake would hand out free subscriptions")
+
+    if settings.billing_provider == "stripe":
+        # Better to refuse the deploy than to show a subscribe button that 503s,
+        # or to accept webhooks whose signature cannot be verified.
+        for name, value in (
+            ("STRIPE_SECRET_KEY", settings.stripe_secret_key),
+            ("STRIPE_PRICE_ID", settings.stripe_price_id),
+            ("STRIPE_WEBHOOK_SECRET", settings.stripe_webhook_secret),
+            ("BILLING_SUCCESS_URL", settings.billing_success_url),
+            ("BILLING_CANCEL_URL", settings.billing_cancel_url),
+        ):
+            if not value:
+                problems.append(f"BILLING_PROVIDER=stripe but {name} is not set")
+
+    if settings.push_enabled and not settings.cors_origins and settings.environment != "local":
+        # Not fatal on its own, but a deployed API with no allowed origin cannot
+        # serve the web build at all — worth failing early rather than debugging
+        # CORS errors in a browser console.
+        problems.append("CORS_ORIGINS is empty, so no browser origin may call this API")
+
     if problems:
         raise RuntimeError(
             f"Refusing to start in environment '{settings.environment}': " + "; ".join(problems)

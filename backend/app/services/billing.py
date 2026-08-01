@@ -51,6 +51,10 @@ class BillingProvider:
     def cancel(self, session: Session, player: Player) -> None:
         raise BillingError("Subscriptions are not enabled on this server")
 
+    def resume(self, session: Session, player: Player) -> None:
+        """Undoes a pending cancellation without starting a second subscription."""
+        raise BillingError("Subscriptions are not enabled on this server")
+
 
 class FakeBillingProvider(BillingProvider):
     """Grants a subscription immediately. Never enable this in production."""
@@ -72,6 +76,12 @@ class FakeBillingProvider(BillingProvider):
 
     def cancel(self, session: Session, player: Player) -> None:
         mark_cancelled(session, player)
+
+    def resume(self, session: Session, player: Player) -> None:
+        player.subscription_cancel_at_period_end = False
+        session.add(player)
+        session.commit()
+        session.refresh(player)
 
 
 class StripeBillingProvider(BillingProvider):
@@ -133,6 +143,20 @@ class StripeBillingProvider(BillingProvider):
         except Exception as exc:  # noqa: BLE001
             raise BillingError(f"Stripe cancellation failed: {exc}") from exc
         mark_cancelled(session, player)
+
+    def resume(self, session: Session, player: Player) -> None:
+        if not player.billing_subscription_id:
+            raise BillingError("No subscription to resume")
+        try:
+            self._stripe.Subscription.modify(
+                player.billing_subscription_id, cancel_at_period_end=False
+            )
+        except Exception as exc:  # noqa: BLE001
+            raise BillingError(f"Stripe resume failed: {exc}") from exc
+        player.subscription_cancel_at_period_end = False
+        session.add(player)
+        session.commit()
+        session.refresh(player)
 
 
 def get_provider(settings: Settings | None = None) -> BillingProvider:

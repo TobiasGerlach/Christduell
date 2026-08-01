@@ -10,6 +10,18 @@ from app.services.rating import rank_for_rating
 router = APIRouter(prefix="/players", tags=["players"])
 
 SEARCH_RESULT_LIMIT = 10
+LIKE_ESCAPE = "\\"
+
+
+def escape_like(term: str) -> str:
+    """Neutralises LIKE wildcards in user input.
+
+    Without this, searching for `%%%` matches every display name and turns this
+    endpoint into a dump of the player table.
+    """
+    for character in (LIKE_ESCAPE, "%", "_"):
+        term = term.replace(character, LIKE_ESCAPE + character)
+    return term
 
 
 class PlayerProfile(BaseModel):
@@ -37,7 +49,10 @@ def search_players(
         .where(
             Player.id != player.id,
             Player.deleted_at.is_(None),
-            or_(Player.email == term, col(Player.display_name).ilike(f"{term}%")),
+            or_(
+                Player.email == term,
+                col(Player.display_name).ilike(f"{escape_like(term)}%", escape=LIKE_ESCAPE),
+            ),
         )
         .order_by(col(Player.rating).desc())
         .limit(SEARCH_RESULT_LIMIT)

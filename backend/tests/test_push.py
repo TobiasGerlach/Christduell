@@ -206,3 +206,16 @@ def test_register_and_clear_push_token(client, session):
     assert anna.delete("/notifications/register-token").status_code == 204
     session.expire_all()
     assert session.get(Player, anna.id).push_token is None
+
+
+def test_registering_a_token_detaches_it_from_the_previous_account(client, session):
+    """Two people using one phone must not receive each other's notifications."""
+    anna = make_player_client(session, client, "Anna", "anna@example.com")
+    bernd = make_player_client(session, client, "Bernd", "bernd@example.com")
+
+    anna.post("/notifications/register-token", json={"push_token": TOKEN})
+    bernd.post("/notifications/register-token", json={"push_token": TOKEN})
+
+    session.expire_all()
+    assert session.get(Player, anna.id).push_token is None
+    assert session.get(Player, bernd.id).push_token == TOKEN

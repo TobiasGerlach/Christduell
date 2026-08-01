@@ -125,3 +125,22 @@ def test_declining_a_running_duel_is_rejected(session, duel):
     duel.challenger.post(f"/duels/{duel.duel_id}/rounds", json={"category": "history"})
 
     assert duel.opponent.post(f"/duels/{duel.duel_id}/decline").status_code == 409
+
+
+def test_search_cannot_be_turned_into_a_player_dump(client, session):
+    """LIKE wildcards in the term must be literal characters, not a match-all."""
+    anna = make_player_client(session, client, "Anna", "anna@example.com")
+    for index in range(5):
+        make_player(session, f"Person{index}", f"p{index}@example.com")
+
+    for wildcard in ("%%%", "___", "%a%", "a_a"):
+        results = anna.get("/players/search", params={"q": wildcard}).json()
+        assert results == [], f"'{wildcard}' leaked {len(results)} players"
+
+
+def test_search_still_matches_a_literal_underscore(client, session):
+    anna = make_player_client(session, client, "Anna", "anna@example.com")
+    make_player(session, "max_mustermann", "max@example.com")
+
+    results = anna.get("/players/search", params={"q": "max_"}).json()
+    assert [r["display_name"] for r in results] == ["max_mustermann"]

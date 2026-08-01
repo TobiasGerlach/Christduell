@@ -23,7 +23,7 @@ def _player(session: Session, player_id: int) -> Player | None:
     return player
 
 
-def notify_challenged(session: Session, opponent: Player, challenger: Player, duel: Duel) -> None:
+def notify_challenged(opponent: Player, challenger: Player, duel: Duel) -> None:
     if opponent.deleted_at is not None:
         return
     push.send(

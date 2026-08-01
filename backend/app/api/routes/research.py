@@ -18,6 +18,7 @@ from app.services.research import (
     get_consent,
     get_due_questionnaire,
     get_finished_duel_count,
+    known_question_keys,
     load_questionnaire_definition,
     mark_completion_done,
     save_answers,
@@ -183,6 +184,15 @@ def submit_answers(
         raise HTTPException(
             status_code=409,
             detail=f"Questionnaire '{questionnaire_type}' is not currently due for this player",
+        )
+
+    # Only keys this questionnaire defines. Without the check, any client could
+    # write arbitrary key/value pairs into the research dataset.
+    unknown = set(payload.answers) - known_question_keys(questionnaire_type)
+    if unknown:
+        raise HTTPException(
+            status_code=422,
+            detail=f"Unknown question keys for this questionnaire: {sorted(unknown)}",
         )
 
     completion = create_or_resume_completion(session, consent.research_uuid, questionnaire_type)

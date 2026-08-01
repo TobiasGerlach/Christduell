@@ -1,6 +1,6 @@
 import random
 
-from sqlmodel import Session, select
+from sqlmodel import Session, col, func, select
 
 from app.models.domain import Category, Question
 
@@ -33,3 +33,33 @@ def select_questions_for_round(
     pool_size = min(len(questions), count * 2)
     closest = sorted(questions, key=lambda q: abs(q.rating - picker_rating))[:pool_size]
     return random.sample(closest, count)
+
+
+def available_question_count(session: Session, category: Category) -> int:
+    """How many questions in this category can still be dealt."""
+    statement = (
+        select(func.count())
+        .select_from(Question)
+        .where(Question.category == category, Question.retired_at.is_(None))
+    )
+    return session.exec(statement).one()
+
+
+def playable_categories(session: Session, count: int, exclude: set[Category]) -> list[Category]:
+    """Categories with enough live questions to fill a round.
+
+    Retirement can empty a category out from under the game, so anything the
+    player is offered has to be checked rather than assumed.
+    """
+    counts = dict(
+        session.exec(
+            select(Question.category, func.count())
+            .where(Question.retired_at.is_(None))
+            .group_by(col(Question.category))
+        ).all()
+    )
+    return [
+        category
+        for category in Category
+        if category not in exclude and counts.get(category, 0) >= count
+    ]

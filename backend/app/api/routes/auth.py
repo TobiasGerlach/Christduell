@@ -3,6 +3,7 @@ from datetime import datetime
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, EmailStr, Field
+from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, select
 
 from app.api.deps import CurrentPlayer
@@ -77,7 +78,15 @@ def register(payload: RegisterRequest, session: SessionDep) -> TokenResponse:
         password_hash=hash_password(payload.password),
     )
     session.add(player)
-    session.commit()
+    try:
+        session.commit()
+    except IntegrityError:
+        # Two registrations for the same address raced past the check above;
+        # the unique index caught it. Same answer as the check would have given.
+        session.rollback()
+        raise HTTPException(
+            status_code=409, detail="An account with this email already exists"
+        ) from None
     session.refresh(player)
 
     return TokenResponse(access_token=create_access_token(player.id), player=to_account(player))

@@ -33,7 +33,11 @@ from app.services.notifications import (
     notify_duel_finished,
     notify_your_turn,
 )
-from app.services.question_selection import select_questions_for_round
+from app.services.question_selection import (
+    available_question_count,
+    playable_categories,
+    select_questions_for_round,
+)
 from app.services.rating import update_ratings_after_answer
 
 router = APIRouter(prefix="/duels", tags=["duels"])
@@ -303,7 +307,7 @@ def create_duel(
     session.commit()
     session.refresh(duel)
 
-    notify_challenged(session, opponent, challenger=player, duel=duel)
+    notify_challenged(opponent, challenger=player, duel=duel)
     return _to_summary(session, duel)
 
 
@@ -350,7 +354,7 @@ def create_random_duel(player: CurrentPlayer, session: SessionDep) -> DuelSummar
     session.commit()
     session.refresh(duel)
 
-    notify_challenged(session, opponent, challenger=player, duel=duel)
+    notify_challenged(opponent, challenger=player, duel=duel)
     return _to_summary(session, duel)
 
 
@@ -401,7 +405,14 @@ def get_category_recommendations(
     _require_pick_turn(session, duel, player.id)
 
     used = set(session.exec(select(DuelRound.category).where(DuelRound.duel_id == duel_id)))
-    unused = [category for category in Category if category not in used]
+    # Only offer categories that still hold enough questions — a retired-out
+    # category would 409 the moment the player tapped it.
+    unused = playable_categories(session, QUESTIONS_PER_ROUND, exclude=used)
+    if not unused:
+        raise HTTPException(
+            status_code=409,
+            detail="Zurzeit sind nicht genug Fragen für eine weitere Runde verfügbar",
+        )
     sample = random.sample(unused, min(3, len(unused)))
     return [
         CategoryRecommendation(category=category, display_name=CATEGORY_DISPLAY_NAMES[category])
@@ -427,6 +438,14 @@ def pick_category(
     if already_used is not None:
         raise HTTPException(status_code=409, detail="Category already used in this duel")
 
+    # Checked before the round is created: reported questions can retire a
+    # category below a full round, and a half-created round would wedge the duel.
+    if available_question_count(session, payload.category) < QUESTIONS_PER_ROUND:
+        raise HTTPException(
+            status_code=409,
+            detail="In dieser Kategorie sind zurzeit nicht genug Fragen verfügbar",
+        )
+
     responder_id = state.waiting_player_id
 
     duel_round = DuelRound(
@@ -444,8 +463,11 @@ def pick_category(
         session, payload.category, player.rating, count=QUESTIONS_PER_ROUND
     )
     if len(questions) < QUESTIONS_PER_ROUND:
+        # Only reachable if a question retired between the check above and here.
+        session.rollback()
         raise HTTPException(
-            status_code=500, detail="Not enough questions available for this category"
+            status_code=409,
+            detail="In dieser Kategorie sind zurzeit nicht genug Fragen verfügbar",
         )
 
     for position, question in enumerate(questions, start=1):
