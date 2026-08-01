@@ -1,0 +1,229 @@
+{
+  "type": "autism_screener",
+  "title": "Soziale Wahrnehmung & Denkstile (AQ-28)",
+  "description": "Dieser Fragebogen untersucht, wie unterschiedliche Denk- und Wahrnehmungsstile das Erleben von Gemeinschaft, Ritual und theologischer Reflexion beeinflussen. Die Fragen basieren auf dem Autism-Spectrum Quotient (AQ) nach Baron-Cohen et al., einem international genutzten Forschungsinstrument.\n\nWichtig: Dies ist kein Diagnosewerkzeug und erlaubt keine Aussage darüber, ob Sie im Autismus-Spektrum liegen. Die Ergebnisse ersetzen keine ärztliche oder psychologische Diagnose. Wenn Sie persönliche Fragen zu diesem Thema haben, wenden Sie sich bitte an eine Fachperson.",
+  "estimated_minutes": 15,
+  "instrument_reference": "Baron-Cohen S, Wheelwright S, Skinner R, Martin J, Clubley E. (2001). The Autism-Spectrum Quotient (AQ). Journal of Autism and Developmental Disorders, 31(1), 5–17.",
+  "response_scale": {
+    "type": "agreement",
+    "options": ["Stimme definitiv zu", "Stimme eher zu", "Stimme eher nicht zu", "Stimme definitiv nicht zu"]
+  },
+  "sections": [
+    {
+      "key": "social_skills",
+      "title": "Soziale Interaktion",
+      "questions": [
+        {
+          "key": "aq_s1",
+          "text": "Ich finde es leicht, mit anderen Menschen gleichzeitig zu spielen oder etwas gemeinsam zu tun.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_s2",
+          "text": "Ich finde es schwierig, neue Freundschaften zu schließen.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_s3",
+          "text": "Ich genieße es, in gesellschaftlichen Situationen mit anderen Menschen zu plaudern.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_s4",
+          "text": "Es fällt mir schwer, zu erspüren, was andere Menschen denken oder fühlen.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_s5",
+          "text": "Ich finde es leicht herauszufinden, ob jemand möchte, dass ich etwas tue oder nicht.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_s6",
+          "text": "Ich finde es schwierig, auf Gruppenunterhaltungen zu reagieren.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_s7",
+          "text": "Andere Menschen sagen mir oft, dass ich zu weit in Details gehe, wenn ich etwas erkläre.",
+          "type": "agreement_scale"
+        }
+      ]
+    },
+    {
+      "key": "attention_switching",
+      "title": "Aufmerksamkeitswechsel",
+      "questions": [
+        {
+          "key": "aq_a1",
+          "text": "Ich wechsle leicht zwischen verschiedenen Tätigkeiten hin und her.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_a2",
+          "text": "Wenn ich unterbrochen werde, kann ich schnell wieder an die Arbeit gehen.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_a3",
+          "text": "Ich kann mir keine Routineabläufe vorstellen, die meinen Alltag strukturieren.",
+          "type": "agreement_scale",
+          "reverse_scored": true
+        },
+        {
+          "key": "aq_a4",
+          "text": "Wenn ich etwas lese, kann ich mich einfach von einem Kapitel zum nächsten vorarbeiten.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_a5",
+          "text": "Ich finde es schwer, mich auf etwas anderes zu konzentrieren, wenn ich erst einmal mit einer Sache angefangen habe.",
+          "type": "agreement_scale"
+        }
+      ]
+    },
+    {
+      "key": "attention_to_detail",
+      "title": "Detailwahrnehmung",
+      "questions": [
+        {
+          "key": "aq_d1",
+          "text": "Wenn ich Bilder anschaue, fällt mir normalerweise eher das Gesamtbild auf als die kleinen Details.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_d2",
+          "text": "Ich bemerke eher kleine Details als andere Menschen.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_d3",
+          "text": "Ich achte mehr darauf, wie Dinge zusammenpassen, als auf Details.",
+          "type": "agreement_scale",
+          "reverse_scored": true
+        },
+        {
+          "key": "aq_d4",
+          "text": "Ich bemerke nicht oft, wenn sich die Frisur oder das Outfit einer mir bekannten Person verändert hat.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_d5",
+          "text": "Ich interessiere mich mehr für das Gesamtbild als für Einzelheiten.",
+          "type": "agreement_scale",
+          "reverse_scored": true
+        }
+      ]
+    },
+    {
+      "key": "communication",
+      "title": "Kommunikation",
+      "questions": [
+        {
+          "key": "aq_c1",
+          "text": "Andere Menschen bemerken oft, dass ich dasselbe Thema mehrfach anspreche.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_c2",
+          "text": "Ich finde es leicht, Geschichten und Anekdoten zu erzählen.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_c3",
+          "text": "Ich finde es schwer, Konversationsregeln beim Gespräch zu verstehen.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_c4",
+          "text": "Ich kann den Sinn einer Metapher oder Redewendung oft nicht so leicht verstehen wie wörtliche Aussagen.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_c5",
+          "text": "Wenn ich telefoniere, bin ich mir manchmal unsicher, wann ich an der Reihe bin zu sprechen.",
+          "type": "agreement_scale"
+        }
+      ]
+    },
+    {
+      "key": "imagination",
+      "title": "Vorstellungsvermögen & Kreativität",
+      "questions": [
+        {
+          "key": "aq_i1",
+          "text": "Ich finde es leicht, mir vorzustellen, wie fiktive Charaktere aussehen könnten.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_i2",
+          "text": "Ich finde es schwer, was Menschen meinen, wenn sie sagen, dass etwas 'ein bisschen' so oder so ist.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_i3",
+          "text": "Wenn ich Rollenspiele beobachte, finde ich es leicht herauszufinden, was die Teilnehmer als nächstes tun werden.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_i4",
+          "text": "Ich habe eine Vorliebe für Fakten eher als für Fiktion.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_i5",
+          "text": "Es bereitet mir Schwierigkeiten, mir vorzustellen, wie es sich anfühlt, eine andere Person zu sein.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "aq_i6",
+          "text": "Ich neige dazu, Dinge genauso zu meinen, wie ich sie sage, ohne Zwischentöne.",
+          "type": "agreement_scale"
+        }
+      ]
+    },
+    {
+      "key": "context_faith",
+      "title": "Glaube & Gemeinschaft",
+      "description": "Diese Fragen verbinden kognitive Stile mit Ihrem Glaubensleben.",
+      "questions": [
+        {
+          "key": "ritual_comfort",
+          "text": "Wiederkehrende Rituale und feste Liturgien geben mir Sicherheit und Halt.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "literal_bible_preference",
+          "text": "Ich bevorzuge klare, eindeutige Aussagen der Bibel gegenüber mehrdeutigen oder symbolischen Texten.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "metaphor_difficulty_faith",
+          "text": "Manche theologischen Bilder und Metaphern (z. B. 'Licht', 'Weg', 'Hirte') fühlen sich für mich abstrakt oder schwer greifbar an.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "community_overwhelm",
+          "text": "Große Gemeindeveranstaltungen oder Gottesdienste mit vielen Menschen empfinde ich manchmal als überreizend.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "systematic_theology_appeal",
+          "text": "Systematische Theologie und klare Lehrsätze sind mir lieber als spirituelle Erfahrungsberichte.",
+          "type": "agreement_scale"
+        },
+        {
+          "key": "autism_formal_diagnosis",
+          "text": "Wurde bei Ihnen jemals eine Autismus-Spektrum-Störung diagnostiziert?",
+          "type": "single_choice",
+          "options": [
+            "Ja",
+            "Nein, aber ich habe es vermutet",
+            "Nein",
+            "Keine Angabe"
+          ]
+        }
+      ]
+    }
+  ]
+}

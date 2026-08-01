@@ -1,0 +1,136 @@
+{
+  "type": "adhd_screener",
+  "title": "Aufmerksamkeit & Konzentration (ASRS v1.1)",
+  "description": "Dieser Fragebogen hilft uns zu verstehen, wie unterschiedliche kognitive Stile das Lernverhalten und die Wissensaneignung im Glaubenskontext beeinflussen. Die Fragen stammen aus dem Adult ADHD Self-Report Scale (ASRS v1.1), einem international validierten Instrument der Weltgesundheitsorganisation (WHO).\n\nWichtig: Dies ist kein Diagnosewerkzeug. Die Ergebnisse ersetzen keine ärztliche oder psychologische Fachdiagnose. Wenn Sie Fragen zu Ihrer eigenen Situation haben, wenden Sie sich bitte an eine Fachperson.",
+  "estimated_minutes": 10,
+  "instrument_reference": "Kessler RC et al. (2005). The World Health Organization Adult ADHD Self-Report Scale (ASRS). Psychological Medicine, 35(2), 245–256.",
+  "response_scale": {
+    "type": "frequency",
+    "options": ["Nie", "Selten", "Manchmal", "Oft", "Sehr oft"]
+  },
+  "sections": [
+    {
+      "key": "asrs_part_a",
+      "title": "Teil A",
+      "description": "Wie oft haben die folgenden Dinge bei Ihnen zugetroffen — in den letzten 6 Monaten?",
+      "questions": [
+        {
+          "key": "asrs_a1",
+          "text": "Wie oft passiert es Ihnen, dass Sie bei einer Aufgabe oder Tätigkeit Fehler machen, weil Sie nicht sorgfältig genug arbeiten?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_a2",
+          "text": "Wie oft fällt es Ihnen schwer, bei einer Aufgabe oder Tätigkeit die Aufmerksamkeit aufrechtzuerhalten?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_a3",
+          "text": "Wie oft fühlen Sie sich abgelenkt, wenn jemand direkt mit Ihnen spricht?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_a4",
+          "text": "Wie oft legen Sie Dinge beiseite oder bringen eine Sache nicht zu Ende, wenn Sie eine andere beginnen?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_a5",
+          "text": "Wie oft fällt es Ihnen schwer, sich auf Aufgaben zu konzentrieren, die Ihnen nicht liegen oder die Sie langweilen?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_a6",
+          "text": "Wie oft suchen Sie nach Dingen (z. B. Schlüssel, Geldbörse, Papiere), weil Sie vergessen haben, wo Sie sie hingelegt haben?",
+          "type": "frequency_scale"
+        }
+      ]
+    },
+    {
+      "key": "asrs_part_b",
+      "title": "Teil B",
+      "questions": [
+        {
+          "key": "asrs_b1",
+          "text": "Wie oft lassen Sie sich von äußeren Reizen oder Gedanken, die nichts mit der aktuellen Aufgabe zu tun haben, ablenken?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b2",
+          "text": "Wie oft vergessen Sie, Verabredungen einzuhalten oder verpflichtende Dinge zu erledigen?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b3",
+          "text": "Wie oft drehen sich Ihre Gedanken im Kreis, wenn Sie sich auf Aufgaben konzentrieren müssen, die mehr Nachdenken erfordern?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b4",
+          "text": "Wie oft fühlen Sie sich zappelig oder haben das Bedürfnis, sich zu bewegen, wenn Sie lange sitzen müssen?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b5",
+          "text": "Wie oft sind Sie übermäßig aktiv oder haben das Gefühl, dass Sie angetrieben werden?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b6",
+          "text": "Wie oft reden Sie in Gesellschaft zu viel?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b7",
+          "text": "Wie oft beenden Sie Sätze anderer oder platzen heraus mit dem, was Sie sagen wollen, noch bevor der andere ausgesprochen hat?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b8",
+          "text": "Wie oft fällt es Ihnen schwer, zu warten, bis Sie an der Reihe sind?",
+          "type": "frequency_scale"
+        },
+        {
+          "key": "asrs_b9",
+          "text": "Wie oft unterbrechen Sie andere bei dem, was sie tun?",
+          "type": "frequency_scale"
+        }
+      ]
+    },
+    {
+      "key": "context",
+      "title": "Kontextfragen",
+      "description": "Diese Fragen helfen uns, die oben genannten Muster besser einzuordnen.",
+      "questions": [
+        {
+          "key": "adhd_childhood_onset",
+          "text": "Gab es die oben beschriebenen Schwierigkeiten bei Ihnen bereits in der Kindheit oder Jugend?",
+          "type": "single_choice",
+          "options": [
+            "Ja, deutlich",
+            "Ja, in abgeschwächter Form",
+            "Ich weiß es nicht / kann mich nicht gut erinnern",
+            "Nein"
+          ]
+        },
+        {
+          "key": "adhd_formal_diagnosis",
+          "text": "Wurde bei Ihnen jemals eine ADHS (Aufmerksamkeitsdefizit-Hyperaktivitätsstörung) diagnostiziert?",
+          "type": "single_choice",
+          "options": [
+            "Ja, im Kindesalter",
+            "Ja, im Erwachsenenalter",
+            "Nein, aber ich habe es vermutet",
+            "Nein"
+          ]
+        },
+        {
+          "key": "adhd_medication",
+          "text": "Nehmen Sie aktuell Medikamente, die auf Ihre Konzentration oder Impulsivität abzielen?",
+          "type": "single_choice",
+          "options": ["Ja", "Nein", "Keine Angabe"]
+        }
+      ]
+    }
+  ]
+}

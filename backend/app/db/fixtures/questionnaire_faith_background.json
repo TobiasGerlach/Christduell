@@ -1,0 +1,651 @@
+{
+  "type": "faith_background",
+  "title": "Glaubenshintergrund & Hermeneutik",
+  "description": "Dieser Fragebogen hilft uns, Ihre Glaubensbiographie und Ihr Bibelverständnis besser zu verstehen. Er bildet die Grundlage für die Forschungsauswertung. Bitte antworten Sie so ehrlich wie möglich — es gibt keine richtigen oder falschen Antworten.",
+  "estimated_minutes": 30,
+  "sections": [
+    {
+      "key": "demographics",
+      "title": "Demografische Angaben",
+      "questions": [
+        {
+          "key": "age_range",
+          "text": "Welcher Altersgruppe gehören Sie an?",
+          "type": "single_choice",
+          "options": ["unter 18", "18–24", "25–34", "35–44", "45–54", "55–64", "65 oder älter", "Keine Angabe"]
+        },
+        {
+          "key": "gender",
+          "text": "Wie beschreiben Sie Ihr Geschlecht?",
+          "type": "single_choice",
+          "options": ["Männlich", "Weiblich", "Divers / nicht-binär", "Keine Angabe"]
+        },
+        {
+          "key": "education",
+          "text": "Was ist Ihr höchster abgeschlossener Bildungsabschluss?",
+          "type": "single_choice",
+          "options": [
+            "Kein Schulabschluss",
+            "Haupt-/Volksschulabschluss",
+            "Mittlere Reife / Realschulabschluss",
+            "Abitur / Hochschulreife",
+            "Berufsausbildung",
+            "Bachelor",
+            "Master / Diplom / Magister",
+            "Promotion / Habilitation",
+            "Keine Angabe"
+          ]
+        },
+        {
+          "key": "country",
+          "text": "In welchem Land leben Sie?",
+          "type": "single_choice",
+          "options": [
+            "Deutschland",
+            "Österreich",
+            "Schweiz",
+            "Anderes deutschsprachiges Land",
+            "Anderes europäisches Land",
+            "Außerhalb Europas"
+          ]
+        },
+        {
+          "key": "occupation_category",
+          "text": "Wie würden Sie Ihre berufliche Tätigkeit am ehesten beschreiben?",
+          "type": "single_choice",
+          "options": [
+            "Schüler/in oder Auszubildende/r",
+            "Studierende/r",
+            "Angestellt (nicht-akademisch)",
+            "Angestellt (akademisch / Hochschule / Forschung)",
+            "Kirchliche/r Mitarbeiter/in oder Pastor/in",
+            "Selbstständig",
+            "In Elternzeit oder Haushaltsführung",
+            "Rentner/in oder Pensionär/in",
+            "Arbeitssuchend",
+            "Keine Angabe"
+          ]
+        },
+        {
+          "key": "theological_education",
+          "text": "Haben Sie eine theologische Ausbildung genossen?",
+          "type": "single_choice",
+          "options": [
+            "Nein",
+            "Konfirmandenunterricht oder Erstkommunion-Vorbereitung",
+            "Kirchliche Laienausbildung / Kurs",
+            "Bibelschule oder Gemeindeakademie",
+            "Theologiestudium (Bachelor oder entsprechend)",
+            "Theologiestudium (Master, Diplom oder entsprechend)",
+            "Promotion in Theologie"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "faith_background",
+      "title": "Glaubensbiographie",
+      "questions": [
+        {
+          "key": "raised_christian",
+          "text": "Wurden Sie in einem christlichen Elternhaus aufgezogen?",
+          "type": "single_choice",
+          "options": ["Ja, aktiv christlich", "Ja, kulturell christlich", "Teilweise", "Nein", "Weiß nicht"]
+        },
+        {
+          "key": "family_faith_intensity",
+          "text": "Wie stark war der Glaube in Ihrem Elternhaus ausgeprägt?",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Gar nicht religiös",
+          "scale_max_label": "Sehr stark religiös"
+        },
+        {
+          "key": "faith_duration",
+          "text": "Seit wann würden Sie sich selbst als Christ/Christin bezeichnen?",
+          "type": "single_choice",
+          "options": [
+            "Seit der Kindheit / schon immer",
+            "Seit der Jugend (12–18 Jahre)",
+            "Seit dem jungen Erwachsenenalter (19–25 Jahre)",
+            "Seit dem Erwachsenenalter (26–40 Jahre)",
+            "Seit dem mittleren oder späten Erwachsenenalter (40+)",
+            "Ich bezeichne mich nicht als Christ/Christin"
+          ]
+        },
+        {
+          "key": "conversion_experience",
+          "text": "Hatten Sie ein bewusstes Bekehrungs- oder Entscheidungserlebnis?",
+          "type": "single_choice",
+          "options": [
+            "Ja, ein klares, datier­bares Erlebnis",
+            "Ja, aber eher ein schleichender Prozess",
+            "Nein, der Glaube war immer einfach da",
+            "Nein, ich lebe kulturell christlich ohne persönliche Entscheidung"
+          ]
+        },
+        {
+          "key": "serious_doubts",
+          "text": "Ich habe in meinem Leben ernsthaften Glaubenszweifel erlebt.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Nie",
+          "scale_max_label": "Immer wieder, stark ausgeprägt"
+        },
+        {
+          "key": "faith_central_identity",
+          "text": "Der Glaube ist zentral für meine Identität.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        }
+      ]
+    },
+    {
+      "key": "church_affiliation",
+      "title": "Kirchenzugehörigkeit & Konfession",
+      "questions": [
+        {
+          "key": "confession",
+          "text": "Welcher Konfession gehören Sie an oder stehen Sie am nächsten?",
+          "type": "single_choice",
+          "options": [
+            "Römisch-katholisch",
+            "Evangelisch-lutherisch",
+            "Evangelisch-reformiert",
+            "Evangelisch (Landeskirche, unspezifisch)",
+            "Evangelisch-freikirchlich (z. B. Baptisten, Brüdergemeinde)",
+            "Pfingstkirchlich / Charismatisch",
+            "Methodistisch",
+            "Anglikanisch / Episkopalisch",
+            "Ostkirchlich (orthodox)",
+            "Altkatholisch",
+            "Mennonitisch / Täuferisch",
+            "Neuapostolisch",
+            "Unabhängige Freikirche",
+            "Keine Konfession, aber christlich",
+            "Andere"
+          ]
+        },
+        {
+          "key": "denomination_detail",
+          "text": "Falls möglich: Welche Gemeinde oder Denomination konkret? (Freitext, freiwillig)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "denomination_change",
+          "text": "Haben Sie die Konfession oder Denomination im Laufe Ihres Lebens gewechselt?",
+          "type": "single_choice",
+          "options": ["Nein", "Ja, einmal", "Ja, mehrfach"]
+        },
+        {
+          "key": "faith_style",
+          "text": "Welche Begriffe beschreiben Ihren Glaubensstil? (Mehrfachauswahl möglich)",
+          "type": "multi_choice",
+          "options": [
+            "Evangelikal",
+            "Charismatisch",
+            "Pietistisch",
+            "Liberal / progressiv",
+            "Traditionell / konservativ",
+            "Ökumenisch",
+            "Mystisch / kontemplativ",
+            "Sozial-ethisch engagiert",
+            "Konfessionell bewusst",
+            "Keines davon"
+          ]
+        },
+        {
+          "key": "church_attendance",
+          "text": "Wie oft nehmen Sie an einem Gottesdienst teil?",
+          "type": "single_choice",
+          "options": [
+            "Mehrmals pro Woche",
+            "Wöchentlich",
+            "Zwei- bis dreimal im Monat",
+            "Einmal im Monat",
+            "Ein paar Mal im Jahr (Weihnachten, Ostern etc.)",
+            "Selten",
+            "Nie"
+          ]
+        },
+        {
+          "key": "church_involvement",
+          "text": "Sind Sie aktiv in einer Gemeinde tätig (Ehrenamt, Leitung, Dienste)?",
+          "type": "single_choice",
+          "options": [
+            "Ja, in Leitungsverantwortung",
+            "Ja, als Mitarbeiter/in ohne Leitungsfunktion",
+            "Gelegentlich",
+            "Nein"
+          ]
+        },
+        {
+          "key": "small_group",
+          "text": "Nehmen Sie regelmäßig an einem Bibelkreis, einer Kleingruppe oder einem Gebetskreis teil?",
+          "type": "single_choice",
+          "options": ["Ja, wöchentlich", "Ja, monatlich", "Selten", "Nein"]
+        },
+        {
+          "key": "ecumenical_openness",
+          "text": "Ich bin offen für den Austausch mit anderen Konfessionen und Traditionen.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        }
+      ]
+    },
+    {
+      "key": "bible_practice",
+      "title": "Bibelleseverhalten & -praxis",
+      "questions": [
+        {
+          "key": "bible_reading_frequency",
+          "text": "Wie oft lesen Sie die Bibel?",
+          "type": "single_choice",
+          "options": [
+            "Täglich",
+            "Mehrmals pro Woche",
+            "Wöchentlich",
+            "Ein paar Mal im Monat",
+            "Selten",
+            "Nie"
+          ]
+        },
+        {
+          "key": "bible_translation",
+          "text": "Welche Bibelübersetzung nutzen Sie hauptsächlich?",
+          "type": "single_choice",
+          "options": [
+            "Lutherbibel (2017)",
+            "Lutherbibel (1984)",
+            "Einheitsübersetzung",
+            "Elberfelder Bibel",
+            "Schlachter 2000",
+            "Neue Genfer Übersetzung",
+            "Hoffnung für alle",
+            "Gute Nachricht Bibel",
+            "BasisBibel",
+            "Zürcher Bibel",
+            "Andere deutschsprachige",
+            "Ich lese hauptsächlich auf Englisch (z. B. NIV, ESV)",
+            "Im Originaltext (Hebräisch/Griechisch)"
+          ]
+        },
+        {
+          "key": "bible_reading_plan",
+          "text": "Nutzen Sie einen Bibelleseplan, Andachtshefte oder digitale Devotionals?",
+          "type": "single_choice",
+          "options": ["Ja, regelmäßig", "Gelegentlich", "Nein"]
+        },
+        {
+          "key": "bible_read_completely",
+          "text": "Haben Sie die Bibel schon einmal vollständig gelesen?",
+          "type": "single_choice",
+          "options": ["Ja, einmal", "Ja, mehrfach", "Noch nicht, aber angefangen", "Nein"]
+        },
+        {
+          "key": "original_languages",
+          "text": "Beherrschen Sie Bibelsprachen (Hebräisch, Griechisch, Aramäisch)?",
+          "type": "single_choice",
+          "options": [
+            "Nein",
+            "Grundkenntnisse (Bibelkurs / Einführung)",
+            "Arbeitskenntnisse (kann Texte mit Hilfsmitteln lesen)",
+            "Gute Kenntnisse (lese eigenständig im Original)",
+            "Fließend"
+          ]
+        },
+        {
+          "key": "study_aids",
+          "text": "Nutzen Sie theologische Kommentare, Lexika oder Studienhilfen?",
+          "type": "single_choice",
+          "options": [
+            "Ja, regelmäßig",
+            "Gelegentlich",
+            "Selten",
+            "Nein"
+          ]
+        },
+        {
+          "key": "apocrypha_engagement",
+          "text": "Lesen oder nutzen Sie die Apokryphen / Deuterokanonischen Schriften?",
+          "type": "single_choice",
+          "options": [
+            "Ja, regelmäßig",
+            "Gelegentlich",
+            "Selten",
+            "Nein, sie gehören nicht zur Bibel",
+            "Nein, aber ich erkenne sie an"
+          ]
+        },
+        {
+          "key": "bible_primary_approach",
+          "text": "Wie lesen Sie die Bibel hauptsächlich?",
+          "type": "single_choice",
+          "options": [
+            "Zur persönlichen Andacht und Erbauung",
+            "Zum akademisch-theologischen Studium",
+            "Zur Predigtvorbereitung / Unterrichtsgestaltung",
+            "In der Gemeinschaft (Bibelkreis, Gottesdienst)",
+            "Als historisch-kulturelles Dokument",
+            "Verschiedene Zugänge gleichzeitig"
+          ]
+        },
+        {
+          "key": "psalms_prayer",
+          "text": "Ich bete mit oder durch die Psalmen.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Nie",
+          "scale_max_label": "Regelmäßig"
+        }
+      ]
+    },
+    {
+      "key": "hermeneutics",
+      "title": "Bibelverständnis & Hermeneutik",
+      "description": "Dieser Abschnitt fragt nach Ihrer Überzeugung zu grundlegenden Fragen der Bibelauslegung. Es geht nicht um Wissen, sondern um Ihre persönliche Haltung.",
+      "questions": [
+        {
+          "key": "biblical_authority",
+          "text": "Wie würden Sie die Autorität der Bibel am besten beschreiben?",
+          "type": "single_choice",
+          "options": [
+            "Die Bibel ist in allem wörtlich wahr und irrtumslos (Verbalinspiration)",
+            "Die Bibel ist in Glaubens- und Heilsfragen unfehlbar, nicht aber in naturwissenschaftlichen Details",
+            "Die Bibel ist das primäre Zeugnis von Gottes Offenbarung, aber in menschlicher Sprache und Vorstellung",
+            "Die Bibel ist ein historisch bedingtes menschliches Dokument, das von Gotteserfahrungen erzählt",
+            "Ich habe eine andere oder differenziertere Sichtweise"
+          ]
+        },
+        {
+          "key": "biblical_inspiration",
+          "text": "Wie verstehen Sie die Entstehung der Bibel?",
+          "type": "single_choice",
+          "options": [
+            "Wörtliche Inspiration: Gott hat die Bibelautoren die genauen Worte diktiert",
+            "Plenare Inspiration: Gott hat alle Inhalte inspiriert, die Autoren aber in ihrer Sprache schreiben lassen",
+            "Dynamische Inspiration: Gott hat die Gedanken und Glaubenserfahrungen der Autoren inspiriert",
+            "Begegnungsinspiration: Die Bibel wird zum Wort Gottes, wenn sie uns in unserer Situation trifft",
+            "Soziale Entstehung: Die Bibel ist ein gemeinschaftlich gewachsenes religiöses Dokument ohne spezielle Inspiration"
+          ]
+        },
+        {
+          "key": "genesis_literal",
+          "text": "Genesis 1–2 berichtet buchstäblich, wie die Welt in sechs Tagen erschaffen wurde.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "miracles_literal",
+          "text": "Die biblischen Wunder (z. B. Speisung der 5000, Auferstehung) haben sich so ereignet, wie sie beschrieben werden.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "contradictions_approach",
+          "text": "Wie gehen Sie mit scheinbaren Widersprüchen innerhalb der Bibel um?",
+          "type": "single_choice",
+          "options": [
+            "Es gibt keine echten Widersprüche — nur scheinbare, die sich bei genauem Hinsehen auflösen",
+            "Kleinere Widersprüche in Nebenfragen beeinträchtigen nicht die Glaubwürdigkeit in Hauptfragen",
+            "Widersprüche zeigen die menschliche Bedingtheit der Texte — das ist kein Problem",
+            "Widersprüche sind ein wichtiges literarisches und theologisches Signal, dem ich nachgehe",
+            "Ich habe noch keine befriedigende Antwort darauf"
+          ]
+        },
+        {
+          "key": "ot_ethics_today",
+          "text": "Wie wenden Sie alttestamentliche Gebote (z. B. Reinheitsgesetze, Opfervorschriften) auf die Gegenwart an?",
+          "type": "single_choice",
+          "options": [
+            "Direkt — sie sind weiterhin verbindlich, sofern im NT nicht ausdrücklich aufgehoben",
+            "Sie zeigen Gottes ewige moralische Prinzipien, sind aber in ihrer Form nicht direkt anwendbar",
+            "Sie sind durch Christus erfüllt und deshalb für Christen nicht mehr als Gebote bindend",
+            "Ich unterscheide zwischen zeremoniellem, bürgerlichem und moralischem Gesetz",
+            "Sie sind historische Dokumente ohne direkte Verbindlichkeit für heute"
+          ]
+        },
+        {
+          "key": "prophecy_interpretation",
+          "text": "Wie deuten Sie prophetische Texte des AT (z. B. Jesaja, Ezechiel)?",
+          "type": "single_choice",
+          "options": [
+            "Vor allem typologisch: Sie zeigen auf Christus und die Kirche voraus",
+            "Vor allem wörtlich-futuristisch: Sie werden sich in Zukunft buchstäblich erfüllen",
+            "Vor allem historisch: Sie waren an die damalige Situation gerichtet",
+            "Vor allem kanonisch: Ihre Bedeutung erschließt sich im Zusammenhang der ganzen Bibel",
+            "Multivalent: Sie haben mehrere Bedeutungsebenen gleichzeitig"
+          ]
+        },
+        {
+          "key": "historical_context_importance",
+          "text": "Der historische und kulturelle Kontext eines Bibeltextes ist entscheidend für sein Verständnis.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "holy_spirit_guides_interpretation",
+          "text": "Der Heilige Geist führt mich persönlich in das richtige Verständnis der Bibel.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "nt_reinterprets_ot",
+          "text": "Das Neue Testament erfüllt, überbietet und deutet das Alte Testament neu.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "paul_cultural_conditioning",
+          "text": "Bestimmte Aussagen des Paulus (z. B. zu Frauen, zu Sklaven) sind kulturell bedingt und dürfen heute anders angewendet werden.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "bible_answers_social_issues",
+          "text": "Die Bibel gibt klare und direkte Antworten auf aktuelle gesellschaftliche Fragen (z. B. Migration, Ökologie, Geschlechterfragen).",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "hermeneutical_method",
+          "text": "Nutzen Sie bewusst eine hermeneutische Methode bei der Bibelauslegung?",
+          "type": "single_choice",
+          "options": [
+            "Grammatisch-historische Methode",
+            "Kanonische Auslegung",
+            "Narrative Theologie",
+            "Befreiungstheologischer Ansatz",
+            "Lectio Divina / kontemplative Auslegung",
+            "Rhetorische oder literarische Analyse",
+            "Keine bewusste Methode",
+            "Ich kenne mich mit hermeneutischen Methoden nicht aus"
+          ]
+        },
+        {
+          "key": "scripture_tradition_reason_experience",
+          "text": "Wie gewichten Sie die vier Quellen theologischer Erkenntnis? (Schrift = 1 bedeutet am wichtigsten)",
+          "type": "ranking",
+          "items": ["Heilige Schrift", "kirchliche Tradition", "Vernunft", "persönliche Erfahrung"]
+        },
+        {
+          "key": "faith_science_relationship",
+          "text": "Wie sehen Sie das Verhältnis von christlichem Glauben und Naturwissenschaft?",
+          "type": "single_choice",
+          "options": [
+            "Konflikt: Wo die Wissenschaft spricht, muss die Bibel weichen",
+            "Konflikt: Wo die Bibel spricht, muss die Wissenschaft weichen",
+            "Unabhängigkeit: Beide beschreiben verschiedene Wirklichkeitsbereiche",
+            "Dialog: Glaube und Wissenschaft können voneinander lernen",
+            "Integration: Glaube bietet den Rahmen, in dem Wissenschaft sinnvoll ist"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "theology_practice",
+      "title": "Theologische Überzeugungen & Glaubenspraxis",
+      "questions": [
+        {
+          "key": "salvation_understanding",
+          "text": "Wie verstehen Sie Heil/Erlösung?",
+          "type": "single_choice",
+          "options": [
+            "Allein durch Glaube und Gnade (sola fide, sola gratia)",
+            "Durch Glaube und gute Werke gemeinsam",
+            "Durch die Sakramente der Kirche",
+            "Als universale Wiederherstellung aller Dinge (Apokatastasis)",
+            "Als innere Befreiung und Transformation in diesem Leben",
+            "Ich habe eine andere Vorstellung"
+          ]
+        },
+        {
+          "key": "baptism_understanding",
+          "text": "Wie verstehen Sie die Taufe?",
+          "type": "single_choice",
+          "options": [
+            "Als Sakrament, das Gnade und Wiedergeburt wirkt (ex opere operato)",
+            "Als Besiegelung des Bundes Gottes, daher auch für Säuglinge sinnvoll",
+            "Als öffentliches Bekenntnis des persönlichen Glaubens (Gläubigentaufe)",
+            "Als Symbol ohne sakramentale Wirkung",
+            "Als Initiationsritus in die Gemeinschaft der Kirche"
+          ]
+        },
+        {
+          "key": "lords_supper_understanding",
+          "text": "Wie verstehen Sie das Abendmahl / die Eucharistie?",
+          "type": "single_choice",
+          "options": [
+            "Transsubstantiation: Brot und Wein werden wirklich zu Leib und Blut Christi",
+            "Realpräsenz (lutherisch): Christus ist wahrhaft gegenwärtig in, mit und unter Brot und Wein",
+            "Spirituelle Gegenwart: Christus ist im Glauben wirklich gegenwärtig",
+            "Gedächtnismahl: Es ist ein Erinnerungszeichen ohne Realpräsenz",
+            "Ich habe noch keine klare Überzeugung"
+          ]
+        },
+        {
+          "key": "tongues_today",
+          "text": "Zungenrede (Glossolalie) ist eine Gabe des Heiligen Geistes, die heute noch ausgeübt wird.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "divine_daily_intervention",
+          "text": "Gott greift aktiv und spürbar in meinen Alltag ein.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "prayer_frequency",
+          "text": "Wie oft beten Sie persönlich?",
+          "type": "single_choice",
+          "options": [
+            "Mehrmals täglich",
+            "Täglich",
+            "Mehrmals pro Woche",
+            "Selten",
+            "Fast nie"
+          ]
+        },
+        {
+          "key": "afterlife_understanding",
+          "text": "Wie verstehen Sie das Leben nach dem Tod?",
+          "type": "single_choice",
+          "options": [
+            "Himmel für Gläubige, Hölle für Ungläubige (ewige Trennung von Gott)",
+            "Himmel für Gläubige, Vernichtung (Annihilationismus) für Ungläubige",
+            "Universale Wiederherstellung aller Menschen",
+            "Auferstehung der Toten am Ende der Zeiten, dann Gericht",
+            "Ich glaube an eine Fortexistenz der Seele, habe aber keine klare Vorstellung",
+            "Ich bin unsicher oder agnostisch in dieser Frage"
+          ]
+        },
+        {
+          "key": "women_leadership",
+          "text": "Frauen sollten alle Leitungsaufgaben in der Kirche (einschließlich Pfarramt/Bischofsamt) übernehmen dürfen.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "faith_politics_relationship",
+          "text": "Wie sehen Sie das Verhältnis von Glaube und Politik?",
+          "type": "single_choice",
+          "options": [
+            "Glaube und Politik sollten streng getrennt bleiben",
+            "Christen sollen politisch engagiert sein, die Kirche als Institution aber neutral",
+            "Die Kirche soll öffentlich für christliche Werte in der Politik eintreten",
+            "Das Evangelium fordert konkrete politische Positionen (z. B. für die Armen)",
+            "Mein Glaube prägt meine politische Haltung, aber ich lehne eine Politisierung der Kirche ab"
+          ]
+        },
+        {
+          "key": "devotional_practice",
+          "text": "Ich habe eine regelmäßige persönliche Andachtspraxis (Stille, Meditation, Gebet, Bibellesen).",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Nein, gar nicht",
+          "scale_max_label": "Ja, täglich und strukturiert"
+        },
+        {
+          "key": "faith_community_essential",
+          "text": "Christliche Gemeinschaft ist für mein Glaubensleben unverzichtbar.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Stimme gar nicht zu",
+          "scale_max_label": "Stimme voll zu"
+        },
+        {
+          "key": "faith_growth_recent",
+          "text": "Mein Glaube hat sich in den letzten zwei Jahren vertieft.",
+          "type": "scale",
+          "scale_min": 1,
+          "scale_max": 5,
+          "scale_min_label": "Nein, eher abgeflacht",
+          "scale_max_label": "Ja, deutlich gewachsen"
+        }
+      ]
+    }
+  ]
+}
