@@ -1,0 +1,702 @@
+[
+  {
+    "category": "ancient_languages",
+    "prompt": "In welcher Sprache wurde der Großteil des Alten Testaments verfasst?",
+    "choices": [
+      "Latein",
+      "Hebräisch",
+      "Aramäisch",
+      "Griechisch"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Nur wenige Teile, etwa in Daniel und Esra, sind aramäisch.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "In welcher Sprache wurde das Neue Testament verfasst?",
+    "choices": [
+      "Latein",
+      "Griechisch",
+      "Syrisch",
+      "Hebräisch"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Koine-Griechisch, die Verkehrssprache des östlichen Mittelmeers.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Welche Sprache sprach Jesus vermutlich im Alltag?",
+    "choices": [
+      "Koptisch",
+      "Aramäisch",
+      "Latein",
+      "Altgriechisch"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Aramäisch war im Palästina des 1. Jahrhunderts Umgangssprache.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet das hebräische Wort 'Amen' sinngemäß?",
+    "choices": [
+      "'Gelobt sei Gott'",
+      "'Bitte'",
+      "'So sei es'",
+      "'Danke'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Von der Wurzel für 'fest, verlässlich sein'.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Aus welcher Sprache stammt das Wort 'Evangelium'?",
+    "choices": [
+      "Aramäisch",
+      "Latein",
+      "Griechisch",
+      "Hebräisch"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Von 'euangelion' — gute Nachricht.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Halleluja'?",
+    "choices": [
+      "'Gott ist groß'",
+      "'Friede sei mit euch'",
+      "'Lobet den Herrn'",
+      "'Wir danken dir'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 150,1",
+    "explanation": "Hebräisch: 'hallelu Jah' — lobt Jahwe.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet der Name 'Jesus' auf Hebräisch?",
+    "choices": [
+      "'Sohn Gottes'",
+      "'Gott rettet'",
+      "'Gesalbter'",
+      "'Friedensfürst'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 1,21",
+    "explanation": "Jeschua ist eine Kurzform von Jehoschua — 'JHWH rettet'.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet das Wort 'Christus'?",
+    "choices": [
+      "'Der Erlöser'",
+      "'Der Lehrer'",
+      "'Der König'",
+      "'Der Gesalbte'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Griechisch 'christos' übersetzt das hebräische 'maschiach' — Messias.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wie heißt die berühmte griechische Übersetzung des Alten Testaments?",
+    "choices": [
+      "Septuaginta",
+      "Peschitta",
+      "Targum",
+      "Vulgata"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Legende nach von 72 Gelehrten in Alexandria erstellt.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wer übersetzte die Bibel ins Lateinische — die spätere Vulgata?",
+    "choices": [
+      "Origenes",
+      "Hieronymus",
+      "Augustinus",
+      "Ambrosius"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Hieronymus arbeitete um 400 n. Chr. in Betlehem.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Hosanna' ursprünglich?",
+    "choices": [
+      "'Willkommen'",
+      "'Hilf doch!'",
+      "'Ehre sei Gott'",
+      "'Heiliger Gott'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ps 118,25",
+    "explanation": "Ein Hilferuf, der zum Jubelruf wurde.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was heißt 'Messias' übersetzt?",
+    "choices": [
+      "'Der Erwählte'",
+      "'Der Erstgeborene'",
+      "'Der Gesandte'",
+      "'Der Gesalbte'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Hebräisch 'maschiach', griechisch 'christos'.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet das aramäische 'Abba', das Jesus für Gott gebraucht?",
+    "choices": [
+      "'Schöpfer'",
+      "'Meister'",
+      "'Herr'",
+      "'Vater'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 14,36",
+    "explanation": "Eine vertraute Anrede, etwa 'lieber Vater'.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wie viele Buchstaben hat das hebräische Alphabet?",
+    "choices": [
+      "20",
+      "22",
+      "26",
+      "24"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "22 Konsonanten; Vokale wurden später als Punkte ergänzt.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "In welche Richtung wird Hebräisch gelesen?",
+    "choices": [
+      "Abwechselnd",
+      "Von links nach rechts",
+      "Von rechts nach links",
+      "Von oben nach unten"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Wie auch Arabisch.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Welche vier hebräischen Buchstaben bilden den Gottesnamen (Tetragramm)?",
+    "choices": [
+      "JHWH",
+      "SCHAD",
+      "ADON",
+      "ELOH"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Ex 3,15",
+    "explanation": "Jod-He-Waw-He; im Judentum wird stattdessen 'Adonai' gelesen.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Eloi, Eloi, lema sabachtani'?",
+    "choices": [
+      "'Mich dürstet'",
+      "'Vater, in deine Hände'",
+      "'Es ist vollbracht'",
+      "'Mein Gott, mein Gott, warum hast du mich verlassen?'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 15,34",
+    "explanation": "Jesu Ruf am Kreuz, der Anfang von Psalm 22.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Talita kum'?",
+    "choices": [
+      "'Sei geheilt'",
+      "'Junge, komm her'",
+      "'Mädchen, steh auf'",
+      "'Friede sei mit dir'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 5,41",
+    "explanation": "Markus überliefert das aramäische Wort Jesu wörtlich.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Effata', das Jesus bei einer Heilung sprach?",
+    "choices": [
+      "'Steh auf'",
+      "'Sei rein'",
+      "'Öffne dich'",
+      "'Sieh'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 7,34",
+    "explanation": "Gesprochen bei der Heilung eines Taubstummen.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Welche Sprache verwendet die katholische Kirche traditionell in ihrer Liturgie?",
+    "choices": [
+      "Griechisch",
+      "Latein",
+      "Aramäisch",
+      "Hebräisch"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Seit dem Zweiten Vatikanum ist die Volkssprache üblich.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Kyrie eleison'?",
+    "choices": [
+      "'Heilig, heilig'",
+      "'Gehet hin in Frieden'",
+      "'Ehre sei Gott'",
+      "'Herr, erbarme dich'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Griechisch — einer der wenigen griechischen Reste in der lateinischen Messe.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wie heißt die aramäische Bibelübersetzung des Judentums?",
+    "choices": [
+      "Talmud",
+      "Targum",
+      "Midrasch",
+      "Mischna"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Targumim wurden in der Synagoge zur Verdeutlichung vorgelesen.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bezeichnet der Begriff 'Tora' wörtlich?",
+    "choices": [
+      "'Weisung'",
+      "'Buch'",
+      "'Bund'",
+      "'Gesetz'"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Oft mit 'Gesetz' übersetzt, wörtlich eher 'Weisung, Unterweisung'.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wofür steht die Abkürzung 'INRI' am Kreuz?",
+    "choices": [
+      "Iesus Nazarenus Rex Iudaeorum",
+      "Iesus Noster Rex Immortalis",
+      "In Nomine Regis Israel",
+      "In Nomine Redemptoris Iesu"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 19,19",
+    "explanation": "'Jesus von Nazaret, König der Juden' — von Pilatus angebracht.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet das griechische Wort 'Ekklesia', von dem sich 'Kirche' in vielen Sprachen ableitet?",
+    "choices": [
+      "'Ort des Gebets'",
+      "'Haus Gottes'",
+      "'Gemeinschaft der Heiligen'",
+      "'Versammlung der Herausgerufenen'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "In der Antike die Bürgerversammlung einer Stadt.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Woher kommt das deutsche Wort 'Kirche'?",
+    "choices": [
+      "Vom gotischen 'kirika'",
+      "Vom lateinischen 'circa'",
+      "Vom hebräischen 'kehillah'",
+      "Vom griechischen 'kyriakon' — dem Herrn gehörig"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "'Kyriakon' bezeichnete das Haus des Herrn.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet der Name 'Immanuel'?",
+    "choices": [
+      "'Gott mit uns'",
+      "'Gottes Sohn'",
+      "'Gott ist gut'",
+      "'Retter'"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Jes 7,14",
+    "explanation": "Matthäus deutet den Namen auf Jesus.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was heißt 'Pascha' bzw. 'Pessach' auf Deutsch?",
+    "choices": [
+      "'Opfer'",
+      "'Ungesäuert'",
+      "'Vorübergang'",
+      "'Befreiung'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ex 12,13",
+    "explanation": "Der Würgeengel ging an den Häusern Israels vorüber.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet das griechische 'Agape' im Neuen Testament?",
+    "choices": [
+      "Selbstlose Liebe",
+      "Zuneigung unter Verwandten",
+      "Freundschaft",
+      "Leidenschaft"
+    ],
+    "correct_choice_index": 0,
+    "reference": "1 Kor 13",
+    "explanation": "Das Griechische unterscheidet mehrere Wörter für Liebe.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wie heißt der jüdische Gebetsruf 'Höre, Israel' auf Hebräisch?",
+    "choices": [
+      "Kaddisch",
+      "Amidah",
+      "Schema Jisrael",
+      "Kiddusch"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Dtn 6,4",
+    "explanation": "Das zentrale Glaubensbekenntnis des Judentums.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Welches Wort steht in der Septuaginta für den Gottesnamen?",
+    "choices": [
+      "Kyrios",
+      "Theos",
+      "Despotes",
+      "Pantokrator"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "'Kyrios' (Herr) — die Basis für die christliche Kyrios-Anrede Jesu.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Apokalypse' wörtlich?",
+    "choices": [
+      "'Weltende'",
+      "'Enthüllung'",
+      "'Vision'",
+      "'Gericht'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Offb 1,1",
+    "explanation": "Nicht Katastrophe, sondern Offenbarung.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Diakon' wörtlich?",
+    "choices": [
+      "'Diener'",
+      "'Lehrer'",
+      "'Ältester'",
+      "'Aufseher'"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 6,1-6",
+    "explanation": "Griechisch 'diakonos'.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Episkopos', woraus das Wort 'Bischof' wurde?",
+    "choices": [
+      "'Vater'",
+      "'Hirte'",
+      "'Aufseher'",
+      "'Erster'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "1 Tim 3,1",
+    "explanation": "Wörtlich 'der darauf schaut'.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet das lateinische 'Credo'?",
+    "choices": [
+      "'Ich glaube'",
+      "'Ich bete'",
+      "'Ich bekenne'",
+      "'Ich danke'"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Das erste Wort des Glaubensbekenntnisses auf Latein.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Gloria in excelsis Deo'?",
+    "choices": [
+      "'Gott ist groß'",
+      "'Friede auf Erden'",
+      "'Ehre sei Gott in der Höhe'",
+      "'Heilig ist der Herr'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lk 2,14",
+    "explanation": "Der Lobgesang der Engel in der Weihnachtsnacht.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wie heißt die Kunst des kunstvollen Bibelabschreibens im Mittelalter?",
+    "choices": [
+      "Typografie",
+      "Ikonografie",
+      "Kalligrafie in Skriptorien",
+      "Epigrafik"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Mönche kopierten Handschriften in klostereigenen Skriptorien.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Welche Bibelübersetzung prägte die deutsche Schriftsprache maßgeblich?",
+    "choices": [
+      "Die Vulgata",
+      "Die Zürcher Bibel",
+      "Die Gutenbergbibel",
+      "Luthers Bibelübersetzung"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Luther übersetzte das Neue Testament 1522 in elf Wochen.",
+    "rating": 850
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet der Ausdruck 'dem Volk aufs Maul schauen' bei Luther?",
+    "choices": [
+      "Predigten kürzen",
+      "Wörtlich übersetzen",
+      "Verständlich in der Alltagssprache übersetzen",
+      "Latein beibehalten"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Aus dem 'Sendbrief vom Dolmetschen' (1530).",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was ist ein 'Codex' im Unterschied zur Schriftrolle?",
+    "choices": [
+      "Ein Papyrusbündel",
+      "Eine Wachstafel",
+      "Eine Steintafel",
+      "Ein gebundenes Buch aus Lagen"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Christen bevorzugten früh den Codex — praktischer zum Nachschlagen.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Wie heißen die ältesten vollständigen Bibelhandschriften des 4. Jahrhunderts?",
+    "choices": [
+      "Codex Sinaiticus und Codex Vaticanus",
+      "Codex Amiatinus und Codex Gigas",
+      "Codex Bezae und Codex Argenteus",
+      "Papyrus 52 und Papyrus 66"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Beide enthalten Altes und Neues Testament auf Griechisch.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Pentateuch'?",
+    "choices": [
+      "'Gesetz Moses'",
+      "'Fünf Behälter/Rollen'",
+      "'Erstes Buch'",
+      "'Heilige Schrift'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Die griechische Bezeichnung für die fünf Bücher Mose.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet der Name 'Petrus'?",
+    "choices": [
+      "'Fischer'",
+      "'Fels'",
+      "'Erster'",
+      "'Bruder'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 16,18",
+    "explanation": "Aramäisch 'Kephas', griechisch 'petros' — Fels.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Betlehem' auf Hebräisch?",
+    "choices": [
+      "'Haus des Brotes'",
+      "'Stadt Davids'",
+      "'Haus Gottes'",
+      "'Ort des Friedens'"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ein sprechender Name für den Geburtsort dessen, der sich Brot des Lebens nennt.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Golgota'?",
+    "choices": [
+      "'Hoher Fels'",
+      "'Ölberg'",
+      "'Ort der Tränen'",
+      "'Schädelstätte'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 15,22",
+    "explanation": "Aramäisch 'gulgolta', lateinisch 'calvaria'.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet 'Sabbat' wörtlich?",
+    "choices": [
+      "'Siebter'",
+      "'Versammlung'",
+      "'Heiliger Tag'",
+      "'Aufhören, ruhen'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 2,2-3",
+    "explanation": "Vom hebräischen Verb 'schabat' — aufhören.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Welche Sprache verwendet die orthodoxe Kirche in Griechenland liturgisch?",
+    "choices": [
+      "Griechisch",
+      "Kirchenslawisch",
+      "Koptisch",
+      "Latein"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Kirchenslawisch ist in slawischen orthodoxen Kirchen üblich.",
+    "rating": 1000
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was ist die 'Peschitta'?",
+    "choices": [
+      "Ein jüdischer Kommentar",
+      "Ein armenisches Gesangbuch",
+      "Eine koptische Liturgie",
+      "Die syrische Bibelübersetzung"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "'Die Einfache' — Standardbibel der syrischen Kirchen.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bedeutet das griechische 'Parusie' in der christlichen Theologie?",
+    "choices": [
+      "Die Himmelfahrt",
+      "Die Auferstehung",
+      "Die Verklärung",
+      "Die Wiederkunft Christi"
+    ],
+    "correct_choice_index": 3,
+    "reference": "1 Thess 4,15",
+    "explanation": "Wörtlich 'Ankunft, Gegenwart'.",
+    "rating": 1150
+  },
+  {
+    "category": "ancient_languages",
+    "prompt": "Was bezeichnet 'Kanon' bezogen auf die Bibel?",
+    "choices": [
+      "Die Kapiteleinteilung",
+      "Eine Predigtform",
+      "Ein liturgisches Lied",
+      "Die verbindliche Sammlung der biblischen Bücher"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Griechisch 'kanon' — Messlatte, Richtschnur.",
+    "rating": 1000
+  }
+]

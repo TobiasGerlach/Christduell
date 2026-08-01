@@ -1,0 +1,702 @@
+[
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche drei Religionen werden als 'abrahamitische Religionen' bezeichnet?",
+    "choices": [
+      "Judentum, Christentum, Islam",
+      "Christentum, Islam, Sikhismus",
+      "Judentum, Islam, Bahai",
+      "Christentum, Hinduismus, Buddhismus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Alle drei berufen sich auf Abraham.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "In welcher Stadt steht die Klagemauer?",
+    "choices": [
+      "Tiberias",
+      "Betlehem",
+      "Jerusalem",
+      "Hebron"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Ein Rest der Umfassungsmauer des herodianischen Tempelplatzes.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie heißt das heilige Buch des Islam?",
+    "choices": [
+      "Der Koran",
+      "Die Veden",
+      "Das Avesta",
+      "Die Tora"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Für Muslime die Offenbarung Gottes an Mohammed.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Stadt ist Christen, Juden und Muslimen gleichermaßen heilig?",
+    "choices": [
+      "Rom",
+      "Mekka",
+      "Istanbul",
+      "Jerusalem"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Grabeskirche, Klagemauer und Felsendom liegen dicht beieinander.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welches jüdische Fest erinnert an den Auszug aus Ägypten?",
+    "choices": [
+      "Chanukka",
+      "Pessach",
+      "Sukkot",
+      "Jom Kippur"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ex 12",
+    "explanation": "Christen feiern Ostern in zeitlicher Nähe dazu.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie heißt der jüdische Versöhnungstag?",
+    "choices": [
+      "Purim",
+      "Jom Kippur",
+      "Schawuot",
+      "Rosch ha-Schana"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lev 16",
+    "explanation": "Der höchste jüdische Feiertag, ein strenger Fastentag.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welches jüdische Lichterfest dauert acht Tage?",
+    "choices": [
+      "Chanukka",
+      "Purim",
+      "Pessach",
+      "Sukkot"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Erinnert an die Wiedereinweihung des Tempels.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie heißt das Gotteshaus des Judentums?",
+    "choices": [
+      "Basilika",
+      "Tempel Salomos",
+      "Moschee",
+      "Synagoge"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Nach der Tempelzerstörung 70 n. Chr. zentraler Ort jüdischen Lebens.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie heißt das Gotteshaus des Islam?",
+    "choices": [
+      "Pagode",
+      "Synagoge",
+      "Moschee",
+      "Stupa"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Von arabisch 'masjid' — Ort der Niederwerfung.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie viele Säulen hat der Islam?",
+    "choices": [
+      "5",
+      "3",
+      "10",
+      "7"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Glaubensbekenntnis, Gebet, Almosen, Fasten, Pilgerfahrt.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie heißt der Fastenmonat der Muslime?",
+    "choices": [
+      "Schawwal",
+      "Muharram",
+      "Ramadan",
+      "Radschab"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Von Sonnenaufgang bis Sonnenuntergang wird gefastet.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wen verehren Muslime als Propheten, den auch Christen kennen?",
+    "choices": [
+      "Paulus",
+      "Petrus",
+      "Johannes den Täufer allein",
+      "Jesus (Isa)"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Isa gilt im Islam als Prophet, nicht als Sohn Gottes.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welches Buch fasst die Weisungen des Judentums neben der Tora zusammen?",
+    "choices": [
+      "Der Talmud",
+      "Das Avesta",
+      "Der Koran",
+      "Die Upanischaden"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Mischna und Gemara bilden zusammen den Talmud.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Weltreligion geht auf Siddhartha Gautama zurück?",
+    "choices": [
+      "Der Sikhismus",
+      "Der Jainismus",
+      "Der Hinduismus",
+      "Der Buddhismus"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Der 'Erwachte' lehrte im 5. Jahrhundert v. Chr.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Religion ist die älteste noch praktizierte monotheistische Religion?",
+    "choices": [
+      "Das Christentum",
+      "Das Judentum",
+      "Der Islam",
+      "Der Zoroastrismus"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Mit einer Tradition von über 3000 Jahren.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie heißen die drei großen Konfessionsfamilien des Christentums?",
+    "choices": [
+      "Katholisch, anglikanisch, koptisch",
+      "Reformiert, katholisch, unitarisch",
+      "Katholisch, orthodox, protestantisch",
+      "Orthodox, koptisch, lutherisch"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Daneben gibt es zahlreiche altorientalische Kirchen.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was bedeutet das Wort 'Ökumene'?",
+    "choices": [
+      "Das Bemühen um die Einheit der Christen",
+      "Die Verwaltung einer Diözese",
+      "Der interreligiöse Dialog allein",
+      "Die Missionsarbeit"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Von griechisch 'oikoumene' — der bewohnte Erdkreis.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Kirche ist in Russland vorherrschend?",
+    "choices": [
+      "Die armenische Kirche",
+      "Die lutherische Kirche",
+      "Die römisch-katholische Kirche",
+      "Die russisch-orthodoxe Kirche"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Die größte orthodoxe Kirche der Welt.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche christliche Kirche ist in Äthiopien vorherrschend?",
+    "choices": [
+      "Die katholische Kirche",
+      "Die koptische Kirche Ägyptens",
+      "Die anglikanische Kirche",
+      "Die äthiopisch-orthodoxe Kirche"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Eine der ältesten Kirchen überhaupt, seit dem 4. Jahrhundert.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Kirche steht an der Spitze der anglikanischen Gemeinschaft?",
+    "choices": [
+      "Die Church of England",
+      "Die episkopale Kirche der USA",
+      "Die Kirche von Irland",
+      "Die Kirche von Wales"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Erzbischof von Canterbury gilt als Ehrenoberhaupt.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was ist der Ökumenische Rat der Kirchen?",
+    "choices": [
+      "Ein weltweiter Zusammenschluss von Kirchen",
+      "Ein Bündnis der Freikirchen",
+      "Eine Missionsgesellschaft",
+      "Ein Organ des Vatikans"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Sitz in Genf, gegründet 1948.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was ist die 'Gemeinsame Erklärung zur Rechtfertigungslehre' von 1999?",
+    "choices": [
+      "Ein Konzilsbeschluss",
+      "Eine katholisch-lutherische Verständigung",
+      "Eine Erklärung zum Abendmahl",
+      "Ein Dokument des ÖRK zur Taufe"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Unterzeichnet in Augsburg.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welches Oberhaupt gilt als 'Ehrenerster' unter den orthodoxen Patriarchen?",
+    "choices": [
+      "Der Katholikos von Armenien",
+      "Der Patriarch von Alexandria",
+      "Der Patriarch von Moskau",
+      "Der Patriarch von Konstantinopel"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Ein Ehrenvorrang, keine Jurisdiktion wie beim Papst.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was ist der Unterschied zwischen Kirche und Freikirche in Deutschland?",
+    "choices": [
+      "Freikirchen finanzieren sich ohne Kirchensteuer",
+      "Freikirchen taufen nicht",
+      "Freikirchen haben keine Pfarrer",
+      "Freikirchen sind nicht christlich"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Freikirchen sind meist auf Spendenbasis organisiert.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Religion kennt das Rad des Dharma als Symbol?",
+    "choices": [
+      "Der Buddhismus",
+      "Das Judentum",
+      "Das Christentum",
+      "Der Islam"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Es steht für die Lehre des Buddha.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welches Symbol steht für das Judentum?",
+    "choices": [
+      "Das Kreuz",
+      "Der Halbmond",
+      "Das Rad",
+      "Der Davidstern"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Der sechszackige Stern, hebräisch Magen David.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wohin pilgern Muslime nach Möglichkeit einmal im Leben?",
+    "choices": [
+      "Nach Jerusalem",
+      "Nach Kairo",
+      "Nach Mekka",
+      "Nach Medina allein"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Die Hadsch ist eine der fünf Säulen.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Wie heißt das christliche Pilgerziel in Nordwestspanien?",
+    "choices": [
+      "Fatima",
+      "Assisi",
+      "Lourdes",
+      "Santiago de Compostela"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Das Grab des Apostels Jakobus wird dort verehrt.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welcher Marienwallfahrtsort liegt in Frankreich?",
+    "choices": [
+      "Tschenstochau",
+      "Fatima",
+      "Lourdes",
+      "Loreto"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1858 berichtete Bernadette Soubirous von Erscheinungen.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche jüdische Schriftensammlung entspricht weitgehend dem christlichen Alten Testament?",
+    "choices": [
+      "Die Kabbala",
+      "Die Mischna",
+      "Der Tanach",
+      "Der Talmud"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Tanach ist ein Akronym aus Tora, Neviim und Ketuvim.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was bedeutet 'koscher'?",
+    "choices": [
+      "Vegetarisch",
+      "Gesegnet",
+      "Nach jüdischem Religionsgesetz erlaubt",
+      "Rituell gewaschen"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lev 11",
+    "explanation": "Die Speisegesetze regeln unter anderem die Trennung von Milch und Fleisch.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was bedeutet 'halal'?",
+    "choices": [
+      "Gefastet",
+      "Gebetet",
+      "Nach islamischem Recht erlaubt",
+      "Geweiht"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Das Gegenstück ist 'haram' — verboten.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welches Land hat weltweit die meisten Christen?",
+    "choices": [
+      "Deutschland",
+      "Brasilien",
+      "Die USA",
+      "Italien"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Gefolgt von Brasilien und Mexiko.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Auf welchem Kontinent wächst das Christentum derzeit am stärksten?",
+    "choices": [
+      "Europa",
+      "Australien",
+      "Nordamerika",
+      "Afrika"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Der Schwerpunkt der Weltchristenheit verschiebt sich nach Süden.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was bezeichnet der Begriff 'Diaspora'?",
+    "choices": [
+      "Eine Wallfahrt",
+      "Eine Kirchenspaltung",
+      "Das Leben einer Glaubensgemeinschaft in der Minderheit",
+      "Ein Kloster"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Ursprünglich für die außerhalb Israels lebenden Juden gebraucht.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welches Dokument des Zweiten Vatikanums regelt das Verhältnis zu nichtchristlichen Religionen?",
+    "choices": [
+      "Dei verbum",
+      "Lumen gentium",
+      "Nostra aetate",
+      "Gaudium et spes"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1965 verabschiedet, ein Wendepunkt im jüdisch-christlichen Verhältnis.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was ist ein 'interreligiöser Dialog'?",
+    "choices": [
+      "Die Übersetzung heiliger Texte",
+      "Das Gespräch zwischen verschiedenen Religionen",
+      "Eine Missionsstrategie",
+      "Ein Streitgespräch in der Gemeinde"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Zu unterscheiden vom ökumenischen Dialog innerhalb des Christentums.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche christliche Gruppe lehnt die Kindertaufe ab und tauft nur Glaubende?",
+    "choices": [
+      "Die Katholiken",
+      "Die Lutheraner",
+      "Die Baptisten",
+      "Die Orthodoxen"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Daher der Name von griechisch 'baptizein' — taufen.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Woher stammt der Begriff 'Protestanten'?",
+    "choices": [
+      "Vom Westfälischen Frieden",
+      "Von den Bauernaufständen",
+      "Vom Protest gegen den Papst 1517",
+      "Von der Protestation evangelischer Stände 1529"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Auf dem Reichstag zu Speyer.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Kirche verwendet den julianischen Kalender für kirchliche Feste?",
+    "choices": [
+      "Die lutherischen Kirchen",
+      "Die katholische Kirche",
+      "Viele orthodoxe Kirchen",
+      "Die anglikanische Kirche"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Deshalb fällt dort Weihnachten oft auf den 7. Januar.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was sind die 'altorientalischen Kirchen'?",
+    "choices": [
+      "Neuere Freikirchen im Orient",
+      "Katholische Ostkirchen",
+      "Kirchen, die die Beschlüsse von Chalcedon 451 nicht annahmen",
+      "Kirchen des Fernen Ostens"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Dazu zählen die koptische, armenische und syrische Kirche.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Rolle hat der Papst für die orthodoxen Kirchen?",
+    "choices": [
+      "Er weiht ihre Bischöfe",
+      "Er leitet ihre Konzilien",
+      "Er ernennt ihre Patriarchen",
+      "Er hat keine Jurisdiktion über sie"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Der Jurisdiktionsprimat war ein Hauptgrund der Trennung 1054.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Sprache verbindet Judentum und Christentum in den heiligen Schriften?",
+    "choices": [
+      "Arabisch",
+      "Hebräisch",
+      "Aramäisch",
+      "Latein"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Das Alte Testament ist die gemeinsame Textgrundlage.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was ist die 'Bergpredigt' im interreligiösen Gespräch häufig?",
+    "choices": [
+      "Ein Streitpunkt über die Trinität",
+      "Ein Bezugspunkt für Gewaltlosigkeit",
+      "Eine Prophezeiung des Endes",
+      "Ein Ritualtext"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 5-7",
+    "explanation": "Auch Gandhi berief sich auf sie.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welcher Sonntag wird in Deutschland als 'Israelsonntag' begangen?",
+    "choices": [
+      "Ein Sonntag im Sommer zum jüdisch-christlichen Verhältnis",
+      "Der Ostersonntag",
+      "Der Reformationstag",
+      "Der erste Advent"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Am 10. Sonntag nach Trinitatis.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Bewegung entstand Anfang des 20. Jahrhunderts und betont Geistesgaben?",
+    "choices": [
+      "Die Erweckungsbewegung des 18. Jh.",
+      "Der Pietismus",
+      "Die Pfingstbewegung",
+      "Der Methodismus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 2",
+    "explanation": "Heute eine der wachstumsstärksten christlichen Strömungen weltweit.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Konfession prägt Lateinamerika traditionell?",
+    "choices": [
+      "Die orthodoxe",
+      "Die anglikanische",
+      "Die römisch-katholische",
+      "Die lutherische"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Pfingstkirchen wachsen dort jedoch stark.",
+    "rating": 850
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche Kirche entstand im 16. Jahrhundert in der Schweiz und heißt 'reformiert'?",
+    "choices": [
+      "Die reformierte Kirche",
+      "Die Methodisten",
+      "Die Herrnhuter",
+      "Die anglikanische Kirche"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Auf Zwingli und Calvin zurückgehend.",
+    "rating": 1000
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Welche religiöse Gemeinschaft entstand aus der Täuferbewegung und lebt bis heute schlicht?",
+    "choices": [
+      "Die Quäker allein",
+      "Die Adventisten",
+      "Die Mennoniten und Amischen",
+      "Die Herrnhuter"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Benannt nach Menno Simons.",
+    "rating": 1150
+  },
+  {
+    "category": "beyond_the_horizon",
+    "prompt": "Was bedeutet 'Mission' im heutigen kirchlichen Sprachgebrauch überwiegend?",
+    "choices": [
+      "Klostergründung",
+      "Kirchensteuer",
+      "Kolonisierung",
+      "Zeugnis und Dienst statt Zwang"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Moderne Missionstheologie betont Dialog und Diakonie.",
+    "rating": 1000
+  }
+]

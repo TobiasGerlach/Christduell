@@ -1,0 +1,702 @@
+[
+  {
+    "category": "history",
+    "prompt": "Wer löste 1517 mit seinen Thesen die Reformation aus?",
+    "choices": [
+      "Martin Luther",
+      "Ulrich Zwingli",
+      "Philipp Melanchthon",
+      "Johannes Calvin"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Luther veröffentlichte 95 Thesen gegen den Ablasshandel.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "Wie viele Thesen veröffentlichte Luther?",
+    "choices": [
+      "50",
+      "120",
+      "95",
+      "75"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Die 95 Thesen richteten sich vor allem gegen den Ablasshandel.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher römische Kaiser erlaubte 313 die freie Ausübung des Christentums?",
+    "choices": [
+      "Nero",
+      "Trajan",
+      "Konstantin",
+      "Diokletian"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Die Mailänder Vereinbarung beendete die Christenverfolgung.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wo fand 325 das erste ökumenische Konzil statt?",
+    "choices": [
+      "Nizäa",
+      "Konstantinopel",
+      "Rom",
+      "Ephesus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Dort wurde das Nizänische Glaubensbekenntnis formuliert.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer gilt als erster Bischof von Rom?",
+    "choices": [
+      "Petrus",
+      "Paulus",
+      "Clemens",
+      "Linus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 16,18",
+    "explanation": "Die römische Kirche führt das Papstamt auf Petrus zurück.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "In welchem Jahr trennten sich West- und Ostkirche endgültig?",
+    "choices": [
+      "1054",
+      "1517",
+      "1378",
+      "1204"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Das Morgenländische Schisma zwischen Rom und Konstantinopel.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Wer übersetzte die Bibel auf der Wartburg ins Deutsche?",
+    "choices": [
+      "Johannes Gutenberg",
+      "Martin Luther",
+      "Thomas Müntzer",
+      "Johannes Bugenhagen"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Luther übersetzte 1521/22 das Neue Testament in elf Wochen.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "Wer erfand den Buchdruck mit beweglichen Lettern in Europa?",
+    "choices": [
+      "Albrecht Dürer",
+      "Johannes Gutenberg",
+      "Martin Luther",
+      "Erasmus"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Die Gutenberg-Bibel entstand um 1455 in Mainz.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher Mönchsorden wurde von Benedikt von Nursia gegründet?",
+    "choices": [
+      "Die Dominikaner",
+      "Die Jesuiten",
+      "Die Franziskaner",
+      "Die Benediktiner"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Sein Leitwort: 'Ora et labora' — bete und arbeite.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer gründete den Orden der Franziskaner?",
+    "choices": [
+      "Dominikus",
+      "Bernhard von Clairvaux",
+      "Ignatius von Loyola",
+      "Franz von Assisi"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Franziskus lebte in radikaler Armut.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer gründete den Jesuitenorden?",
+    "choices": [
+      "Franz Xaver",
+      "Petrus Canisius",
+      "Karl Borromäus",
+      "Ignatius von Loyola"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "1540 päpstlich bestätigt, prägend für Bildung und Mission.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welches Konzil reagierte im 16. Jahrhundert auf die Reformation?",
+    "choices": [
+      "Die Synode von Dordrecht",
+      "Das Konzil von Konstanz",
+      "Das Erste Vatikanum",
+      "Das Konzil von Trient"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "1545-1563, Grundlage der katholischen Reform.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welches Konzil öffnete die katholische Kirche im 20. Jahrhundert zur Volkssprache in der Liturgie?",
+    "choices": [
+      "Das Erste Vatikanum",
+      "Die Würzburger Synode",
+      "Das Zweite Vatikanische Konzil",
+      "Das Konzil von Trient"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1962-1965 unter Johannes XXIII. und Paul VI.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer war der Reformator in Genf?",
+    "choices": [
+      "Martin Luther",
+      "Johannes Calvin",
+      "Ulrich Zwingli",
+      "John Knox"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Calvins Lehre prägte den reformierten Protestantismus.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer war der Reformator in Zürich?",
+    "choices": [
+      "Ulrich Zwingli",
+      "Philipp Melanchthon",
+      "Johannes Calvin",
+      "Martin Bucer"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Zwingli stritt mit Luther über das Abendmahlsverständnis.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Wie hieß der Reichstag, auf dem Luther seinen Widerruf verweigerte?",
+    "choices": [
+      "Reichstag zu Augsburg",
+      "Reichstag zu Speyer",
+      "Reichstag zu Regensburg",
+      "Reichstag zu Worms"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "1521 — 'Hier stehe ich, ich kann nicht anders' ist wohl legendär.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Welches Bekenntnis von 1530 fasst die lutherische Lehre zusammen?",
+    "choices": [
+      "Die Confessio Augustana",
+      "Die Barmer Erklärung",
+      "Die Konkordienformel",
+      "Der Heidelberger Katechismus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Das Augsburger Bekenntnis, verfasst von Melanchthon.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher Krieg endete 1648 mit dem Westfälischen Frieden?",
+    "choices": [
+      "Der Hundertjährige Krieg",
+      "Der Bauernkrieg",
+      "Der Dreißigjährige Krieg",
+      "Der Siebenjährige Krieg"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Er hatte konfessionelle wie machtpolitische Ursachen.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Erklärung von 1934 wandte sich gegen die Vereinnahmung der Kirche durch den Nationalsozialismus?",
+    "choices": [
+      "Das Stuttgarter Schuldbekenntnis",
+      "Die Barmer Theologische Erklärung",
+      "Die Confessio Augustana",
+      "Die Leuenberger Konkordie"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Wesentlich von Karl Barth formuliert.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher Theologe wurde 1945 im KZ Flossenbürg hingerichtet?",
+    "choices": [
+      "Dietrich Bonhoeffer",
+      "Martin Niemöller",
+      "Karl Barth",
+      "Rudolf Bultmann"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Bonhoeffer beteiligte sich am Widerstand gegen Hitler.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer christianisierte im 8. Jahrhundert weite Teile Germaniens?",
+    "choices": [
+      "Willibrord",
+      "Columban",
+      "Bonifatius",
+      "Kilian"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Der 'Apostel der Deutschen' fällte der Legende nach die Donareiche.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher Kaiser wurde im Jahr 800 in Rom gekrönt?",
+    "choices": [
+      "Barbarossa",
+      "Karl der Große",
+      "Otto I.",
+      "Konstantin"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Die Kaiserkrönung durch Papst Leo III. an Weihnachten 800.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Was war der Ablasshandel, gegen den Luther protestierte?",
+    "choices": [
+      "Der Verkauf von Nachlass zeitlicher Sündenstrafen",
+      "Der Verkauf von Kirchenämtern",
+      "Die Vermietung von Kirchenbänken",
+      "Der Handel mit Reliquien"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "'Wenn das Geld im Kasten klingt...' — der Spruch wird Tetzel zugeschrieben.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer war Thomas von Aquin?",
+    "choices": [
+      "Ein Kreuzritter",
+      "Ein bedeutender mittelalterlicher Theologe",
+      "Ein Papst der Renaissance",
+      "Ein Reformator"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Seine 'Summa theologiae' prägt die katholische Theologie bis heute.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer schrieb die 'Bekenntnisse' (Confessiones)?",
+    "choices": [
+      "Origenes",
+      "Ambrosius",
+      "Augustinus",
+      "Hieronymus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Eine der ersten Autobiografien der Weltliteratur, um 400 n. Chr.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Bewegung des 17./18. Jahrhunderts betonte persönliche Frömmigkeit und Bibelkreise?",
+    "choices": [
+      "Der Pietismus",
+      "Der Modernismus",
+      "Die Scholastik",
+      "Die Orthodoxie"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Philipp Jakob Spener gilt als Vater des Pietismus.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Wer gründete die methodistische Bewegung?",
+    "choices": [
+      "John Wesley",
+      "George Whitefield",
+      "John Knox",
+      "William Booth"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Wesley predigte im 18. Jahrhundert oft unter freiem Himmel.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Wer gründete die Heilsarmee?",
+    "choices": [
+      "Dwight Moody",
+      "Charles Spurgeon",
+      "William Booth",
+      "John Wesley"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1865 in London, mit sozialem Engagement für die Ärmsten.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welches Ereignis von 1962 bis 1965 veränderte die katholische Kirche tiefgreifend?",
+    "choices": [
+      "Der Erste Weltjugendtag",
+      "Das Zweite Vatikanische Konzil",
+      "Die Enzyklika Rerum novarum",
+      "Die Gründung des ÖRK"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Liturgiereform, Ökumene und Religionsfreiheit waren zentrale Themen.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wann wurde der Ökumenische Rat der Kirchen gegründet?",
+    "choices": [
+      "1948",
+      "1918",
+      "1962",
+      "1989"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "In Amsterdam, als Zusammenschluss vieler Kirchen weltweit.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher Papst war der erste aus Lateinamerika?",
+    "choices": [
+      "Johannes Paul II.",
+      "Benedikt XVI.",
+      "Pius XII.",
+      "Franziskus"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Jorge Mario Bergoglio aus Argentinien, gewählt 2013.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher Papst war der erste Pole?",
+    "choices": [
+      "Johannes XXIII.",
+      "Paul VI.",
+      "Johannes Paul II.",
+      "Pius XI."
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Karol Wojtyła, gewählt 1978.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer war Mutter Teresa?",
+    "choices": [
+      "Ordensfrau, die in Kalkutta für Sterbende sorgte",
+      "Eine Märtyrerin der Frühkirche",
+      "Eine Reformatorin",
+      "Eine mittelalterliche Mystikerin"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "1979 erhielt sie den Friedensnobelpreis, 2016 wurde sie heiliggesprochen.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "Wer war Martin Luther King jr.?",
+    "choices": [
+      "Ein Missionar in Afrika",
+      "Ein Befreiungstheologe",
+      "Ein deutscher Reformator",
+      "Baptistenpastor und Bürgerrechtler"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Sein Glaube prägte den gewaltfreien Kampf gegen Rassentrennung.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Theologie entstand in Lateinamerika mit dem Fokus auf die Armen?",
+    "choices": [
+      "Die Dialektische Theologie",
+      "Die Natürliche Theologie",
+      "Die Prozesstheologie",
+      "Die Befreiungstheologie"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "'Option für die Armen' als hermeneutischer Schlüssel.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Was waren die Kreuzzüge?",
+    "choices": [
+      "Militärische Züge ins Heilige Land ab 1095",
+      "Missionsreisen nach Asien",
+      "Klostergründungen im Osten",
+      "Wallfahrten nach Rom"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ausgerufen von Papst Urban II. in Clermont.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Stadt war das Ziel des Ersten Kreuzzugs?",
+    "choices": [
+      "Antiochia",
+      "Jerusalem",
+      "Konstantinopel",
+      "Alexandria"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "1099 wurde Jerusalem erobert.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Was war die Inquisition?",
+    "choices": [
+      "Ein Konzil",
+      "Kirchliche Gerichte zur Verfolgung von Häresie",
+      "Eine Missionsbewegung",
+      "Ein Mönchsorden"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Ab dem 13. Jahrhundert eingerichtet.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Wer wurde 1415 in Konstanz als Ketzer verbrannt?",
+    "choices": [
+      "Savonarola",
+      "John Wyclif",
+      "Jan Hus",
+      "Giordano Bruno"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Trotz zugesichertem freiem Geleit.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welcher Herrscher machte England zum Zentrum einer eigenen Staatskirche?",
+    "choices": [
+      "Jakob I.",
+      "Karl I.",
+      "Heinrich VIII.",
+      "Eduard VI."
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1534 erklärte er sich zum Oberhaupt der Church of England.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Bibelübersetzung von 1611 prägte das Englische?",
+    "choices": [
+      "Wycliffe-Bibel",
+      "Douay-Rheims",
+      "Genfer Bibel",
+      "King James Version"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Beauftragt von König Jakob I.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Wer war Katharina von Bora?",
+    "choices": [
+      "Die Frau Martin Luthers",
+      "Eine Äbtissin des Mittelalters",
+      "Eine Mystikerin",
+      "Eine Märtyrerin"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die ehemalige Nonne organisierte den Haushalt im Wittenberger Schwarzen Kloster.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Kirche entstand aus der Union von Lutheranern und Reformierten in Preußen 1817?",
+    "choices": [
+      "Die Altlutherische Kirche",
+      "Die Herrnhuter Brüdergemeine",
+      "Die Evangelische Kirche der Union",
+      "Die Freikirche"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Angeordnet von König Friedrich Wilhelm III.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Wer gründete die Herrnhuter Brüdergemeine?",
+    "choices": [
+      "Philipp Jakob Spener",
+      "August Hermann Francke",
+      "Nikolaus Ludwig von Zinzendorf",
+      "Johann Arndt"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Ab 1722 auf seinem Gut in der Oberlausitz.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welche kirchliche Einrichtung entstand 1848 aus der Arbeit Johann Hinrich Wicherns?",
+    "choices": [
+      "Das Diakonische Werk der Freikirchen",
+      "Der Kirchentag",
+      "Die Caritas",
+      "Die Innere Mission (heute Diakonie)"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Wichern rief zur sozialen Arbeit als Aufgabe der Kirche auf.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welche katholische Sozialenzyklika von 1891 gilt als Beginn der katholischen Soziallehre?",
+    "choices": [
+      "Populorum progressio",
+      "Rerum novarum",
+      "Laudato si'",
+      "Quadragesimo anno"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Leo XIII. äußerte sich zur Lage der Arbeiter.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Enzyklika von Papst Franziskus behandelt die Umweltkrise?",
+    "choices": [
+      "Laudato si'",
+      "Evangelii gaudium",
+      "Fratelli tutti",
+      "Lumen fidei"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "2015 veröffentlicht, benannt nach dem Sonnengesang des Franziskus.",
+    "rating": 1000
+  },
+  {
+    "category": "history",
+    "prompt": "Welche Kirche ist die größte christliche Konfession weltweit?",
+    "choices": [
+      "Die anglikanische Kirche",
+      "Die römisch-katholische Kirche",
+      "Die lutherischen Kirchen",
+      "Die orthodoxen Kirchen"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Mit weit über einer Milliarde Mitgliedern.",
+    "rating": 850
+  },
+  {
+    "category": "history",
+    "prompt": "In welchem Jahrhundert begann die Christianisierung Skandinaviens im großen Stil?",
+    "choices": [
+      "Im 16. Jahrhundert",
+      "Im 10./11. Jahrhundert",
+      "Im 13. Jahrhundert",
+      "Im 5. Jahrhundert"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Mit Königen wie Harald Blauzahn und Olav Haraldsson.",
+    "rating": 1150
+  },
+  {
+    "category": "history",
+    "prompt": "Welches Ereignis von 1989 wird oft mit den Friedensgebeten in Leipzig verbunden?",
+    "choices": [
+      "Die Gründung der EKD",
+      "Der Fall der Berliner Mauer",
+      "Das Ende des Konzils",
+      "Die Wiedervereinigung der Kirchen"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Die Montagsgebete in der Nikolaikirche wurden zum Ausgangspunkt der Demonstrationen.",
+    "rating": 1000
+  }
+]

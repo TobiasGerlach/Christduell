@@ -1,0 +1,702 @@
+[
+  {
+    "category": "old_testament",
+    "prompt": "Wer baute die Arche, um seine Familie und die Tiere vor der Sintflut zu retten?",
+    "choices": [
+      "David",
+      "Mose",
+      "Noah",
+      "Abraham"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Gen 6,14",
+    "explanation": "Gott beauftragte Noah, eine Arche aus Tannenholz zu bauen.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie viele Tage und Nächte regnete es während der Sintflut?",
+    "choices": [
+      "12",
+      "7",
+      "100",
+      "40"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 7,12",
+    "explanation": "Vierzig Tage und Nächte Regen — die Zahl 40 steht in der Bibel oft für eine Zeit der Prüfung.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer führte das Volk Israel aus der ägyptischen Sklaverei?",
+    "choices": [
+      "Abraham",
+      "Mose",
+      "Aaron",
+      "Josua"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ex 12,51",
+    "explanation": "Mose führte Israel im Auftrag Gottes aus Ägypten heraus.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher König ließ den ersten Tempel in Jerusalem erbauen?",
+    "choices": [
+      "David",
+      "Hiskia",
+      "Saul",
+      "Salomo"
+    ],
+    "correct_choice_index": 3,
+    "reference": "1 Kön 6,1",
+    "explanation": "David plante den Tempel, gebaut hat ihn sein Sohn Salomo.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer besiegte den Riesen Goliat mit einer Steinschleuder?",
+    "choices": [
+      "Jonatan",
+      "Samuel",
+      "David",
+      "Saul"
+    ],
+    "correct_choice_index": 2,
+    "reference": "1 Sam 17,50",
+    "explanation": "Der junge David erschlug Goliat mit Schleuder und Stein.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie viele Gebote empfing Mose auf dem Berg Sinai?",
+    "choices": [
+      "12",
+      "7",
+      "40",
+      "10"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Ex 20,1-17",
+    "explanation": "Die Zehn Gebote, auch Dekalog genannt.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie hieß der erste Mensch in der Schöpfungserzählung?",
+    "choices": [
+      "Set",
+      "Abel",
+      "Henoch",
+      "Adam"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 2,7",
+    "explanation": "Gott formte Adam aus Erde vom Ackerboden.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "In welchem Garten lebten Adam und Eva?",
+    "choices": [
+      "Karmel",
+      "Eden",
+      "Getsemani",
+      "Zion"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Gen 2,8",
+    "explanation": "Der Garten Eden, oft auch Paradies genannt.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer wurde von einem großen Fisch verschluckt?",
+    "choices": [
+      "Amos",
+      "Elija",
+      "Hiob",
+      "Jona"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Jona 2,1",
+    "explanation": "Jona verbrachte drei Tage im Bauch des Fisches.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer erschlug seinen Bruder Abel?",
+    "choices": [
+      "Set",
+      "Esau",
+      "Ham",
+      "Kain"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 4,8",
+    "explanation": "Kain tötete Abel aus Neid über dessen Opfer.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie hieß der Sohn, den Abraham und Sara im hohen Alter bekamen?",
+    "choices": [
+      "Josef",
+      "Isaak",
+      "Ismael",
+      "Jakob"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Gen 21,3",
+    "explanation": "Isaak — sein Name bedeutet 'er lacht'.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer erhielt von seinem Vater ein besonderes buntes Gewand?",
+    "choices": [
+      "Juda",
+      "Josef",
+      "Ruben",
+      "Benjamin"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Gen 37,3",
+    "explanation": "Jakob bevorzugte Josef, was dessen Brüder erzürnte.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher Turm sollte bis in den Himmel reichen?",
+    "choices": [
+      "Turm zu Schilo",
+      "Turm von Jericho",
+      "Turm zu Babel",
+      "Turm Davids"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Gen 11,4",
+    "explanation": "Beim Turmbau zu Babel verwirrte Gott die Sprache der Menschen.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie viele Plagen kamen über Ägypten, bevor der Pharao Israel ziehen ließ?",
+    "choices": [
+      "12",
+      "3",
+      "7",
+      "10"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Ex 7-12",
+    "explanation": "Zehn Plagen, die letzte war der Tod der Erstgeborenen.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Durch welches Meer zog Israel auf der Flucht aus Ägypten?",
+    "choices": [
+      "Tote Meer",
+      "Mittelmeer",
+      "Schilfmeer",
+      "See Gennesaret"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ex 14,21",
+    "explanation": "Das Schilfmeer teilte sich, als Mose die Hand ausstreckte.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie viele Söhne Jakobs wurden zu den Stämmen Israels?",
+    "choices": [
+      "12",
+      "10",
+      "7",
+      "14"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Gen 35,22-26",
+    "explanation": "Die zwölf Söhne Jakobs gelten als Stammväter der zwölf Stämme.",
+    "rating": 850
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer war der Bruder des Mose und sein Sprecher vor dem Pharao?",
+    "choices": [
+      "Jitro",
+      "Kaleb",
+      "Aaron",
+      "Josua"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ex 4,14-16",
+    "explanation": "Aaron redete für den wortkargen Mose.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie hieß Abrahams Frau, die Mutter Isaaks?",
+    "choices": [
+      "Sara",
+      "Lea",
+      "Hagar",
+      "Rebekka"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Gen 17,15",
+    "explanation": "Aus Sarai wurde Sara, 'Fürstin'.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer übernahm nach Moses Tod die Führung Israels?",
+    "choices": [
+      "Josua",
+      "Aaron",
+      "Gideon",
+      "Kaleb"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Jos 1,1-2",
+    "explanation": "Josua führte das Volk ins verheißene Land.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welche Stadt fiel, nachdem Israel sie sieben Tage umrundet hatte?",
+    "choices": [
+      "Bet-El",
+      "Jericho",
+      "Hebron",
+      "Ai"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Jos 6,20",
+    "explanation": "Die Mauern Jerichos stürzten nach dem Hörnerklang ein.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer erstarrte zur Salzsäule beim Blick zurück auf Sodom?",
+    "choices": [
+      "Rebekka",
+      "Lots Tochter",
+      "Lots Frau",
+      "Sarai"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Gen 19,26",
+    "explanation": "Lots Frau sah sich um, obwohl es verboten war.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer deutete dem Pharao seine Träume von sieben fetten und sieben mageren Kühen?",
+    "choices": [
+      "Daniel",
+      "Josef",
+      "Jakob",
+      "Mose"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Gen 41,25-32",
+    "explanation": "Josefs Deutung rettete Ägypten vor der Hungersnot.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welchen neuen Namen erhielt Jakob nach seinem Kampf am Jabbok?",
+    "choices": [
+      "Ismael",
+      "Jeschurun",
+      "Immanuel",
+      "Israel"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 32,29",
+    "explanation": "'Israel' — denn er hat mit Gott gerungen.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer war der erste König Israels?",
+    "choices": [
+      "Samuel",
+      "David",
+      "Salomo",
+      "Saul"
+    ],
+    "correct_choice_index": 3,
+    "reference": "1 Sam 10,1",
+    "explanation": "Samuel salbte Saul zum ersten König.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher Richter verlor seine Kraft, als ihm die Haare geschnitten wurden?",
+    "choices": [
+      "Gideon",
+      "Jiftach",
+      "Simson",
+      "Ehud"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ri 16,17-19",
+    "explanation": "Simsons Kraft war an sein Nasiräer-Gelübde gebunden.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer verriet Simson an die Philister?",
+    "choices": [
+      "Rahab",
+      "Delila",
+      "Michal",
+      "Abigajil"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ri 16,18",
+    "explanation": "Delila lockte ihm das Geheimnis seiner Kraft heraus.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welche Moabiterin blieb bei ihrer Schwiegermutter Noomi?",
+    "choices": [
+      "Ester",
+      "Debora",
+      "Rut",
+      "Hanna"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Rut 1,16",
+    "explanation": "'Wohin du gehst, dahin gehe auch ich' — Rut wurde Urgroßmutter Davids.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher Prophet überlebte eine Nacht in der Löwengrube?",
+    "choices": [
+      "Jeremia",
+      "Ezechiel",
+      "Daniel",
+      "Hosea"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Dan 6,23",
+    "explanation": "Gott verschloss den Löwen das Maul.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher Prophet wurde in einem feurigen Wagen entrückt?",
+    "choices": [
+      "Jesaja",
+      "Henoch",
+      "Elija",
+      "Elischa"
+    ],
+    "correct_choice_index": 2,
+    "reference": "2 Kön 2,11",
+    "explanation": "Elija fuhr im Wettersturm zum Himmel auf.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie hieß Davids Vater?",
+    "choices": [
+      "Obed",
+      "Isai",
+      "Nahasch",
+      "Kisch"
+    ],
+    "correct_choice_index": 1,
+    "reference": "1 Sam 16,1",
+    "explanation": "David war der jüngste Sohn Isais aus Betlehem.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welche Königin rettete ihr Volk am persischen Hof vor der Vernichtung?",
+    "choices": [
+      "Ester",
+      "Atalja",
+      "Isebel",
+      "Michal"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Est 7,3-4",
+    "explanation": "Ester trat für ihr Volk beim König Artaxerxes ein.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Auf welchem Berg empfing Mose die Gesetzestafeln?",
+    "choices": [
+      "Nebo",
+      "Sinai",
+      "Tabor",
+      "Karmel"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ex 19,20",
+    "explanation": "Der Sinai, in anderen Texten auch Horeb genannt.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie viele Jahre zog Israel durch die Wüste?",
+    "choices": [
+      "12",
+      "40",
+      "7",
+      "70"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Num 14,33",
+    "explanation": "Vierzig Jahre, bis die ungehorsame Generation gestorben war.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer war die Richterin und Prophetin, die Israel unter einer Palme Recht sprach?",
+    "choices": [
+      "Abigajil",
+      "Debora",
+      "Hulda",
+      "Mirjam"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ri 4,4-5",
+    "explanation": "Debora richtete Israel und zog mit Barak in die Schlacht.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welchen Berufsstand hatte Amos, bevor er Prophet wurde?",
+    "choices": [
+      "Töpfer",
+      "Hirte und Maulbeerfeigenzüchter",
+      "Schreiber",
+      "Priester"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Am 7,14",
+    "explanation": "Amos betonte, er sei kein Berufsprophet gewesen.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie hieß die Mutter Samuels, die ihn Gott weihte?",
+    "choices": [
+      "Rispa",
+      "Michal",
+      "Peninna",
+      "Hanna"
+    ],
+    "correct_choice_index": 3,
+    "reference": "1 Sam 1,20",
+    "explanation": "Hanna betete um einen Sohn und gab ihn in den Dienst am Heiligtum.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher König sah die geheimnisvolle Schrift an der Wand?",
+    "choices": [
+      "Nebukadnezzar",
+      "Kyrus",
+      "Darius",
+      "Belsazar"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Dan 5,5",
+    "explanation": "'Mene mene tekel u-parsin' — noch in derselben Nacht fiel Belsazar.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer war der letzte König von Juda vor dem Babylonischen Exil?",
+    "choices": [
+      "Hiskija",
+      "Joschija",
+      "Jojachin",
+      "Zedekia"
+    ],
+    "correct_choice_index": 3,
+    "reference": "2 Kön 24,18-20",
+    "explanation": "Zedekia regierte, als Jerusalem 587/586 v. Chr. fiel.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher Prophet sollte auf Gottes Geheiß eine untreue Frau heiraten?",
+    "choices": [
+      "Joel",
+      "Habakuk",
+      "Micha",
+      "Hosea"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Hos 1,2",
+    "explanation": "Die Ehe wurde zum Bild für Gottes Treue gegenüber dem untreuen Israel.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer schaute in einer Vision auf ein Tal voller Totengebeine?",
+    "choices": [
+      "Sacharja",
+      "Ezechiel",
+      "Jesaja",
+      "Daniel"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ez 37,1-14",
+    "explanation": "Die Gebeine wurden lebendig — ein Bild der Hoffnung fürs Exil.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie hieß Moses Schwiegervater, der Priester in Midian?",
+    "choices": [
+      "Bileam",
+      "Jitro",
+      "Terach",
+      "Laban"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ex 3,1",
+    "explanation": "Jitro, auch Reguël genannt, riet Mose später zur Delegation von Aufgaben.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer leitete den Wiederaufbau der Mauern Jerusalems nach dem Exil?",
+    "choices": [
+      "Nehemia",
+      "Haggai",
+      "Esra",
+      "Serubbabel"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Neh 2,17-18",
+    "explanation": "Nehemia, Mundschenk des Perserkönigs, ließ die Mauer in 52 Tagen errichten.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wie hieß der Priester, bei dem der junge Samuel aufwuchs?",
+    "choices": [
+      "Ahimelech",
+      "Zadok",
+      "Abjatar",
+      "Eli"
+    ],
+    "correct_choice_index": 3,
+    "reference": "1 Sam 1,25-28",
+    "explanation": "Eli war Priester in Schilo.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer war Abrahams Vater?",
+    "choices": [
+      "Peleg",
+      "Haran",
+      "Nahor",
+      "Terach"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 11,26",
+    "explanation": "Terach zog mit Abram von Ur nach Haran.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welches Alter erreichte Metuschelach nach biblischer Angabe?",
+    "choices": [
+      "865 Jahre",
+      "777 Jahre",
+      "1000 Jahre",
+      "969 Jahre"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 5,27",
+    "explanation": "Mit 969 Jahren ist er der Älteste der biblischen Stammlisten.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welcher persische König erlaubte den Juden die Rückkehr aus dem Exil?",
+    "choices": [
+      "Darius",
+      "Kyrus",
+      "Xerxes",
+      "Artaxerxes"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Esra 1,1-3",
+    "explanation": "Das Kyrus-Edikt beendete das Babylonische Exil.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer war der erste Hohepriester Israels?",
+    "choices": [
+      "Aaron",
+      "Eleasar",
+      "Pinhas",
+      "Melchisedek"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Ex 28,1",
+    "explanation": "Aaron und seine Söhne wurden zum Priesterdienst bestimmt.",
+    "rating": 1150
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welche Stadt machte David zur Hauptstadt seines Reiches?",
+    "choices": [
+      "Jerusalem",
+      "Hebron",
+      "Schilo",
+      "Betlehem"
+    ],
+    "correct_choice_index": 0,
+    "reference": "2 Sam 5,6-9",
+    "explanation": "David eroberte die Jebusiterstadt und nannte sie Stadt Davids.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Welches Buch der Bibel erzählt vom Leid eines Gerechten und seinen Freunden?",
+    "choices": [
+      "Kohelet",
+      "Tobit",
+      "Klagelieder",
+      "Ijob (Hiob)"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Ijob 1,1",
+    "explanation": "Ijob verliert alles und ringt mit der Frage nach Gottes Gerechtigkeit.",
+    "rating": 1000
+  },
+  {
+    "category": "old_testament",
+    "prompt": "Wer wurde von Gott berufen mit den Worten 'Ich bin, der ich bin'?",
+    "choices": [
+      "Mose",
+      "Josua",
+      "Abraham",
+      "Jesaja"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Ex 3,14",
+    "explanation": "Gott offenbart Mose am brennenden Dornbusch seinen Namen.",
+    "rating": 1000
+  }
+]

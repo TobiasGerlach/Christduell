@@ -1,0 +1,702 @@
+[
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer gilt als Schutzpatron der Tiere und der Umwelt?",
+    "choices": [
+      "Antonius von Padua",
+      "Christophorus",
+      "Franz von Assisi",
+      "Benedikt"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Sein Sonnengesang preist 'Bruder Sonne' und 'Schwester Mond'.",
+    "rating": 850
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige teilte seinen Mantel mit einem Bettler?",
+    "choices": [
+      "Nikolaus von Myra",
+      "Georg",
+      "Martin von Tours",
+      "Sebastian"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Der Legende nach begegnete ihm danach Christus im Traum.",
+    "rating": 850
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige gilt als Vorbild für das Schenken zum 6. Dezember?",
+    "choices": [
+      "Martin von Tours",
+      "Blasius",
+      "Nikolaus von Myra",
+      "Bonifatius"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Bischof von Myra, bekannt für Wohltätigkeit.",
+    "rating": 850
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer ist die Schutzpatronin Frankreichs, die als Jugendliche ein Heer führte?",
+    "choices": [
+      "Klara",
+      "Jeanne d'Arc",
+      "Bernadette",
+      "Theresia von Lisieux"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "1431 verbrannt, 1920 heiliggesprochen.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige wird meist mit einem Drachen dargestellt?",
+    "choices": [
+      "Georg",
+      "Christophorus",
+      "Martin",
+      "Michael"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Drachenkampf ist eine Legende des Mittelalters.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer trug der Legende nach das Christuskind über einen Fluss?",
+    "choices": [
+      "Christophorus",
+      "Nikolaus",
+      "Sebastian",
+      "Rochus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Sein Name bedeutet 'Christusträger'.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Ordensfrau gründete die Missionarinnen der Nächstenliebe in Kalkutta?",
+    "choices": [
+      "Edith Stein",
+      "Hildegard von Bingen",
+      "Mutter Teresa",
+      "Katharina von Siena"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Für ihre Arbeit erhielt sie 1979 den Friedensnobelpreis.",
+    "rating": 850
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Benediktinerin des 12. Jahrhunderts war Äbtissin, Heilkundige und Komponistin?",
+    "choices": [
+      "Mechthild von Magdeburg",
+      "Hildegard von Bingen",
+      "Elisabeth von Thüringen",
+      "Klara von Assisi"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "2012 wurde sie zur Kirchenlehrerin erhoben.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Landgräfin ist für ihre Armenfürsorge in Thüringen bekannt?",
+    "choices": [
+      "Notburga",
+      "Hedwig von Andechs",
+      "Elisabeth von Thüringen",
+      "Kunigunde"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Das Rosenwunder gehört zu ihren bekanntesten Legenden.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer gründete gemeinsam mit Franz von Assisi einen Frauenorden?",
+    "choices": [
+      "Klara von Assisi",
+      "Angela Merici",
+      "Katharina von Siena",
+      "Theresa von Ávila"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die Klarissen leben nach der Regel der heiligen Klara.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Mönch wird 'Apostel der Deutschen' genannt?",
+    "choices": [
+      "Bonifatius",
+      "Willibrord",
+      "Kilian",
+      "Ansgar"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "754 bei Dokkum erschlagen.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche spanische Mystikerin reformierte den Karmelitenorden?",
+    "choices": [
+      "Teresa von Ávila",
+      "Katharina von Siena",
+      "Rosa von Lima",
+      "Klara"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ihre Schrift 'Die innere Burg' ist ein Klassiker der Mystik.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige gilt als Patron der Verlorenen und wiedergefundenen Dinge?",
+    "choices": [
+      "Judas Thaddäus",
+      "Blasius",
+      "Rochus",
+      "Antonius von Padua"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "'Heiliger Antonius, hilf mir suchen.'",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige ist Patron der Musik und wird oft mit einer Orgel dargestellt?",
+    "choices": [
+      "Cäcilia",
+      "Barbara",
+      "Lucia",
+      "Agatha"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der 22. November ist ihr Gedenktag.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Heilige wird am 13. Dezember mit einem Lichterkranz gefeiert?",
+    "choices": [
+      "Lucia",
+      "Katharina",
+      "Agnes",
+      "Barbara"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Luciatag ist besonders in Schweden ein Lichterfest.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige ist Patron der Bergleute und wird am 4. Dezember gefeiert?",
+    "choices": [
+      "Georg",
+      "Christophorus",
+      "Barbara",
+      "Florian"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Barbarazweige werden an ihrem Tag geschnitten.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige gilt als Patron der Feuerwehr?",
+    "choices": [
+      "Georg",
+      "Sebastian",
+      "Christophorus",
+      "Florian"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "'Heiliger Sankt Florian, verschon mein Haus.'",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige gilt als Patron der Reisenden?",
+    "choices": [
+      "Antonius",
+      "Benedikt",
+      "Christophorus",
+      "Rochus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Christophorus-Plaketten in Autos sind bis heute verbreitet.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Dietrich Bonhoeffer?",
+    "choices": [
+      "Ein Bischof des Mittelalters",
+      "Ein Missionar in Afrika",
+      "Ein evangelischer Theologe im Widerstand",
+      "Ein Kirchenvater"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1945 im KZ Flossenbürg hingerichtet.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Edith Stein?",
+    "choices": [
+      "Eine mittelalterliche Äbtissin",
+      "Eine Missionarin in Indien",
+      "Eine Reformatorin",
+      "Philosophin, Karmelitin und Opfer der Shoah"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Jüdisch geboren, 1942 in Auschwitz ermordet, 1998 heiliggesprochen.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Maximilian Kolbe?",
+    "choices": [
+      "Ein Ordensgründer des 19. Jahrhunderts",
+      "Ein Märtyrer der Frühkirche",
+      "Ein Priester, der in Auschwitz für einen anderen starb",
+      "Ein polnischer Bischof"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Er bot sich als Ersatz für einen Familienvater an.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Oscar Romero?",
+    "choices": [
+      "Ein Kardinal in Rom",
+      "Erzbischof von San Salvador, 1980 ermordet",
+      "Ein spanischer Mystiker",
+      "Ein Jesuitengeneral"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Er wurde beim Zelebrieren der Messe erschossen.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Kirchenvater schrieb die 'Bekenntnisse'?",
+    "choices": [
+      "Augustinus",
+      "Athanasius",
+      "Hieronymus",
+      "Origenes"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Bischof von Hippo in Nordafrika, gestorben 430.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige schrieb eine bis heute befolgte Mönchsregel?",
+    "choices": [
+      "Dominikus",
+      "Franz von Assisi",
+      "Benedikt von Nursia",
+      "Ignatius"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "'Ora et labora' fasst ihren Geist zusammen.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Frau gilt in den Evangelien als erste Zeugin der Auferstehung?",
+    "choices": [
+      "Salome",
+      "Marta",
+      "Maria von Magdala",
+      "Johanna"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Joh 20,18",
+    "explanation": "Sie wird deshalb 'Apostelin der Apostel' genannt.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Stephanus?",
+    "choices": [
+      "Ein Bischof von Antiochia",
+      "Ein Evangelist",
+      "Der erste Märtyrer der Kirche",
+      "Ein Apostel der Zwölf"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 7,59",
+    "explanation": "Gesteinigt, während Saulus die Kleider bewachte.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Apostel wird als Missionar Indiens verehrt?",
+    "choices": [
+      "Bartholomäus",
+      "Andreas",
+      "Thomas",
+      "Philippus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Die Thomaschristen in Kerala führen sich auf ihn zurück.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige ist Patron Irlands?",
+    "choices": [
+      "Columban",
+      "Kevin",
+      "Patrick",
+      "Brendan"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Er soll das Kleeblatt zur Erklärung der Dreifaltigkeit genutzt haben.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Heilige ist neben Katharina von Siena Schutzpatronin Europas?",
+    "choices": [
+      "Hildegard von Bingen",
+      "Klara von Assisi",
+      "Elisabeth von Thüringen",
+      "Edith Stein"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Johannes Paul II. ernannte 1999 drei Frauen zu Mitpatroninnen Europas.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Katharina von Siena?",
+    "choices": [
+      "Eine Märtyrerin der Frühkirche",
+      "Eine Königin Spaniens",
+      "Eine Ordensgründerin des 19. Jahrhunderts",
+      "Mystikerin, die den Papst zur Rückkehr nach Rom drängte"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Kirchenlehrerin, gestorben 1380.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Missionar brachte im 16. Jahrhundert das Christentum nach Japan?",
+    "choices": [
+      "Franz Xaver",
+      "Ignatius von Loyola",
+      "Matteo Ricci",
+      "Petrus Canisius"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ein Gefährte des Ignatius und Mitbegründer der Jesuiten.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Albert Schweitzer?",
+    "choices": [
+      "Ein Missionar in China",
+      "Ein Reformator der Schweiz",
+      "Arzt, Theologe und Musiker in Lambarene",
+      "Ein Bischof der Bekennenden Kirche"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Friedensnobelpreis 1952 für sein Wirken in Afrika.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige wird oft mit Pestkranken in Verbindung gebracht?",
+    "choices": [
+      "Rochus",
+      "Sebastian",
+      "Antonius",
+      "Blasius"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Angerufen in Zeiten von Seuchen.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige wird am 3. Februar mit dem Halssegen geehrt?",
+    "choices": [
+      "Agatha",
+      "Dorothea",
+      "Blasius",
+      "Valentin"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Der Blasiussegen bittet um Bewahrung vor Halskrankheiten.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Heilige ist Patron der Liebenden?",
+    "choices": [
+      "Antonius",
+      "Valentin",
+      "Nikolaus",
+      "Josef"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Der Valentinstag am 14. Februar.",
+    "rating": 850
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer gilt als Patron der Arbeiter und wird am 1. Mai gefeiert?",
+    "choices": [
+      "Josef",
+      "Paulus",
+      "Petrus",
+      "Isidor"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "'Josef der Arbeiter' — der Zimmermann von Nazaret.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Frau der Bibel wird als Vorbild der Gastfreundschaft genannt?",
+    "choices": [
+      "Rahel",
+      "Debora",
+      "Marta von Betanien",
+      "Hulda"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lk 10,38",
+    "explanation": "Sie nahm Jesus in ihr Haus auf.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Priska (Priszilla) im Neuen Testament?",
+    "choices": [
+      "Eine Diakonin in Rom",
+      "Eine Märtyrerin in Ephesus",
+      "Eine Mitarbeiterin des Paulus",
+      "Eine Prophetin in Korinth"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 18,26",
+    "explanation": "Mit ihrem Mann Aquila unterwies sie Apollos im Glauben.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Phöbe im Römerbrief?",
+    "choices": [
+      "Die Mutter des Timotheus",
+      "Eine Diakonin der Gemeinde von Kenchreä",
+      "Eine Prophetin",
+      "Eine Purpurhändlerin"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Röm 16,1",
+    "explanation": "Paulus empfiehlt sie ausdrücklich der römischen Gemeinde.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher biblische Mann wird als Vorbild der Geduld im Leid genannt?",
+    "choices": [
+      "Elija",
+      "Ijob (Hiob)",
+      "Jakob",
+      "Jona"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Jak 5,11",
+    "explanation": "'Ihr habt von der Ausdauer Ijobs gehört.'",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer wird in Hebräer 11 als Vorbild des Glaubens ausführlich gewürdigt?",
+    "choices": [
+      "Samuel",
+      "Abraham",
+      "Josua",
+      "Salomo"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Hebr 11,8",
+    "explanation": "Er zog los, ohne zu wissen, wohin er kommen würde.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Barnabas?",
+    "choices": [
+      "Ein Bischof von Rom",
+      "Ein Märtyrer in Jerusalem",
+      "Der Begleiter des Paulus auf der ersten Missionsreise",
+      "Ein Evangelist"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 13,2",
+    "explanation": "Sein Name bedeutet 'Sohn des Trostes'.",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Frau salbte Jesus vor seinem Leiden?",
+    "choices": [
+      "Maria von Magdala",
+      "Marta",
+      "Johanna",
+      "Eine Frau in Betanien"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 14,3-9",
+    "explanation": "'Wo das Evangelium verkündet wird, wird man von ihr erzählen.'",
+    "rating": 1000
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher Papst des 20. Jahrhunderts berief das Zweite Vatikanische Konzil ein?",
+    "choices": [
+      "Pius XII.",
+      "Paul VI.",
+      "Johannes Paul I.",
+      "Johannes XXIII."
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Er wollte 'die Fenster öffnen'.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Martin Niemöller?",
+    "choices": [
+      "Ein Kirchenmusiker",
+      "Ein katholischer Bischof",
+      "Pfarrer der Bekennenden Kirche und KZ-Häftling",
+      "Ein Missionar in Afrika"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Bekannt für das Zitat 'Als sie die Kommunisten holten...'",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Ordensfrau und Ärztin gilt als Vorbild moderner Diakonie in Deutschland?",
+    "choices": [
+      "Antje Jackelén",
+      "Dorothee Sölle",
+      "Ruth Pfau",
+      "Elisabeth Schmitz"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Sie kämpfte in Pakistan jahrzehntelang gegen die Lepra.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Amalie Sieveking?",
+    "choices": [
+      "Eine Pionierin der weiblichen Diakonie in Hamburg",
+      "Eine Kirchenmusikerin",
+      "Eine Missionarin in Indien",
+      "Eine Theologin des Pietismus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Sie gründete 1832 einen Frauenverein für Armen- und Krankenpflege.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Wer war Theodor Fliedner?",
+    "choices": [
+      "Gründer der Diakonissenanstalt Kaiserswerth",
+      "Ein Missionar in China",
+      "Ein Kirchenlieddichter",
+      "Ein Bischof in Preußen"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Dort lernte auch Florence Nightingale.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welcher biblische Prophet wird als Vorbild für Zivilcourage vor Königen genannt?",
+    "choices": [
+      "Natan",
+      "Nahum",
+      "Haggai",
+      "Obadja"
+    ],
+    "correct_choice_index": 0,
+    "reference": "2 Sam 12,7",
+    "explanation": "'Du bist der Mann!' — Natan stellte David zur Rede.",
+    "rating": 1150
+  },
+  {
+    "category": "saints_role_models",
+    "prompt": "Welche Frau rettete in der Bibel die israelitischen Kundschafter in Jericho?",
+    "choices": [
+      "Debora",
+      "Rut",
+      "Rahab",
+      "Jaël"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Jos 2,1-6",
+    "explanation": "Sie versteckte sie auf ihrem Dach und wird in Mt 1 als Ahnin Jesu genannt.",
+    "rating": 1150
+  }
+]

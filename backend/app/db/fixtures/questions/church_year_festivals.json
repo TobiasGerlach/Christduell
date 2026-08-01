@@ -1,0 +1,702 @@
+[
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest feiert die Geburt Jesu?",
+    "choices": [
+      "Weihnachten",
+      "Ostern",
+      "Epiphanie",
+      "Pfingsten"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 2,1-20",
+    "explanation": "Am 25. Dezember, in den orthodoxen Kirchen oft am 7. Januar.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest feiert die Auferstehung Jesu?",
+    "choices": [
+      "Ostern",
+      "Advent",
+      "Weihnachten",
+      "Pfingsten"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 16,1-8",
+    "explanation": "Das älteste und höchste Fest der Christenheit.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest erinnert an die Sendung des Heiligen Geistes?",
+    "choices": [
+      "Pfingsten",
+      "Ostern",
+      "Erntedank",
+      "Fronleichnam"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 2,1-4",
+    "explanation": "Fünfzig Tage nach Ostern — daher der Name (griech. pentekoste).",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wie viele Sonntage hat der Advent?",
+    "choices": [
+      "3",
+      "2",
+      "5",
+      "4"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Vier Adventssonntage bereiten auf Weihnachten vor.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was beginnt am Aschermittwoch?",
+    "choices": [
+      "Der Advent",
+      "Das Kirchenjahr",
+      "Die Fastenzeit",
+      "Die Osterzeit"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Vierzig Tage Vorbereitung auf Ostern.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "An welchem Tag gedenken Christen des letzten Abendmahls?",
+    "choices": [
+      "Gründonnerstag",
+      "Karsamstag",
+      "Palmsonntag",
+      "Karfreitag"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 14,22-25",
+    "explanation": "Der Donnerstag der Karwoche.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was wird am Karfreitag begangen?",
+    "choices": [
+      "Der Einzug in Jerusalem",
+      "Die Himmelfahrt",
+      "Die Auferstehung",
+      "Kreuzigung und Tod Jesu"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Joh 19",
+    "explanation": "Der stillste Tag im Kirchenjahr, in Deutschland ein 'stiller Feiertag'.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Woran erinnert der Palmsonntag?",
+    "choices": [
+      "An die Verklärung",
+      "Am Einzug Jesu in Jerusalem",
+      "An die Taufe Jesu",
+      "An das Abendmahl"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mk 11,1-10",
+    "explanation": "Die Menge legte Kleider und Zweige auf den Weg.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wann beginnt das Kirchenjahr?",
+    "choices": [
+      "Am 1. Januar",
+      "Am 1. Advent",
+      "An Ostern",
+      "An Epiphanie"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Das Kirchenjahr beginnt vier Sonntage vor Weihnachten.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wie viele Tage dauert die österliche Fastenzeit ohne Sonntage?",
+    "choices": [
+      "50",
+      "30",
+      "60",
+      "40"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Vierzig Tage, wie Jesu Fasten in der Wüste.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest wird am 6. Januar gefeiert?",
+    "choices": [
+      "Mariä Lichtmess",
+      "Epiphanie / Erscheinung des Herrn",
+      "Allerheiligen",
+      "Christi Himmelfahrt"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 2,1-12",
+    "explanation": "In vielen Regionen als Dreikönigstag bekannt.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wie viele Tage nach Ostern wird Christi Himmelfahrt gefeiert?",
+    "choices": [
+      "40",
+      "50",
+      "30",
+      "7"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 1,3",
+    "explanation": "Immer an einem Donnerstag.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest feiert die evangelische Kirche am 31. Oktober?",
+    "choices": [
+      "Allerheiligen",
+      "Reformationstag",
+      "Ewigkeitssonntag",
+      "Erntedank"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Erinnert an Luthers Thesenanschlag 1517.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest begeht die katholische Kirche am 1. November?",
+    "choices": [
+      "Allerseelen",
+      "Allerheiligen",
+      "Mariä Empfängnis",
+      "Christkönig"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Am 2. November folgt Allerseelen.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welcher Sonntag beschließt das evangelische Kirchenjahr?",
+    "choices": [
+      "Christkönig",
+      "Kirchweih",
+      "Ewigkeitssonntag / Totensonntag",
+      "Erntedank"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "In der katholischen Kirche endet das Jahr mit dem Christkönigssonntag.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was feiert die katholische Kirche an Fronleichnam?",
+    "choices": [
+      "Die Geburt Johannes' des Täufers",
+      "Die Auferstehung",
+      "Die Gegenwart Christi in der Eucharistie",
+      "Die Himmelfahrt Mariens"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Am zweiten Donnerstag nach Pfingsten, oft mit Prozession.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wie berechnet sich das Osterdatum?",
+    "choices": [
+      "Erster Sonntag im April",
+      "Erster Sonntag nach dem Frühlingsvollmond",
+      "Vierzig Tage nach Neujahr",
+      "Fester Termin am 1. April"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Festgelegt beim Konzil von Nizäa 325.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Warum feiern orthodoxe Kirchen Ostern oft an einem anderen Datum?",
+    "choices": [
+      "Sie rechnen nach dem julianischen Kalender",
+      "Sie feiern es monatlich",
+      "Sie folgen dem jüdischen Kalender",
+      "Sie feiern immer im Mai"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der julianische Kalender läuft dem gregorianischen derzeit 13 Tage nach.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welche liturgische Farbe hat die Adventszeit?",
+    "choices": [
+      "Violett",
+      "Weiß",
+      "Grün",
+      "Rot"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Violett steht für Buße und Erwartung.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welche liturgische Farbe wird an Pfingsten verwendet?",
+    "choices": [
+      "Grün",
+      "Rot",
+      "Violett",
+      "Weiß"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Rot für das Feuer des Heiligen Geistes und für Märtyrer.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welche liturgische Farbe gilt an Weihnachten und Ostern?",
+    "choices": [
+      "Grün",
+      "Weiß",
+      "Schwarz",
+      "Rot"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Weiß steht für Freude, Licht und Reinheit.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was bezeichnet die 'Karwoche'?",
+    "choices": [
+      "Die Woche vor Ostern",
+      "Die Woche vor Pfingsten",
+      "Die Woche nach Ostern",
+      "Die letzte Adventswoche"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "'Kara' ist althochdeutsch für Klage, Trauer.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was wird in der Osternacht traditionell entzündet?",
+    "choices": [
+      "Das Ewige Licht",
+      "Die Osterkerze",
+      "Der Adventskranz",
+      "Die Taufkerze"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Am Osterfeuer entzündet, symbolisiert sie den auferstandenen Christus.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest wird am 24. Dezember abends begangen?",
+    "choices": [
+      "Heiligabend",
+      "Silvester",
+      "Nikolaus",
+      "Epiphanie"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Nach jüdischer Zählweise beginnt der Festtag am Vorabend.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wann ist der Nikolaustag?",
+    "choices": [
+      "6. Dezember",
+      "1. Dezember",
+      "13. Dezember",
+      "24. Dezember"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Gedenktag des heiligen Nikolaus von Myra.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was feiert Mariä Himmelfahrt am 15. August?",
+    "choices": [
+      "Die Aufnahme Mariens in den Himmel",
+      "Die Vermählung",
+      "Die Verkündigung",
+      "Die Geburt Mariens"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Hochfest vor allem in der katholischen Kirche.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest wird neun Monate vor Weihnachten, am 25. März, gefeiert?",
+    "choices": [
+      "Mariä Himmelfahrt",
+      "Mariä Verkündigung",
+      "Mariä Lichtmess",
+      "Mariä Geburt"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 1,26-38",
+    "explanation": "Die Ankündigung der Geburt Jesu durch den Engel Gabriel.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was wird an Mariä Lichtmess am 2. Februar gefeiert?",
+    "choices": [
+      "Die Darstellung Jesu im Tempel",
+      "Die Taufe Jesu",
+      "Die Geburt Marias",
+      "Das erste Wunder"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 2,22-38",
+    "explanation": "Vierzig Tage nach Weihnachten, traditionell mit Kerzenweihe.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wie heißt der Sonntag vor dem 1. Advent im evangelischen Kalender?",
+    "choices": [
+      "Kirchweih",
+      "Ewigkeitssonntag",
+      "Bußtag",
+      "Trinitatis"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Auch Totensonntag genannt, Gedenken an die Verstorbenen.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest folgt eine Woche nach Pfingsten?",
+    "choices": [
+      "Trinitatis (Dreifaltigkeitssonntag)",
+      "Erntedank",
+      "Fronleichnam",
+      "Christkönig"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Das Fest der Dreieinigkeit Gottes.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was ist die 'Osteroktav'?",
+    "choices": [
+      "Die acht Tage von Ostersonntag an",
+      "Der achte Sonntag nach Ostern",
+      "Die Osternachtsliturgie",
+      "Ein Osterlied"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die Osterfreude wird acht Tage lang wie ein einziger Festtag begangen.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wann wird in Deutschland der Buß- und Bettag begangen?",
+    "choices": [
+      "Am Aschermittwoch",
+      "Am Mittwoch vor dem Ewigkeitssonntag",
+      "Am Karfreitag",
+      "Am 1. Advent"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Seit 1995 nur noch in Sachsen gesetzlicher Feiertag.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welche Zeit im Kirchenjahr heißt liturgisch 'Zeit im Jahreskreis'?",
+    "choices": [
+      "Die Wochen außerhalb der Festkreise",
+      "Die Fastenzeit",
+      "Die Osterzeit",
+      "Die Adventszeit"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Liturgische Farbe: Grün.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was erinnert der Adventskranz mit seinen vier Kerzen?",
+    "choices": [
+      "An das wachsende Licht bis Weihnachten",
+      "An die vier Evangelisten",
+      "An die vier Jahreszeiten",
+      "An die vier Erzengel"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Brauch geht auf Johann Hinrich Wichern (1839) zurück.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welcher Tag beendet die Weihnachtszeit in der katholischen Liturgie?",
+    "choices": [
+      "Das Fest der Taufe des Herrn",
+      "Silvester",
+      "Der 6. Januar",
+      "Mariä Lichtmess"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Sonntag nach Epiphanie.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was feiert das Erntedankfest?",
+    "choices": [
+      "Das Ende des Kirchenjahres",
+      "Den Dank für die Ernte",
+      "Die Schöpfung der Welt",
+      "Den Beginn des Herbstes"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "In Deutschland meist am ersten Sonntag im Oktober.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest der Ostkirchen entspricht Epiphanie und betont die Taufe Jesu?",
+    "choices": [
+      "Theophanie",
+      "Koimesis",
+      "Transfiguration",
+      "Pantokrator"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 1,9-11",
+    "explanation": "Am 6. Januar mit großer Wasserweihe gefeiert.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wie heißt der letzte Sonntag vor der Fastenzeit im Volksmund?",
+    "choices": [
+      "Laetare",
+      "Fastnachtssonntag",
+      "Palmsonntag",
+      "Kirchweih"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Die Karnevalstage enden am Aschermittwoch.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was bedeutet der Name des Fastensonntags 'Laetare'?",
+    "choices": [
+      "'Trauere'",
+      "'Freue dich'",
+      "'Warte'",
+      "'Bete'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Jes 66,10",
+    "explanation": "Der vierte Fastensonntag, liturgische Farbe Rosa.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest begeht die Kirche am 26. Dezember?",
+    "choices": [
+      "Johannestag",
+      "Stephanustag",
+      "Unschuldige Kinder",
+      "Silvester"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Apg 7",
+    "explanation": "Gedenktag des ersten Märtyrers Stephanus.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was wird an Christi Himmelfahrt gefeiert?",
+    "choices": [
+      "Die Auferstehung",
+      "Die Verklärung",
+      "Die Rückkehr Jesu zum Vater",
+      "Die Geburt der Kirche"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 1,9",
+    "explanation": "Vierzig Tage nach Ostern.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welcher Feiertag ist in Deutschland zugleich Vatertag?",
+    "choices": [
+      "Karfreitag",
+      "Fronleichnam",
+      "Christi Himmelfahrt",
+      "Pfingstmontag"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Der Brauch der 'Herrenpartie' entstand im 19. Jahrhundert.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was ist der 'Weiße Sonntag'?",
+    "choices": [
+      "Der letzte Sonntag im Januar",
+      "Der Sonntag nach Ostern",
+      "Der erste Advent",
+      "Der Sonntag nach Pfingsten"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Traditioneller Termin der Erstkommunion.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Woran erinnert der Gedenktag 'Unschuldige Kinder' am 28. Dezember?",
+    "choices": [
+      "An die Beschneidung Jesu",
+      "An die Darstellung im Tempel",
+      "An den Kindermord in Betlehem",
+      "An die Flucht nach Ägypten"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 2,16-18",
+    "explanation": "Herodes ließ die Kinder in Betlehem töten.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wie viele Tage umfasst die Osterzeit bis Pfingsten?",
+    "choices": [
+      "50",
+      "60",
+      "40",
+      "7"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Fünfzig Tage — die Pfingstzeit als 'Woche der Wochen'.",
+    "rating": 1000
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welches Fest feiert die Kirche am 24. Juni?",
+    "choices": [
+      "Peter und Paul",
+      "Mariä Geburt",
+      "Michaelis",
+      "Geburt Johannes' des Täufers"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 1,57-66",
+    "explanation": "Sechs Monate vor Weihnachten, entsprechend Lk 1,36.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Welcher Gedenktag fällt auf den 29. Juni?",
+    "choices": [
+      "Allerheiligen",
+      "Martinstag",
+      "Peter und Paul",
+      "Michaelis"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Hochfest der beiden Apostelfürsten.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Wann ist der Martinstag?",
+    "choices": [
+      "6. Dezember",
+      "11. November",
+      "31. Oktober",
+      "1. November"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Martinsumzüge mit Laternen erinnern an die Mantelteilung.",
+    "rating": 850
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was wird am Michaelistag am 29. September gefeiert?",
+    "choices": [
+      "Die Erzengel Michael, Gabriel und Rafael",
+      "Die Schutzheiligen der Bauern",
+      "Das Ende der Ernte",
+      "Die Kirchweih"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Offb 12,7",
+    "explanation": "Michael gilt als Anführer der himmlischen Heerscharen.",
+    "rating": 1150
+  },
+  {
+    "category": "church_year_festivals",
+    "prompt": "Was bezeichnet 'Kirchweih' (Kirmes)?",
+    "choices": [
+      "Das Erntedankfest",
+      "Den Reformationstag",
+      "Den Beginn des Kirchenjahres",
+      "Das Weihefest einer Kirche"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Aus dem Jahrestag der Kirchweihe wurde vielerorts ein Volksfest.",
+    "rating": 1000
+  }
+]

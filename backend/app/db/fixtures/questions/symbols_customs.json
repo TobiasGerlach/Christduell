@@ -1,0 +1,702 @@
+[
+  {
+    "category": "symbols_customs",
+    "prompt": "Welches Symbol steht zentral für das Christentum?",
+    "choices": [
+      "Das Rad",
+      "Der Davidstern",
+      "Der Halbmond",
+      "Das Kreuz"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Zeichen des Todes und der Auferstehung Jesu.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welches Tier symbolisiert den Heiligen Geist?",
+    "choices": [
+      "Das Lamm",
+      "Der Löwe",
+      "Der Adler",
+      "Die Taube"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 1,10",
+    "explanation": "Bei der Taufe Jesu kam der Geist wie eine Taube herab.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wofür steht das Lamm in der christlichen Kunst meist?",
+    "choices": [
+      "Für Jesus Christus",
+      "Für die Kirche",
+      "Für die Apostel",
+      "Für die Sanftmut Marias"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 1,29",
+    "explanation": "'Seht das Lamm Gottes, das die Sünde der Welt hinwegnimmt.'",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welche liturgische Farbe wird in der Fastenzeit getragen?",
+    "choices": [
+      "Violett",
+      "Rot",
+      "Weiß",
+      "Grün"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Violett steht für Buße und Umkehr.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welches Element wird bei der Taufe verwendet?",
+    "choices": [
+      "Öl",
+      "Wasser",
+      "Salz",
+      "Brot"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 28,19",
+    "explanation": "Zeichen der Reinigung und des neuen Lebens.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was symbolisiert der Fisch als frühchristliches Zeichen?",
+    "choices": [
+      "Ein Bekenntnis zu Christus",
+      "Den Beruf der Apostel",
+      "Die Speisung der Fünftausend",
+      "Die Taufe"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Das griechische 'Ichthys' ist ein Akrostichon: Jesus Christus, Gottes Sohn, Retter.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wofür stehen Brot und Wein im Abendmahl?",
+    "choices": [
+      "Für Ernte und Fest",
+      "Für Leib und Blut Christi",
+      "Für Himmel und Erde",
+      "Für Israel und die Völker"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mk 14,22-24",
+    "explanation": "Die Deutung unterscheidet sich zwischen den Konfessionen.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was bedeutet das Alpha und Omega als christliches Symbol?",
+    "choices": [
+      "Die zwei Testamente",
+      "Gott ist Anfang und Ende",
+      "Schöpfung und Gericht",
+      "Die zwei Naturen Christi"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Offb 22,13",
+    "explanation": "Der erste und der letzte Buchstabe des griechischen Alphabets.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welches Zeichen entsteht aus den griechischen Buchstaben Chi und Rho?",
+    "choices": [
+      "Das Ankerkreuz",
+      "Der Davidstern",
+      "Das Kreuz des Andreas",
+      "Das Christusmonogramm"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "XP — die ersten Buchstaben von 'Christos'.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wofür steht der Anker in frühchristlicher Symbolik?",
+    "choices": [
+      "Für die Seefahrt",
+      "Für den Tod",
+      "Für die Taufe",
+      "Für die Hoffnung"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Hebr 6,19",
+    "explanation": "'Ein sicherer und fester Anker der Seele.'",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was symbolisiert die Osterkerze?",
+    "choices": [
+      "Den auferstandenen Christus",
+      "Das Licht der Schöpfung",
+      "Das Ende der Fastenzeit",
+      "Die Hoffnung der Märtyrer"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Sie wird in der Osternacht am Osterfeuer entzündet.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was bedeutet das Aschekreuz am Aschermittwoch?",
+    "choices": [
+      "Zeichen der Firmung",
+      "Zeichen der Buße und Vergänglichkeit",
+      "Zeichen des Segens",
+      "Zeichen der Taufe"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Gen 3,19",
+    "explanation": "'Bedenke, Mensch, dass du Staub bist.'",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was symbolisiert der Regenbogen in der Bibel?",
+    "choices": [
+      "Die Wiederkunft Christi",
+      "Das kommende Gericht",
+      "Gottes Bund mit der Schöpfung",
+      "Den Auszug aus Ägypten"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Gen 9,13",
+    "explanation": "Das Zeichen des Bundes nach der Sintflut.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wofür steht die Palme in der christlichen Kunst?",
+    "choices": [
+      "Für den Frieden",
+      "Für die Wüste",
+      "Für die Ernte",
+      "Für Sieg und Martyrium"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Offb 7,9",
+    "explanation": "Märtyrer werden oft mit Palmzweigen dargestellt.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welche Blume gilt als Symbol für die Reinheit Marias?",
+    "choices": [
+      "Die Sonnenblume",
+      "Die Rose",
+      "Der Mohn",
+      "Die Lilie"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Häufig in Verkündigungsdarstellungen zu sehen.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was symbolisiert der Pelikan in mittelalterlicher Kunst?",
+    "choices": [
+      "Die Taufe",
+      "Die Kirche",
+      "Die Hingabe Christi",
+      "Die Auferstehung"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Der Legende nach nährte er seine Jungen mit dem eigenen Blut.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wofür steht der Weinstock als Bild?",
+    "choices": [
+      "Für die Verbundenheit mit Christus",
+      "Für den Reichtum",
+      "Für das Abendmahl allein",
+      "Für Israels Könige"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 15,5",
+    "explanation": "'Ich bin der Weinstock, ihr seid die Reben.'",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was bezeichnet das 'Ewige Licht' in katholischen Kirchen?",
+    "choices": [
+      "Die Altarkerzen",
+      "Die Osterkerze",
+      "Das Licht über dem Eingang",
+      "Ein Licht beim Tabernakel"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Es zeigt die Gegenwart der Eucharistie an.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist ein Weihwasserbecken?",
+    "choices": [
+      "Ein Behälter für Öl",
+      "Ein Taufbecken",
+      "Ein Becken am Kircheneingang zum Bekreuzigen",
+      "Ein Gefäß für das Abendmahl"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Erinnert an die eigene Taufe.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welche Bedeutung hat das Kreuzzeichen?",
+    "choices": [
+      "Bekenntnis zum dreieinigen Gott",
+      "Ein Segensgruß unter Freunden",
+      "Ein Abschiedsgruß",
+      "Ein Zeichen der Reue"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 28,19",
+    "explanation": "'Im Namen des Vaters und des Sohnes und des Heiligen Geistes.'",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist eine Ikone?",
+    "choices": [
+      "Ein geweihtes Andachtsbild der Ostkirche",
+      "Ein Kirchenfenster",
+      "Eine Reliquie",
+      "Ein liturgisches Gewand"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ikonen gelten als 'Fenster zum Himmel'.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist eine Reliquie?",
+    "choices": [
+      "Ein Überrest oder Gegenstand eines Heiligen",
+      "Ein altes Kirchenbuch",
+      "Ein Messgewand",
+      "Ein Altarstein"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "In vielen Altären sind Reliquien eingelassen.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist ein Rosenkranz?",
+    "choices": [
+      "Eine Gebetsschnur mit Perlen",
+      "Ein Kranz für Verstorbene",
+      "Ein Osterkranz",
+      "Ein Blumenschmuck am Altar"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die Perlen strukturieren das wiederholte Gebet.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist ein Adventskranz?",
+    "choices": [
+      "Ein Kranz aus Stroh",
+      "Ein Erntedankschmuck",
+      "Ein Kranz mit vier Kerzen",
+      "Ein Kranz für Verstorbene"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Jede Woche brennt eine Kerze mehr.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Woran erinnert der Brauch des Martinsumzugs?",
+    "choices": [
+      "An die Wanderung durch die Wüste",
+      "An den Einzug in Jerusalem",
+      "An die Mantelteilung des heiligen Martin",
+      "An die Flucht nach Ägypten"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Martin teilte seinen Mantel mit einem Bettler.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was verbirgt sich hinter dem Brauch der Sternsinger?",
+    "choices": [
+      "Kinder ziehen als Weise verkleidet von Haus zu Haus",
+      "Ein Erntedankumzug",
+      "Ein Krippenspiel",
+      "Ein Osterbrauch"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 2,1-12",
+    "explanation": "Sie sammeln für Kinder in Not und schreiben C+M+B an die Tür.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wofür steht das Segenszeichen 'C+M+B' an Türen?",
+    "choices": [
+      "Corpus Mariae Beatae",
+      "Caspar, Melchior, Balthasar allein",
+      "Christus multum benedicat",
+      "Christus mansionem benedicat"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "'Christus segne dieses Haus' — die Namen der Weisen sind die Volksdeutung.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was symbolisieren Ostereier?",
+    "choices": [
+      "Den Frühlingsbeginn",
+      "Neues Leben und Auferstehung",
+      "Die Fruchtbarkeit der Felder",
+      "Das Ende des Winters"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Aus dem scheinbar toten Ei bricht Leben hervor.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welche Bedeutung hat das Osterlamm als Gebäck oder Speise?",
+    "choices": [
+      "Es symbolisiert die Ernte",
+      "Es erinnert an Christus als Lamm Gottes",
+      "Es steht für den Frühling",
+      "Es erinnert an die Hirten"
+    ],
+    "correct_choice_index": 1,
+    "reference": "1 Kor 5,7",
+    "explanation": "'Christus, unser Paschalamm, ist geopfert.'",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist eine Krippe in der Weihnachtszeit?",
+    "choices": [
+      "Ein Opferstock",
+      "Eine Darstellung der Geburt Jesu",
+      "Ein Altarbild",
+      "Ein Adventsschmuck"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 2,7",
+    "explanation": "Der Brauch geht auf Franz von Assisi (1223) zurück.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was symbolisiert der Weihnachtsbaum in christlicher Deutung?",
+    "choices": [
+      "Den Feigenbaum",
+      "Den Ölberg",
+      "Den Baum der Erkenntnis",
+      "Den Baum des Lebens und immerwährendes Leben"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Immergrün als Zeichen des Lebens mitten im Winter.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welche liturgische Farbe wird bei Beerdigungen häufig verwendet?",
+    "choices": [
+      "Schwarz oder Violett",
+      "Rot",
+      "Grün",
+      "Gold"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "In der evangelischen Tradition zunehmend auch Weiß als Zeichen der Auferstehungshoffnung.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist eine Monstranz?",
+    "choices": [
+      "Ein Kelch für den Wein",
+      "Ein Weihrauchfass",
+      "Ein Taufgefäß",
+      "Ein Schaugefäß für die geweihte Hostie"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Wird bei Prozessionen wie an Fronleichnam getragen.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wozu dient ein Weihrauchfass?",
+    "choices": [
+      "Zum Aufbewahren von Öl",
+      "Zum Aufbewahren von Reliquien",
+      "Zum Sammeln der Kollekte",
+      "Zum Verbrennen von Weihrauch als Gebetssymbol"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Ps 141,2",
+    "explanation": "'Mein Gebet steige auf wie Weihrauch vor dein Angesicht.'",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist eine Stola?",
+    "choices": [
+      "Ein Altartuch",
+      "Ein liturgisches Band über der Schulter",
+      "Ein Bucheinband",
+      "Eine Kopfbedeckung"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Zeichen des Amtes bei Diakonen, Priestern und Pfarrerinnen.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was sind die 'Kreuzwegstationen'?",
+    "choices": [
+      "Die sieben Sakramente",
+      "Bilder oder Tafeln zum Leidensweg Jesu",
+      "Die Etappen einer Wallfahrt",
+      "Die Stationen der Wüstenwanderung"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Meist vierzehn Stationen, besonders in der Fastenzeit gebetet.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wie viele Sakramente kennt die katholische Kirche?",
+    "choices": [
+      "5",
+      "2",
+      "7",
+      "12"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Taufe, Firmung, Eucharistie, Buße, Krankensalbung, Weihe, Ehe.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wie viele Sakramente kennen die meisten evangelischen Kirchen?",
+    "choices": [
+      "2",
+      "3",
+      "7",
+      "5"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Taufe und Abendmahl, weil beide auf Jesus selbst zurückgeführt werden.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welche Bedeutung hat das Läuten der Kirchenglocken zum Gottesdienst?",
+    "choices": [
+      "Ankündigung des Marktes",
+      "Einladung und Ruf zum Gebet",
+      "Warnung vor Unwetter",
+      "Erinnerung an die Toten"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Glocken strukturieren traditionell den Tag eines Dorfes.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist ein Taufkleid?",
+    "choices": [
+      "Ein weißes Gewand als Zeichen des neuen Lebens",
+      "Ein Tuch für den Altar",
+      "Ein Festgewand des Paten",
+      "Ein Gewand des Pfarrers"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Gal 3,27",
+    "explanation": "'Ihr habt Christus angezogen.'",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist die Bedeutung der Taufkerze?",
+    "choices": [
+      "Christus als Licht für den Getauften",
+      "Das Ende der Zeremonie",
+      "Der Beginn des Kirchenjahres",
+      "Der Segen der Paten"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 8,12",
+    "explanation": "Sie wird an der Osterkerze entzündet.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was bedeutet 'Konfirmation' in evangelischen Kirchen?",
+    "choices": [
+      "Die erste Kommunion",
+      "Die Bekräftigung der Taufe durch den Jugendlichen",
+      "Die Aufnahme in den Kirchenvorstand",
+      "Die Segnung zur Ehe"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Von lateinisch 'confirmare' — bestärken.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was entspricht der Konfirmation in der katholischen Kirche?",
+    "choices": [
+      "Die Firmung",
+      "Die Weihe",
+      "Die Beichte",
+      "Die Erstkommunion"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die Firmung wird meist vom Bischof gespendet.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist ein Patenamt?",
+    "choices": [
+      "Die Aufsicht über den Kirchenbau",
+      "Die Leitung des Chors",
+      "Begleitung eines Täuflings im Glauben",
+      "Ein Ehrenamt im Kirchenvorstand"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Paten stehen für die christliche Erziehung mit ein.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was bezeichnet der Begriff 'Kanzel'?",
+    "choices": [
+      "Der Taufstein",
+      "Die Orgelempore",
+      "Der Altarraum",
+      "Der erhöhte Ort für die Predigt"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "In evangelischen Kirchen oft zentral platziert.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist ein Tabernakel?",
+    "choices": [
+      "Der Aufbewahrungsort der geweihten Hostien",
+      "Der Beichtstuhl",
+      "Das Kirchenportal",
+      "Der Altartisch"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Name erinnert an das 'Zelt' der Bundeslade.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist ein Triptychon?",
+    "choices": [
+      "Ein dreifaches Kreuz",
+      "Ein Gebet in drei Teilen",
+      "Ein dreistimmiger Gesang",
+      "Ein dreiteiliges Altarbild"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Die Flügel lassen sich je nach Festzeit öffnen und schließen.",
+    "rating": 1150
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Welche Bedeutung hat das Fasten im Christentum traditionell?",
+    "choices": [
+      "Ein Gesundheitsritual",
+      "Eine Bußstrafe",
+      "Verzicht als Weg zu Umkehr und Konzentration",
+      "Ein Zeichen der Trauer allein"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 6,16-18",
+    "explanation": "Jesus setzt Fasten voraus, warnt aber vor Zurschaustellung.",
+    "rating": 1000
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Was ist eine Wallfahrt?",
+    "choices": [
+      "Eine Prozession um die Kirche",
+      "Eine Pilgerreise zu einem heiligen Ort",
+      "Ein Umzug an Erntedank",
+      "Eine Klosterführung"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Bekannte Ziele sind Jerusalem, Rom und Santiago de Compostela.",
+    "rating": 850
+  },
+  {
+    "category": "symbols_customs",
+    "prompt": "Wofür steht die Jakobsmuschel?",
+    "choices": [
+      "Für die Fischer am See",
+      "Für die Taufe",
+      "Für die Pilger auf dem Jakobsweg",
+      "Für das Abendmahl"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Sie kennzeichnet den Weg nach Santiago de Compostela.",
+    "rating": 1000
+  }
+]

@@ -36,8 +36,21 @@ def _seed_players(session: Session) -> None:
     session.commit()
 
 
+def _load_question_fixtures() -> list[dict]:
+    """Reads every category file under fixtures/questions/.
+
+    One file per category rather than a single list: a few hundred questions in
+    one file is not reviewable, and edits to one category stop colliding with
+    edits to another.
+    """
+    entries: list[dict] = []
+    for path in sorted((FIXTURES_DIR / "questions").glob("*.json")):
+        entries.extend(json.loads(path.read_text(encoding="utf-8")))
+    return entries
+
+
 def _seed_questions(session: Session) -> None:
-    entries = json.loads((FIXTURES_DIR / "questions.json").read_text(encoding="utf-8"))
+    entries = _load_question_fixtures()
 
     for entry in entries:
         category = Category(entry["category"])
@@ -70,6 +83,7 @@ def seed() -> None:
     with Session(engine) as session:
         _seed_players(session)
         _seed_questions(session)
+    print(f"Seeded {len(_load_question_fixtures())} questions.")
     print(
         "Seeded demo players:\n"
         + "\n".join(f"  {p['email']} / {SEED_PASSWORD}" for p in SEED_PLAYERS)

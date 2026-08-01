@@ -1,0 +1,702 @@
+[
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie beginnt Psalm 23?",
+    "choices": [
+      "'Aus der Tiefe rufe ich'",
+      "'Der Herr ist mein Hirte'",
+      "'Lobe den Herrn, meine Seele'",
+      "'Wie lieblich sind deine Wohnungen'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ps 23,1",
+    "explanation": "Der bekannteste Psalm überhaupt.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "In welchem Zusammenhang lehrt Jesus bei Matthäus das Vaterunser?",
+    "choices": [
+      "Beim letzten Abendmahl",
+      "Bei der Taufe im Jordan",
+      "In der Bergpredigt",
+      "Nach der Auferstehung"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 6,9",
+    "explanation": "Eingebettet in die Weisung über das rechte Beten.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie viele Psalmen enthält der Psalter?",
+    "choices": [
+      "180",
+      "150",
+      "120",
+      "100"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "150 Psalmen, eingeteilt in fünf Bücher.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie endet das Vaterunser in der gebräuchlichen Fassung?",
+    "choices": [
+      "'... in Ewigkeit'",
+      "'... wie im Himmel'",
+      "'... alle Tage'",
+      "'... sondern erlöse uns von dem Bösen'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 6,13",
+    "explanation": "Der Lobpreis 'Denn dein ist das Reich' ist ein späterer Zusatz.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wer gilt traditionell als Verfasser vieler Psalmen?",
+    "choices": [
+      "David",
+      "Mose",
+      "Salomo",
+      "Jesaja"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Etwa die Hälfte der Psalmen trägt die Überschrift 'von David'.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm ist der längste?",
+    "choices": [
+      "Psalm 150",
+      "Psalm 119",
+      "Psalm 23",
+      "Psalm 1"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ps 119",
+    "explanation": "176 Verse, alphabetisch nach hebräischen Buchstaben gegliedert.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm ist der kürzeste?",
+    "choices": [
+      "Psalm 117",
+      "Psalm 23",
+      "Psalm 150",
+      "Psalm 1"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Ps 117",
+    "explanation": "Nur zwei Verse.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Womit endet der Psalter?",
+    "choices": [
+      "Mit einem Segen",
+      "Mit einer Klage",
+      "Mit einem Fluch",
+      "Mit einem großen Lobgesang"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Ps 150",
+    "explanation": "'Alles, was atmet, lobe den Herrn.'",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welchen Psalm zitierte Jesus am Kreuz?",
+    "choices": [
+      "Psalm 23",
+      "Psalm 22",
+      "Psalm 51",
+      "Psalm 121"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ps 22,2",
+    "explanation": "'Mein Gott, mein Gott, warum hast du mich verlassen?'",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm ist der bekannteste Bußpsalm?",
+    "choices": [
+      "Psalm 100",
+      "Psalm 8",
+      "Psalm 51",
+      "Psalm 139"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 51",
+    "explanation": "'Gott, sei mir gnädig nach deiner Huld' — Davids Reue nach Batseba.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie beginnt Psalm 130, der 'De profundis'?",
+    "choices": [
+      "'Der Herr ist mein Licht'",
+      "'Herr, unser Herrscher'",
+      "'Aus der Tiefe rufe ich, Herr, zu dir'",
+      "'Wie der Hirsch lechzt'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 130,1",
+    "explanation": "Einer der sieben Bußpsalmen, oft bei Begräbnissen.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm beginnt 'Herr, du hast mich erforscht und du kennst mich'?",
+    "choices": [
+      "Psalm 42",
+      "Psalm 63",
+      "Psalm 90",
+      "Psalm 139"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Ps 139,1",
+    "explanation": "Ein Psalm über Gottes Allgegenwart.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was ist ein 'Halleluja-Psalm'?",
+    "choices": [
+      "Ein Psalm, der mit dem Lobruf beginnt oder endet",
+      "Ein Königspsalm",
+      "Ein Klagepsalm",
+      "Ein Wallfahrtspsalm"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Ps 146-150",
+    "explanation": "Die letzten fünf Psalmen bilden das große Halleluja.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt das Gebet, das Maria bei Elisabet spricht?",
+    "choices": [
+      "Benedictus",
+      "Te Deum",
+      "Nunc dimittis",
+      "Magnificat"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 1,46-55",
+    "explanation": "'Meine Seele preist die Größe des Herrn.'",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt der Lobgesang des Zacharias?",
+    "choices": [
+      "Benedictus",
+      "Nunc dimittis",
+      "Magnificat",
+      "Gloria"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 1,68-79",
+    "explanation": "'Gepriesen sei der Herr, der Gott Israels.'",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt das Nachtgebet des greisen Simeon?",
+    "choices": [
+      "Nunc dimittis",
+      "Kyrie",
+      "Benedictus",
+      "Magnificat"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 2,29-32",
+    "explanation": "'Nun lässt du, Herr, deinen Knecht in Frieden scheiden.'",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welches Gebet ist im Katholizismus mit dem Rosenkranz verbunden?",
+    "choices": [
+      "Das Te Deum",
+      "Das Salve Regina",
+      "Das Angelus",
+      "Das Ave Maria"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 1,28",
+    "explanation": "'Gegrüßet seist du, Maria' greift den Gruß des Engels auf.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie viele Bitten enthält das Vaterunser traditionell?",
+    "choices": [
+      "10",
+      "7",
+      "5",
+      "12"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 6,9-13",
+    "explanation": "Sieben Bitten, oft in drei 'Du-Bitten' und vier 'Wir-Bitten' geteilt.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welche Bitte im Vaterunser folgt auf 'Dein Reich komme'?",
+    "choices": [
+      "'Führe uns nicht'",
+      "'Vergib uns'",
+      "'Dein Wille geschehe'",
+      "'Unser tägliches Brot'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 6,10",
+    "explanation": "'... wie im Himmel, so auf Erden.'",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was ist ein Wallfahrtspsalm?",
+    "choices": [
+      "Ein Psalm des Königs",
+      "Ein Psalm für den Weg nach Jerusalem",
+      "Ein Psalm für den Sabbat",
+      "Ein Psalm für Begräbnisse"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ps 120-134",
+    "explanation": "Die 'Stufenpsalmen' oder 'Lieder für die Wallfahrt'.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie beginnt Psalm 121?",
+    "choices": [
+      "'Der Herr ist mein Hirte'",
+      "'Selig der Mann'",
+      "'Ich hebe meine Augen auf zu den Bergen'",
+      "'Wie lieblich sind deine Wohnungen'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 121,1",
+    "explanation": "Ein Segenspsalm für Reisende.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm beginnt 'Wie der Hirsch lechzt nach frischem Wasser'?",
+    "choices": [
+      "Psalm 23",
+      "Psalm 84",
+      "Psalm 42",
+      "Psalm 63"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 42,2",
+    "explanation": "Ein Sehnsuchtspsalm, häufig vertont.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm beginnt 'Selig der Mann, der nicht dem Rat der Frevler folgt'?",
+    "choices": [
+      "Psalm 15",
+      "Psalm 1",
+      "Psalm 2",
+      "Psalm 119"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ps 1,1",
+    "explanation": "Der Eingangspsalm des Psalters.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was bedeutet das Wort 'Psalm'?",
+    "choices": [
+      "'Lobpreis'",
+      "'Saitenspiel, Lied zur Harfe'",
+      "'Klage'",
+      "'Gebet'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Vom griechischen 'psalmos' — Lied zum Saitenspiel.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt der hebräische Name des Psalmenbuchs?",
+    "choices": [
+      "Ketuvim",
+      "Neviim",
+      "Torah",
+      "Tehillim (Lobgesänge)"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Obwohl viele Psalmen Klagen sind, heißt das Buch 'Lobgesänge'.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welches Gebet gehört zum Beginn fast jeder katholischen Messe?",
+    "choices": [
+      "Angelus",
+      "Salve Regina",
+      "Kyrie eleison",
+      "Te Deum"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Der Kyrie-Ruf um Erbarmen.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was ist das 'Gebet des Herrn'?",
+    "choices": [
+      "Das Gebet in Getsemani",
+      "Der Psalm 23",
+      "Das Hohepriesterliche Gebet",
+      "Das Vaterunser"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 6,9",
+    "explanation": "Weil Jesus selbst es gelehrt hat.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt das lange Gebet Jesu vor seiner Verhaftung im Johannesevangelium?",
+    "choices": [
+      "Das Vaterunser",
+      "Das Hohepriesterliche Gebet",
+      "Das Magnificat",
+      "Das Benedictus"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Joh 17",
+    "explanation": "Jesus betet für die Einheit seiner Jünger.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was betete Jesus in Getsemani?",
+    "choices": [
+      "'Mich dürstet'",
+      "'Nicht mein, sondern dein Wille geschehe'",
+      "'Es ist vollbracht'",
+      "'Vater, vergib ihnen'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 22,42",
+    "explanation": "Das Ringen um Annahme des Leidens.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welche Gebetshaltung ist mit dem Wort 'Orant' verbunden?",
+    "choices": [
+      "Knien",
+      "Stehen mit erhobenen Händen",
+      "Sitzen",
+      "Liegen"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Die älteste christliche Gebetshaltung, in Katakombenbildern zu sehen.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was ist ein 'Stoßgebet'?",
+    "choices": [
+      "Ein Gebet im Chor",
+      "Ein Gebet vor dem Essen",
+      "Ein Bußgebet",
+      "Ein kurzes, spontanes Gebet"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Wenige Worte in einer akuten Situation.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt das Tischgebet in vielen Familien?",
+    "choices": [
+      "Vesper",
+      "Tischgebet",
+      "Angelus",
+      "Komplet"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Dank vor dem Essen, oft in gereimter Form.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt das kirchliche Stundengebet am Abend?",
+    "choices": [
+      "Terz",
+      "Laudes",
+      "Komplet",
+      "Vesper"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Von lateinisch 'vespera' — Abend.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welches Stundengebet beschließt den Tag?",
+    "choices": [
+      "Laudes",
+      "Komplet",
+      "Vesper",
+      "Sext"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "'Completorium' — die Vervollständigung des Tages.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welches Stundengebet wird am Morgen gebetet?",
+    "choices": [
+      "Komplet",
+      "Non",
+      "Vesper",
+      "Laudes"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Das Morgenlob, oft mit Psalm 148-150.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie heißt die Sammlung der täglichen Gebete im Kloster?",
+    "choices": [
+      "Rituale",
+      "Graduale",
+      "Stundenbuch / Brevier",
+      "Missale"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Ordensleute und Priester beten es täglich.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm wird traditionell als Danklied nach überstandener Not gebetet?",
+    "choices": [
+      "Psalm 88",
+      "Psalm 22",
+      "Psalm 103",
+      "Psalm 137"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 103,1",
+    "explanation": "'Lobe den Herrn, meine Seele, und vergiss nicht, was er dir Gutes getan hat.'",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm beginnt mit 'An den Strömen von Babel'?",
+    "choices": [
+      "Psalm 79",
+      "Psalm 74",
+      "Psalm 137",
+      "Psalm 126"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 137,1",
+    "explanation": "Das Klagelied der Verschleppten im Exil.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was sind die 'Klagepsalmen'?",
+    "choices": [
+      "Loblieder",
+      "Königspsalmen",
+      "Weisheitspsalmen",
+      "Gebete in Not und Anfechtung"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Die größte Gruppe im Psalter — Klage gehört zum Beten dazu.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wie beginnt Psalm 8?",
+    "choices": [
+      "'Danket dem Herrn'",
+      "'Herr, unser Herrscher, wie gewaltig ist dein Name'",
+      "'Der Herr ist mein Licht'",
+      "'Gott ist unsre Zuversicht'"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Ps 8,2",
+    "explanation": "Ein Schöpfungspsalm über die Würde des Menschen.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm wird oft bei Trauerfeiern gelesen?",
+    "choices": [
+      "Psalm 23",
+      "Psalm 2",
+      "Psalm 137",
+      "Psalm 110"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Ps 23,4",
+    "explanation": "'Und ob ich schon wanderte im finstern Tal, fürchte ich kein Unglück.'",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was bedeutet 'Sela', das in vielen Psalmen steht?",
+    "choices": [
+      "'Halleluja'",
+      "Der Name eines Instruments",
+      "Vermutlich eine musikalische Pause",
+      "'Amen'"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 3,3",
+    "explanation": "Die genaue Bedeutung ist bis heute unklar.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welches Gebet spricht die Gemeinde im Gottesdienst gemeinsam als Bekenntnis?",
+    "choices": [
+      "Das Vaterunser",
+      "Das Glaubensbekenntnis",
+      "Das Magnificat",
+      "Das Kyrie"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Meist das Apostolische oder das Nizänische Glaubensbekenntnis.",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was ist ein 'Fürbittgebet'?",
+    "choices": [
+      "Ein Gebet um Vergebung",
+      "Ein Danklied",
+      "Ein Gebet für andere",
+      "Ein Segensspruch"
+    ],
+    "correct_choice_index": 2,
+    "reference": "1 Tim 2,1",
+    "explanation": "Fester Bestandteil fast jedes Gottesdienstes.",
+    "rating": 850
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Segen wird häufig am Ende des Gottesdienstes gesprochen?",
+    "choices": [
+      "Das Magnificat",
+      "Das Gloria",
+      "Das Sanctus",
+      "Der Aaronitische Segen"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Num 6,24-26",
+    "explanation": "'Der Herr segne dich und behüte dich.'",
+    "rating": 1000
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was ist die 'Doxologie'?",
+    "choices": [
+      "Ein Klagelied",
+      "Ein kurzer Lobpreis auf die Dreieinigkeit",
+      "Ein Bußgebet",
+      "Eine Predigtform"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "'Ehre sei dem Vater und dem Sohn und dem Heiligen Geist.'",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welches Gebet wird beim Angelusläuten gebetet?",
+    "choices": [
+      "Der Rosenkranz",
+      "Der Engel des Herrn",
+      "Das Vaterunser",
+      "Das Te Deum"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 1,38",
+    "explanation": "Morgens, mittags und abends beim Glockenläuten.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Wofür steht das Wort 'Litanei'?",
+    "choices": [
+      "Ein langes Klagelied",
+      "Ein Wechselgebet mit gleichbleibender Antwort",
+      "Ein Segensgebet",
+      "Ein Psalmengesang"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Etwa die Allerheiligenlitanei.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Was ist das 'Jesusgebet' der Ostkirche?",
+    "choices": [
+      "Ein Gesang zur Ikone",
+      "'Herr Jesus Christus, erbarme dich meiner'",
+      "Ein Gebet vor dem Essen",
+      "Das Vaterunser auf Griechisch"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 18,13",
+    "explanation": "Wird als immerwährendes Herzensgebet wiederholt.",
+    "rating": 1150
+  },
+  {
+    "category": "psalms_prayers",
+    "prompt": "Welcher Psalm gilt als messianischer Königspsalm und wird im Neuen Testament oft zitiert?",
+    "choices": [
+      "Psalm 110",
+      "Psalm 137",
+      "Psalm 88",
+      "Psalm 42"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Ps 110,1",
+    "explanation": "'Setze dich zu meiner Rechten' — im NT auf Christus gedeutet.",
+    "rating": 1150
+  }
+]

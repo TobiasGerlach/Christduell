@@ -1,0 +1,716 @@
+[
+  {
+    "category": "parables_miracles",
+    "prompt": "Wer half in einem Gleichnis Jesu einem Überfallenen am Straßenrand?",
+    "choices": [
+      "Ein Levit",
+      "Ein Priester",
+      "Ein Pharisäer",
+      "Ein Samariter"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 10,33",
+    "explanation": "Der barmherzige Samariter — ausgerechnet ein Fremder handelt richtig.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was tat Jesus bei der Hochzeit zu Kana?",
+    "choices": [
+      "Er stillte den Sturm",
+      "Er speiste die Gäste mit Brot",
+      "Er verwandelte Wasser in Wein",
+      "Er heilte den Bräutigam"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Joh 2,1-11",
+    "explanation": "Das erste Zeichen im Johannesevangelium.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wie viele Menschen speiste Jesus mit fünf Broten und zwei Fischen?",
+    "choices": [
+      "1000",
+      "10000",
+      "5000",
+      "500"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 6,44",
+    "explanation": "Fünftausend Männer, Frauen und Kinder nicht mitgezählt.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welchen Freund erweckte Jesus nach vier Tagen aus dem Grab?",
+    "choices": [
+      "Lazarus",
+      "Bartimäus",
+      "Zachäus",
+      "Jairus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 11,43-44",
+    "explanation": "'Lazarus, komm heraus!'",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welches Gleichnis erzählt von einem Sohn, der sein Erbe verschwendet und heimkehrt?",
+    "choices": [
+      "Vom Sämann",
+      "Von den zehn Jungfrauen",
+      "Vom verlorenen Sohn",
+      "Vom reichen Kornbauern"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lk 15,11-32",
+    "explanation": "Der Vater läuft dem Heimkehrer entgegen.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was geschah, als Jesus auf dem See Gennesaret im Boot schlief?",
+    "choices": [
+      "Die Jünger fingen nichts",
+      "Das Boot sank",
+      "Er ging über das Wasser",
+      "Ein Sturm kam auf, den er stillte"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 4,37-39",
+    "explanation": "'Schweig, sei still!' — und der Sturm legte sich.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welcher Jünger versuchte, auf dem Wasser zu Jesus zu gehen?",
+    "choices": [
+      "Jakobus",
+      "Andreas",
+      "Petrus",
+      "Johannes"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 14,28-30",
+    "explanation": "Petrus ging los, bekam Angst und begann zu sinken.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Womit vergleicht Jesus das Himmelreich in einem sehr kurzen Gleichnis?",
+    "choices": [
+      "Mit einem Senfkorn",
+      "Mit einem Turm",
+      "Mit einem Weinberg",
+      "Mit einem Fischernetz"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 4,30-32",
+    "explanation": "Das kleinste Korn wird zum größten Gartengewächs.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wie viele Aussätzige heilte Jesus, von denen nur einer zurückkam?",
+    "choices": [
+      "7",
+      "10",
+      "3",
+      "12"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 17,12-19",
+    "explanation": "Nur der Samariter kehrte um, um zu danken.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was tat der reiche Mann im Gleichnis vom armen Lazarus?",
+    "choices": [
+      "Er nahm ihn auf",
+      "Er ließ ihn vor seiner Tür liegen",
+      "Er verklagte ihn",
+      "Er gab ihm Arbeit"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 16,19-21",
+    "explanation": "Der Reiche lebte in Prunk, während Lazarus vor der Tür hungerte.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welche Frau berührte den Saum von Jesu Gewand und wurde geheilt?",
+    "choices": [
+      "Maria von Magdala",
+      "Die Schwiegermutter des Petrus",
+      "Eine blutflüssige Frau",
+      "Die Witwe von Nain"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 5,25-29",
+    "explanation": "Zwölf Jahre lang krank — 'Dein Glaube hat dich gerettet.'",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wessen Tochter erweckte Jesus mit den Worten 'Talita kum'?",
+    "choices": [
+      "Des Nikodemus",
+      "Des Zachäus",
+      "Des Jairus",
+      "Des Kajaphas"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 5,41",
+    "explanation": "'Mädchen, ich sage dir, steh auf!'",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was tat der Sämann im gleichnamigen Gleichnis mit dem Saatgut?",
+    "choices": [
+      "Er wartete auf Regen",
+      "Er säte auf verschiedene Böden",
+      "Er säte nur auf gutem Boden",
+      "Er pflügte zuerst"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mk 4,3-8",
+    "explanation": "Weg, Felsen, Dornen und guter Boden stehen für Arten des Hörens.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wie viele Körbe Brot blieben nach der Speisung der Fünftausend übrig?",
+    "choices": [
+      "20",
+      "7",
+      "3",
+      "12"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 6,43",
+    "explanation": "Zwölf Körbe — mehr als genug.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was war der Blinde Bartimäus, bevor Jesus ihn heilte?",
+    "choices": [
+      "Bettler in Jericho",
+      "Zöllner in Betanien",
+      "Schriftgelehrter",
+      "Fischer in Kafarnaum"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 10,46-52",
+    "explanation": "'Sohn Davids, hab Erbarmen mit mir!'",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Womit endet das Gleichnis vom barmherzigen Samariter?",
+    "choices": [
+      "'Dann geh und handle genauso!'",
+      "'Geh hin in Frieden'",
+      "'Wer Ohren hat, der höre'",
+      "'Selig die Barmherzigen'"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 10,37",
+    "explanation": "Jesus dreht die Frage 'Wer ist mein Nächster?' um.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wer wird im Gleichnis vom Weltgericht von den Böcken getrennt?",
+    "choices": [
+      "Die Rinder",
+      "Die Lämmer",
+      "Die Tauben",
+      "Die Schafe"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 25,32-33",
+    "explanation": "'Was ihr für einen meiner geringsten Brüder getan habt, das habt ihr mir getan.'",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wie viele Jungfrauen im Gleichnis hatten Öl für ihre Lampen mitgenommen?",
+    "choices": [
+      "5 von 10",
+      "3 von 10",
+      "9 von 10",
+      "7 von 10"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 25,1-13",
+    "explanation": "Fünf kluge und fünf törichte Jungfrauen.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was tat der Hirte im Gleichnis, als ein Schaf von hundert fehlte?",
+    "choices": [
+      "Er ließ es ziehen",
+      "Er kaufte ein neues",
+      "Er suchte es",
+      "Er zählte neu"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lk 15,4",
+    "explanation": "Über einen Umkehrenden herrscht mehr Freude als über neunundneunzig Gerechte.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welches Gleichnis kritisiert einen Mann, der immer größere Scheunen baut?",
+    "choices": [
+      "Vom Schalksknecht",
+      "Vom reichen Kornbauern",
+      "Vom ungerechten Verwalter",
+      "Von den Arbeitern im Weinberg"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 12,16-21",
+    "explanation": "'Du Narr! Noch in dieser Nacht wird man dein Leben von dir zurückfordern.'",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was erhielten alle Arbeiter im Gleichnis vom Weinberg?",
+    "choices": [
+      "Nichts",
+      "Lohn nach Stunden",
+      "Doppelten Lohn",
+      "Denselben Lohn"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 20,9-10",
+    "explanation": "Auch die zur elften Stunde bekamen einen Denar — Gnade statt Verrechnung.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wen heilte Jesus, ohne ihm zu begegnen, allein auf die Bitte hin?",
+    "choices": [
+      "Den Bruder der Marta",
+      "Den Sohn des Jairus",
+      "Den Vater des Petrus",
+      "Den Diener eines Hauptmanns"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 8,5-13",
+    "explanation": "'Sprich nur ein Wort, dann wird mein Diener gesund.'",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "An welchem Teich in Jerusalem heilte Jesus einen seit 38 Jahren Gelähmten?",
+    "choices": [
+      "Gihon",
+      "Bethanien",
+      "Siloach",
+      "Betesda"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Joh 5,2-9",
+    "explanation": "Der Teich Betesda mit den fünf Säulenhallen.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was war das Besondere an der Heilung des Blindgeborenen in Joh 9?",
+    "choices": [
+      "Er schickte ihn zum Hohepriester",
+      "Er heilte ihn im Traum",
+      "Jesus machte einen Teig aus Erde und Speichel",
+      "Er heilte ihn am Ölberg"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Joh 9,6-7",
+    "explanation": "Danach musste sich der Mann im Teich Siloach waschen.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "In welchen Ort trieb Jesus die Dämonen, die 'Legion' hießen?",
+    "choices": [
+      "In die Wüste",
+      "In einen Feigenbaum",
+      "In eine Schweineherde",
+      "In das Meer selbst"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 5,9-13",
+    "explanation": "Die Herde stürzte sich den Abhang hinab in den See.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was sagte Jesus zu dem Feigenbaum ohne Früchte?",
+    "choices": [
+      "Er segnete ihn",
+      "Er düngte ihn",
+      "Er verfluchte ihn",
+      "Er beschnitt ihn"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 11,14",
+    "explanation": "Am nächsten Morgen war er verdorrt — ein Zeichenhandeln gegen fruchtlose Frömmigkeit.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wer betete im Tempel: 'Gott, sei mir Sünder gnädig'?",
+    "choices": [
+      "Der Zöllner",
+      "Der Hohepriester",
+      "Der Pharisäer",
+      "Der Schriftgelehrte"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 18,13",
+    "explanation": "Er ging gerechtfertigt nach Hause, nicht der Pharisäer.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welches Gleichnis handelt von einem König, der seinem Knecht eine riesige Schuld erlässt?",
+    "choices": [
+      "Von den Talenten",
+      "Von den bösen Winzern",
+      "Vom klugen Verwalter",
+      "Vom unbarmherzigen Knecht"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 18,23-35",
+    "explanation": "Der Begnadigte lässt selbst keine Gnade walten.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was vertrauten die Herren im Gleichnis von den Talenten ihren Knechten an?",
+    "choices": [
+      "Land",
+      "Weinberge",
+      "Schafe",
+      "Geld"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 25,14-30",
+    "explanation": "Fünf, zwei und ein Talent — wer nichts wagt, verliert.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welche Speisung wird neben den Fünftausend im Markusevangelium noch berichtet?",
+    "choices": [
+      "Die Speisung der Zweitausend",
+      "Die Speisung der Dreitausend",
+      "Die Speisung der Zehntausend",
+      "Die Speisung der Viertausend"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 8,1-9",
+    "explanation": "Sieben Brote und einige Fische, sieben Körbe blieben übrig.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was geschah bei der Verklärung Jesu auf dem Berg?",
+    "choices": [
+      "Die Jünger wurden blind",
+      "Der Berg bebte",
+      "Mose und Elija erschienen",
+      "Ein Engel brachte Brot"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 9,2-4",
+    "explanation": "Jesu Kleider wurden strahlend weiß.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wen heilte Jesus am Sabbat, was die Pharisäer erzürnte?",
+    "choices": [
+      "Einen Blinden in Jericho",
+      "Den Diener des Hohepriesters",
+      "Zehn Aussätzige",
+      "Einen Mann mit verdorrter Hand"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 3,1-6",
+    "explanation": "Jesus fragte, ob man am Sabbat Gutes tun dürfe.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wem sagte Jesus 'Heute noch wirst du mit mir im Paradies sein'?",
+    "choices": [
+      "Judas",
+      "Einem mitgekreuzigten Verbrecher",
+      "Dem Hauptmann",
+      "Petrus"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 23,43",
+    "explanation": "Dem sogenannten guten Schächer.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was tat Jesus mit dem Ohr des Dieners, das ein Jünger abgeschlagen hatte?",
+    "choices": [
+      "Er verband es",
+      "Er ignorierte es",
+      "Er heilte es",
+      "Er tadelte den Diener"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lk 22,51",
+    "explanation": "Selbst bei der Verhaftung heilt er noch.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welchen Fischzug erlebten die Jünger nach einer erfolglosen Nacht?",
+    "choices": [
+      "Einen Fisch mit Münze",
+      "Gar keinen",
+      "Ein Netz voller Fische",
+      "Sieben kleine Fische"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lk 5,4-6",
+    "explanation": "Auf Jesu Wort hin wurden die Netze fast zerrissen.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "In welchem Fisch fand Petrus eine Münze für die Tempelsteuer?",
+    "choices": [
+      "Im ersten, den er fing",
+      "Im größten des Fangs",
+      "In keinem, er lieh Geld",
+      "Im letzten des Tages"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 17,27",
+    "explanation": "Ein ungewöhnliches Wunder, nur bei Matthäus.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Womit vergleicht Jesus das Reich Gottes, das eine Frau unter Mehl mischt?",
+    "choices": [
+      "Mit Salz",
+      "Mit Öl",
+      "Mit Honig",
+      "Mit Sauerteig"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 13,20-21",
+    "explanation": "Ein wenig Sauerteig durchsäuert den ganzen Teig.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was fand ein Mann im Acker, sodass er alles verkaufte, um ihn zu kaufen?",
+    "choices": [
+      "Einen Schatz",
+      "Eine Quelle",
+      "Ein Grab",
+      "Einen Weinstock"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 13,44",
+    "explanation": "Das Reich Gottes ist alles wert, was man hat.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wen stellte Jesus als Vorbild hin, als er sagte, sie habe mehr gegeben als alle anderen?",
+    "choices": [
+      "Eine arme Witwe",
+      "Maria von Betanien",
+      "Marta",
+      "Die Frau am Jakobsbrunnen"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 12,41-44",
+    "explanation": "Zwei kleine Münzen — ihr ganzer Lebensunterhalt.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welcher Frau am Brunnen offenbarte sich Jesus als Messias?",
+    "choices": [
+      "Einer Römerin",
+      "Einer Witwe aus Nain",
+      "Einer Kanaanäerin",
+      "Einer Samariterin"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Joh 4,25-26",
+    "explanation": "Das längste Gespräch Jesu mit einem einzelnen Menschen.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was sagte Jesus zu der Frau, die man beim Ehebruch ertappt hatte?",
+    "choices": [
+      "'Auch ich verurteile dich nicht'",
+      "'Bring ein Opfer dar'",
+      "'Deine Sünde ist groß'",
+      "'Geh zu den Priestern'"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 8,11",
+    "explanation": "Zuvor: 'Wer von euch ohne Sünde ist, werfe den ersten Stein.'",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welche Bitte einer nichtjüdischen Frau erhörte Jesus wegen ihres Glaubens?",
+    "choices": [
+      "Brot für ihr Dorf",
+      "Die Heilung ihres Mannes",
+      "Wein für ein Fest",
+      "Die Heilung ihrer Tochter"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 7,25-30",
+    "explanation": "Die Syrophönizierin: 'Auch die Hunde essen von den Brotresten.'",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was tat Jesus im Tempel mit den Tischen der Geldwechsler?",
+    "choices": [
+      "Er verhüllte sie",
+      "Er segnete sie",
+      "Er stieß sie um",
+      "Er kaufte sie"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 11,15",
+    "explanation": "'Mein Haus soll ein Haus des Gebetes sein.'",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wen fragte Jesus dreimal 'Liebst du mich?'",
+    "choices": [
+      "Johannes",
+      "Petrus",
+      "Thomas",
+      "Andreas"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Joh 21,15-17",
+    "explanation": "Dreimal gefragt — so oft, wie Petrus ihn verleugnet hatte.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welche zwei Jünger erkannten Jesus beim Brotbrechen?",
+    "choices": [
+      "Petrus und Johannes",
+      "Philippus und Natanaël",
+      "Jakobus und Johannes",
+      "Die Emmausjünger"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 24,30-31",
+    "explanation": "Auf dem Weg nach Emmaus brannte ihnen das Herz.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was war das Zeichen, an dem Judas Jesus auslieferte?",
+    "choices": [
+      "Ein Handschlag",
+      "Eine Fackel",
+      "Ein Ruf",
+      "Ein Kuss"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 14,44-45",
+    "explanation": "Der Judaskuss in Getsemani.",
+    "rating": 850
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Was sagte Jesus über das Senfkorn und den Glauben?",
+    "choices": [
+      "Es müsse gekocht werden",
+      "Es wachse nie",
+      "Damit könne man Berge versetzen",
+      "Es sei nutzlos allein"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 17,20",
+    "explanation": "Schon so wenig Glaube genügt.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welches Wunder wird bei allen vier Evangelisten berichtet?",
+    "choices": [
+      "Der Fischzug des Petrus",
+      "Die Auferweckung des Lazarus",
+      "Die Speisung der Fünftausend",
+      "Die Hochzeit zu Kana"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 6; Mt 14; Lk 9; Joh 6",
+    "explanation": "Das einzige Wunder in allen vier Evangelien.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wen heilte Jesus in Kafarnaum, nachdem man das Dach abgedeckt hatte?",
+    "choices": [
+      "Einen Stummen",
+      "Einen Aussätzigen",
+      "Einen Gelähmten",
+      "Einen Blinden"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 2,3-5",
+    "explanation": "Vier Männer ließen den Gelähmten durchs Dach hinab.",
+    "rating": 1000
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Welches Gleichnis handelt von Winzern, die den Sohn des Besitzers töten?",
+    "choices": [
+      "Von den zwei Söhnen",
+      "Vom Feigenbaum",
+      "Von den bösen Winzern",
+      "Vom großen Gastmahl"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 12,1-9",
+    "explanation": "Eine Anspielung auf Jesu eigenes Schicksal.",
+    "rating": 1150
+  },
+  {
+    "category": "parables_miracles",
+    "prompt": "Wer wurde in Nain aus dem Sarg auferweckt?",
+    "choices": [
+      "Die Tochter des Jairus",
+      "Der Bruder der Marta",
+      "Ein römischer Soldat",
+      "Der einzige Sohn einer Witwe"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 7,11-15",
+    "explanation": "Jesus sah die Witwe und hatte Mitleid.",
+    "rating": 1150
+  }
+]

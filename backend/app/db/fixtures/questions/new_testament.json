@@ -1,0 +1,702 @@
+[
+  {
+    "category": "new_testament",
+    "prompt": "In welcher Stadt wurde Jesus geboren?",
+    "choices": [
+      "Kafarnaum",
+      "Jerusalem",
+      "Betlehem",
+      "Nazaret"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Lk 2,4-7",
+    "explanation": "Betlehem, die Stadt Davids.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie hieß die Mutter Jesu?",
+    "choices": [
+      "Maria",
+      "Hanna",
+      "Marta",
+      "Elisabet"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 1,27",
+    "explanation": "Maria aus Nazaret.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer taufte Jesus im Jordan?",
+    "choices": [
+      "Elija",
+      "Johannes der Täufer",
+      "Petrus",
+      "Andreas"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mk 1,9",
+    "explanation": "Johannes der Täufer taufte ihn im Jordan.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie viele Apostel berief Jesus?",
+    "choices": [
+      "10",
+      "7",
+      "12",
+      "24"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 3,14",
+    "explanation": "Zwölf — wie die zwölf Stämme Israels.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer verriet Jesus für dreißig Silberstücke?",
+    "choices": [
+      "Thomas",
+      "Petrus",
+      "Matthäus",
+      "Judas Iskariot"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 26,14-16",
+    "explanation": "Judas Iskariot verriet ihn an die Hohepriester.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie hieß der Jünger, der Jesus dreimal verleugnete?",
+    "choices": [
+      "Philippus",
+      "Johannes",
+      "Jakobus",
+      "Petrus"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 22,54-62",
+    "explanation": "Petrus verleugnete ihn, bevor der Hahn krähte.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "An welchem Ort wurde Jesus gekreuzigt?",
+    "choices": [
+      "Betanien",
+      "Getsemani",
+      "Golgota",
+      "Ölberg"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Joh 19,17",
+    "explanation": "Golgota, die 'Schädelstätte'.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "An welchem Tag der Woche fanden die Frauen das Grab leer?",
+    "choices": [
+      "Am Sabbat",
+      "Am ersten Tag der Woche",
+      "Am Rüsttag",
+      "Am dritten Tag nach dem Sabbat"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mk 16,2",
+    "explanation": "Deshalb feiern Christen den Sonntag als Tag der Auferstehung.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie viele Evangelien stehen im Neuen Testament?",
+    "choices": [
+      "4",
+      "5",
+      "7",
+      "3"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Matthäus, Markus, Lukas und Johannes.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Beruf wird Josef, dem Mann Marias, zugeschrieben?",
+    "choices": [
+      "Töpfer",
+      "Hirte",
+      "Fischer",
+      "Zimmermann"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 13,55",
+    "explanation": "Jesus wird als 'der Sohn des Zimmermanns' bezeichnet.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer wusch beim letzten Abendmahl den Jüngern die Füße?",
+    "choices": [
+      "Johannes",
+      "Judas",
+      "Jesus",
+      "Petrus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Joh 13,4-5",
+    "explanation": "Jesus tat den Sklavendienst als Zeichen des Dienens.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher römische Statthalter verurteilte Jesus?",
+    "choices": [
+      "Pontius Pilatus",
+      "Felix",
+      "Herodes Antipas",
+      "Festus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 15,15",
+    "explanation": "Pontius Pilatus gab dem Drängen nach.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wem erschien der Auferstandene laut Johannesevangelium zuerst?",
+    "choices": [
+      "Thomas",
+      "Jakobus",
+      "Petrus",
+      "Maria von Magdala"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Joh 20,14-16",
+    "explanation": "Maria von Magdala hielt ihn zunächst für den Gärtner.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Jünger wollte die Wundmale sehen, bevor er glaubte?",
+    "choices": [
+      "Philippus",
+      "Bartholomäus",
+      "Andreas",
+      "Thomas"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Joh 20,25",
+    "explanation": "Daher die Redensart vom 'ungläubigen Thomas'.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie hieß der Apostel, der zuvor Christen verfolgte?",
+    "choices": [
+      "Silas",
+      "Barnabas",
+      "Paulus",
+      "Timotheus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 9,1-5",
+    "explanation": "Saulus wurde vor Damaskus zum Apostel Paulus.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "In welcher Stadt wurden die Jünger zuerst 'Christen' genannt?",
+    "choices": [
+      "Korinth",
+      "Jerusalem",
+      "Antiochia",
+      "Ephesus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 11,26",
+    "explanation": "In Antiochia entstand der Name.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer schrieb die Apostelgeschichte nach kirchlicher Überlieferung?",
+    "choices": [
+      "Johannes",
+      "Markus",
+      "Paulus",
+      "Lukas"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Apg 1,1",
+    "explanation": "Der Verfasser widmet sie wie das Lukasevangelium dem Theophilus.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie hießen die Schwestern des Lazarus?",
+    "choices": [
+      "Maria und Marta",
+      "Maria und Salome",
+      "Marta und Johanna",
+      "Salome und Johanna"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 11,1",
+    "explanation": "Maria und Marta aus Betanien.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Zöllner stieg auf einen Baum, um Jesus zu sehen?",
+    "choices": [
+      "Matthäus",
+      "Levi",
+      "Bartimäus",
+      "Zachäus"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 19,1-4",
+    "explanation": "Zachäus, der kleine Oberzöllner von Jericho.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer war der erste Märtyrer der Christenheit?",
+    "choices": [
+      "Paulus",
+      "Jakobus",
+      "Stephanus",
+      "Petrus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 7,54-60",
+    "explanation": "Stephanus wurde gesteinigt, Saulus sah zu.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welches Buch beschließt das Neue Testament?",
+    "choices": [
+      "Judasbrief",
+      "3. Johannesbrief",
+      "Offenbarung",
+      "Hebräerbrief"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Offb 22,21",
+    "explanation": "Die Offenbarung des Johannes.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie viele Bücher umfasst das Neue Testament?",
+    "choices": [
+      "24",
+      "21",
+      "27",
+      "39"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "27 Schriften, von den Evangelien bis zur Offenbarung.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer sprach das Bekenntnis 'Du bist der Messias, der Sohn des lebendigen Gottes'?",
+    "choices": [
+      "Natanaël",
+      "Andreas",
+      "Johannes",
+      "Petrus"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 16,16",
+    "explanation": "Das Petrusbekenntnis bei Cäsarea Philippi.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Jünger war der Bruder des Petrus?",
+    "choices": [
+      "Philippus",
+      "Thaddäus",
+      "Jakobus",
+      "Andreas"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Joh 1,40-41",
+    "explanation": "Andreas führte Petrus zu Jesus.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "An wen richtet sich der längste Brief des Paulus?",
+    "choices": [
+      "die Epheser",
+      "die Römer",
+      "die Korinther",
+      "die Galater"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Röm 1,7",
+    "explanation": "Der Römerbrief ist der umfangreichste und theologisch dichteste.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer war die Purpurhändlerin, die Paulus in Philippi aufnahm?",
+    "choices": [
+      "Priska",
+      "Tabita",
+      "Phöbe",
+      "Lydia"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Apg 16,14-15",
+    "explanation": "Lydia war die erste bekannte Christin in Europa.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Hohepriester verhörte Jesus vor der Auslieferung an Pilatus?",
+    "choices": [
+      "Gamaliel",
+      "Zacharias",
+      "Kajaphas",
+      "Hannas"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 26,57",
+    "explanation": "Kajaphas war amtierender Hoherpriester, sein Schwiegervater war Hannas.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie hieß der Gelehrte, bei dem Paulus nach eigener Aussage studierte?",
+    "choices": [
+      "Gamaliel",
+      "Nikodemus",
+      "Hillel",
+      "Schammai"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 22,3",
+    "explanation": "Gamaliel, ein angesehener Pharisäer im Hohen Rat.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer stellte Paulus in Athen den 'unbekannten Gott' als den wahren Gott vor?",
+    "choices": [
+      "Silas im Gefängnis",
+      "Apollos im Hafen",
+      "Barnabas in der Synagoge",
+      "Paulus selbst auf dem Areopag"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Apg 17,22-23",
+    "explanation": "Die Areopagrede knüpft an einen Altar 'einem unbekannten Gott' an.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "An welchen Mitarbeiter schrieb Paulus wegen eines entlaufenen Sklaven?",
+    "choices": [
+      "Philemon",
+      "Timotheus",
+      "Titus",
+      "Tychikus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Phlm 1,10",
+    "explanation": "Paulus bittet Philemon, Onesimus als Bruder aufzunehmen.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Jünger ersetzte Judas im Kreis der Zwölf?",
+    "choices": [
+      "Barnabas",
+      "Stephanus",
+      "Josef Barsabbas",
+      "Matthias"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Apg 1,26",
+    "explanation": "Das Los fiel auf Matthias.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie hieß der Kämmerer, den Philippus auf der Straße nach Gaza taufte?",
+    "choices": [
+      "ein syrischer Kaufmann",
+      "ein zyprischer Statthalter",
+      "ein äthiopischer Hofbeamter",
+      "ein römischer Hauptmann"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 8,27-38",
+    "explanation": "Der Finanzverwalter der Königin Kandake las gerade Jesaja.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welche sieben Gemeinden werden in der Offenbarung angeschrieben?",
+    "choices": [
+      "Gemeinden in Kleinasien",
+      "Gemeinden in Griechenland",
+      "Gemeinden in Judäa",
+      "Gemeinden in Ägypten"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Offb 1,11",
+    "explanation": "Ephesus, Smyrna, Pergamon, Thyatira, Sardes, Philadelphia und Laodizea.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer wird als 'der geliebte Arzt' bezeichnet?",
+    "choices": [
+      "Titus",
+      "Demas",
+      "Markus",
+      "Lukas"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Kol 4,14",
+    "explanation": "Paulus grüßt so seinen Mitarbeiter Lukas.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welches Konzil in der Apostelgeschichte klärte den Umgang mit Heidenchristen?",
+    "choices": [
+      "Konzil von Cäsarea",
+      "Versammlung in Ephesus",
+      "Synode von Antiochia",
+      "Apostelkonzil in Jerusalem"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Apg 15,1-29",
+    "explanation": "Heidenchristen mussten sich nicht beschneiden lassen.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie hieß das Ehepaar, das Paulus in Korinth beherbergte und mit ihm Zelte machte?",
+    "choices": [
+      "Andronikus und Junia",
+      "Aquila und Priszilla",
+      "Ananias und Saphira",
+      "Philemon und Aphia"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Apg 18,2-3",
+    "explanation": "Aquila und Priszilla, aus Rom vertrieben, teilten Handwerk und Mission.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Evangelist beginnt sein Evangelium mit 'Im Anfang war das Wort'?",
+    "choices": [
+      "Markus",
+      "Johannes",
+      "Matthäus",
+      "Lukas"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Joh 1,1",
+    "explanation": "Der Johannesprolog deutet Jesus als das ewige Wort Gottes.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welches Evangelium gilt als das älteste und kürzeste?",
+    "choices": [
+      "Lukas",
+      "Johannes",
+      "Markus",
+      "Matthäus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Markus entstand vermutlich um 70 n. Chr.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer sprach 'Siehe, ich bin die Magd des Herrn'?",
+    "choices": [
+      "Hanna",
+      "Maria",
+      "Elisabet",
+      "Marta"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 1,38",
+    "explanation": "Marias Antwort auf die Botschaft des Engels Gabriel.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welches Gebet lehrte Jesus seine Jünger?",
+    "choices": [
+      "Das Vaterunser",
+      "Das Benedictus",
+      "Das Magnificat",
+      "Das Nunc dimittis"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 6,9-13",
+    "explanation": "Das Vaterunser steht in der Bergpredigt.",
+    "rating": 850
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer trug das Kreuz Jesu ein Stück des Weges?",
+    "choices": [
+      "Josef von Arimathäa",
+      "Barabbas",
+      "Simon von Zyrene",
+      "Nikodemus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 15,21",
+    "explanation": "Simon von Zyrene wurde von den Soldaten dazu gezwungen.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "In wessen Grab wurde Jesus gelegt?",
+    "choices": [
+      "Lazarus",
+      "Josef von Arimathäa",
+      "Simon der Aussätzige",
+      "Nikodemus"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 27,57-60",
+    "explanation": "Josef von Arimathäa stellte sein neues Felsengrab zur Verfügung.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Gefangene wurde statt Jesus freigelassen?",
+    "choices": [
+      "Bartimäus",
+      "Barnabas",
+      "Bartholomäus",
+      "Barabbas"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mk 15,15",
+    "explanation": "Pilatus gab dem Passa-Brauch entsprechend Barabbas frei.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie viele Tage lag zwischen Auferstehung und Himmelfahrt Jesu?",
+    "choices": [
+      "40",
+      "3",
+      "7",
+      "50"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 1,3",
+    "explanation": "Vierzig Tage erschien er den Jüngern.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer wurde in Damaskus zu Paulus gesandt, damit er wieder sehen konnte?",
+    "choices": [
+      "Ananias",
+      "Barnabas",
+      "Stephanus",
+      "Philippus"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 9,17",
+    "explanation": "Ananias legte ihm die Hände auf.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wie heißt der Berg, von dem Jesus in den Himmel aufgenommen wurde?",
+    "choices": [
+      "Ölberg",
+      "Karmel",
+      "Tabor",
+      "Zion"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 1,12",
+    "explanation": "Der Ölberg östlich von Jerusalem.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer sang das Magnificat, den Lobgesang 'Meine Seele preist die Größe des Herrn'?",
+    "choices": [
+      "Elisabet",
+      "Maria",
+      "Mirjam",
+      "Hanna"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Lk 1,46-55",
+    "explanation": "Maria bei der Begegnung mit Elisabet.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welches Tier steht sinnbildlich für den Evangelisten Markus?",
+    "choices": [
+      "Stier",
+      "Mensch",
+      "Löwe",
+      "Adler"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Die vier Wesen aus Ez 1 und Offb 4 wurden den Evangelisten zugeordnet.",
+    "rating": 1150
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Wer war der Hauptmann, der unter dem Kreuz bekannte: 'Wahrhaftig, dieser Mensch war Gottes Sohn'?",
+    "choices": [
+      "Pilatus",
+      "Nikodemus",
+      "ein römischer Hauptmann",
+      "Josef von Arimathäa"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mk 15,39",
+    "explanation": "Ausgerechnet ein römischer Soldat spricht das Bekenntnis.",
+    "rating": 1000
+  },
+  {
+    "category": "new_testament",
+    "prompt": "Welcher Brief des Neuen Testaments betont, dass Glaube ohne Werke tot ist?",
+    "choices": [
+      "Judasbrief",
+      "1. Petrusbrief",
+      "Jakobusbrief",
+      "Hebräerbrief"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Jak 2,17",
+    "explanation": "Der Jakobusbrief drängt auf die Tat.",
+    "rating": 1150
+  }
+]

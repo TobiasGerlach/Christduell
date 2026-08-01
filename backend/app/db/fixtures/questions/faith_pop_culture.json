@@ -1,0 +1,702 @@
+[
+  {
+    "category": "faith_pop_culture",
+    "prompt": "In welcher Filmreihe spielt die Suche nach dem Heiligen Gral eine zentrale Rolle?",
+    "choices": [
+      "James Bond",
+      "Star Trek",
+      "Indiana Jones",
+      "Jurassic Park"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "'Indiana Jones und der letzte Kreuzzug' von 1989.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Sängerin wurde mit dem gospelbeeinflussten Hit 'Like a Prayer' bekannt?",
+    "choices": [
+      "Cher",
+      "Tina Turner",
+      "Whitney Houston",
+      "Madonna"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Das Video von 1989 löste kirchliche Proteste aus.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "In welchem Disney-Film wird 'Colors of the Wind' gesungen?",
+    "choices": [
+      "Mulan",
+      "Aladdin",
+      "Der König der Löwen",
+      "Pocahontas"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Das Lied greift Schöpfung und Ehrfurcht vor der Natur auf.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche irische Band wird mit Sänger Bono und spirituellen Texten verbunden?",
+    "choices": [
+      "The Cranberries",
+      "Snow Patrol",
+      "U2",
+      "Coldplay"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Songs wie 'I Still Haven't Found What I'm Looking For' zitieren Psalmen.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "In welchem Musical werden Jesu letzte Tage aus Judas' Perspektive erzählt?",
+    "choices": [
+      "Godspell",
+      "Les Misérables",
+      "Hair",
+      "Jesus Christ Superstar"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Musik von Andrew Lloyd Webber, Text von Tim Rice.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Film von Mel Gibson zeigt die letzten Stunden Jesu?",
+    "choices": [
+      "König der Könige",
+      "Ben Hur",
+      "Die Passion Christi",
+      "Das Gewand"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "2004 erschienen, in Aramäisch und Latein gedreht.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "In welcher Komödie wird Whoopi Goldberg als Sängerin in einem Kloster versteckt?",
+    "choices": [
+      "Dogma",
+      "Sister Act",
+      "Nonnen auf der Flucht",
+      "Bruce Allmächtig"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "1992, mit Gospelversionen klassischer Kirchenlieder.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Roman von Umberto Eco spielt in einem mittelalterlichen Kloster?",
+    "choices": [
+      "Die Säulen der Erde",
+      "Das Foucaultsche Pendel",
+      "Der Name der Rose",
+      "Der Medicus"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Verfilmt 1986 mit Sean Connery.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Roman von Ken Follett erzählt vom Bau einer Kathedrale?",
+    "choices": [
+      "Die Päpstin",
+      "Die Säulen der Erde",
+      "Der Name der Rose",
+      "Der Schwarm"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Spielt im England des 12. Jahrhunderts.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Wer schrieb 'Die Chroniken von Narnia' mit ihren christlichen Anklängen?",
+    "choices": [
+      "C. S. Lewis",
+      "Michael Ende",
+      "J. R. R. Tolkien",
+      "Roald Dahl"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Löwe Aslan wird oft als Christusfigur gelesen.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Autor des 'Herrn der Ringe' war überzeugter Katholik und Freund von C. S. Lewis?",
+    "choices": [
+      "H. G. Wells",
+      "George Orwell",
+      "Aldous Huxley",
+      "J. R. R. Tolkien"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Er nannte sein Werk selbst 'grundlegend religiös und katholisch'.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "In welchem Film spielt Jim Carrey einen Mann, der Gottes Aufgaben übernimmt?",
+    "choices": [
+      "Der Grinch",
+      "Bruce Allmächtig",
+      "Der Dummschwätzer",
+      "Die Truman Show"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Morgan Freeman spielt darin Gott.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Monty-Python-Komödie parodiert einen Zeitgenossen Jesu?",
+    "choices": [
+      "Der Sinn des Lebens",
+      "Das Leben des Brian",
+      "Die Ritter der Kokosnuss",
+      "Das Wunder von Bern"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "1979 erschienen, in mehreren Ländern zunächst verboten.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welches Oratorium von Händel enthält das 'Halleluja'?",
+    "choices": [
+      "Die Schöpfung",
+      "Judas Maccabaeus",
+      "Elias",
+      "Der Messias"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "1741 komponiert, das Halleluja beschließt den zweiten Teil.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Wer komponierte die Matthäus-Passion?",
+    "choices": [
+      "Joseph Haydn",
+      "Johann Sebastian Bach",
+      "Felix Mendelssohn",
+      "Georg Friedrich Händel"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "1727 in Leipzig uraufgeführt.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Wer komponierte das Oratorium 'Die Schöpfung'?",
+    "choices": [
+      "Joseph Haydn",
+      "Bach",
+      "Beethoven",
+      "Mozart"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Uraufgeführt 1798 in Wien.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "In welchem Jahr entstand das Lied 'Stille Nacht, heilige Nacht'?",
+    "choices": [
+      "1848",
+      "1900",
+      "1750",
+      "1818"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Text von Joseph Mohr, Melodie von Franz Xaver Gruber, in Oberndorf bei Salzburg.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Wer schrieb den Text des Liedes 'Amazing Grace'?",
+    "choices": [
+      "John Newton",
+      "Charles Wesley",
+      "Martin Luther",
+      "Isaac Watts"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ein ehemaliger Sklavenhändler, der zum Prediger wurde.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welches Kirchenlied schrieb Martin Luther nach Psalm 46?",
+    "choices": [
+      "Lobe den Herren",
+      "Großer Gott, wir loben dich",
+      "Ein feste Burg ist unser Gott",
+      "Nun danket alle Gott"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ps 46",
+    "explanation": "Es gilt als die 'Marseillaise der Reformation'.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher US-Musiker sang trotz seines rauen Images viele Gospelsongs, darunter 'Personal Jesus'?",
+    "choices": [
+      "Neil Young",
+      "Bob Dylan",
+      "Elvis Presley",
+      "Johnny Cash"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Seine späten American Recordings enthalten zahlreiche geistliche Lieder.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Wessen Song 'Hallelujah' wurde durch zahllose Coverversionen weltbekannt?",
+    "choices": [
+      "Bob Dylan",
+      "Nick Cave",
+      "Leonard Cohen",
+      "Tom Waits"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1984 veröffentlicht, bekannt vor allem in der Version von Jeff Buckley.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welches Genre entstand aus den geistlichen Liedern afroamerikanischer Gemeinden?",
+    "choices": [
+      "Gospel",
+      "Country",
+      "Techno",
+      "Blues allein"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Aus Spirituals und Gospel entwickelte sich viel populäre Musik.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Monumentalfilm von 1959 spielt zur Zeit Jesu und gewann elf Oscars?",
+    "choices": [
+      "Spartacus",
+      "Cleopatra",
+      "Ben Hur",
+      "Quo Vadis"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Jesus erscheint darin nur am Rand und nie von vorn.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Animationsfilm erzählt die Geschichte des Mose?",
+    "choices": [
+      "Die Bibel",
+      "Joseph",
+      "Der Prinz von Ägypten",
+      "Moses und der Pharao"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Ex 1-15",
+    "explanation": "1998 von DreamWorks produziert.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Roman von Dan Brown löste Debatten über den Heiligen Gral aus?",
+    "choices": [
+      "Inferno",
+      "Sakrileg (The Da Vinci Code)",
+      "Illuminati",
+      "Diabolus"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Die Kirche kritisierte die historischen Behauptungen des Romans scharf.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche TV-Serie erzählt seit 2017 crowdfinanziert das Leben Jesu?",
+    "choices": [
+      "The Bible",
+      "A.D.",
+      "The Chosen",
+      "Jesus of Nazareth"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Sie gilt als eines der erfolgreichsten Crowdfunding-Projekte der Filmgeschichte.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Film von Martin Scorsese behandelt Jesuitenmissionare im Japan des 17. Jahrhunderts?",
+    "choices": [
+      "Kundun",
+      "Silence",
+      "Gangs of New York",
+      "The Irishman"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Nach dem Roman von Shūsaku Endō.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Film erzählt von zwei Päpsten im Gespräch?",
+    "choices": [
+      "Konklave",
+      "Die zwei Päpste",
+      "Habemus Papam",
+      "Der Name der Rose"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "2019, mit Anthony Hopkins und Jonathan Pryce.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche berühmte Deckenmalerei schuf Michelangelo im Vatikan?",
+    "choices": [
+      "Die Cappella Brancacci",
+      "Das Jüngste Gericht in Florenz",
+      "Die Stanzen Raffaels",
+      "Die Sixtinische Kapelle"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Darunter die Erschaffung Adams.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Wer malte 'Das letzte Abendmahl' in Mailand?",
+    "choices": [
+      "Tizian",
+      "Raffael",
+      "Michelangelo",
+      "Leonardo da Vinci"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Joh 13",
+    "explanation": "Ein Wandbild im Refektorium von Santa Maria delle Grazie.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche berühmte Skulptur Michelangelos zeigt Maria mit dem toten Jesus?",
+    "choices": [
+      "Die Pietà",
+      "Der Moses",
+      "Der David",
+      "Die Nacht"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Sie steht im Petersdom in Rom.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Kathedrale in Barcelona wurde von Antoni Gaudí entworfen?",
+    "choices": [
+      "Die Alhambra",
+      "Die Sagrada Família",
+      "Santiago de Compostela",
+      "Die Kathedrale von Sevilla"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Der Bau begann 1882 und dauert bis heute an.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Kathedrale brannte im April 2019 in Paris?",
+    "choices": [
+      "Saint-Sulpice",
+      "Sacré-Cœur",
+      "Sainte-Chapelle",
+      "Notre-Dame"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Der Dachstuhl und der Vierungsturm wurden zerstört.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Christusstatue überragt Rio de Janeiro?",
+    "choices": [
+      "Der Christus der Anden",
+      "Christus der Erlöser von Lissabon",
+      "Christus von Świebodzin",
+      "Cristo Redentor"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "1931 eingeweiht, 30 Meter hoch.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Kirche ist das größte Kirchengebäude der Welt?",
+    "choices": [
+      "Die Kathedrale von Sevilla",
+      "Der Petersdom in Rom",
+      "Der Kölner Dom",
+      "Die Hagia Sophia"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Gemessen an der Innenfläche.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche deutsche Kathedrale war jahrzehntelang das höchste Gebäude der Welt?",
+    "choices": [
+      "Die Frauenkirche Dresden",
+      "Der Kölner Dom",
+      "Der Freiburger Münster",
+      "Der Ulmer Münster"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Nach der Vollendung 1880, für vier Jahre.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Kirche hat den höchsten Kirchturm der Welt?",
+    "choices": [
+      "Das Ulmer Münster",
+      "Der Kölner Dom",
+      "Die Sagrada Família",
+      "Notre-Dame"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "161,5 Meter — die Sagrada Família könnte ihn nach Fertigstellung übertreffen.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welches Weihnachtslied stammt von Charles Wesley?",
+    "choices": [
+      "Silent Night",
+      "O Tannenbaum",
+      "Hark! The Herald Angels Sing",
+      "Jingle Bells"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Wesley war Mitbegründer des Methodismus und Dichter tausender Lieder.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Fernsehsendung überträgt in Deutschland sonntags regelmäßig Gottesdienste?",
+    "choices": [
+      "Wetten, dass..?",
+      "Das ZDF-Fernsehgottesdienst-Format",
+      "Tagesschau",
+      "Die Sendung mit der Maus"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "ARD und ZDF übertragen abwechselnd sonntags Gottesdienste.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Comicfigur der Simpsons ist als frommer Nachbar bekannt?",
+    "choices": [
+      "Krusty",
+      "Apu",
+      "Barney Gumble",
+      "Ned Flanders"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Sein 'Diddly' gehört zu den bekanntesten Running Gags der Serie.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Horrorfilm von 1973 machte das Thema Exorzismus populär?",
+    "choices": [
+      "Poltergeist",
+      "Das Omen",
+      "Rosemaries Baby",
+      "Der Exorzist"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Nach dem Roman von William Peter Blatty.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "In welchem Film wird eine Chocolaterie in der Fastenzeit zur Provokation?",
+    "choices": [
+      "Chocolat",
+      "Amélie",
+      "Babettes Fest",
+      "Ratatouille"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "2000, mit Juliette Binoche.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher dänische Film erzählt von einem Festmahl in einer strengen Glaubensgemeinschaft?",
+    "choices": [
+      "Babettes Fest",
+      "Die Jagd",
+      "Das Fest",
+      "Adams Äpfel"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Oscar 1988 für den besten fremdsprachigen Film.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welche Band veröffentlichte das Album 'The Joshua Tree'?",
+    "choices": [
+      "Simple Minds",
+      "U2",
+      "Coldplay",
+      "Genesis"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Der Titel spielt auf den Josuabaum an, benannt von Mormonensiedlern.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Rapper veröffentlichte den Song 'Jesus Walks'?",
+    "choices": [
+      "Kanye West",
+      "Snoop Dogg",
+      "Eminem",
+      "Jay-Z"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "2004, ein Grammy-prämierter Song über Glauben im Hip-Hop.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welches biblische Motiv prägt den Filmtitel 'Sieben' (Se7en)?",
+    "choices": [
+      "Die sieben Siegel",
+      "Die sieben Todsünden",
+      "Die sieben Sakramente",
+      "Die sieben Schöpfungstage"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Der Mörder inszeniert seine Taten nach den Todsünden.",
+    "rating": 1000
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Roman von John Steinbeck trägt einen Titel aus dem Buch Genesis?",
+    "choices": [
+      "Die Straße",
+      "Früchte des Zorns",
+      "Von Mäusen und Menschen",
+      "Jenseits von Eden"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 4,16",
+    "explanation": "Der Titel 'East of Eden' spielt auf das Land Nod östlich von Eden an.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welches Musical von Stephen Schwartz vertont Gleichnisse des Matthäusevangeliums?",
+    "choices": [
+      "Godspell",
+      "Cats",
+      "Evita",
+      "Hair"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "1971 uraufgeführt, im selben Jahr wie Jesus Christ Superstar.",
+    "rating": 1150
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welcher Weihnachtsklassiker von Charles Dickens erzählt von der Wandlung eines Geizhalses?",
+    "choices": [
+      "David Copperfield",
+      "Oliver Twist",
+      "Eine Weihnachtsgeschichte",
+      "Große Erwartungen"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "1843 erschienen, mit Ebenezer Scrooge.",
+    "rating": 850
+  },
+  {
+    "category": "faith_pop_culture",
+    "prompt": "Welches Kirchenlied wird traditionell zum Abschluss vieler Kirchentage gesungen?",
+    "choices": [
+      "Stille Nacht",
+      "Großer Gott, wir loben dich",
+      "Der Segen 'Bewahre uns, Gott'",
+      "Ein feste Burg"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Ein bekanntes Segenslied aus dem Evangelischen Gesangbuch.",
+    "rating": 1150
+  }
+]

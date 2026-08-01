@@ -12,7 +12,8 @@ it (accounts, money, legal, content).
 Auth, invites, push, payments, migrations and the matching UI now exist and are tested. What
 is left splits into two piles:
 
-- **Engineering** — roughly 2–4 focused days (password reset, question content, deploy).
+- **Engineering** — roughly 1–2 focused days (password reset, deploy). The question bank is
+  written; it needs review, not authoring.
 - **Calendar time you cannot compress** — Apple/Google developer account approval, Stripe
   account verification, app review, and a data-protection opinion on the research consent.
   Each of these is days-to-weeks of *waiting*, and they only start once you file them.
@@ -46,19 +47,34 @@ Whichever you choose, §1 and §2 are mandatory.
 - [ ] While you are there: no email *verification* either, so anyone can register with someone
       else's address. Acceptable for a beta, not for charging money.
 
-### 1.2 Question content **(you — the biggest single risk)**
+### 1.2 Question content — **fact-check still open (you)**
 
-- [ ] There are **65 questions, 5 per category**. One duel is 8 rounds × 3 questions = 24, and
-      each round draws 3 from a single category's pool of 5. Players see repeats **inside their
-      first match**.
-- [ ] Target at least **40–60 per category** (≈ 500–800 total) before opening it up.
-      `backend/app/db/fixtures/questions.json`, then `make seed`.
-- [ ] Have a second person fact-check the answer keys. A wrong answer key in a Bible quiz is
-      the kind of thing users screenshot.
+- [x] The bank went from 65 to **651 questions, ~50 per category**, in
+      `backend/app/db/fixtures/questions/<category>.json` (one file per category). Ecumenical
+      framing, difficulty seeded at 850 / 1000 / 1150, and every question carries a one-line
+      explanation; 283 also carry a Bible reference.
+- [ ] **Fact-check the answer keys before launch (you).** They were written by a language
+      model. Most are standard catechism-level facts, but a wrong answer key in a Bible quiz is
+      exactly what users screenshot — and the app now *displays* the explanation, so an error is
+      stated confidently rather than silently. Prioritise in this order:
+      1. `facts_numbers_dates` and `history` — dates and counts are the easiest to get wrong
+      2. `faith_pop_culture` — release years, attributions
+      3. `saints_role_models` — legends vs. documented biography
+      4. the Bible references themselves (chapter/verse), which are easy to spot-check
+- [ ] Decide whether the confessional balance is right for your audience. Where traditions
+      differ, questions name the tradition ("Was feiert die katholische Kirche an Fronleichnam?")
+      rather than picking a side.
+- [ ] `make check` now validates the bank: four distinct choices, a valid answer index, no
+      duplicate prompts, and an even spread of the correct answer across all four positions
+      (the first draft had 88 % of answers in position A — the fixtures are deliberately
+      shuffled, and a test keeps them that way).
 - [ ] Note: `select_questions_for_round` picks by rating proximity but has **no memory of what
-      a player has already seen**. With a big enough bank that is fine; if repeats still bother
-      you after the content push, add a "not answered by this player" filter
+      a player has already seen**. At ~50 per category that is tolerable; if repeats bother you,
+      add a "not answered by this player" filter
       (`backend/app/services/question_selection.py:20`).
+- [ ] Seeding adds and updates but never **deletes**: a question removed from the fixtures stays
+      in an already-seeded database. Use `make reset-db` locally; in production, delete the row
+      by hand.
 
 ### 1.3 Legal pages **(you — required before taking money in Germany)**
 
@@ -222,8 +238,9 @@ Terraform rejects it and the app refuses to boot with it outside local.
 | Billing | Provider abstraction (`none` / `fake` / `stripe`), checkout, cancel-at-period-end, signed webhooks, entitlement expiry + downgrade job |
 | Migrations | Alembic, revisions `0001` (pre-existing schema) and `0002` (accounts, billing, research); `alembic check` runs in CI |
 | App | Login/register, opponent search + challenge + random duel, subscription screen, profile (rename, logout, delete), research consent, questionnaire renderer for all 7 question types |
+| Content | 651 questions across 13 categories, each with an explanation and (where applicable) a Bible reference, revealed with the answer |
 | Infra | HTTPS-only, always-on, health check, TLS 1.2, generated signing key, all new settings wired |
-| CI | Runs on push and PR: backend lint + 130 tests + migration drift, frontend typecheck + tests, `terraform fmt`/`validate` |
+| CI | Runs on push and PR: backend lint + tests + migration drift, frontend typecheck + tests, `terraform fmt`/`validate` |
 
 ### Verify it locally
 
@@ -232,7 +249,7 @@ make setup          # install backend + frontend dependencies
 make reset-db       # migrate and seed (demo logins printed at the end)
 make backend        # API on :8000, docs at /docs
 make web            # Expo web on :8081  (or `make frontend` for the phone)
-make check          # lint + 130 backend tests + 7 frontend tests + migration drift
+make check          # lint + backend tests + frontend tests + migration drift
 make smoke          # end-to-end against the running server (needs `make backend`)
 ```
 

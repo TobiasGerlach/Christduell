@@ -1,0 +1,702 @@
+[
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Bücher umfasst die Bibel in der evangelischen Zählung?",
+    "choices": [
+      "81",
+      "73",
+      "77",
+      "66"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "39 im Alten und 27 im Neuen Testament.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Bücher umfasst der katholische Kanon des Alten Testaments zusätzlich?",
+    "choices": [
+      "Sieben sogenannte deuterokanonische Bücher",
+      "Zwei",
+      "Zwölf",
+      "Keine"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Darunter Tobit, Judit, Weisheit, Jesus Sirach und die Makkabäerbücher.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Kapitel hat das Buch der Psalmen?",
+    "choices": [
+      "150",
+      "200",
+      "120",
+      "100"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "150 Psalmen.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Jünger sandte Jesus laut Lukas zu zweit aus?",
+    "choices": [
+      "Sieben",
+      "Zwölf",
+      "Vierzig",
+      "Zweiundsiebzig"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Lk 10,1",
+    "explanation": "In manchen Handschriften siebzig.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Seligpreisungen nennt die Bergpredigt bei Matthäus?",
+    "choices": [
+      "Drei",
+      "Fünf",
+      "Acht bzw. neun",
+      "Zwölf"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 5,3-12",
+    "explanation": "Je nach Zählung der letzten.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie alt war Jesus nach Lukas etwa zu Beginn seines Wirkens?",
+    "choices": [
+      "Etwa 30 Jahre",
+      "Etwa 20 Jahre",
+      "Etwa 25 Jahre",
+      "Etwa 40 Jahre"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Lk 3,23",
+    "explanation": "'Jesus war, als er auftrat, etwa dreißig Jahre alt.'",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Tage fastete Jesus in der Wüste?",
+    "choices": [
+      "7",
+      "30",
+      "50",
+      "40"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 4,2",
+    "explanation": "Vierzig Tage und vierzig Nächte.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Steinkrüge ließ Jesus bei der Hochzeit zu Kana füllen?",
+    "choices": [
+      "Sechs",
+      "Zwölf",
+      "Zwei",
+      "Vier"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Joh 2,6",
+    "explanation": "Sechs Krüge mit je zwei bis drei Maß.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Bücher schrieb Paulus nach traditioneller Zuschreibung?",
+    "choices": [
+      "13 Briefe",
+      "7 Briefe",
+      "4 Briefe",
+      "21 Briefe"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die historische Forschung hält sieben für unbestritten echt.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Gemeinden werden in der Offenbarung angeschrieben?",
+    "choices": [
+      "Sieben",
+      "Zwölf",
+      "Vier",
+      "Drei"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Offb 1,4",
+    "explanation": "Sieben Gemeinden in Kleinasien.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Siegel werden in der Offenbarung geöffnet?",
+    "choices": [
+      "Zehn",
+      "Zwölf",
+      "Drei",
+      "Sieben"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Offb 6",
+    "explanation": "Sieben Siegel, sieben Posaunen, sieben Schalen.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Reiter der Apokalypse gibt es?",
+    "choices": [
+      "Drei",
+      "Sieben",
+      "Vier",
+      "Zwölf"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Offb 6,1-8",
+    "explanation": "Sie folgen den ersten vier Siegeln.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Personen hat die Dreifaltigkeit?",
+    "choices": [
+      "Eine",
+      "Drei",
+      "Zwei",
+      "Vier"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 28,19",
+    "explanation": "Vater, Sohn und Heiliger Geist.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Werke der Barmherzigkeit zählt die Tradition?",
+    "choices": [
+      "Drei",
+      "Fünf",
+      "Zehn",
+      "Sieben leibliche"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Mt 25,35-36",
+    "explanation": "Sechs stehen bei Matthäus, das Begraben der Toten kam hinzu.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Todsünden kennt die kirchliche Tradition?",
+    "choices": [
+      "Sieben",
+      "Drei",
+      "Zehn",
+      "Fünf"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Hochmut, Geiz, Neid, Zorn, Unkeuschheit, Unmäßigkeit, Trägheit.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Gaben des Heiligen Geistes nennt die Tradition?",
+    "choices": [
+      "Neun",
+      "Drei",
+      "Zwölf",
+      "Sieben"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Jes 11,2",
+    "explanation": "Weisheit, Einsicht, Rat, Stärke, Erkenntnis, Frömmigkeit, Gottesfurcht.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Stämme hatte Israel?",
+    "choices": [
+      "Zwölf",
+      "Sieben",
+      "Zehn",
+      "Vierzehn"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Gen 49",
+    "explanation": "Nach den Söhnen Jakobs.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Jahre dauerte das Babylonische Exil nach traditioneller Zählung?",
+    "choices": [
+      "40",
+      "100",
+      "70",
+      "30"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Jer 25,11",
+    "explanation": "Jeremia kündigte siebzig Jahre an.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "In welchem Jahr wurde der zweite Tempel in Jerusalem zerstört?",
+    "choices": [
+      "33 n. Chr.",
+      "70 n. Chr.",
+      "586 v. Chr.",
+      "135 n. Chr."
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Durch die Römer unter Titus.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "In welchem Jahr fand das Konzil von Nizäa statt?",
+    "choices": [
+      "381",
+      "451",
+      "1054",
+      "325"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Dort wurde die Wesensgleichheit des Sohnes mit dem Vater bekräftigt.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "In welchem Jahr veröffentlichte Luther seine 95 Thesen?",
+    "choices": [
+      "1521",
+      "1530",
+      "1517",
+      "1500"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Am 31. Oktober 1517.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "In welchem Jahr trennten sich Ost- und Westkirche?",
+    "choices": [
+      "1054",
+      "1204",
+      "1517",
+      "1378"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Das Große Schisma.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "In welchem Jahr endete das Zweite Vatikanische Konzil?",
+    "choices": [
+      "1958",
+      "1965",
+      "1962",
+      "1970"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Es begann 1962 unter Johannes XXIII.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Bitten des Vaterunsers richten sich an Gott selbst ('Du-Bitten')?",
+    "choices": [
+      "Sieben",
+      "Drei",
+      "Vier",
+      "Zwei"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mt 6,9-10",
+    "explanation": "Name, Reich und Wille — danach folgen vier 'Wir-Bitten'.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Adventssonntage gibt es?",
+    "choices": [
+      "Fünf",
+      "Vier",
+      "Drei",
+      "Zwei"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Der vierte fällt manchmal direkt vor Heiligabend.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Tage liegen zwischen Ostern und Pfingsten?",
+    "choices": [
+      "30",
+      "60",
+      "50",
+      "40"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Apg 2,1",
+    "explanation": "Pfingsten heißt wörtlich 'der fünfzigste'.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Kreuzwegstationen sind heute üblich?",
+    "choices": [
+      "7",
+      "14",
+      "12",
+      "10"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Manche Kirchen ergänzen eine fünfzehnte zur Auferstehung.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Perlen hat ein Rosenkranz für die Gesätze insgesamt?",
+    "choices": [
+      "100 Perlen",
+      "12 Perlen",
+      "33 Perlen",
+      "59 Perlen"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Fünf Gesätze zu zehn Ave Maria plus Zusatzperlen.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Menschen zählt die römisch-katholische Kirche ungefähr weltweit?",
+    "choices": [
+      "Etwa 300 Millionen",
+      "Etwa 3 Milliarden",
+      "Etwa 1,3 Milliarden",
+      "Etwa 700 Millionen"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Damit die größte christliche Konfession.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Christen gibt es weltweit ungefähr?",
+    "choices": [
+      "Etwa 4 Milliarden",
+      "Etwa 1 Milliarde",
+      "Etwa 2,4 Milliarden",
+      "Etwa 800 Millionen"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Rund ein Drittel der Weltbevölkerung.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Landeskirchen hat die EKD?",
+    "choices": [
+      "12",
+      "16",
+      "27",
+      "20"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Historisch gewachsene regionale Kirchen.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele katholische Bistümer gibt es in Deutschland?",
+    "choices": [
+      "20",
+      "33",
+      "27",
+      "16"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Darunter sieben Erzbistümer.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie hoch ist die Kirchensteuer in den meisten Bundesländern?",
+    "choices": [
+      "1 Prozent des Vermögens",
+      "2 Prozent des Bruttolohns",
+      "5 Prozent der Einkommensteuer",
+      "9 Prozent der Einkommensteuer"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "In Bayern und Baden-Württemberg sind es 8 Prozent.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Verse hat das Vaterunser bei Matthäus?",
+    "choices": [
+      "Zehn Verse",
+      "Drei Verse",
+      "Fünf Verse",
+      "Zwei Verse"
+    ],
+    "correct_choice_index": 2,
+    "reference": "Mt 6,9-13",
+    "explanation": "Mt 6,9 bis 6,13.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Evangelien wurden in den Kanon aufgenommen?",
+    "choices": [
+      "Fünf",
+      "Vier",
+      "Sieben",
+      "Drei"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Andere Evangelien wie das Thomasevangelium blieben außen vor.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Kapitel hat das Markusevangelium?",
+    "choices": [
+      "24",
+      "21",
+      "16",
+      "28"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Das kürzeste der vier Evangelien.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Kapitel hat das Matthäusevangelium?",
+    "choices": [
+      "16",
+      "24",
+      "28",
+      "21"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Es schließt mit dem Missionsbefehl in Kapitel 28.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Welches ist das längste Buch der Bibel nach Kapitelzahl?",
+    "choices": [
+      "Jeremia",
+      "Genesis",
+      "Die Psalmen",
+      "Jesaja"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "150 Kapitel.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Jahre regierte König David nach biblischer Angabe?",
+    "choices": [
+      "30",
+      "50",
+      "40",
+      "20"
+    ],
+    "correct_choice_index": 2,
+    "reference": "2 Sam 5,4",
+    "explanation": "Sieben Jahre in Hebron, 33 in Jerusalem.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Söhne hatte Noah?",
+    "choices": [
+      "Drei",
+      "Zwei",
+      "Sieben",
+      "Vier"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Gen 6,10",
+    "explanation": "Sem, Ham und Jafet.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Menschen wurden nach der Pfingstpredigt getauft?",
+    "choices": [
+      "Etwa 5000",
+      "Etwa 500",
+      "Etwa 120",
+      "Etwa 3000"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Apg 2,41",
+    "explanation": "Der Beginn der Jerusalemer Gemeinde.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Personen waren nach Apostelgeschichte 1 vor Pfingsten versammelt?",
+    "choices": [
+      "Etwa 120",
+      "Etwa 12",
+      "Etwa 500",
+      "Etwa 70"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Apg 1,15",
+    "explanation": "Die Urgemeinde vor dem Pfingstereignis.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Silberlinge erhielt Judas?",
+    "choices": [
+      "30",
+      "100",
+      "20",
+      "50"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mt 26,15",
+    "explanation": "Dreißig Silberstücke.",
+    "rating": 850
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Stunden herrschte laut den Evangelien Finsternis bei der Kreuzigung?",
+    "choices": [
+      "Eine Stunde",
+      "Drei Stunden",
+      "Neun Stunden",
+      "Sechs Stunden"
+    ],
+    "correct_choice_index": 1,
+    "reference": "Mk 15,33",
+    "explanation": "Von der sechsten bis zur neunten Stunde.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "An welchem Tag der Woche steht die Auferstehung Jesu?",
+    "choices": [
+      "Am ersten Tag der Woche",
+      "Am dritten Tag der Woche",
+      "Am Sabbat",
+      "Am Freitag"
+    ],
+    "correct_choice_index": 0,
+    "reference": "Mk 16,2",
+    "explanation": "Deshalb feiern Christen den Sonntag.",
+    "rating": 1000
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Konzilien gelten als 'ökumenisch' für die orthodoxe Kirche?",
+    "choices": [
+      "Zwei",
+      "Einundzwanzig",
+      "Sieben",
+      "Zwölf"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Die katholische Kirche zählt 21.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Päpste gab es bisher ungefähr?",
+    "choices": [
+      "Etwa 100",
+      "Etwa 50",
+      "Etwa 500",
+      "Über 260"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Die Zählung beginnt traditionell bei Petrus.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "In welchem Jahr wurde die Gutenberg-Bibel gedruckt?",
+    "choices": [
+      "Um 1600",
+      "Um 1350",
+      "Um 1517",
+      "Um 1455"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Der erste bedeutende Druck mit beweglichen Lettern.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Menschen besuchen in Deutschland regelmäßig sonntags den Gottesdienst?",
+    "choices": [
+      "Ein kleiner einstelliger Prozentsatz der Mitglieder",
+      "Etwa die Hälfte",
+      "Fast alle",
+      "Etwa ein Drittel"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ein zentraler Befund kirchlicher Statistik.",
+    "rating": 1150
+  },
+  {
+    "category": "facts_numbers_dates",
+    "prompt": "Wie viele Kerzen brennen am vierten Advent?",
+    "choices": [
+      "Drei",
+      "Eine",
+      "Zwei",
+      "Vier"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Jede Woche kommt eine hinzu.",
+    "rating": 850
+  }
+]

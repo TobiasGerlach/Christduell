@@ -1,0 +1,702 @@
+[
+  {
+    "category": "jesus_today",
+    "prompt": "Wie heißt ein Gottesdienst speziell für Jugendliche oft?",
+    "choices": [
+      "Jugendgottesdienst",
+      "Requiem",
+      "Vesper",
+      "Pontifikalamt"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Oft mit Band, moderner Musik und Mitwirkung Jugendlicher.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie nennt man das soziale Engagement der evangelischen Kirche?",
+    "choices": [
+      "Diakonie",
+      "Kollekte",
+      "Caritas",
+      "Mission"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die katholische Entsprechung heißt Caritas.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie heißt der soziale Wohlfahrtsverband der katholischen Kirche?",
+    "choices": [
+      "Kolping",
+      "Malteser allein",
+      "Diakonie",
+      "Caritas"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Einer der größten Arbeitgeber Deutschlands.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie werden Gottesdienste heute vielerorts auch online zugänglich gemacht?",
+    "choices": [
+      "Per Livestream",
+      "Per Fax",
+      "Per Brief",
+      "Per Zeitungsannonce"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "In der Corona-Zeit wurde das flächendeckend eingeführt.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie heißt das große evangelische Glaubenstreffen, das alle zwei Jahre stattfindet?",
+    "choices": [
+      "Der Kirchentag",
+      "Der Katholikentag",
+      "Die Synode",
+      "Der Weltjugendtag"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Mit Gottesdiensten, Konzerten und politischen Debatten.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie heißt das entsprechende katholische Großtreffen in Deutschland?",
+    "choices": [
+      "Der Katholikentag",
+      "Das Konzil",
+      "Der Weltjugendtag",
+      "Der Kirchentag"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Beide Formate gab es auch schon als Ökumenischer Kirchentag.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist der Weltjugendtag?",
+    "choices": [
+      "Ein evangelischer Konfitag",
+      "Ein ökumenischer Gebetstag",
+      "Ein Aktionstag der UNO",
+      "Ein weltweites katholisches Jugendtreffen"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Von Johannes Paul II. ins Leben gerufen.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bedeutet 'Schöpfungsverantwortung'?",
+    "choices": [
+      "Die Sorge für Kirchengebäude",
+      "Die Erziehung der Kinder",
+      "Die Pflicht zur Mission",
+      "Verantwortungsvoller Umgang mit der Umwelt"
+    ],
+    "correct_choice_index": 3,
+    "reference": "Gen 2,15",
+    "explanation": "Der Mensch soll den Garten 'bebauen und behüten'.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Welche Enzyklika von Papst Franziskus widmet sich der Ökologie?",
+    "choices": [
+      "Rerum novarum",
+      "Deus caritas est",
+      "Humanae vitae",
+      "Laudato si'"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "2015 erschienen, mit großem Echo über die Kirche hinaus.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Segnungsgottesdienst'?",
+    "choices": [
+      "Ein Gottesdienst nur für Getaufte",
+      "Eine Andacht am Morgen",
+      "Ein Gottesdienst, in dem Menschen persönlich gesegnet werden",
+      "Eine Trauerfeier"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Etwa für Paare, Schulanfänger oder zum Geburtstag.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wofür steht die Abkürzung 'EKD'?",
+    "choices": [
+      "Evangelische Kirche in Deutschland",
+      "Evangelischer Kirchendienst",
+      "Evangelisch-katholischer Dialog",
+      "Einheit der Kirchen Deutschlands"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Ein Zusammenschluss der Landeskirchen.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist eine Landeskirche?",
+    "choices": [
+      "Eine regional eigenständige evangelische Kirche",
+      "Eine katholische Diözese",
+      "Eine Kirche ohne Bischof",
+      "Eine Kirche auf dem Land"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "In Deutschland gibt es 20 Landeskirchen.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein Bistum bzw. eine Diözese?",
+    "choices": [
+      "Ein Kirchenchor",
+      "Ein Pfarrhaus",
+      "Eine Ordensprovinz",
+      "Der Amtsbezirk eines Bischofs"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Deutschland hat 27 katholische Bistümer.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wer leitet in der evangelischen Kirche meist eine Gemeinde gemeinsam mit dem Pfarrer?",
+    "choices": [
+      "Die Synode",
+      "Der Bischof",
+      "Der Dekan",
+      "Der Kirchenvorstand / Presbyterium"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Ehrenamtlich gewählte Gemeindeglieder.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist eine Synode?",
+    "choices": [
+      "Eine Wallfahrt",
+      "Ein Gottesdienst",
+      "Ein Kirchenchor",
+      "Eine kirchliche Versammlung mit Entscheidungsbefugnis"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Das evangelische 'Kirchenparlament'.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was war der 'Synodale Weg' in Deutschland?",
+    "choices": [
+      "Eine ökumenische Wallfahrt",
+      "Ein Reformprozess der katholischen Kirche",
+      "Ein evangelischer Kirchentag",
+      "Ein Missionsprojekt"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "2019 begonnen, unter anderem zu Macht, Sexualmoral und Rolle der Frauen.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bedeutet 'Kirchenaustritt' rechtlich in Deutschland?",
+    "choices": [
+      "Ein Antrag beim Bischof",
+      "Ein Gespräch mit dem Pfarrer",
+      "Die Erklärung vor einer staatlichen Stelle",
+      "Die Rückgabe der Taufurkunde"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Er beendet auch die Kirchensteuerpflicht.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie finanzieren sich die großen Kirchen in Deutschland überwiegend?",
+    "choices": [
+      "Über die Kirchensteuer",
+      "Über Staatszuschüsse allein",
+      "Über Eintrittsgelder",
+      "Nur über Spenden"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Der Staat zieht sie mit der Einkommensteuer ein.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist eine 'Tafel' im kirchlich-diakonischen Kontext?",
+    "choices": [
+      "Ein Gemeindebrief",
+      "Ein Altarbild",
+      "Eine Ausgabestelle für Lebensmittel",
+      "Ein Kirchenvorstandstisch"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Viele Tafeln werden von Kirchengemeinden getragen.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist die 'Telefonseelsorge'?",
+    "choices": [
+      "Anonyme Beratung rund um die Uhr",
+      "Ein Seelsorgekurs",
+      "Ein kirchliches Callcenter",
+      "Die Gebetshotline eines Senders"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Kostenfrei und rund um die Uhr erreichbar, getragen von beiden Kirchen.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist Notfallseelsorge?",
+    "choices": [
+      "Seelsorge per E-Mail",
+      "Seelsorge im Krankenhaus",
+      "Nachtgebet in Klöstern",
+      "Seelsorge direkt nach Unglücken"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Ehrenamtliche begleiten Betroffene an Einsatzstellen.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bezeichnet 'Hospiz'?",
+    "choices": [
+      "Eine Einrichtung zur Begleitung Sterbender",
+      "Ein Pilgerheim",
+      "Ein Kloster für Gäste",
+      "Ein Kinderheim"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Die Hospizbewegung hat starke christliche Wurzeln.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist die 'Aktion Brot für die Welt'?",
+    "choices": [
+      "Ein Erntedankbrauch",
+      "Eine Bäckerkette",
+      "Ein evangelisches Entwicklungswerk",
+      "Ein Fastenprojekt der Klöster"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Das katholische Pendant heißt Misereor.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie heißt das katholische Hilfswerk für die Fastenzeit?",
+    "choices": [
+      "Renovabis",
+      "Missio",
+      "Misereor",
+      "Adveniat"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Adveniat sammelt zu Weihnachten für Lateinamerika.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bezeichnet 'Kirchenasyl'?",
+    "choices": [
+      "Ein Wohnheim für Ordensleute",
+      "Ein kirchliches Gefängnis",
+      "Ein Rückzugsort für Pfarrer",
+      "Vorübergehender Schutz für Geflüchtete in Gemeinderäumen"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Eine geduldete Praxis ohne eigenen Rechtsstatus.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Gemeindebrief'?",
+    "choices": [
+      "Ein Rundschreiben der Synode",
+      "Ein Bittbrief um Spenden",
+      "Eine regelmäßige Publikation der Kirchengemeinde",
+      "Ein Brief des Bischofs"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Meist mit Terminen, Andachten und Berichten.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Hauskreis'?",
+    "choices": [
+      "Eine regelmäßige Gruppe zum Austausch über den Glauben",
+      "Ein Kirchenvorstand",
+      "Ein Bauverein",
+      "Ein Chor"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Trifft sich meist privat, oft mit Bibellese und Gebet.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist die 'Konfirmandenzeit'?",
+    "choices": [
+      "Die Zeit nach der Taufe",
+      "Ein Ferienlager",
+      "Die Ausbildung zum Pfarrer",
+      "Ein Unterrichtsjahr vor der Konfirmation"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Meist im 13./14. Lebensjahr.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Kirchenchor'?",
+    "choices": [
+      "Der Ort der Orgel",
+      "Ein Gremium der Leitung",
+      "Eine singende Gruppe der Gemeinde",
+      "Der Altarraum"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Das Wort 'Chor' bezeichnet auch den Altarraum.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Welches Sakrament bzw. welche Handlung schließt viele Trauungen ab?",
+    "choices": [
+      "Die Firmung",
+      "Die Salbung",
+      "Der Segen für das Paar",
+      "Die Beichte"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "In der katholischen Kirche gilt die Ehe als Sakrament.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist die 'Ökumenische Bibelwoche'?",
+    "choices": [
+      "Gemeinsame Bibelabende der Konfessionen",
+      "Ein Bibelwettbewerb",
+      "Ein Bibelverkauf",
+      "Eine Wallfahrt"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Meist im Winter mit gemeinsamen Textreihen.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bedeutet 'Inklusion' im kirchlichen Kontext?",
+    "choices": [
+      "Teilhabe aller Menschen am Gemeindeleben",
+      "Die Mitgliedschaft im ÖRK",
+      "Die Aufnahme in den Orden",
+      "Der Kirchenbeitritt"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Barrierefreiheit und Gebärdensprachgottesdienste gehören dazu.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist die 'Kirchensteuer' bezogen auf die Einkommensteuer?",
+    "choices": [
+      "Eine freiwillige Spende",
+      "Eine Grundsteuer",
+      "Ein Festbetrag pro Jahr",
+      "Ein prozentualer Zuschlag"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Je nach Bundesland 8 oder 9 Prozent der Einkommensteuer.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Pfarrgemeinderat'?",
+    "choices": [
+      "Der Rat des Bischofs",
+      "Ein Ordenskapitel",
+      "Die Versammlung aller Getauften",
+      "Ein gewähltes Gremium der katholischen Gemeinde"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Vertritt die Laien in der Gemeindeleitung.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie heißt der Dienst von Christen in Krankenhäusern?",
+    "choices": [
+      "Krankenhausseelsorge",
+      "Katechese",
+      "Kirchenmusik",
+      "Diakonat"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Oft konfessionsübergreifend organisiert.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie nennt man den Dienst der ehrenamtlichen Begleitung von Sterbenden?",
+    "choices": [
+      "Katechese",
+      "Hospizbegleitung",
+      "Diakonat",
+      "Krankensalbung"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Ehrenamtliche werden dafür eigens geschult.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist der 'Weltgebetstag der Frauen'?",
+    "choices": [
+      "Ein Marienfest",
+      "Ein Frauentag der UNO",
+      "Ein Gedenktag für Märtyrerinnen",
+      "Ein weltweiter ökumenischer Gebetstag"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Jedes Jahr am ersten Freitag im März, vorbereitet von Frauen eines Landes.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bezeichnet 'geistliche Begleitung'?",
+    "choices": [
+      "Die Vorbereitung auf die Taufe",
+      "Die Leitung eines Chores",
+      "Die Aufsicht über Ministranten",
+      "Persönliche Beratung im Glaubensweg"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Eine alte Praxis, heute wieder verbreitet.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Taizé-Gebet'?",
+    "choices": [
+      "Eine Prozession",
+      "Eine Bibelstunde",
+      "Ein meditativer Gottesdienst mit wiederholten Gesängen",
+      "Ein Bußgottesdienst"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Nach der ökumenischen Bruderschaft in Burgund benannt.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Kirchentagslied'?",
+    "choices": [
+      "Ein Lied, das ein Kirchentag bekannt macht",
+      "Ein Lied für Beerdigungen",
+      "Ein Choral aus dem 16. Jahrhundert",
+      "Ein Lied nur für Konfirmanden"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Viele neue geistliche Lieder wurden so populär.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bedeutet 'Nachhaltigkeit' im kirchlichen Handeln zum Beispiel?",
+    "choices": [
+      "Der Bau neuer Kirchen",
+      "Die Rücklagenbildung",
+      "Ökofaire Beschaffung und Klimaschutz in Gemeinden",
+      "Die Mitgliederwerbung"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Manche Landeskirchen haben Klimaschutzgesetze beschlossen.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Fairer Handel'-Stand in der Gemeinde?",
+    "choices": [
+      "Ein Flohmarkt",
+      "Verkauf fair gehandelter Waren nach dem Gottesdienst",
+      "Ein Bücherstand",
+      "Eine Tombola"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Ein klassisches Beispiel gelebter Schöpfungsverantwortung.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bedeutet 'Sakramentenpastoral'?",
+    "choices": [
+      "Die Begleitung von Menschen rund um Taufe, Trauung und Co.",
+      "Die Ausbildung von Diakonen",
+      "Die Reinigung der Altargeräte",
+      "Die Verwaltung der Kirchenbücher"
+    ],
+    "correct_choice_index": 0,
+    "reference": "",
+    "explanation": "Etwa Taufgespräche oder Traugespräche.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Welche Rolle hat die Predigt im evangelischen Gottesdienst?",
+    "choices": [
+      "Sie ist optional",
+      "Sie steht im Zentrum",
+      "Sie ersetzt die Lesung",
+      "Sie folgt dem Abendmahl immer"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Aus der reformatorischen Betonung des Wortes.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Prädikant' oder 'Lektor'?",
+    "choices": [
+      "Ein Mitglied der Synode",
+      "Ein ehrenamtlich Predigender bzw. Lesender",
+      "Ein Küster",
+      "Ein Kirchenmusiker"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Beauftragt und ausgebildet für den Gottesdienst.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Wie heißt die Person, die Kirche und Gebäude praktisch betreut?",
+    "choices": [
+      "Diakon",
+      "Küster / Mesner",
+      "Kantor",
+      "Lektor"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Regional auch Sigrist genannt.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was macht ein Kantor?",
+    "choices": [
+      "Er unterrichtet Konfirmanden",
+      "Er verwaltet die Finanzen",
+      "Er hält die Predigt",
+      "Er leitet die Kirchenmusik"
+    ],
+    "correct_choice_index": 3,
+    "reference": "",
+    "explanation": "Orgel, Chor und Gemeindegesang gehören dazu.",
+    "rating": 1000
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was ist ein 'Ministrant'?",
+    "choices": [
+      "Ein Diakon in Ausbildung",
+      "Ein Chorleiter",
+      "Ein Messdiener im Gottesdienst",
+      "Ein Kirchenvorstand"
+    ],
+    "correct_choice_index": 2,
+    "reference": "",
+    "explanation": "Von lateinisch 'ministrare' — dienen.",
+    "rating": 850
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was bezeichnet 'Seelsorgeeinheit' oder 'Pfarrverbund'?",
+    "choices": [
+      "Ein Ausschuss der Synode",
+      "Der Zusammenschluss mehrerer Gemeinden",
+      "Ein Gremium der Landeskirche",
+      "Eine Ordensgemeinschaft"
+    ],
+    "correct_choice_index": 1,
+    "reference": "",
+    "explanation": "Eine Folge sinkender Zahlen von Priestern und Pfarrerinnen.",
+    "rating": 1150
+  },
+  {
+    "category": "jesus_today",
+    "prompt": "Was besagt das Priestertum aller Getauften?",
+    "choices": [
+      "Priester sind überflüssig",
+      "Jeder darf die Messe feiern",
+      "Nur Ordinierte dürfen taufen",
+      "Alle Getauften haben unmittelbaren Zugang zu Gott"
+    ],
+    "correct_choice_index": 3,
+    "reference": "1 Petr 2,9",
+    "explanation": "Ein zentraler Gedanke der Reformation.",
+    "rating": 1150
+  }
+]
