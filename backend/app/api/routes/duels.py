@@ -7,6 +7,7 @@ from pydantic import BaseModel, EmailStr, model_validator
 from sqlmodel import Session, col, select
 
 from app.api.deps import CurrentPlayer
+from app.core.config import get_settings
 from app.core.time import utcnow
 from app.db.session import SessionDep
 from app.models.domain import (
@@ -37,7 +38,10 @@ from app.services.rating import update_ratings_after_answer
 
 router = APIRouter(prefix="/duels", tags=["duels"])
 
-QUESTION_TIME_LIMIT_SECONDS = 30.0
+
+def question_time_limit() -> float:
+    return get_settings().question_time_limit_seconds
+
 
 CATEGORY_DISPLAY_NAMES: dict[Category, str] = {
     Category.OLD_TESTAMENT: "Altes Testament",
@@ -489,7 +493,7 @@ def get_round_question(
         session.refresh(answer)
 
     elapsed_seconds = (utcnow() - answer.shown_at).total_seconds()
-    seconds_remaining = max(0.0, QUESTION_TIME_LIMIT_SECONDS - elapsed_seconds)
+    seconds_remaining = max(0.0, question_time_limit() - elapsed_seconds)
 
     return QuestionToAnswer(
         round_id=round_id,
@@ -545,7 +549,7 @@ def submit_answer(
     # timeout regardless of what the client thinks it sent.
     timed_out = (
         payload.selected_choice_index is None
-        or elapsed_ms > QUESTION_TIME_LIMIT_SECONDS * 1000
+        or elapsed_ms > question_time_limit() * 1000
     )
 
     answer.answered_at = now

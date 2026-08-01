@@ -1,7 +1,17 @@
 import * as SecureStore from "expo-secure-store";
 import { Platform } from "react-native";
 
-const TOKEN_KEY = "christduell.accessToken";
+import { currentDevPlayer } from "./devPlayers";
+
+/**
+ * Namespaced by the `?player=` demo account when one is in play, so two browser
+ * tabs on the same origin can hold two different sessions at once. Without a
+ * dev player it is a single plain key, exactly as in a released build.
+ */
+function tokenKey(): string {
+  const devPlayer = currentDevPlayer();
+  return devPlayer ? `christduell.accessToken.${devPlayer}` : "christduell.accessToken";
+}
 
 /**
  * Token storage. Native builds use the OS keychain via expo-secure-store, which
@@ -9,23 +19,23 @@ const TOKEN_KEY = "christduell.accessToken";
  */
 export async function saveToken(token: string): Promise<void> {
   if (Platform.OS === "web") {
-    window.localStorage.setItem(TOKEN_KEY, token);
+    window.localStorage.setItem(tokenKey(), token);
     return;
   }
-  await SecureStore.setItemAsync(TOKEN_KEY, token);
+  await SecureStore.setItemAsync(tokenKey(), token);
 }
 
 export async function loadToken(): Promise<string | null> {
   if (Platform.OS === "web") {
-    return window.localStorage.getItem(TOKEN_KEY);
+    return window.localStorage.getItem(tokenKey());
   }
-  return SecureStore.getItemAsync(TOKEN_KEY);
+  return SecureStore.getItemAsync(tokenKey());
 }
 
 export async function clearToken(): Promise<void> {
   if (Platform.OS === "web") {
-    window.localStorage.removeItem(TOKEN_KEY);
+    window.localStorage.removeItem(tokenKey());
     return;
   }
-  await SecureStore.deleteItemAsync(TOKEN_KEY);
+  await SecureStore.deleteItemAsync(tokenKey());
 }

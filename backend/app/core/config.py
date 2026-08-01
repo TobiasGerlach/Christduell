@@ -23,6 +23,11 @@ class Settings(BaseSettings):
     # long-lived; shorten this once refresh tokens exist.
     access_token_expire_minutes: int = 60 * 24 * 30
 
+    # --- Gameplay ---------------------------------------------------------
+    # Seconds a player has per question. Raise it locally when you want to look
+    # at a screen instead of racing the clock; keep 30 in production.
+    question_time_limit_seconds: float = 30.0
+
     # --- CORS -------------------------------------------------------------
     # Comma-separated list of allowed browser origins for the Expo web build.
     cors_origins: list[str] = []

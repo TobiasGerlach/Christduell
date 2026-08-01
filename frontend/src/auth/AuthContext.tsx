@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Account, authApi } from "../api/auth";
 import { api, setAccessToken, setUnauthorizedHandler } from "../api/client";
 import { registerForPushNotifications } from "../notifications/registerForPushNotifications";
+import { DEV_PASSWORD, DEV_PLAYERS, currentDevPlayer } from "./devPlayers";
 import { clearToken, loadToken, saveToken } from "./storage";
 
 interface AuthValue {
@@ -47,6 +48,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     (async () => {
       const token = await loadToken();
       if (!token) {
+        // `?player=anna` on the web dev build: sign that demo account in rather
+        // than showing a login form we already know the answer to.
+        const devPlayer = currentDevPlayer();
+        if (devPlayer) {
+          try {
+            const response = await authApi.login(DEV_PLAYERS[devPlayer].email, DEV_PASSWORD);
+            if (!cancelled) await applySession(response.access_token, response.player);
+          } catch (error) {
+            console.warn(
+              `Auto-login as ${devPlayer} failed — run \`make reset-db\` to seed the demo players.`,
+              error,
+            );
+          }
+        }
         if (!cancelled) setInitialising(false);
         return;
       }
@@ -68,7 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [forgetSession]);
+  }, [forgetSession, applySession]);
 
   // A 401 from any endpoint means the session is gone; drop it everywhere at once.
   useEffect(() => {

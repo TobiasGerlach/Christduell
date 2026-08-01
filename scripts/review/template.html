@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christduell — Fragen prüfen</title>
+<style>
+  :root {
+    --purple: #6750A4;
+    --purple-dark: #4A3B7C;
+    --tint: #F4F1FB;
+    --tint-strong: #EDE7F6;
+    --ok: #2E7D32;
+    --bad: #B00020;
+    --warn: #8A5A00;
+    --ink: #1D1B20;
+    --muted: #5B5B5B;
+    --line: #D9D2E9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background: #FBFAFD;
+  }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: #fff; border-bottom: 1px solid var(--line);
+    padding: 10px 16px;
+  }
+  .bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .bar h1 { font-size: 15px; margin: 0; color: var(--purple); font-weight: 700; }
+  .grow { flex: 1; }
+  .counter { font-variant-numeric: tabular-nums; font-size: 13px; color: var(--muted); }
+  .counter b { color: var(--ink); }
+  .pill { padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .pill.ok { background: #E8F5E9; color: var(--ok); }
+  .pill.flag { background: #FDECEA; color: var(--bad); }
+  .pill.edit { background: #FFF3E0; color: var(--warn); }
+  progress { width: 100%; height: 6px; margin-top: 8px; }
+  select, button, input, textarea { font: inherit; }
+  button {
+    border: 1px solid var(--line); background: #fff; border-radius: 8px;
+    padding: 6px 12px; cursor: pointer;
+  }
+  button:hover { border-color: var(--purple); }
+  button.primary { background: var(--purple); color: #fff; border-color: var(--purple); }
+  button.danger { background: #fff; color: var(--bad); border-color: #F2C4C4; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 24px 16px 96px; }
+  .badges { display: flex; gap: 8px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+  .badge { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--tint-strong); color: var(--purple-dark); font-weight: 600; }
+  .badge.grey { background: #EEE; color: var(--muted); }
+  .prompt { font-size: 20px; font-weight: 600; line-height: 1.4; margin: 0 0 18px; }
+  .choices { display: grid; gap: 10px; }
+  .choice {
+    display: flex; gap: 10px; align-items: flex-start; text-align: left;
+    padding: 14px; border-radius: 12px; border: 1px solid var(--line);
+    background: #fff; width: 100%; line-height: 1.35;
+  }
+  .choice .key {
+    flex: none; width: 22px; height: 22px; border-radius: 6px; background: var(--tint-strong);
+    color: var(--purple-dark); font-size: 12px; font-weight: 700;
+    display: grid; place-items: center;
+  }
+  .choice.correct { border-color: var(--ok); background: #F1F8F2; }
+  .choice.correct .key { background: var(--ok); color: #fff; }
+  .choice.picked-wrong { border-color: var(--bad); background: #FDF3F3; }
+  .choice.picked-wrong .key { background: var(--bad); color: #fff; }
+
+  .reveal { margin-top: 18px; padding: 14px; border-radius: 12px; background: var(--tint); }
+  .reveal .verdict { font-weight: 700; margin-bottom: 6px; }
+  .reveal .verdict.match { color: var(--ok); }
+  .reveal .verdict.mismatch { color: var(--bad); }
+  .reveal .explanation { line-height: 1.5; }
+  .reveal .reference { margin-top: 6px; font-size: 12px; color: var(--muted); }
+  .missing { color: var(--warn); font-style: italic; }
+
+  .actions { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+  .hint { margin-top: 18px; font-size: 12px; color: var(--muted); line-height: 1.7; }
+  kbd {
+    font: inherit; font-size: 11px; border: 1px solid var(--line); border-bottom-width: 2px;
+    border-radius: 4px; padding: 1px 5px; background: #fff;
+  }
+
+  .editor { margin-top: 20px; padding: 16px; border: 1px solid var(--purple); border-radius: 12px; background: #fff; }
+  .editor label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin: 12px 0 4px; }
+  .editor input[type=text], .editor textarea {
+    width: 100%; padding: 9px; border: 1px solid var(--line); border-radius: 8px;
+  }
+  .editor textarea { min-height: 60px; resize: vertical; }
+  .editor .choice-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+  .editor .choice-row input[type=text] { flex: 1; }
+  .done { text-align: center; padding: 60px 20px; }
+  .done h2 { color: var(--purple); }
+  .status { font-size: 13px; padding: 8px 0; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>Fragen prüfen</h1>
+    <select id="filter"></select>
+    <span class="grow"></span>
+    <span class="counter" id="counter"></span>
+    <button id="jump">Nächste ungeprüfte</button>
+    <button id="export" class="primary">Export</button>
+  </div>
+  <progress id="progress" value="0" max="1"></progress>
+</header>
+
+<main id="main"></main>
+
+<script>
+const QUESTIONS = __QUESTIONS__;
+const STORAGE_KEY = "christduell.review.v1";
+
+const CATEGORY_LABELS = {
+  old_testament: "Altes Testament", new_testament: "Neues Testament",
+  beyond_the_horizon: "Über den Tellerrand", ancient_languages: "Alte Sprachen",
+  history: "Geschichte", jesus_today: "Jesus heute",
+  church_year_festivals: "Kirchenjahr & Feste", parables_miracles: "Gleichnisse & Wunder",
+  psalms_prayers: "Psalmen & Gebete", symbols_customs: "Symbole & Bräuche",
+  saints_role_models: "Heilige & Vorbilder", facts_numbers_dates: "Zahlen, Daten & Fakten",
+  faith_pop_culture: "Glaube & Popkultur",
+};
+const DIFFICULTY = { 850: "leicht", 1000: "mittel", 1150: "schwer" };
+
+/** id → {verdict, note, pick, edits} — everything the reviewer decided. */
+let reviews = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+let index = 0;
+let revealed = false;
+let pick = null;
+let editing = false;
+let filter = "";
+
+const save = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
+const idOf = (q) => q.category + "::" + q.prompt;
+const visible = () => QUESTIONS.filter((q) => !filter || q.category === filter);
+
+function counts() {
+  const list = visible();
+  let ok = 0, flag = 0, edit = 0;
+  for (const q of list) {
+    const r = reviews[idOf(q)];
+    if (!r) continue;
+    if (r.verdict === "ok") ok++;
+    else if (r.verdict === "flag") flag++;
+    else if (r.verdict === "edit") edit++;
+  }
+  return { ok, flag, edit, total: list.length, done: ok + flag + edit };
+}
+
+function renderHeader() {
+  const c = counts();
+  document.getElementById("counter").innerHTML =
+    `<b>${c.done}</b> / ${c.total} &nbsp;
+     <span class="pill ok">${c.ok} ok</span>
+     <span class="pill flag">${c.flag} markiert</span>
+     <span class="pill edit">${c.edit} bearbeitet</span>`;
+  const bar = document.getElementById("progress");
+  bar.max = c.total; bar.value = c.done;
+}
+
+function esc(text) {
+  return String(text ?? "").replace(/[&<>"]/g, (ch) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+}
+
+function current() {
+  const list = visible();
+  if (index >= list.length) index = Math.max(0, list.length - 1);
+  return list[index];
+}
+
+/** The question as it stands now — an earlier edit wins over the fixture text. */
+function effective(q) {
+  const r = reviews[idOf(q)];
+  return r && r.edits ? { ...q, ...r.edits } : q;
+}
+
+function render() {
+  renderHeader();
+  const list = visible();
+  const main = document.getElementById("main");
+
+  if (!list.length) { main.innerHTML = "<p class='done'>Keine Fragen in dieser Kategorie.</p>"; return; }
+
+  const raw = current();
+  const q = effective(raw);
+  const review = reviews[idOf(raw)] || {};
+  const isCorrect = (i) => i === q.correct_choice_index;
+
+  const choices = q.choices.map((choice, i) => {
+    let cls = "choice";
+    if (revealed) {
+      if (isCorrect(i)) cls += " correct";
+      else if (pick === i) cls += " picked-wrong";
+    }
+    return `<button class="${cls}" data-pick="${i}">
+      <span class="key">${i + 1}</span><span>${esc(choice)}</span></button>`;
+  }).join("");
+
+  let reveal = "";
+  if (revealed) {
+    const mismatch = pick !== null && pick !== q.correct_choice_index;
+    reveal = `<div class="reveal">
+      ${pick === null ? "" : `<div class="verdict ${mismatch ? "mismatch" : "match"}">
+        ${mismatch
+          ? "Deine Antwort weicht vom hinterlegten Schlüssel ab — bitte prüfen."
+          : "Stimmt mit dem hinterlegten Schlüssel überein."}</div>`}
+      <div class="explanation">${q.explanation ? esc(q.explanation)
+        : "<span class='missing'>Keine Erklärung hinterlegt.</span>"}</div>
+      ${q.reference ? `<div class="reference">${esc(q.reference)}</div>`
+        : `<div class="reference missing">Keine Bibelstelle hinterlegt.</div>`}
+    </div>`;
+  }
+
+  const statusPill = review.verdict
+    ? `<span class="pill ${review.verdict}">${
+        { ok: "geprüft", flag: "markiert", edit: "bearbeitet" }[review.verdict]}</span>`
+    : "";
+
+  main.innerHTML = `
+    <div class="badges">
+      <span class="badge">${esc(CATEGORY_LABELS[q.category] || q.category)}</span>
+      <span class="badge grey">${DIFFICULTY[q.rating] || q.rating}</span>
+      <span class="badge grey">${index + 1} / ${list.length}</span>
+      ${statusPill}
+    </div>
+    <p class="prompt">${esc(q.prompt)}</p>
+    <div class="choices">${choices}</div>
+    ${reveal}
+    ${revealed ? `<div class="actions">
+      <button class="primary" data-verdict="ok">Passt <kbd>⏎</kbd></button>
+      <button class="danger" data-verdict="flag">Markieren <kbd>F</kbd></button>
+      <button data-action="edit">Bearbeiten <kbd>E</kbd></button>
+    </div>` : `<div class="actions">
+      <button data-action="reveal">Auflösen ohne Tipp <kbd>Leertaste</kbd></button>
+    </div>`}
+    ${review.note ? `<div class="status">Notiz: ${esc(review.note)}</div>` : ""}
+    ${editing ? editor(q) : ""}
+    <div class="hint">
+      <kbd>1</kbd>–<kbd>4</kbd> Antwort tippen · <kbd>Leertaste</kbd> auflösen ·
+      <kbd>⏎</kbd> passt · <kbd>F</kbd> markieren · <kbd>E</kbd> bearbeiten ·
+      <kbd>←</kbd> <kbd>→</kbd> blättern<br>
+      Tipp selbst setzen heißt: ein Abweichen vom Schlüssel fällt sofort auf, statt beim Lesen
+      übersehen zu werden. Fortschritt bleibt im Browser gespeichert.
+    </div>`;
+
+  main.querySelectorAll("[data-pick]").forEach((el) =>
+    el.onclick = () => choose(Number(el.dataset.pick)));
+  main.querySelectorAll("[data-verdict]").forEach((el) =>
+    el.onclick = () => verdict(el.dataset.verdict));
+  const revealBtn = main.querySelector("[data-action=reveal]");
+  if (revealBtn) revealBtn.onclick = () => { revealed = true; render(); };
+  const editBtn = main.querySelector("[data-action=edit]");
+  if (editBtn) editBtn.onclick = () => { editing = true; render(); };
+  if (editing) wireEditor(raw, q);
+}
+
+function editor(q) {
+  const rows = q.choices.map((choice, i) => `
+    <div class="choice-row">
+      <input type="radio" name="correct" value="${i}" ${i === q.correct_choice_index ? "checked" : ""}>
+      <input type="text" data-choice="${i}" value="${esc(choice)}">
+    </div>`).join("");
+  return `<div class="editor">
+    <label>Frage</label>
+    <textarea data-field="prompt">${esc(q.prompt)}</textarea>
+    <label>Antworten (Punkt markiert die richtige)</label>
+    ${rows}
+    <label>Bibelstelle</label>
+    <input type="text" data-field="reference" value="${esc(q.reference || "")}">
+    <label>Erklärung</label>
+    <textarea data-field="explanation">${esc(q.explanation || "")}</textarea>
+    <label>Notiz für dich</label>
+    <input type="text" data-field="note" value="${esc((reviews[idOf(current())] || {}).note || "")}">
+    <div class="actions">
+      <button class="primary" data-action="save-edit">Änderung übernehmen</button>
+      <button data-action="cancel-edit">Abbrechen <kbd>Esc</kbd></button>
+    </div>
+  </div>`;
+}
+
+function wireEditor(raw, q) {
+  const box = document.querySelector(".editor");
+  box.querySelector("[data-action=save-edit]").onclick = () => {
+    const edits = {
+      prompt: box.querySelector("[data-field=prompt]").value.trim(),
+      choices: [...box.querySelectorAll("[data-choice]")].map((el) => el.value.trim()),
+      correct_choice_index: Number(box.querySelector("input[name=correct]:checked").value),
+      reference: box.querySelector("[data-field=reference]").value.trim(),
+      explanation: box.querySelector("[data-field=explanation]").value.trim(),
+    };
+    const note = box.querySelector("[data-field=note]").value.trim();
+    reviews[idOf(raw)] = { verdict: "edit", note, pick, edits };
+    save(); editing = false; next();
+  };
+  box.querySelector("[data-action=cancel-edit]").onclick = () => { editing = false; render(); };
+}
+
+function choose(i) {
+  if (revealed) return;
+  pick = i; revealed = true; render();
+}
+
+function verdict(kind) {
+  const raw = current();
+  const previous = reviews[idOf(raw)] || {};
+  reviews[idOf(raw)] = { ...previous, verdict: kind, pick };
+  if (kind === "flag" && !previous.note) {
+    const note = prompt("Was stimmt nicht? (optional)") || "";
+    reviews[idOf(raw)].note = note.trim();
+  }
+  save(); next();
+}
+
+function next() {
+  revealed = false; pick = null; editing = false;
+  if (index < visible().length - 1) index++;
+  render();
+}
+
+function prev() {
+  revealed = false; pick = null; editing = false;
+  if (index > 0) index--;
+  render();
+}
+
+function jumpToUnreviewed() {
+  const list = visible();
+  const start = list.findIndex((q, i) => i > index && !reviews[idOf(q)]);
+  const fallback = list.findIndex((q) => !reviews[idOf(q)]);
+  const target = start >= 0 ? start : fallback;
+  if (target < 0) { alert("Alle Fragen in dieser Auswahl sind geprüft."); return; }
+  index = target; revealed = false; pick = null; editing = false; render();
+}
+
+function exportReviews() {
+  const payload = {
+    exported_at: new Date().toISOString(),
+    total_questions: QUESTIONS.length,
+    reviews: QUESTIONS.filter((q) => reviews[idOf(q)]).map((q) => {
+      const r = reviews[idOf(q)];
+      return {
+        category: q.category,
+        prompt: q.prompt,           // original — how apply_review.py finds the row
+        verdict: r.verdict,
+        note: r.note || "",
+        reviewer_pick: r.pick,
+        stored_key: q.correct_choice_index,
+        edits: r.edits || null,
+      };
+    }),
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "question-review.json";
+  link.click();
+}
+
+document.addEventListener("keydown", (event) => {
+  if (editing) {
+    if (event.key === "Escape") { editing = false; render(); }
+    return;
+  }
+  if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") return;
+  if (event.key >= "1" && event.key <= "4") { choose(Number(event.key) - 1); event.preventDefault(); }
+  else if (event.key === " ") { revealed = true; render(); event.preventDefault(); }
+  else if (event.key === "Enter" && revealed) { verdict("ok"); }
+  else if (event.key.toLowerCase() === "f" && revealed) { verdict("flag"); }
+  else if (event.key.toLowerCase() === "e" && revealed) { editing = true; render(); }
+  else if (event.key === "ArrowRight") next();
+  else if (event.key === "ArrowLeft") prev();
+});
+
+const select = document.getElementById("filter");
+select.innerHTML = `<option value="">Alle Kategorien (${QUESTIONS.length})</option>` +
+  [...new Set(QUESTIONS.map((q) => q.category))].map((c) => {
+    const n = QUESTIONS.filter((q) => q.category === c).length;
+    return `<option value="${c}">${CATEGORY_LABELS[c] || c} (${n})</option>`;
+  }).join("");
+select.onchange = () => { filter = select.value; index = 0; revealed = false; pick = null; render(); };
+document.getElementById("export").onclick = exportReviews;
+document.getElementById("jump").onclick = jumpToUnreviewed;
+
+render();
+</script>
+</body>
+</html>

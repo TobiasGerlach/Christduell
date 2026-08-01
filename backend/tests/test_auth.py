@@ -162,3 +162,17 @@ def test_account_deletion_scrubs_personal_data_and_blocks_login(client, session)
         ).status_code
         == 401
     )
+
+
+def test_registration_rejects_reserved_tld_addresses(client):
+    """A regression guard: the demo accounts were once seeded on a .test domain
+    and therefore could not be logged into at all."""
+    resp = client.post(
+        "/auth/register",
+        json={
+            "display_name": "Test",
+            "email": "someone@christduell.test",
+            "password": "password-1234",
+        },
+    )
+    assert resp.status_code == 422

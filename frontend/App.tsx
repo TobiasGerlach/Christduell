@@ -2,6 +2,7 @@ import * as Notifications from "expo-notifications";
 import { StatusBar } from "expo-status-bar";
 
 import { AuthProvider } from "./src/auth/AuthContext";
+import { DevPlayerSwitcher } from "./src/components/DevPlayerSwitcher";
 import { RootNavigator } from "./src/navigation/RootNavigator";
 
 Notifications.setNotificationHandler({
@@ -19,6 +20,8 @@ export default function App() {
   return (
     <AuthProvider>
       <RootNavigator />
+      {/* Local-only: renders nothing outside a web development build. */}
+      <DevPlayerSwitcher />
       <StatusBar style="auto" />
     </AuthProvider>
   );

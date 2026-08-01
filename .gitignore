@@ -40,3 +40,6 @@ web-build/
 
 # Azure
 .azure/
+
+# Generated proofreading page (rebuild with 'make review')
+scripts/review/review.html

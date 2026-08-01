@@ -39,6 +39,34 @@ Configuration lives in `backend/.env` and `frontend/.env` — copy the `.env.exa
 each. To try the paid tier without a Stripe account, start the API with `BILLING_PROVIDER=fake`;
 checkout then grants 30 days instantly.
 
+### Playing it locally
+
+```sh
+make play     # prints the three commands and the two URLs
+```
+
+Each browser tab keeps its own session, so `?player=anna` and `?player=tobias` can be two
+ordinary tabs side by side rather than a normal window and a private one — the stored token is
+namespaced per demo player. The badge at the bottom right switches sides in one click. This
+only exists in a web development build.
+
+`make backend-slow` runs the API with a ten-minute question timer so you can look at a screen
+instead of racing a 30-second clock, and `make demo-duels` leaves a duel in every interesting
+state (finished, your turn, opponent's turn, undecided challenge) so you don't have to play
+eight rounds to reach the history screen.
+
+### Proofreading the questions
+
+```sh
+make review                                          # builds and opens the review page
+make apply-review f=~/Downloads/question-review.json # feeds your corrections back in
+```
+
+A single offline HTML file with all questions, one per screen. You pick the answer you think is
+right before it reveals the stored one, so a wrong answer key announces itself instead of being
+skimmed past. `Enter` accepts, `F` flags, `E` edits inline; progress lives in the browser, and
+the export applies back to the fixtures.
+
 ### Tests
 
 ```sh

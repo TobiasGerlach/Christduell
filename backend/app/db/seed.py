@@ -11,10 +11,14 @@ FIXTURES_DIR = Path(__file__).parent / "fixtures"
 
 # Demo accounts for local development. They share one obvious password so both
 # sides of a duel can be logged into quickly; never seed these in production.
+#
+# example.com rather than a nicer-looking christduell.test: reserved TLDs like
+# .test are rejected by the email validator, so those accounts could be seeded
+# but never logged into.
 SEED_PASSWORD = "christduell-dev"
 SEED_PLAYERS = [
-    {"display_name": "Anna", "email": "anna@christduell.test"},
-    {"display_name": "Tobias", "email": "tobias@christduell.test"},
+    {"display_name": "Anna", "email": "anna@example.com"},
+    {"display_name": "Tobias", "email": "tobias@example.com"},
 ]
 
 

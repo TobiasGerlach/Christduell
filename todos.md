@@ -253,7 +253,7 @@ make check          # lint + backend tests + frontend tests + migration drift
 make smoke          # end-to-end against the running server (needs `make backend`)
 ```
 
-Demo logins after `make reset-db`: `anna@christduell.test` / `tobias@christduell.test`,
+Demo logins after `make reset-db`: `anna@example.com` / `tobias@example.com`,
 password `christduell-dev`.
 
 To exercise the paid tier locally, start the API with `BILLING_PROVIDER=fake` — "subscribe"

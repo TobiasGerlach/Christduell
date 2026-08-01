@@ -186,7 +186,7 @@ az webapp ssh --resource-group christduell-production-rg --name <app>
 python -m app.db.seed
 ```
 
-> `app.db.seed` also creates the two demo players (`anna@` / `tobias@christduell.test`) with a
+> `app.db.seed` also creates the two demo players (`anna@` / `tobias@example.com`) with a
 > known password. Delete them in production, or edit `SEED_PLAYERS` first.
 
 ---

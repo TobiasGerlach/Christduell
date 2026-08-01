@@ -2,8 +2,9 @@
 # Run `make` (or `make help`) for the list.
 
 .DEFAULT_GOAL := help
-.PHONY: help setup backend frontend web seed migrate migration reset-db \
-        test test-backend test-frontend lint fmt check smoke maintenance clean
+.PHONY: help setup backend backend-slow frontend web seed migrate migration reset-db \
+        test test-backend test-frontend lint fmt check smoke maintenance clean \
+        review apply-review demo-duels play
 
 BACKEND := backend
 FRONTEND := frontend
@@ -48,6 +49,35 @@ reset-db: ## Delete the local database and rebuild it from scratch
 
 maintenance: ## Run the housekeeping job (downgrade expired subscriptions)
 	cd $(BACKEND) && uv run python -m app.jobs.maintenance
+
+# --- Reviewing the questions ------------------------------------------------
+
+review: ## Build and open the offline proofreading page for all questions
+	uv run --project $(BACKEND) python scripts/build_review.py
+
+apply-review: ## Apply a review export: make apply-review f=~/Downloads/question-review.json
+	@test -n "$(f)" || (echo 'Usage: make apply-review f=~/Downloads/question-review.json [dry=1]'; exit 1)
+	uv run --project $(BACKEND) python scripts/apply_review.py "$(f)" $(if $(dry),--dry-run,)
+
+# --- Playing it locally -----------------------------------------------------
+
+demo-duels: ## Create duels in every state between the demo players (needs a running API)
+	BASE_URL=$(BASE_URL) uv run --project $(BACKEND) python scripts/seed_demo_duels.py
+
+play: ## Print how to play both sides locally
+	@echo "Terminal 1:  make reset-db && make backend-slow"
+	@echo "Terminal 2:  make demo-duels   (duels in every state, so you can jump to any screen)"
+	@echo "Terminal 3:  make web"
+	@echo ""
+	@echo "Then open these two URLs — each tab signs itself in and stays its own player:"
+	@echo "  http://localhost:8081/?player=anna"
+	@echo "  http://localhost:8081/?player=tobias"
+	@echo ""
+	@echo "The badge at the bottom right switches sides in one click. Logins are"
+	@echo "anna@example.com / tobias@example.com, password christduell-dev."
+
+backend-slow: ## Run the API with a 10-minute question timer (for unhurried UI testing)
+	cd $(BACKEND) && QUESTION_TIME_LIMIT_SECONDS=600 uv run fastapi dev app/main.py
 
 # --- Tests ------------------------------------------------------------------
 
