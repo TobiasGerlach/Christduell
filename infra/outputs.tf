@@ -11,10 +11,6 @@ output "backend_url" {
   value       = "https://${azurerm_linux_web_app.backend.default_hostname}"
 }
 
-output "postgres_fqdn" {
-  value = azurerm_postgresql_flexible_server.main.fqdn
-}
-
 output "notification_hub_name" {
   value = azurerm_notification_hub.main.name
 }
@@ -22,4 +18,10 @@ output "notification_hub_name" {
 output "notification_hub_connection_string" {
   value     = azurerm_notification_hub_authorization_rule.backend.primary_connection_string
   sensitive = true
+}
+
+output "jwt_secret_key" {
+  description = "Generated signing key for access tokens. Rotating it logs every player out."
+  value       = random_password.secret_key.result
+  sensitive   = true
 }

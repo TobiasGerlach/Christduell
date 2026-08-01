@@ -1,15 +1,18 @@
-name: Backend CI
+name: CI
 
 on:
+  push:
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
-defaults:
-  run:
-    working-directory: backend
-
 jobs:
-  lint-and-test:
+  backend:
+    name: Backend (lint, tests, migrations)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
     steps:
       - uses: actions/checkout@v4
 
@@ -26,3 +29,54 @@ jobs:
 
       - name: Test
         run: uv run pytest -q
+
+      - name: Check for missing migrations
+        # Fails when the models have moved on without a matching Alembic revision.
+        env:
+          DATABASE_URL: sqlite:///./ci-check.db
+        run: |
+          uv run alembic upgrade head
+          uv run alembic check
+
+  frontend:
+    name: Frontend (typecheck, tests)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Test
+        run: npm test
+
+  infra:
+    name: Infra (terraform validate)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infra
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Format check
+        run: terraform fmt -check -recursive
+
+      - name: Validate
+        run: |
+          terraform init -backend=false
+          terraform validate

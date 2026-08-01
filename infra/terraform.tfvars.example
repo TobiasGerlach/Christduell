@@ -3,7 +3,28 @@ environment = "production"
 location    = "westeurope"
 
 # Image to run on first deploy — the CD pipeline will update this on each push.
+# Use any public image (e.g. "nginx:latest") for the very first apply, then
+# update to the real ACR address after the registry is created.
 container_image = "christduellproductionXXXXXXacr.azurecr.io/christduell-backend:latest"
 
-postgres_admin_username = "christduell_admin"
-postgres_admin_password = "change-me-to-a-strong-secret"
+# Browser origins allowed to call the API. Required for the Expo web build;
+# leave empty if only the native apps talk to the backend.
+cors_origins = "https://christduell.example"
+
+# --- Push notifications -----------------------------------------------------
+# Turn on once the app is built with an EAS project id and pushes were tested.
+push_enabled = false
+# expo_access_token = "..."   # only needed with Expo's enhanced security setting
+
+# --- Billing ----------------------------------------------------------------
+# "none" until Stripe is live. "fake" is rejected here on purpose: it would give
+# every player a free subscription.
+billing_provider = "none"
+# stripe_secret_key     = "sk_live_..."
+# stripe_price_id       = "price_..."
+# stripe_webhook_secret = "whsec_..."
+# billing_success_url   = "https://christduell.example/abo/danke"
+# billing_cancel_url    = "https://christduell.example/abo"
+
+# Bump before real traffic — B1 is a development size.
+# app_service_sku = "B2"
