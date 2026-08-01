@@ -1,10 +1,8 @@
-import { useEffect } from "react";
-import { StatusBar } from "expo-status-bar";
 import * as Notifications from "expo-notifications";
+import { StatusBar } from "expo-status-bar";
 
-import { CURRENT_PLAYER_ID } from "./src/currentPlayer";
+import { AuthProvider } from "./src/auth/AuthContext";
 import { RootNavigator } from "./src/navigation/RootNavigator";
-import { registerForPushNotifications } from "./src/notifications/registerForPushNotifications";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -16,16 +14,12 @@ Notifications.setNotificationHandler({
 });
 
 export default function App() {
-  useEffect(() => {
-    registerForPushNotifications(CURRENT_PLAYER_ID).catch((err) =>
-      console.warn("Push registration failed:", err),
-    );
-  }, []);
-
+  // Push tokens are registered from AuthContext once a player is signed in —
+  // an anonymous device has no player row to attach a token to.
   return (
-    <>
+    <AuthProvider>
       <RootNavigator />
       <StatusBar style="auto" />
-    </>
+    </AuthProvider>
   );
 }

@@ -7,11 +7,17 @@ import { api } from "../api/client";
 
 /**
  * Asks for notification permission, fetches an Expo push token, and registers
- * it with the backend so duel alerts ("it's your turn!") can be delivered.
- * Returns null on simulators/emulators or if the user declines permission —
- * push tokens require a physical device.
+ * it with the backend so duel alerts ("Du bist dran!") can be delivered to the
+ * logged-in player. Requires an authenticated session — call it after login.
+ *
+ * Returns null on simulators/emulators, on web, or if the user declines
+ * permission: push tokens require a physical device.
  */
-export async function registerForPushNotifications(playerId: number): Promise<string | null> {
+export async function registerForPushNotifications(): Promise<string | null> {
+  if (Platform.OS === "web") {
+    return null;
+  }
+
   if (!Device.isDevice) {
     console.warn("Push notifications require a physical device");
     return null;
@@ -39,7 +45,7 @@ export async function registerForPushNotifications(playerId: number): Promise<st
     projectId ? { projectId } : undefined,
   );
 
-  await api.post("/notifications/register-token", { player_id: playerId, push_token: pushToken });
+  await api.post("/notifications/register-token", { push_token: pushToken });
 
   return pushToken;
 }

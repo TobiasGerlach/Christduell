@@ -1,6 +1,10 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    // expo/tsconfig.base sets no `types`, which makes TS pick up every package
+    // in node_modules/@types — listing them explicitly keeps jest's globals
+    // available in the test files without pulling in anything else.
+    "types": ["jest"]
   }
 }

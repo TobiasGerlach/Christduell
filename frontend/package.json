@@ -10,6 +10,7 @@
     "expo-constants": "~56.0.17",
     "expo-device": "~56.0.4",
     "expo-notifications": "~56.0.16",
+    "expo-secure-store": "~56.0.4",
     "expo-status-bar": "~56.0.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -19,14 +20,26 @@
     "react-native-web": "^0.21.2"
   },
   "devDependencies": {
+    "@types/jest": "29.5.14",
     "@types/react": "~19.2.2",
+    "babel-preset-expo": "~56.0.0",
+    "jest": "~29.7.0",
+    "jest-expo": "~56.0.5",
     "typescript": "~6.0.3"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "test": "NODE_OPTIONS=--localstorage-file=./.jest-localstorage jest",
+    "typecheck": "tsc --noEmit"
   },
-  "private": true
+  "private": true,
+  "jest": {
+    "preset": "jest-expo/ios",
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg))"
+    ]
+  }
 }

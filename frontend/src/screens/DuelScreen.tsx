@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { DuelStateResponse, duelsApi } from "../api/duels";
-import { CURRENT_PLAYER_ID } from "../currentPlayer";
+import { useAccount } from "../auth/AuthContext";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
@@ -15,13 +15,14 @@ const POLL_INTERVAL_MS = 8000;
 
 export function DuelScreen({ route, navigation }: Props) {
   const { duelId } = route.params;
+  const account = useAccount();
   const [state, setState] = useState<DuelStateResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     try {
       setError(null);
-      setState(await duelsApi.getState(duelId, CURRENT_PLAYER_ID));
+      setState(await duelsApi.getState(duelId));
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to load duel");
     }
@@ -54,7 +55,7 @@ export function DuelScreen({ route, navigation }: Props) {
     );
   }
 
-  const isMyTurn = state.acting_player_id === CURRENT_PLAYER_ID;
+  const isMyTurn = state.acting_player_id === account.id;
 
   return (
     <View style={styles.container}>

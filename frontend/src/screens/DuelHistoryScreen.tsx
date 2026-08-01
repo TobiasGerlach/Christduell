@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { DuelHistoryQuestion, DuelHistoryResponse, DuelHistoryRound, duelsApi } from "../api/duels";
-import { CURRENT_PLAYER_ID } from "../currentPlayer";
+import { useAccount } from "../auth/AuthContext";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "DuelHistory">;
 
-function QuestionRow({ question }: { question: DuelHistoryQuestion }) {
+function QuestionRow({ question, playerId }: { question: DuelHistoryQuestion; playerId: number }) {
   const correctChoice =
     question.correct_choice_index != null ? question.choices[question.correct_choice_index] : null;
 
@@ -19,7 +19,7 @@ function QuestionRow({ question }: { question: DuelHistoryQuestion }) {
       </Text>
       {correctChoice != null && <Text style={styles.questionAnswer}>Richtig: {correctChoice}</Text>}
       {question.answers.map((answer) => {
-        const label = answer.player_id === CURRENT_PLAYER_ID ? "Du" : "Gegner";
+        const label = answer.player_id === playerId ? "Du" : "Gegner";
         const outcome = answer.is_timeout
           ? "Zeit abgelaufen"
           : answer.is_correct
@@ -35,8 +35,8 @@ function QuestionRow({ question }: { question: DuelHistoryQuestion }) {
   );
 }
 
-function RoundCard({ round }: { round: DuelHistoryRound }) {
-  const pickerLabel = round.picked_by_id === CURRENT_PLAYER_ID ? "Du" : "Gegner";
+function RoundCard({ round, playerId }: { round: DuelHistoryRound; playerId: number }) {
+  const pickerLabel = round.picked_by_id === playerId ? "Du" : "Gegner";
 
   return (
     <View style={styles.roundCard}>
@@ -48,7 +48,9 @@ function RoundCard({ round }: { round: DuelHistoryRound }) {
       {!round.revealed ? (
         <Text style={styles.pending}>Noch nicht abgeschlossen …</Text>
       ) : (
-        round.questions.map((question) => <QuestionRow key={question.position} question={question} />)
+        round.questions.map((question) => (
+          <QuestionRow key={question.position} question={question} playerId={playerId} />
+        ))
       )}
     </View>
   );
@@ -56,12 +58,13 @@ function RoundCard({ round }: { round: DuelHistoryRound }) {
 
 export function DuelHistoryScreen({ route }: Props) {
   const { duelId } = route.params;
+  const account = useAccount();
   const [history, setHistory] = useState<DuelHistoryResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     duelsApi
-      .getHistory(duelId, CURRENT_PLAYER_ID)
+      .getHistory(duelId)
       .then(setHistory)
       .catch((err) => setError(err instanceof Error ? err.message : "Failed to load history"));
   }, [duelId]);
@@ -85,7 +88,7 @@ export function DuelHistoryScreen({ route }: Props) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {history.rounds.map((round) => (
-        <RoundCard key={round.sequence} round={round} />
+        <RoundCard key={round.sequence} round={round} playerId={account.id} />
       ))}
     </ScrollView>
   );

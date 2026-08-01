@@ -1,42 +1,35 @@
 import { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { DuelSummary, duelsApi } from "../api/duels";
-import { PlayerProfile, playersApi } from "../api/players";
-import { CURRENT_PLAYER_ID } from "../currentPlayer";
-import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { QuestionnaireType, researchApi } from "../api/research";
+import { useAccount } from "../auth/AuthContext";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "DuelsList">;
 
-// The seed data ships exactly two test players (Anna #1, Tobias #2) — pick
-// "the other one" as the sparring partner for ad-hoc test duels.
-const TEST_OPPONENT_ID = CURRENT_PLAYER_ID === 1 ? 2 : 1;
-
-function scoreLineFor(duel: DuelSummary): string {
-  const isChallenger = duel.challenger_id === CURRENT_PLAYER_ID;
-  const ownScore = isChallenger ? duel.challenger_score : duel.opponent_score;
-  const opponentScore = isChallenger ? duel.opponent_score : duel.challenger_score;
-  return `${ownScore} – ${opponentScore} · ${duel.status}`;
-}
-
 export function DuelsListScreen({ navigation }: Props) {
+  const account = useAccount();
   const [duels, setDuels] = useState<DuelSummary[]>([]);
-  const [profile, setProfile] = useState<PlayerProfile | null>(null);
+  const [dueQuestionnaire, setDueQuestionnaire] = useState<QuestionnaireType | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [creating, setCreating] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const load = useCallback(async () => {
     try {
       setError(null);
-      const [duelsResult, profileResult] = await Promise.all([
-        duelsApi.listForPlayer(CURRENT_PLAYER_ID),
-        playersApi.getProfile(CURRENT_PLAYER_ID),
+      const [duelsResult, questionnaire] = await Promise.all([
+        duelsApi.list(),
+        // A pending questionnaire is not worth failing the whole screen over.
+        researchApi.getCurrentQuestionnaire().catch(() => null),
       ]);
       setDuels(duelsResult);
-      setProfile(profileResult);
+      setDueQuestionnaire(questionnaire?.due_questionnaire ?? null);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load duels");
+      setError(err instanceof Error ? err.message : "Duelle konnten nicht geladen werden");
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -44,41 +37,83 @@ export function DuelsListScreen({ navigation }: Props) {
     load();
   }, [load]);
 
-  useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", load);
-    return unsubscribe;
-  }, [navigation, load]);
+  useEffect(() => navigation.addListener("focus", load), [navigation, load]);
 
-  const startTestDuel = useCallback(async () => {
-    setCreating(true);
-    try {
-      setError(null);
-      await duelsApi.create(CURRENT_PLAYER_ID, TEST_OPPONENT_ID);
-      await load();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to start duel");
-    } finally {
-      setCreating(false);
-    }
-  }, [load]);
+  const decline = useCallback(
+    (duel: DuelSummary) => {
+      Alert.alert("Herausforderung ablehnen?", `Duell gegen ${duel.challenger_display_name}`, [
+        { text: "Abbrechen", style: "cancel" },
+        {
+          text: "Ablehnen",
+          style: "destructive",
+          onPress: async () => {
+            try {
+              await duelsApi.decline(duel.id);
+              await load();
+            } catch (err) {
+              setError(err instanceof Error ? err.message : "Ablehnen fehlgeschlagen");
+            }
+          },
+        },
+      ]);
+    },
+    [load],
+  );
+
+  const describe = useCallback(
+    (duel: DuelSummary) => {
+      const isChallenger = duel.challenger_id === account.id;
+      const opponentName = isChallenger
+        ? duel.opponent_display_name
+        : duel.challenger_display_name;
+      const ownScore = isChallenger ? duel.challenger_score : duel.opponent_score;
+      const opponentScore = isChallenger ? duel.opponent_score : duel.challenger_score;
+      const statusLabel =
+        duel.status === "finished"
+          ? ownScore > opponentScore
+            ? "gewonnen"
+            : ownScore < opponentScore
+              ? "verloren"
+              : "unentschieden"
+          : duel.status === "pending"
+            ? "wartet auf Start"
+            : "läuft";
+      return { opponentName, line: `${ownScore} – ${opponentScore} · ${statusLabel}` };
+    },
+    [account.id],
+  );
+
+  if (loading) {
+    return (
+      <View style={styles.center}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
-      {profile && (
-        <View style={styles.profileBadge}>
-          <Text style={styles.profileName}>{profile.display_name}</Text>
-          <Text style={styles.profileRank}>
-            {profile.rank} · {Math.round(profile.rating)}
+      <Pressable style={styles.profileBadge} onPress={() => navigation.navigate("Profile")}>
+        <Text style={styles.profileName}>{account.display_name}</Text>
+        <Text style={styles.profileRank}>
+          {account.rank} · {Math.round(account.rating)}
+        </Text>
+      </Pressable>
+
+      {dueQuestionnaire && (
+        <Pressable
+          style={styles.questionnaireBanner}
+          onPress={() => navigation.navigate("Questionnaire")}
+        >
+          <Text style={styles.bannerTitle}>Ein Fragebogen wartet auf dich</Text>
+          <Text style={styles.bannerBody}>
+            Damit bleibt Christduell für dich kostenlos. Jetzt ausfüllen →
           </Text>
-        </View>
+        </Pressable>
       )}
 
-      <Pressable style={styles.startButton} onPress={startTestDuel} disabled={creating}>
-        {creating ? (
-          <ActivityIndicator color="#FFFFFF" />
-        ) : (
-          <Text style={styles.startButtonLabel}>Testduell starten</Text>
-        )}
+      <Pressable style={styles.startButton} onPress={() => navigation.navigate("NewDuel")}>
+        <Text style={styles.startButtonLabel}>Neues Duell</Text>
       </Pressable>
 
       {error && <Text style={styles.error}>{error}</Text>}
@@ -88,15 +123,21 @@ export function DuelsListScreen({ navigation }: Props) {
         keyExtractor={(duel) => String(duel.id)}
         contentContainerStyle={styles.list}
         ListEmptyComponent={<Text style={styles.empty}>Noch keine Duelle — starte eines!</Text>}
-        renderItem={({ item }) => (
-          <Pressable
-            style={styles.card}
-            onPress={() => navigation.navigate("Duel", { duelId: item.id })}
-          >
-            <Text style={styles.cardTitle}>Duell #{item.id}</Text>
-            <Text style={styles.cardSubtitle}>{scoreLineFor(item)}</Text>
-          </Pressable>
-        )}
+        renderItem={({ item }) => {
+          const { opponentName, line } = describe(item);
+          const canDecline = item.status === "pending" && item.opponent_id === account.id;
+          return (
+            <Pressable
+              style={styles.card}
+              onPress={() => navigation.navigate("Duel", { duelId: item.id })}
+              onLongPress={canDecline ? () => decline(item) : undefined}
+            >
+              <Text style={styles.cardTitle}>gegen {opponentName}</Text>
+              <Text style={styles.cardSubtitle}>{line}</Text>
+              {canDecline && <Text style={styles.cardHint}>Lange drücken zum Ablehnen</Text>}
+            </Pressable>
+          );
+        }}
       />
     </View>
   );
@@ -104,6 +145,7 @@ export function DuelsListScreen({ navigation }: Props) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 16 },
+  center: { flex: 1, alignItems: "center", justifyContent: "center" },
   profileBadge: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -115,6 +157,14 @@ const styles = StyleSheet.create({
   },
   profileName: { fontSize: 16, fontWeight: "700" },
   profileRank: { color: "#5B5B5B" },
+  questionnaireBanner: {
+    backgroundColor: "#FFF3E0",
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 12,
+  },
+  bannerTitle: { fontWeight: "700", color: "#8A5A00" },
+  bannerBody: { color: "#8A5A00", marginTop: 2, fontSize: 13 },
   startButton: {
     backgroundColor: "#6750A4",
     borderRadius: 12,
@@ -124,13 +174,10 @@ const styles = StyleSheet.create({
   },
   startButtonLabel: { color: "#FFFFFF", fontWeight: "600" },
   list: { gap: 12 },
-  card: {
-    backgroundColor: "#F4F1FB",
-    borderRadius: 12,
-    padding: 16,
-  },
+  card: { backgroundColor: "#F4F1FB", borderRadius: 12, padding: 16 },
   cardTitle: { fontSize: 16, fontWeight: "600" },
   cardSubtitle: { marginTop: 4, color: "#5B5B5B" },
+  cardHint: { marginTop: 6, fontSize: 11, color: "#9A9A9A" },
   empty: { textAlign: "center", marginTop: 48, color: "#5B5B5B" },
   error: { color: "#B00020", marginBottom: 12 },
 });

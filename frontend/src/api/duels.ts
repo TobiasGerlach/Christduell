@@ -4,6 +4,8 @@ export type DuelStatus = "pending" | "active" | "finished";
 export type DuelAction = "pick_category" | "answer_question" | "finished";
 
 export interface DuelSummary {
+  challenger_display_name: string;
+  opponent_display_name: string;
   id: number;
   challenger_id: number;
   opponent_id: number;
@@ -82,39 +84,41 @@ export interface DuelHistoryResponse {
   rounds: DuelHistoryRound[];
 }
 
+// The acting player is taken from the auth token on the server, so none of
+// these calls pass a player id.
 export const duelsApi = {
-  listForPlayer: (playerId: number) =>
-    api.get<DuelSummary[]>(`/duels?player_id=${playerId}`),
+  list: () => api.get<DuelSummary[]>("/duels"),
 
-  create: (challengerId: number, opponentId: number) =>
-    api.post<DuelSummary>("/duels", { challenger_id: challengerId, opponent_id: opponentId }),
+  challengePlayer: (opponentId: number) =>
+    api.post<DuelSummary>("/duels", { opponent_id: opponentId }),
 
-  getState: (duelId: number, playerId: number) =>
-    api.get<DuelStateResponse>(`/duels/${duelId}/state?player_id=${playerId}`),
+  challengeByEmail: (opponentEmail: string) =>
+    api.post<DuelSummary>("/duels", { opponent_email: opponentEmail }),
 
-  getRecommendations: (duelId: number, playerId: number) =>
-    api.get<CategoryRecommendation[]>(`/duels/${duelId}/recommendations?player_id=${playerId}`),
+  challengeRandom: () => api.post<DuelSummary>("/duels/random"),
 
-  pickCategory: (duelId: number, playerId: number, category: string) =>
-    api.post<DuelStateResponse>(`/duels/${duelId}/rounds`, { player_id: playerId, category }),
+  decline: (duelId: number) => api.post<DuelSummary>(`/duels/${duelId}/decline`),
 
-  getQuestion: (duelId: number, roundId: number, position: number, playerId: number) =>
-    api.get<QuestionToAnswer>(
-      `/duels/${duelId}/rounds/${roundId}/questions/${position}?player_id=${playerId}`,
-    ),
+  getState: (duelId: number) => api.get<DuelStateResponse>(`/duels/${duelId}/state`),
+
+  getRecommendations: (duelId: number) =>
+    api.get<CategoryRecommendation[]>(`/duels/${duelId}/recommendations`),
+
+  pickCategory: (duelId: number, category: string) =>
+    api.post<DuelStateResponse>(`/duels/${duelId}/rounds`, { category }),
+
+  getQuestion: (duelId: number, roundId: number, position: number) =>
+    api.get<QuestionToAnswer>(`/duels/${duelId}/rounds/${roundId}/questions/${position}`),
 
   submitAnswer: (
     duelId: number,
     roundId: number,
     position: number,
-    playerId: number,
     selectedChoiceIndex: number | null,
   ) =>
     api.post<AnswerResult>(`/duels/${duelId}/rounds/${roundId}/questions/${position}/answer`, {
-      player_id: playerId,
       selected_choice_index: selectedChoiceIndex,
     }),
 
-  getHistory: (duelId: number, playerId: number) =>
-    api.get<DuelHistoryResponse>(`/duels/${duelId}/history?player_id=${playerId}`),
+  getHistory: (duelId: number) => api.get<DuelHistoryResponse>(`/duels/${duelId}/history`),
 };

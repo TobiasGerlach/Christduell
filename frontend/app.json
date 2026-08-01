@@ -31,7 +31,8 @@
           "icon": "./assets/icon.png",
           "color": "#5B3CC4"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "extra": {
       "apiBaseUrl": "http://localhost:8000"

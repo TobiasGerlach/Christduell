@@ -9,4 +9,8 @@ export interface PlayerProfile {
 
 export const playersApi = {
   getProfile: (playerId: number) => api.get<PlayerProfile>(`/players/${playerId}`),
+
+  /** Finds opponents. Email matches must be exact; display names match by prefix. */
+  search: (query: string) =>
+    api.get<PlayerProfile[]>(`/players/search?q=${encodeURIComponent(query)}`),
 };

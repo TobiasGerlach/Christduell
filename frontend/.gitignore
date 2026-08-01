@@ -39,3 +39,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Scratch file for Node's webstorage flag (see the test script)
+.jest-localstorage

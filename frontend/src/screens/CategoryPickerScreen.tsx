@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { CategoryRecommendation, duelsApi } from "../api/duels";
-import { CURRENT_PLAYER_ID } from "../currentPlayer";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
@@ -16,7 +15,7 @@ export function CategoryPickerScreen({ route, navigation }: Props) {
 
   useEffect(() => {
     duelsApi
-      .getRecommendations(duelId, CURRENT_PLAYER_ID)
+      .getRecommendations(duelId)
       .then(setRecommendations)
       .catch((err) => setError(err instanceof Error ? err.message : "Failed to load categories"));
   }, [duelId]);
@@ -27,7 +26,7 @@ export function CategoryPickerScreen({ route, navigation }: Props) {
       setPicking(category);
       try {
         setError(null);
-        const state = await duelsApi.pickCategory(duelId, CURRENT_PLAYER_ID, category);
+        const state = await duelsApi.pickCategory(duelId, category);
         if (state.round_id != null) {
           navigation.replace("PlayQuestion", { duelId, roundId: state.round_id, position: 1 });
         }

@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { AnswerResult, QuestionToAnswer, duelsApi } from "../api/duels";
-import { CURRENT_PLAYER_ID } from "../currentPlayer";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
@@ -25,7 +24,7 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
     setSelected(null);
     setResult(null);
     duelsApi
-      .getQuestion(duelId, roundId, position, CURRENT_PLAYER_ID)
+      .getQuestion(duelId, roundId, position)
       .then((q) => {
         setQuestion(q);
         setSecondsLeft(Math.ceil(q.seconds_remaining));
@@ -40,7 +39,7 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
       setSelected(choiceIndex);
       try {
         setError(null);
-        setResult(await duelsApi.submitAnswer(duelId, roundId, position, CURRENT_PLAYER_ID, choiceIndex));
+        setResult(await duelsApi.submitAnswer(duelId, roundId, position, choiceIndex));
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to submit answer");
       }
