@@ -4,25 +4,59 @@ A Quizduell-style trivia duel app for playful Christian education — challenge 
 
 ## Project structure
 
-- `backend/` — FastAPI backend (Python, managed with `uv`), deployed to Azure. Owns game logic, question banks, matchmaking, scoring, and push notification dispatch.
+- `backend/` — FastAPI backend (Python, managed with `uv`), deployed to Azure. Owns game logic, question banks, matchmaking, scoring, push notification dispatch, and the research/questionnaire module.
 - `frontend/` — Expo / React Native (TypeScript) mobile app. Talks to the backend over REST and registers for push notifications.
+- `infra/` — Terraform for the Azure deployment (ACR, App Service, persistent SQLite on Azure Files, Notification Hub). See `infra/README.md`.
+- `scripts/` — operational helpers: `backup-db.sh` downloads the production SQLite database, `smoke_test.py` exercises a running deployment end to end.
+
+## Features
+
+- **Accounts** — email/password registration, JWT bearer tokens, password change, and GDPR
+  account deletion that scrubs personal data while keeping past duels intact.
+- **Duels** — Quizduell-style asynchronous 1v1 matches across 13 faith-themed categories, with Elo-style ratings for both players and questions from day one. Challenge someone by name or email, or get matched with a similarly-rated stranger.
+- **Push notifications** — "you've been challenged", "you're up", "duel finished", delivered through the Expo push service.
+- **Subscriptions** — €5/month removes the questionnaire obligation. Stripe Checkout on the web, behind a provider abstraction (`none` / `fake` / `stripe`) so the app-store in-app-purchase flow can slot in later.
+- **Research programme** — free ("research" tier) players are periodically invited to complete questionnaires (faith background, then optional ADHD/autism screeners). Answers are stored only under a pseudonymous UUID, gated behind explicit consent (with a separate opt-in for health data) and a GDPR-style right to withdraw. A paid tier skips questionnaires. See `backend/app/services/research.py`.
+
+See [`todos.md`](todos.md) for what is still missing before launch.
 
 ## Getting started
 
-### Backend
+Everything runs through the `Makefile` — `make` on its own lists the targets.
 
 ```sh
-cd backend
-uv sync
-uv run fastapi dev app/main.py
+make setup      # install backend and frontend dependencies
+make reset-db   # apply migrations and seed demo players + questions
+make backend    # API on http://localhost:8000 (docs at /docs)
+make web        # Expo web build on http://localhost:8081
+make frontend   # Expo dev server for a phone (Expo Go)
 ```
 
-### Frontend
+`make reset-db` prints the demo logins (password `christduell-dev`). Open two browser windows
+against `make web` and log in as each to play both sides of a duel.
+
+Configuration lives in `backend/.env` and `frontend/.env` — copy the `.env.example` next to
+each. To try the paid tier without a Stripe account, start the API with `BILLING_PROVIDER=fake`;
+checkout then grants 30 days instantly.
+
+### Tests
 
 ```sh
-cd frontend
-npm install
-npx expo start
+make check    # lint + backend tests + frontend typecheck/tests + migration drift
+make smoke    # end-to-end HTTP run against a running server
+```
+
+`make smoke` registers two throwaway accounts, plays a complete eight-round duel, walks the
+research and billing flows, then deletes the accounts. Point it at a deployment with
+`BASE_URL=https://… make smoke`.
+
+### Database migrations
+
+Schema changes go through Alembic; the app runs `alembic upgrade head` on startup.
+
+```sh
+make migration m="add something"   # generate from model changes
+make migrate                       # apply
 ```
 
 ## Stack
@@ -30,5 +64,11 @@ npx expo start
 | Layer        | Choice                                   |
 |--------------|------------------------------------------|
 | Backend      | FastAPI + uv, deployed to Azure          |
+| Database     | SQLite (WAL mode) on Azure Files; local SQLite in dev |
 | Frontend     | Expo / React Native (TypeScript)         |
 | Push         | Expo Notifications / Azure Notification Hubs |
+| Infra        | Terraform (Azure)                        |
+| Auth         | JWT (PyJWT) + Argon2 password hashing    |
+| Payments     | Stripe Checkout subscriptions (web)      |
+| Migrations   | Alembic                                  |
+| CI/CD        | GitHub Actions (`.github/workflows/`)    |
