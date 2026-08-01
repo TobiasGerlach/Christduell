@@ -14,6 +14,10 @@ COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-install-project --no-dev
 
 COPY app ./app
+# The app applies migrations on startup, so alembic.ini and the revisions have
+# to be in the image — without them the container fails to boot.
+COPY alembic.ini ./
+COPY migrations ./migrations
 RUN uv sync --frozen --no-dev
 
 EXPOSE 8000
