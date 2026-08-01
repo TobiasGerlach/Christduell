@@ -128,6 +128,8 @@ class AnswerResult(BaseModel):
     is_correct: bool
     is_timeout: bool
     correct_choice_index: int
+    reference: str | None
+    explanation: str | None
     round_revealed: bool
     duel_finished: bool
 
@@ -144,6 +146,8 @@ class DuelHistoryQuestion(BaseModel):
     prompt: str
     choices: list[str]
     correct_choice_index: int | None
+    reference: str | None
+    explanation: str | None
     answers: list[DuelHistoryAnswer]
 
 
@@ -591,6 +595,8 @@ def submit_answer(
         is_correct=answer.is_correct,
         is_timeout=answer.is_timeout,
         correct_choice_index=question.correct_choice_index,
+        reference=question.reference,
+        explanation=question.explanation,
         round_revealed=round_revealed,
         duel_finished=duel_finished,
     )
@@ -648,6 +654,9 @@ def get_duel_history(
                     prompt=question.prompt,
                     choices=json.loads(question.choices),
                     correct_choice_index=question.correct_choice_index if revealed else None,
+                    # Withheld until the round reveals, like the answer key.
+                    reference=question.reference if revealed else None,
+                    explanation=question.explanation if revealed else None,
                     answers=visible_answers,
                 )
             )

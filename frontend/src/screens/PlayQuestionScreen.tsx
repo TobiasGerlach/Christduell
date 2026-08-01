@@ -124,6 +124,8 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
           <Text style={result.is_correct ? styles.feedbackCorrect : styles.feedbackWrong}>
             {result.is_timeout ? "Zeit abgelaufen!" : result.is_correct ? "Richtig!" : "Leider falsch."}
           </Text>
+          {result.explanation && <Text style={styles.explanation}>{result.explanation}</Text>}
+          {result.reference && <Text style={styles.reference}>{result.reference}</Text>}
           <Pressable style={styles.continueButton} onPress={proceed}>
             <Text style={styles.continueButtonLabel}>
               {position < 3 ? "Weiter" : "Zurück zum Duell"}
@@ -137,6 +139,8 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 24, gap: 12 },
+  explanation: { marginTop: 8, color: "#4A4A4A", lineHeight: 20, textAlign: "center" },
+  reference: { marginTop: 4, color: "#7A7A7A", fontSize: 12, textAlign: "center" },
   center: { flex: 1, alignItems: "center", justifyContent: "center" },
   timer: { textAlign: "right", fontSize: 16, fontWeight: "600", color: "#6750A4" },
   prompt: { fontSize: 20, fontWeight: "600", marginBottom: 8 },

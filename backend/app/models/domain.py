@@ -64,6 +64,12 @@ class Question(SQLModel, table=True):
     prompt: str
     choices: str  # JSON-encoded list[str]
     correct_choice_index: int
+    # Shown once the answer is revealed — the app is meant to teach, and a
+    # citation is what settles a dispute about an answer key.
+    reference: str | None = None    # e.g. "Gen 6,14"
+    explanation: str | None = None  # one sentence
+    # Seeded per authored difficulty (~850 easy / 1000 medium / 1150 hard) and
+    # then adjusted by the Elo update on every answer.
     rating: float = Field(default=1000.0)
 
 

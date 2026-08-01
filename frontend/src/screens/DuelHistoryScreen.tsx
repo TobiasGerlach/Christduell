@@ -18,6 +18,8 @@ function QuestionRow({ question, playerId }: { question: DuelHistoryQuestion; pl
         {question.position}. {question.prompt}
       </Text>
       {correctChoice != null && <Text style={styles.questionAnswer}>Richtig: {correctChoice}</Text>}
+      {question.explanation && <Text style={styles.questionExplanation}>{question.explanation}</Text>}
+      {question.reference && <Text style={styles.questionReference}>{question.reference}</Text>}
       {question.answers.map((answer) => {
         const label = answer.player_id === playerId ? "Du" : "Gegner";
         const outcome = answer.is_timeout
@@ -95,6 +97,8 @@ export function DuelHistoryScreen({ route }: Props) {
 }
 
 const styles = StyleSheet.create({
+  questionExplanation: { color: "#4A4A4A", fontSize: 13, lineHeight: 18, marginTop: 2 },
+  questionReference: { color: "#7A7A7A", fontSize: 11, marginTop: 1 },
   container: { padding: 16, gap: 12 },
   center: { flex: 1, alignItems: "center", justifyContent: "center" },
   roundCard: {

@@ -73,12 +73,16 @@ def make_question(
     prompt: str,
     correct_choice_index: int = 0,
     rating: float = 1000.0,
+    reference: str | None = None,
+    explanation: str | None = None,
 ) -> Question:
     question = Question(
         category=category,
         prompt=prompt,
         choices=json.dumps(["A", "B", "C", "D"], ensure_ascii=False),
         correct_choice_index=correct_choice_index,
+        reference=reference,
+        explanation=explanation,
         rating=rating,
     )
     session.add(question)

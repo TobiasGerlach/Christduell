@@ -47,6 +47,9 @@ def _seed_questions(session: Session) -> None:
             )
         ).first()
         if existing is not None:
+            existing.reference = entry.get("reference")
+            existing.explanation = entry.get("explanation")
+            session.add(existing)
             continue
         session.add(
             Question(
@@ -54,6 +57,8 @@ def _seed_questions(session: Session) -> None:
                 prompt=entry["prompt"],
                 choices=json.dumps(entry["choices"], ensure_ascii=False),
                 correct_choice_index=entry["correct_choice_index"],
+                reference=entry.get("reference"),
+                explanation=entry.get("explanation"),
                 rating=entry.get("rating", 1000.0),
             )
         )

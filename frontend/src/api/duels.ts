@@ -46,6 +46,8 @@ export interface QuestionToAnswer {
 }
 
 export interface AnswerResult {
+  reference: string | null;
+  explanation: string | null;
   is_correct: boolean;
   is_timeout: boolean;
   correct_choice_index: number;
@@ -61,6 +63,8 @@ export interface DuelHistoryAnswer {
 }
 
 export interface DuelHistoryQuestion {
+  reference: string | null;
+  explanation: string | null;
   position: number;
   prompt: string;
   choices: string[];
