@@ -1,10 +1,16 @@
+from types import SimpleNamespace
+
 import pytest
 from fastapi.testclient import TestClient
 from sqlmodel import Session, SQLModel, create_engine
 from sqlmodel.pool import StaticPool
 
+from app.core.config import get_settings
 from app.db.session import get_session
 from app.main import app
+from app.models.domain import Category
+from app.services import push
+from tests.factories import PlayerClient, make_player
 
 
 @pytest.fixture(name="session")
@@ -26,3 +32,60 @@ def client_fixture(session):
     client = TestClient(app)
     yield client
     app.dependency_overrides.clear()
+
+
+@pytest.fixture(name="settings_override")
+def settings_override_fixture(monkeypatch):
+    """Sets settings fields for one test and restores the cache afterwards.
+
+    `get_settings` is lru_cached, so the cached instance is patched in place and
+    then cleared — that way anything holding a reference sees the change too.
+    """
+    settings = get_settings()
+    originals: dict[str, object] = {}
+
+    def override(**values):
+        for key, value in values.items():
+            if key not in originals:
+                originals[key] = getattr(settings, key)
+            monkeypatch.setattr(settings, key, value, raising=False)
+        return settings
+
+    yield override
+
+    for key, value in originals.items():
+        setattr(settings, key, value)
+    get_settings.cache_clear()
+
+
+@pytest.fixture(name="captured_pushes")
+def captured_pushes_fixture(monkeypatch) -> list[push.PushMessage]:
+    """Collects the push messages the app tried to send."""
+    sent: list[push.PushMessage] = []
+    monkeypatch.setattr(push, "send", lambda messages: sent.extend(messages))
+    return sent
+
+
+@pytest.fixture(name="duel")
+def duel_fixture(client, session):
+    """Two registered players and a fresh duel between them.
+
+    `duel.challenger` / `duel.opponent` are `PlayerClient`s — call the API
+    through them to act as that player.
+    """
+    challenger = PlayerClient(client, make_player(session, "Challenger", "challenger@example.com"))
+    opponent = PlayerClient(client, make_player(session, "Opponent", "opponent@example.com"))
+
+    create_resp = challenger.post("/duels", json={"opponent_id": opponent.id})
+    assert create_resp.status_code == 201, create_resp.text
+
+    return SimpleNamespace(
+        duel_id=create_resp.json()["id"],
+        challenger=challenger,
+        opponent=opponent,
+    )
+
+
+@pytest.fixture(name="categories")
+def categories_fixture() -> list[Category]:
+    return list(Category)

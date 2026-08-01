@@ -5,7 +5,7 @@ from app.services.rating import RANK_THRESHOLDS, rank_for_rating, update_ratings
 
 
 def _player(rating: float) -> Player:
-    return Player(display_name="P", email=f"p-{rating}@test.local", rating=rating)
+    return Player(display_name="P", email=f"p-{rating}@example.com", rating=rating)
 
 
 def _question(rating: float) -> Question:

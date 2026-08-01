@@ -1,48 +1,19 @@
-from types import SimpleNamespace
-
-import pytest
-
 from app.models.domain import Category
-from tests.factories import make_player, make_questions_for_category
+from tests.factories import answer_all_questions, make_questions_for_category
 
 
-@pytest.fixture(name="duel")
-def duel_fixture(client, session):
-    challenger = make_player(session, "Challenger", "challenger@test.local")
-    opponent = make_player(session, "Opponent", "opponent@test.local")
-    create_resp = client.post(
-        "/duels", json={"challenger_id": challenger.id, "opponent_id": opponent.id}
-    )
-    return SimpleNamespace(duel_id=create_resp.json()["id"], challenger=challenger, opponent=opponent)
-
-
-def _answer_all(client, duel_id, round_id, player_id):
-    for position in (1, 2, 3):
-        client.get(
-            f"/duels/{duel_id}/rounds/{round_id}/questions/{position}",
-            params={"player_id": player_id},
-        )
-        client.post(
-            f"/duels/{duel_id}/rounds/{round_id}/questions/{position}/answer",
-            json={"player_id": player_id, "selected_choice_index": 0},
-        )
-
-
-def test_opponent_answers_hidden_pre_reveal_then_visible_post_reveal(client, session, duel):
+def test_opponent_answers_hidden_pre_reveal_then_visible_post_reveal(session, duel):
     make_questions_for_category(session, Category.PSALMS_PRAYERS, 3)
-    pick_resp = client.post(
-        f"/duels/{duel.duel_id}/rounds",
-        json={"player_id": duel.challenger.id, "category": Category.PSALMS_PRAYERS.value},
+    pick_resp = duel.challenger.post(
+        f"/duels/{duel.duel_id}/rounds", json={"category": Category.PSALMS_PRAYERS.value}
     )
     round_id = pick_resp.json()["round_id"]
 
     # Picker (first responder) finishes their three answers; the round is not
     # revealed yet because the second responder hasn't gone.
-    _answer_all(client, duel.duel_id, round_id, duel.challenger.id)
+    answer_all_questions(duel.challenger, duel.duel_id, round_id)
 
-    history_before = client.get(
-        f"/duels/{duel.duel_id}/history", params={"player_id": duel.opponent.id}
-    ).json()
+    history_before = duel.opponent.get(f"/duels/{duel.duel_id}/history").json()
     round_before = next(r for r in history_before["rounds"] if r["sequence"] == 1)
     assert round_before["revealed"] is False
     for question in round_before["questions"]:
@@ -52,14 +23,15 @@ def test_opponent_answers_hidden_pre_reveal_then_visible_post_reveal(client, ses
         assert question["answers"] == []
 
     # Now the second responder (opponent) answers — the round reveals.
-    _answer_all(client, duel.duel_id, round_id, duel.opponent.id)
+    answer_all_questions(duel.opponent, duel.duel_id, round_id)
 
-    history_after = client.get(
-        f"/duels/{duel.duel_id}/history", params={"player_id": duel.opponent.id}
-    ).json()
+    history_after = duel.opponent.get(f"/duels/{duel.duel_id}/history").json()
     round_after = next(r for r in history_after["rounds"] if r["sequence"] == 1)
     assert round_after["revealed"] is True
     for question in round_after["questions"]:
         assert question["correct_choice_index"] == 0
-        assert {a["player_id"] for a in question["answers"]} == {duel.challenger.id, duel.opponent.id}
+        assert {a["player_id"] for a in question["answers"]} == {
+            duel.challenger.id,
+            duel.opponent.id,
+        }
         assert all(a["is_correct"] is True for a in question["answers"])
