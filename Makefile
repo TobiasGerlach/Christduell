@@ -4,7 +4,7 @@
 .DEFAULT_GOAL := help
 .PHONY: help setup backend backend-slow frontend web seed migrate migration reset-db \
         test test-backend test-frontend lint fmt check smoke maintenance clean \
-        review apply-review demo-duels play
+        review apply-review demo-duels play reports
 
 BACKEND := backend
 FRONTEND := frontend
@@ -46,6 +46,9 @@ seed: ## Migrate, then load demo players and questions
 reset-db: ## Delete the local database and rebuild it from scratch
 	rm -f $(BACKEND)/christduell.db $(BACKEND)/christduell.db-wal $(BACKEND)/christduell.db-shm
 	$(MAKE) seed
+
+reports: ## Triage questions players reported: make reports [a="fix 42" | a="keep 42"]
+	cd $(BACKEND) && uv run python -m app.jobs.question_reports $(a)
 
 maintenance: ## Run the housekeeping job (downgrade expired subscriptions)
 	cd $(BACKEND) && uv run python -m app.jobs.maintenance

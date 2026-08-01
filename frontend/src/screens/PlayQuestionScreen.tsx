@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { AnswerResult, QuestionToAnswer, duelsApi } from "../api/duels";
+import { ReportQuestionModal } from "../components/ReportQuestionModal";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
@@ -14,6 +15,7 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
   const [question, setQuestion] = useState<QuestionToAnswer | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(QUESTION_TIME_LIMIT_SECONDS);
   const [selected, setSelected] = useState<number | null>(null);
+  const [reporting, setReporting] = useState(false);
   const [result, setResult] = useState<AnswerResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const submittedRef = useRef(false);
@@ -126,6 +128,9 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
           </Text>
           {result.explanation && <Text style={styles.explanation}>{result.explanation}</Text>}
           {result.reference && <Text style={styles.reference}>{result.reference}</Text>}
+          <Pressable onPress={() => setReporting(true)}>
+            <Text style={styles.reportLink}>Frage melden</Text>
+          </Pressable>
           <Pressable style={styles.continueButton} onPress={proceed}>
             <Text style={styles.continueButtonLabel}>
               {position < 3 ? "Weiter" : "Zurück zum Duell"}
@@ -133,6 +138,12 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
           </Pressable>
         </View>
       )}
+
+      <ReportQuestionModal
+        visible={reporting}
+        questionId={question.question_id}
+        onClose={() => setReporting(false)}
+      />
     </View>
   );
 }
@@ -140,6 +151,13 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 24, gap: 12 },
   explanation: { marginTop: 8, color: "#4A4A4A", lineHeight: 20, textAlign: "center" },
+  reportLink: {
+    marginTop: 12,
+    color: "#7A7A7A",
+    fontSize: 12,
+    textAlign: "center",
+    textDecorationLine: "underline",
+  },
   reference: { marginTop: 4, color: "#7A7A7A", fontSize: 12, textAlign: "center" },
   center: { flex: 1, alignItems: "center", justifyContent: "center" },
   timer: { textAlign: "right", fontSize: 16, fontWeight: "600", color: "#6750A4" },

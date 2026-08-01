@@ -10,13 +10,15 @@ import logging
 
 from sqlmodel import Session
 
-from app.db.session import engine
+from app.db.session import engine, init_db
 from app.services.subscriptions import downgrade_expired_subscriptions
 
 logger = logging.getLogger(__name__)
 
 
 def run() -> int:
+    # Same reason as in question_reports: a job is not the app booting.
+    init_db()
     with Session(engine) as session:
         downgraded = downgrade_expired_subscriptions(session)
     logger.info("maintenance: downgraded %d expired subscription(s)", downgraded)

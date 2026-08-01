@@ -53,14 +53,16 @@ Whichever you choose, §1 and §2 are mandatory.
       `backend/app/db/fixtures/questions/<category>.json` (one file per category). Ecumenical
       framing, difficulty seeded at 850 / 1000 / 1150, and every question carries a one-line
       explanation; 283 also carry a Bible reference.
-- [ ] **Fact-check the answer keys before launch (you).** They were written by a language
-      model. Most are standard catechism-level facts, but a wrong answer key in a Bible quiz is
-      exactly what users screenshot — and the app now *displays* the explanation, so an error is
-      stated confidently rather than silently. Prioritise in this order:
-      1. `facts_numbers_dates` and `history` — dates and counts are the easiest to get wrong
-      2. `faith_pop_culture` — release years, attributions
-      3. `saints_role_models` — legends vs. documented biography
-      4. the Bible references themselves (chapter/verse), which are easy to spot-check
+- [x] **Players report bad questions instead of you proofreading all 651.** Every revealed
+      answer has a "Frage melden" link. Once `QUESTION_REPORT_RETIRE_THRESHOLD` distinct players
+      (default 3) call a question wrong or ambiguous, it retires itself and stops being dealt —
+      no action needed from you at 3am. `make reports` shows what came in, `make reports
+      a="fix 42"` / `a="keep 42"` closes it out.
+- [ ] **Optional but cheap: spot-check the ~100 riskiest questions (you, ~40 minutes).**
+      Reporting only helps *after* someone hits a wrong answer, and in a quiz about a text people
+      know well that is the kind of error they screenshot rather than report. `make review`, then
+      filter to `facts_numbers_dates` and `history` — dates and counts are where a language model
+      is most likely to be confidently wrong. The rest can safely wait for reports.
 - [ ] Decide whether the confessional balance is right for your audience. Where traditions
       differ, questions name the tradition ("Was feiert die katholische Kirche an Fronleichnam?")
       rather than picking a side.

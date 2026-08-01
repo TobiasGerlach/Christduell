@@ -55,6 +55,18 @@ instead of racing a 30-second clock, and `make demo-duels` leaves a duel in ever
 state (finished, your turn, opponent's turn, undecided challenge) so you don't have to play
 eight rounds to reach the history screen.
 
+### When players report a bad question
+
+Every revealed answer has a "Frage melden" link. A question that enough distinct players call
+wrong or ambiguous retires itself — it stops being dealt into new rounds while staying in the
+database for review. Rounds already in progress are unaffected.
+
+```sh
+make reports              # what came in, most-reported first
+make reports a="fix 42"   # you corrected it in the fixtures
+make reports a="keep 42"  # it was fine; dismiss and put it back
+```
+
 ### Proofreading the questions
 
 ```sh

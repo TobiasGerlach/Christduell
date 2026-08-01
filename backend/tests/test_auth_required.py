@@ -27,6 +27,7 @@ PROTECTED_ENDPOINTS = [
     ("get", "/duels/1/history"),
     ("post", "/notifications/register-token"),
     ("delete", "/notifications/register-token"),
+    ("post", "/questions/1/report"),
     ("get", "/players/search?q=abc"),
     ("get", "/players/1"),
     ("get", "/research/consent"),

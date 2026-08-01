@@ -71,6 +71,9 @@ class Question(SQLModel, table=True):
     # Seeded per authored difficulty (~850 easy / 1000 medium / 1150 hard) and
     # then adjusted by the Elo update on every answer.
     rating: float = Field(default=1000.0)
+    # Set when enough players report the question — it stops being dealt into
+    # new rounds without being deleted, so the reports stay reviewable.
+    retired_at: datetime | None = None
 
 
 class Duel(SQLModel, table=True):
@@ -125,6 +128,41 @@ class DuelAnswer(SQLModel, table=True):
     is_correct: bool | None = None
     is_timeout: bool = Field(default=False)
     response_time_ms: int | None = None
+
+
+class ReportReason(StrEnum):
+    WRONG_ANSWER = "wrong_answer"      # the marked answer is not correct
+    AMBIGUOUS = "ambiguous"            # more than one answer works
+    TYPO = "typo"                      # spelling or grammar
+    INAPPROPRIATE = "inappropriate"    # offensive or out of place
+    OTHER = "other"
+
+
+class ReportStatus(StrEnum):
+    OPEN = "open"
+    RESOLVED = "resolved"      # the question was fixed
+    DISMISSED = "dismissed"    # the question was fine
+
+
+class QuestionReport(SQLModel, table=True):
+    """A player's complaint about a question.
+
+    One report per player per question — a single annoyed person cannot retire a
+    question by reporting it repeatedly.
+    """
+
+    __table_args__ = (
+        UniqueConstraint("question_id", "player_id", name="uq_report_per_player"),
+    )
+
+    id: int | None = Field(default=None, primary_key=True)
+    question_id: int = Field(foreign_key="question.id", index=True)
+    player_id: int = Field(foreign_key="player.id", index=True)
+    reason: ReportReason
+    note: str | None = None
+    status: ReportStatus = Field(default=ReportStatus.OPEN, index=True)
+    created_at: datetime = Field(default_factory=utcnow)
+    resolved_at: datetime | None = None
 
 
 # ---------------------------------------------------------------------------

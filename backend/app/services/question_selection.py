@@ -17,7 +17,16 @@ def select_questions_for_round(
     later phase could plug in a smarter selection strategy without touching
     the duel engine around it.
     """
-    questions = list(session.exec(select(Question).where(Question.category == category)))
+    questions = list(
+        session.exec(
+            select(Question).where(
+                Question.category == category,
+                # Reported-and-retired questions stay in the table for review but
+                # are never dealt again.
+                Question.retired_at.is_(None),
+            )
+        )
+    )
     if len(questions) <= count:
         return questions
 

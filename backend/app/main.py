@@ -3,7 +3,16 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import auth, billing, duels, health, notifications, players, research
+from app.api.routes import (
+    auth,
+    billing,
+    duels,
+    health,
+    notifications,
+    players,
+    questions,
+    research,
+)
 from app.core.config import Settings, get_settings
 from app.db.session import init_db
 
@@ -60,6 +69,7 @@ def create_app() -> FastAPI:
     app.include_router(duels.router)
     app.include_router(notifications.router)
     app.include_router(players.router)
+    app.include_router(questions.router)
     app.include_router(research.router)
 
     return app

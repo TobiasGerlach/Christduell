@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     # at a screen instead of racing the clock; keep 30 in production.
     question_time_limit_seconds: float = 30.0
 
+    # How many distinct players must report a question before it retires itself.
+    # Low on purpose: a wrong answer key in a Bible quiz costs more trust than
+    # briefly losing one question out of several hundred.
+    question_report_retire_threshold: int = 3
+
     # --- CORS -------------------------------------------------------------
     # Comma-separated list of allowed browser origins for the Expo web build.
     cors_origins: list[str] = []
