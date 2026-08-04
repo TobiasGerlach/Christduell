@@ -150,6 +150,7 @@ resource "azurerm_linux_web_app" "backend" {
     AZURE_NOTIFICATION_HUB_NAME              = azurerm_notification_hub.main.name
     AZURE_NOTIFICATION_HUB_CONNECTION_STRING = azurerm_notification_hub_authorization_rule.backend.primary_connection_string
     PUSH_ENABLED                             = tostring(var.push_enabled)
+    RESEARCH_ENABLED                         = tostring(var.research_enabled)
     EXPO_ACCESS_TOKEN                        = var.expo_access_token
     BILLING_PROVIDER                         = var.billing_provider
     STRIPE_SECRET_KEY                        = var.stripe_secret_key

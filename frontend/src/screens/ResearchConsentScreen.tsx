@@ -78,6 +78,24 @@ export function ResearchConsentScreen() {
     );
   }
 
+  if (!status.research_enabled) {
+    return (
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.heading}>Forschungsteilnahme</Text>
+        <Text style={styles.body}>
+          Während der Testphase ist die Forschungsteilnahme deaktiviert — es werden keine
+          Fragebögen gestellt und keine Forschungsdaten erhoben. Du kannst Christduell ganz
+          normal spielen.
+        </Text>
+        {status.consented && (
+          <Pressable style={styles.dangerButton} onPress={withdraw} disabled={busy}>
+            <Text style={styles.dangerLabel}>Frühere Einwilligung widerrufen</Text>
+          </Pressable>
+        )}
+      </ScrollView>
+    );
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.heading}>Forschungsteilnahme</Text>

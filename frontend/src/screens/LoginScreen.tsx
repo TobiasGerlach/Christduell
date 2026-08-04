@@ -2,10 +2,12 @@ import { useCallback, useState } from "react";
 import {
   ActivityIndicator,
   KeyboardAvoidingView,
+  Linking,
   Platform,
   Pressable,
   ScrollView,
   StyleSheet,
+  Switch,
   Text,
   TextInput,
   View,
@@ -15,12 +17,18 @@ import { useAuth } from "../auth/AuthContext";
 
 type Mode = "login" | "register";
 
+// Set at build time; without them the screen falls back to honest beta wording
+// instead of asserting consent to documents that do not exist.
+const TERMS_URL = process.env.EXPO_PUBLIC_TERMS_URL ?? "";
+const PRIVACY_URL = process.env.EXPO_PUBLIC_PRIVACY_URL ?? "";
+
 export function LoginScreen() {
   const { login, register } = useAuth();
   const [mode, setMode] = useState<Mode>("login");
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -32,7 +40,7 @@ export function LoginScreen() {
       if (mode === "login") {
         await login(email.trim(), password);
       } else {
-        await register(displayName.trim(), email.trim(), password);
+        await register(displayName.trim(), email.trim(), password, ageConfirmed);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Anmeldung fehlgeschlagen");
@@ -83,6 +91,16 @@ export function LoginScreen() {
           onSubmitEditing={submit}
         />
 
+        {mode === "register" && (
+          <View style={styles.ageRow}>
+            <Switch value={ageConfirmed} onValueChange={setAgeConfirmed} />
+            <Text style={styles.ageLabel}>
+              Ich bin mindestens 16 Jahre alt, oder meine Erziehungsberechtigten sind mit der
+              Nutzung einverstanden.
+            </Text>
+          </View>
+        )}
+
         {error && <Text style={styles.error}>{error}</Text>}
 
         <Pressable style={styles.primaryButton} onPress={submit} disabled={busy}>
@@ -109,12 +127,26 @@ export function LoginScreen() {
         </Pressable>
 
         <View style={styles.legalBox}>
-          <Text style={styles.legalText}>
-            Mit der Registrierung stimmst du den Nutzungsbedingungen und der
-            Datenschutzerklärung zu. Christduell ist kostenlos, wenn du gelegentlich an
-            Forschungsfragebögen teilnimmst — alternativ gibt es ein werbefreies Abo ohne
-            Fragebögen.
-          </Text>
+          {TERMS_URL && PRIVACY_URL ? (
+            <Text style={styles.legalText}>
+              Mit der Registrierung stimmst du den{" "}
+              <Text style={styles.legalLink} onPress={() => Linking.openURL(TERMS_URL)}>
+                Nutzungsbedingungen
+              </Text>{" "}
+              und der{" "}
+              <Text style={styles.legalLink} onPress={() => Linking.openURL(PRIVACY_URL)}>
+                Datenschutzerklärung
+              </Text>{" "}
+              zu.
+            </Text>
+          ) : (
+            // No links configured yet: do not claim agreement to documents that
+            // are not there. The organiser hands the information out instead.
+            <Text style={styles.legalText}>
+              Testversion. Nutzungsbedingungen und Datenschutzinformationen erhältst du von
+              deiner Ansprechperson.
+            </Text>
+          )}
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
@@ -145,6 +177,9 @@ const styles = StyleSheet.create({
   primaryLabel: { color: "#FFFFFF", fontWeight: "600", fontSize: 16 },
   switchMode: { textAlign: "center", color: "#6750A4", marginTop: 8 },
   error: { color: "#B00020" },
+  ageRow: { flexDirection: "row", alignItems: "center", gap: 10 },
+  ageLabel: { flex: 1, fontSize: 12, color: "#5B5B5B", lineHeight: 17 },
   legalBox: { marginTop: 24 },
+  legalLink: { color: "#6750A4", textDecorationLine: "underline" },
   legalText: { fontSize: 12, color: "#7A7A7A", textAlign: "center", lineHeight: 18 },
 });

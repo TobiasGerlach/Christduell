@@ -4,6 +4,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from app.api.deps import CurrentPlayer
+from app.core.config import get_settings
 from app.core.time import utcnow
 from app.db.session import SessionDep
 from app.models.domain import (
@@ -12,6 +13,7 @@ from app.models.domain import (
     SubscriptionTier,
 )
 from app.services.research import (
+    CONSENT_VERSION,
     GAMES_REQUIRED_BEFORE_QUESTIONNAIRE,
     create_or_resume_completion,
     get_active_consent,
@@ -37,10 +39,12 @@ class ConsentRequest(BaseModel):
     general_consent: bool
     # Separate explicit opt-in required for special-category health data (ADHD/autism).
     health_data_consent: bool = False
-    consent_version: str = "1.0"
 
 
 class ConsentStatus(BaseModel):
+    # False while the research programme is switched off (e.g. during a beta,
+    # until the consent texts are lawyer-approved).
+    research_enabled: bool
     consented: bool
     health_data_consented: bool
     research_tier: bool  # True = on research tier (questionnaires apply)
@@ -70,6 +74,11 @@ class QuestionnaireStatusResponse(BaseModel):
 def give_consent(
     payload: ConsentRequest, player: CurrentPlayer, session: SessionDep
 ) -> ConsentStatus:
+    if not get_settings().research_enabled:
+        raise HTTPException(
+            status_code=503,
+            detail="Die Forschungsteilnahme ist zurzeit deaktiviert",
+        )
     if not payload.general_consent:
         raise HTTPException(status_code=400, detail="general_consent must be true to participate")
 
@@ -87,7 +96,7 @@ def give_consent(
         existing.withdrawn_at = None
         existing.consented_at = utcnow()
         existing.health_data_consent = payload.health_data_consent
-        existing.consent_version = payload.consent_version
+        existing.consent_version = CONSENT_VERSION
         session.add(existing)
         session.commit()
         session.refresh(existing)
@@ -96,7 +105,7 @@ def give_consent(
         consent = ResearchConsent(
             player_id=player.id,
             health_data_consent=payload.health_data_consent,
-            consent_version=payload.consent_version,
+            consent_version=CONSENT_VERSION,
         )
         session.add(consent)
         session.commit()
@@ -104,6 +113,7 @@ def give_consent(
 
     games = get_finished_duel_count(session, player.id)
     return ConsentStatus(
+        research_enabled=True,
         consented=True,
         health_data_consented=consent.health_data_consent,
         research_tier=player.subscription_tier == SubscriptionTier.RESEARCH,
@@ -119,6 +129,7 @@ def get_consent_status(player: CurrentPlayer, session: SessionDep) -> ConsentSta
     games = get_finished_duel_count(session, player.id)
 
     return ConsentStatus(
+        research_enabled=get_settings().research_enabled,
         consented=consent is not None and consent.withdrawn_at is None,
         health_data_consented=consent.health_data_consent if consent else False,
         research_tier=player.subscription_tier == SubscriptionTier.RESEARCH,

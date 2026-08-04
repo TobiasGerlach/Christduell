@@ -144,3 +144,43 @@ def test_search_still_matches_a_literal_underscore(client, session):
 
     results = anna.get("/players/search", params={"q": "max_"}).json()
     assert [r["display_name"] for r in results] == ["max_mustermann"]
+
+
+def test_only_one_open_challenge_per_pair(client, session):
+    """Challenging the same person twenty times is spam, not enthusiasm."""
+    anna = make_player_client(session, client, "Anna", "anna@example.com")
+    bernd = make_player_client(session, client, "Bernd", "bernd@example.com")
+
+    assert anna.post("/duels", json={"opponent_id": bernd.id}).status_code == 201
+    repeat = anna.post("/duels", json={"opponent_id": bernd.id})
+    assert repeat.status_code == 409
+    # The same guard applies in the other direction.
+    counter = bernd.post("/duels", json={"opponent_id": anna.id})
+    assert counter.status_code == 409
+
+
+def test_declining_frees_the_pair_for_a_new_challenge(client, session):
+    anna = make_player_client(session, client, "Anna", "anna@example.com")
+    bernd = make_player_client(session, client, "Bernd", "bernd@example.com")
+
+    duel_id = anna.post("/duels", json={"opponent_id": bernd.id}).json()["id"]
+    bernd.post(f"/duels/{duel_id}/decline")
+
+    assert bernd.post("/duels", json={"opponent_id": anna.id}).status_code == 201
+
+
+def test_parallel_running_duels_with_the_same_person_are_allowed(client, session):
+    """Only unanswered challenges are limited — playing several duels at once,
+    including with the same person, is the point of the game."""
+    from app.models.domain import Category
+    from tests.factories import make_questions_for_category
+
+    anna = make_player_client(session, client, "Anna", "anna@example.com")
+    bernd = make_player_client(session, client, "Bernd", "bernd@example.com")
+
+    first = anna.post("/duels", json={"opponent_id": bernd.id}).json()["id"]
+    make_questions_for_category(session, Category.HISTORY, 3)
+    anna.post(f"/duels/{first}/rounds", json={"category": "history"})  # now ACTIVE
+
+    second = bernd.post("/duels", json={"opponent_id": anna.id})
+    assert second.status_code == 201

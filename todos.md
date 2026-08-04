@@ -2,6 +2,30 @@
 
 Everything between here and paying users. Ordered by what blocks what.
 
+## Beta with the church youth group — remaining steps
+
+The code side is done: research programme off by default in production, duel expiry,
+login/register rate limits, 16+/parental-consent confirmation at registration, one open
+challenge per pair, demo accounts only seeded locally, `make reset-password` as the
+password-reset stopgap. What remains is yours:
+
+- [ ] **Impressum + Datenschutzerklärung** — required for the beta, not just launch (§5 DDG,
+      Art. 13 GDPR). Host them, then set `EXPO_PUBLIC_TERMS_URL` / `EXPO_PUBLIC_PRIVACY_URL`
+      for the web build; without them the login screen shows neutral beta wording and points to
+      you as the organiser.
+- [ ] **Under-16s**: the registration checkbox covers "16+ or guardians agree" — collect the
+      parental consent on paper for the Konfirmanden. Keep the sheets.
+- [ ] **Leave `research_enabled = false`** (the Terraform default) until a lawyer has approved
+      the consent texts. Note they collect *religious* data (Art. 9), not only the health
+      screeners.
+- [ ] **Leave `billing_provider = "none"`** (also the default) — free beta, no Widerruf/AGB
+      machinery needed yet.
+- [ ] Deploy per `first-deploy.md`, then `BASE_URL=... make smoke`.
+- [ ] Schedule `make maintenance` daily — it now also closes abandoned duels (3 days without a
+      move; `DUEL_INACTIVITY_EXPIRY_DAYS` to change).
+- [ ] When someone forgets their password: `make reset-password email=...` against the
+      production DB until the real email flow exists.
+
 **Status legend:** `[x]` done in the codebase · `[ ]` still open · **(you)** = only you can do
 it (accounts, money, legal, content).
 
@@ -196,11 +220,9 @@ Terraform rejects it and the app refuses to boot with it outside local.
 
 ## 4. Before real users touch it (hardening)
 
-- [ ] **Rate-limit `/auth/login` and `/auth/register`.** Nothing currently slows down a
-      password-guessing loop. `slowapi` or an App Service / front-door rule. Related: login
-      skips the password hash entirely for an unknown address, so response time still leaks
-      whether an account exists. Cheap fix once you touch this file: verify against a dummy
-      hash in the not-found branch.
+- [x] Rate limits on login (per account) and register (per IP), in-memory — correct for one
+      instance, swap for a shared store if the app ever scales out. Login timing no longer
+      reveals whether an address is registered (dummy-hash verify).
 - [ ] **`GET /duels` runs a handful of queries per duel** (two display names, two score
       aggregates). Fine at a few dozen duels per player, worth batching before it is thousands.
 - [ ] **The container runs as root.** Now that no file share is involved, a non-root user is
@@ -228,7 +250,9 @@ Terraform rejects it and the app refuses to boot with it outside local.
 
 ## 5. Nice to have (post-launch)
 
-- [ ] Duel timeouts — a player who abandons a duel blocks it forever; no expiry job exists.
+- [x] Duel expiry: the maintenance job closes duels after 3 days without a move — pending
+      challenges disappear, active duels end at the current score, both players get a push.
+      Expired pairs become available to random matchmaking again.
 - [ ] Leaderboard / friends list.
 - [ ] Question reporting ("this answer is wrong") — you will want this the moment strangers
       play.

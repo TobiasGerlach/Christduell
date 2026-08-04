@@ -4,7 +4,7 @@ from enum import StrEnum
 from sqlalchemy import func
 from sqlmodel import Session, select
 
-from app.models.domain import Duel, DuelAnswer, DuelRound
+from app.models.domain import Duel, DuelAnswer, DuelRound, DuelStatus
 
 TOTAL_ROUNDS = 8
 QUESTIONS_PER_ROUND = 3
@@ -47,6 +47,19 @@ def compute_duel_state(session: Session, duel: Duel) -> DuelState:
     `acting_player_id` — that one check rules out out-of-turn picks/answers,
     skipped positions, second-responder-before-first, and double submission).
     """
+    # A closed duel is closed regardless of what its rounds look like. Expiry
+    # can finish a duel mid-round, and without this early return the rounds
+    # would still say "someone should answer" — which the routes would allow.
+    if duel.status in (DuelStatus.FINISHED, DuelStatus.DECLINED):
+        return DuelState(
+            action=DuelAction.FINISHED,
+            acting_player_id=None,
+            waiting_player_id=None,
+            round_sequence=None,
+            round_id=None,
+            position=None,
+        )
+
     rounds = list(
         session.exec(
             select(DuelRound).where(DuelRound.duel_id == duel.id).order_by(DuelRound.sequence)

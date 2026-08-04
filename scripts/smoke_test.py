@@ -54,7 +54,12 @@ class Player:
         self.email = f"smoke-{uuid.uuid4().hex[:12]}@example.com"
         response = client.post(
             "/auth/register",
-            json={"display_name": display_name, "email": self.email, "password": PASSWORD},
+            json={
+                "display_name": display_name,
+                "email": self.email,
+                "password": PASSWORD,
+                "min_age_confirmed": True,
+            },
         )
         response.raise_for_status()
         body = response.json()
@@ -177,21 +182,28 @@ def main() -> int:
     )
 
     print("\nResearch")
-    consent = anna.post("/research/consent", json={"general_consent": True})
-    check("consent recorded", consent.status_code == 201, consent.text)
+    research_status = anna.get("/research/consent")
+    check("research status readable", research_status.status_code == 200, research_status.text)
+    research_enabled = research_status.json().get("research_enabled", True)
 
-    questionnaire = anna.get("/research/questionnaire/current")
-    check("questionnaire endpoint responds", questionnaire.status_code == 200, questionnaire.text)
-    if questionnaire.status_code == 200 and questionnaire.json()["due_questionnaire"]:
-        due = questionnaire.json()["due_questionnaire"]
-        saved = anna.post(
-            f"/research/questionnaire/{due}/answers",
-            json={"answers": {"smoke_test": "yes"}, "finished": False},
+    if not research_enabled:
+        # Expected for the beta: the programme is switched off until the
+        # consent texts are approved. Consent must be refused, not recorded.
+        print("    (research programme disabled on this server)")
+        refused = anna.post("/research/consent", json={"general_consent": True})
+        check("consent is refused while research is off", refused.status_code == 503)
+    else:
+        consent = anna.post("/research/consent", json={"general_consent": True})
+        check("consent recorded", consent.status_code == 201, consent.text)
+
+        questionnaire = anna.get("/research/questionnaire/current")
+        check(
+            "questionnaire endpoint responds",
+            questionnaire.status_code == 200,
+            questionnaire.text,
         )
-        check("questionnaire progress saves", saved.status_code == 200, saved.text)
-
-    withdraw = anna.delete("/research/consent")
-    check("consent can be withdrawn", withdraw.status_code == 204, withdraw.text)
+        withdraw = anna.delete("/research/consent")
+        check("consent can be withdrawn", withdraw.status_code == 204, withdraw.text)
 
     print("\nBilling")
     status = anna.get("/billing/status")

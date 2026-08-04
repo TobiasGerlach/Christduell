@@ -1,12 +1,14 @@
 import uuid
 from datetime import datetime
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, EmailStr, Field
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, select
 
 from app.api.deps import CurrentPlayer
+from app.core.config import get_settings
+from app.core.ratelimit import limiter
 from app.core.security import create_access_token, hash_password, verify_password
 from app.core.time import utcnow
 from app.db.session import SessionDep
@@ -18,11 +20,28 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 MIN_PASSWORD_LENGTH = 8
 
+# Verified against when no account matches, so "unknown address" and "wrong
+# password" take the same time — otherwise response timing reveals whether an
+# email is registered.
+_TIMING_DUMMY_HASH = hash_password("timing-equalizer-not-a-real-password")
+
+_TOO_MANY_ATTEMPTS = HTTPException(
+    status_code=429, detail="Zu viele Versuche. Bitte warte ein paar Minuten."
+)
+
+
+def _client_ip(request: Request) -> str:
+    return request.client.host if request.client else "unknown"
+
 
 class RegisterRequest(BaseModel):
     display_name: str = Field(min_length=2, max_length=40)
     email: EmailStr
     password: str = Field(min_length=MIN_PASSWORD_LENGTH, max_length=128)
+    # GDPR Art. 8: the consent age in Germany is 16. Younger players need their
+    # parents' consent, which an organiser (e.g. a youth group) can collect on
+    # paper — hence the "or my guardians agree" wording in the app.
+    min_age_confirmed: bool = False
 
 
 class LoginRequest(BaseModel):
@@ -67,7 +86,26 @@ def find_by_email(session: Session, email: str) -> Player | None:
 
 
 @router.post("/register", response_model=TokenResponse, status_code=201)
-def register(payload: RegisterRequest, session: SessionDep) -> TokenResponse:
+def register(payload: RegisterRequest, request: Request, session: SessionDep) -> TokenResponse:
+    settings = get_settings()
+    register_key = f"register:{_client_ip(request)}"
+    if limiter.blocked(
+        register_key,
+        settings.register_rate_limit_attempts,
+        settings.register_rate_limit_window_seconds,
+    ):
+        raise _TOO_MANY_ATTEMPTS
+    limiter.record(register_key, settings.register_rate_limit_window_seconds)
+
+    if not payload.min_age_confirmed:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "Bitte bestätige, dass du mindestens 16 Jahre alt bist "
+                "oder deine Erziehungsberechtigten einverstanden sind"
+            ),
+        )
+
     email = payload.email.strip().lower()
     if find_by_email(session, email) is not None:
         raise HTTPException(status_code=409, detail="An account with this email already exists")
@@ -76,6 +114,7 @@ def register(payload: RegisterRequest, session: SessionDep) -> TokenResponse:
         display_name=payload.display_name.strip(),
         email=email,
         password_hash=hash_password(payload.password),
+        min_age_confirmed_at=utcnow(),
     )
     session.add(player)
     try:
@@ -94,15 +133,31 @@ def register(payload: RegisterRequest, session: SessionDep) -> TokenResponse:
 
 @router.post("/login", response_model=TokenResponse)
 def login(payload: LoginRequest, session: SessionDep) -> TokenResponse:
+    settings = get_settings()
+    # Limited per account, not per IP: a whole youth group behind one church
+    # wifi must not be able to lock each other out, but ten failures against a
+    # single mailbox is a guessing loop.
+    login_key = f"login:{payload.email.strip().lower()}"
+    if limiter.blocked(
+        login_key,
+        settings.login_rate_limit_attempts,
+        settings.login_rate_limit_window_seconds,
+    ):
+        raise _TOO_MANY_ATTEMPTS
+
     player = find_by_email(session, payload.email)
     # Same error for "no such account" and "wrong password" so the endpoint
     # can't be used to enumerate registered email addresses.
     invalid = HTTPException(status_code=401, detail="Invalid email or password")
     if player is None or player.password_hash is None or player.deleted_at is not None:
+        verify_password(payload.password, _TIMING_DUMMY_HASH)
+        limiter.record(login_key, settings.login_rate_limit_window_seconds)
         raise invalid
     if not verify_password(payload.password, player.password_hash):
+        limiter.record(login_key, settings.login_rate_limit_window_seconds)
         raise invalid
 
+    limiter.clear(login_key)
     return TokenResponse(access_token=create_access_token(player.id), player=to_account(player))
 
 

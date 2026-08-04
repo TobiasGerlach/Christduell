@@ -4,6 +4,7 @@ from pathlib import Path
 
 from sqlmodel import Session, func, select
 
+from app.core.config import get_settings
 from app.core.time import utcnow
 from app.models.domain import (
     Duel,
@@ -17,6 +18,11 @@ from app.models.domain import (
 from app.services.subscriptions import is_subscription_active
 
 FIXTURES_DIR = Path(__file__).parent.parent / "db" / "fixtures"
+
+# Stamped by the SERVER on every consent — which text was live is a fact about
+# the deployment, not something the client gets to claim. Bump on any change to
+# the consent wording.
+CONSENT_VERSION = "1.0"
 
 # How many completed duels a player must have before the first questionnaire appears.
 GAMES_REQUIRED_BEFORE_QUESTIONNAIRE = 5
@@ -91,6 +97,9 @@ def get_due_questionnaire(
     - Questionnaires unlock in sequence; each is separated by DAYS_BETWEEN_QUESTIONNAIRES.
     - Months 2 & 3 require explicit health data consent.
     """
+    if not get_settings().research_enabled:
+        return None
+
     player = session.get(Player, player_id)
     if player is None:
         return None

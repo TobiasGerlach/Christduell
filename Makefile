@@ -4,7 +4,7 @@
 .DEFAULT_GOAL := help
 .PHONY: help setup backend backend-slow frontend web seed migrate migration reset-db \
         test test-backend test-postgres test-frontend lint fmt check smoke maintenance clean \
-        review apply-review demo-duels play reports
+        review apply-review demo-duels play reports reset-password
 
 BACKEND := backend
 FRONTEND := frontend
@@ -46,6 +46,10 @@ seed: ## Migrate, then load demo players and questions
 reset-db: ## Delete the local database and rebuild it from scratch
 	rm -f $(BACKEND)/christduell.db $(BACKEND)/christduell.db-wal $(BACKEND)/christduell.db-shm
 	$(MAKE) seed
+
+reset-password: ## Set a player's password by hand: make reset-password email=anna@example.com
+	@test -n "$(email)" || (echo 'Usage: make reset-password email=<address> [pw=<password>]'; exit 1)
+	cd $(BACKEND) && uv run python -m app.jobs.reset_password "$(email)" $(if $(pw),--password "$(pw)",)
 
 reports: ## Triage questions players reported: make reports [a="fix 42" | a="keep 42"]
 	cd $(BACKEND) && uv run python -m app.jobs.question_reports $(a)

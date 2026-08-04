@@ -31,6 +31,19 @@ class Settings(BaseSettings):
     # at a screen instead of racing the clock; keep 30 in production.
     question_time_limit_seconds: float = 30.0
 
+    # Days without any move before an open duel is closed by the maintenance
+    # job. Pending challenges quietly disappear; active duels end at the
+    # current score.
+    duel_inactivity_expiry_days: int = 3
+
+    # Login/register rate limits (in-memory, correct for one instance).
+    # Login is limited per account so a shared church wifi cannot lock everyone
+    # out; register is limited per IP to slow down mass account creation.
+    login_rate_limit_attempts: int = 10
+    login_rate_limit_window_seconds: int = 300
+    register_rate_limit_attempts: int = 20
+    register_rate_limit_window_seconds: int = 600
+
     # How many distinct players must report a question before it retires itself.
     # Low on purpose: a wrong answer key in a Bible quiz costs more trust than
     # briefly losing one question out of several hundred.
@@ -46,6 +59,12 @@ class Settings(BaseSettings):
     expo_push_url: str = "https://exp.host/--/api/v2/push/send"
     azure_notification_hub_connection_string: str | None = None
     azure_notification_hub_name: str | None = None
+
+    # --- Research ---------------------------------------------------------
+    # Master switch for the research programme. True locally so development and
+    # tests see the whole flow; the Terraform default is FALSE, because the
+    # consent texts must be lawyer-approved before real participants see them.
+    research_enabled: bool = True
 
     # --- Billing ----------------------------------------------------------
     # "none"   — subscriptions disabled, everyone stays on the research tier

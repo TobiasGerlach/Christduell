@@ -3,6 +3,8 @@ import { api } from "./client";
 export type QuestionnaireType = "faith_background" | "adhd_screener" | "autism_screener";
 
 export interface ConsentStatus {
+  /** False while the research programme is switched off server-side. */
+  research_enabled: boolean;
   consented: boolean;
   health_data_consented: boolean;
   research_tier: boolean;

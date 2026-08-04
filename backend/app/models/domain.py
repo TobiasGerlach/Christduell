@@ -53,6 +53,9 @@ class Player(SQLModel, table=True):
     billing_customer_id: str | None = Field(default=None, index=True)
     billing_subscription_id: str | None = Field(default=None, index=True)
     created_at: datetime = Field(default_factory=utcnow)
+    # When the player confirmed being 16+ (or having parental consent) at
+    # registration — GDPR Art. 8 accountability. Null on rows that predate it.
+    min_age_confirmed_at: datetime | None = None
     # Account deletion is a soft delete: PII is scrubbed in place and login is
     # blocked, but the row survives so past duels keep referential integrity.
     deleted_at: datetime | None = None

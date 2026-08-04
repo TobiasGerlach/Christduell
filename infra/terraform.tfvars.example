@@ -16,6 +16,11 @@ cors_origins = "https://christduell.example"
 push_enabled = false
 # expo_access_token = "..."   # only needed with Expo's enhanced security setting
 
+# --- Research ---------------------------------------------------------------
+# OFF until the consent texts have been reviewed by a data-protection lawyer.
+# The questionnaires collect religious and health data (Art. 9 GDPR).
+research_enabled = false
+
 # --- Billing ----------------------------------------------------------------
 # "none" until Stripe is live. "fake" is rejected here on purpose: it would give
 # every player a free subscription.

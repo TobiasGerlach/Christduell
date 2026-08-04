@@ -12,7 +12,12 @@ interface AuthValue {
   /** True until the stored token has been checked — keeps the login screen from flashing. */
   initialising: boolean;
   login: (email: string, password: string) => Promise<void>;
-  register: (displayName: string, email: string, password: string) => Promise<void>;
+  register: (
+    displayName: string,
+    email: string,
+    password: string,
+    minAgeConfirmed: boolean,
+  ) => Promise<void>;
   logout: () => Promise<void>;
   deleteAccount: () => Promise<void>;
   refresh: () => Promise<void>;
@@ -102,8 +107,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const register = useCallback(
-    async (displayName: string, email: string, password: string) => {
-      const response = await authApi.register(displayName, email, password);
+    async (displayName: string, email: string, password: string, minAgeConfirmed: boolean) => {
+      const response = await authApi.register(displayName, email, password, minAgeConfirmed);
       await applySession(response.access_token, response.player);
     },
     [applySession],

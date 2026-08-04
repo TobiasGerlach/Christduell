@@ -302,6 +302,23 @@ def create_duel(
     """Challenge another player. The caller is always the challenger."""
     opponent = _resolve_opponent(session, payload, player)
 
+    # Parallel *running* duels between the same two people are fine; a stack of
+    # unanswered challenges is just spam. One open challenge per pair.
+    open_challenge = session.exec(
+        select(Duel.id).where(
+            Duel.status == DuelStatus.PENDING,
+            (
+                ((Duel.challenger_id == player.id) & (Duel.opponent_id == opponent.id))
+                | ((Duel.challenger_id == opponent.id) & (Duel.opponent_id == player.id))
+            ),
+        )
+    ).first()
+    if open_challenge is not None:
+        raise HTTPException(
+            status_code=409,
+            detail="Zwischen euch gibt es bereits eine offene Herausforderung",
+        )
+
     duel = Duel(challenger_id=player.id, opponent_id=opponent.id)
     session.add(duel)
     session.commit()

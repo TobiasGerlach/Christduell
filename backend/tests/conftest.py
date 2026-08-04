@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 from sqlmodel import Session, SQLModel, create_engine
 from sqlmodel.pool import StaticPool
 
+from app.core import ratelimit
 from app.core.config import get_settings
 from app.db.session import get_session
 from app.main import app
@@ -47,6 +48,15 @@ def client_fixture(session):
     client = TestClient(app)
     yield client
     app.dependency_overrides.clear()
+
+
+@pytest.fixture(autouse=True)
+def _clean_rate_limits():
+    """The limiter is process-global; without this, login failures in one test
+    would count against the same address in the next."""
+    ratelimit.limiter.reset()
+    yield
+    ratelimit.limiter.reset()
 
 
 @pytest.fixture(name="settings_override")

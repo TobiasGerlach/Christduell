@@ -8,6 +8,7 @@ REGISTRATION = {
     "display_name": "Neuer Spieler",
     "email": "neu@example.com",
     "password": "ein-gutes-passwort",
+    "min_age_confirmed": True,
 }
 
 
@@ -173,6 +174,7 @@ def test_registration_rejects_reserved_tld_addresses(client):
             "display_name": "Test",
             "email": "someone@christduell.test",
             "password": "password-1234",
+            "min_age_confirmed": True,
         },
     )
     assert resp.status_code == 422
@@ -184,6 +186,20 @@ def test_duplicate_registration_that_races_past_the_check_is_a_conflict(client, 
 
     resp = client.post(
         "/auth/register",
-        json={"display_name": "Zweite", "email": "race@example.com", "password": "password-1234"},
+        json={**REGISTRATION, "display_name": "Zweite", "email": "race@example.com"},
     )
     assert resp.status_code == 409
+
+
+def test_registration_requires_the_age_confirmation(client, session):
+    """GDPR Art. 8: consent age 16 in Germany; younger players need parental
+    consent, which the checkbox wording covers."""
+    resp = client.post("/auth/register", json={**REGISTRATION, "min_age_confirmed": False})
+    assert resp.status_code == 400
+    assert "16" in resp.json()["detail"]
+
+
+def test_registration_records_when_the_age_was_confirmed(client, session):
+    resp = client.post("/auth/register", json=REGISTRATION)
+    player = session.get(Player, resp.json()["player"]["id"])
+    assert player.min_age_confirmed_at is not None

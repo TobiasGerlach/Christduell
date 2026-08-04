@@ -3,6 +3,7 @@ from pathlib import Path
 
 from sqlmodel import Session, select
 
+from app.core.config import get_settings
 from app.core.security import hash_password
 from app.db.session import engine, init_db
 from app.models.domain import Category, Player, Question
@@ -23,6 +24,12 @@ SEED_PLAYERS = [
 
 
 def _seed_players(session: Session) -> None:
+    # The demo accounts have a password that is printed to the console and
+    # written in the README. Seeding them anywhere reachable from the internet
+    # would be an open door, so they exist only in local development.
+    if get_settings().environment != "local":
+        print("Skipping demo players (only seeded when ENVIRONMENT=local).")
+        return
     for data in SEED_PLAYERS:
         existing = session.exec(select(Player).where(Player.email == data["email"])).first()
         if existing is None:
@@ -88,10 +95,11 @@ def seed() -> None:
         _seed_players(session)
         _seed_questions(session)
     print(f"Seeded {len(_load_question_fixtures())} questions.")
-    print(
-        "Seeded demo players:\n"
-        + "\n".join(f"  {p['email']} / {SEED_PASSWORD}" for p in SEED_PLAYERS)
-    )
+    if get_settings().environment == "local":
+        print(
+            "Seeded demo players:\n"
+            + "\n".join(f"  {p['email']} / {SEED_PASSWORD}" for p in SEED_PLAYERS)
+        )
 
 
 if __name__ == "__main__":

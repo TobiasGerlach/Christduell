@@ -51,6 +51,12 @@ variable "postgres_backup_retention_days" {
   default     = 14
 }
 
+variable "research_enabled" {
+  description = "Master switch for the research questionnaires. Keep FALSE until the consent texts are lawyer-approved — they collect Art. 9 GDPR data (religious beliefs, health screeners)."
+  type        = bool
+  default     = false
+}
+
 variable "cors_origins" {
   description = "Comma-separated browser origins allowed to call the API (the Expo web build's URL)."
   type        = string

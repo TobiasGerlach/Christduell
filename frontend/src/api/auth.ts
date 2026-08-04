@@ -21,11 +21,12 @@ export interface TokenResponse {
 }
 
 export const authApi = {
-  register: (displayName: string, email: string, password: string) =>
+  register: (displayName: string, email: string, password: string, minAgeConfirmed: boolean) =>
     api.post<TokenResponse>("/auth/register", {
       display_name: displayName,
       email,
       password,
+      min_age_confirmed: minAgeConfirmed,
     }),
 
   login: (email: string, password: string) =>
