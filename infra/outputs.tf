@@ -25,3 +25,14 @@ output "jwt_secret_key" {
   value       = random_password.secret_key.result
   sensitive   = true
 }
+
+output "postgres_fqdn" {
+  description = "Hostname of the PostgreSQL flexible server."
+  value       = azurerm_postgresql_flexible_server.main.fqdn
+}
+
+output "database_url" {
+  description = "Connection string the Web App uses. Needed for `pg_dump` and manual migrations."
+  value       = azurerm_linux_web_app.backend.app_settings["DATABASE_URL"]
+  sensitive   = true
+}

@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
-# Downloads the SQLite database from the Azure Web App to a local backup file.
+# Takes an off-site dump of the production PostgreSQL database.
+#
+# Azure already keeps automatic backups with point-in-time restore (see
+# postgres_backup_retention_days in infra/), so this is not the primary safety
+# net — it is the copy you hold yourself, for migrations, for local debugging on
+# real data, and for the case where the whole subscription is unavailable.
 #
 # Usage:
-#   ./scripts/backup-db.sh                          # auto-detects app name from Terraform
-#   WEBAPP_NAME=my-app ./scripts/backup-db.sh       # explicit override
+#   ./scripts/backup-db.sh                    # reads the connection from Terraform
+#   DATABASE_URL=postgresql://... ./scripts/backup-db.sh
 #
-# Prerequisites: az CLI logged in, terraform state present (or WEBAPP_NAME set).
+# Prerequisites: pg_dump (brew install libpq), and either DATABASE_URL or a
+# Terraform state you can read.
 
 set -euo pipefail
 
@@ -13,48 +19,38 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 BACKUP_DIR="$REPO_ROOT/backups"
 
-# Resolve webapp name from Terraform output if not set explicitly.
-if [[ -z "${WEBAPP_NAME:-}" ]]; then
-  WEBAPP_NAME=$(cd "$REPO_ROOT/infra" && terraform output -raw backend_url \
-    | sed 's|https://||' | cut -d'.' -f1)
+if [[ -z "${DATABASE_URL:-}" ]]; then
+  echo "Reading the connection string from Terraform ..."
+  DATABASE_URL=$(cd "$REPO_ROOT/infra" && terraform output -raw database_url)
 fi
 
-RESOURCE_GROUP=$(cd "$REPO_ROOT/infra" && terraform output -raw resource_group_name)
+# The app uses SQLAlchemy's driver-qualified scheme; pg_dump wants the plain one.
+DUMP_URL="${DATABASE_URL/postgresql+psycopg:/postgresql:}"
+
+if ! command -v pg_dump >/dev/null 2>&1; then
+  echo "pg_dump not found. On macOS: brew install libpq && brew link --force libpq" >&2
+  exit 1
+fi
 
 mkdir -p "$BACKUP_DIR"
-DEST="$BACKUP_DIR/christduell-$(date +%Y%m%d-%H%M%S).db"
+DEST="$BACKUP_DIR/christduell-$(date +%Y%m%d-%H%M%S).dump"
 
-echo "Downloading /home/christduell.db from $WEBAPP_NAME ..."
-
-# App Service exposes the /home Azure Files share through the Kudu VFS endpoint.
-KUDU_BASE="https://${WEBAPP_NAME}.scm.azurewebsites.net/api/vfs/home"
-
-az rest --method GET --url "$KUDU_BASE/christduell.db" \
-  --headers "Accept=application/octet-stream" --output-file "$DEST"
-
-# The database runs in WAL mode, so recent commits may live in the -wal file
-# rather than the main one. Copying only christduell.db can therefore lose the
-# newest writes; fetch its companions too so SQLite can recover the full state.
-# They may legitimately be absent right after a checkpoint.
-for suffix in "-wal" "-shm"; do
-  az rest --method GET --url "$KUDU_BASE/christduell.db${suffix}" \
-    --headers "Accept=application/octet-stream" \
-    --output-file "${DEST}${suffix}" 2>/dev/null \
-    || rm -f "${DEST}${suffix}"
-done
+echo "Dumping to $DEST ..."
+# Custom format: compressed, and restorable selectively with pg_restore.
+pg_dump --format=custom --no-owner --no-privileges --file="$DEST" "$DUMP_URL"
 
 echo "Saved to $DEST"
 echo "Size: $(du -h "$DEST" | cut -f1)"
 
-# Prove the copy is readable rather than discovering it during a restore.
-if command -v sqlite3 >/dev/null 2>&1; then
-  if sqlite3 "$DEST" "pragma quick_check;" | grep -qx "ok"; then
-    echo "Integrity check: ok ($(sqlite3 "$DEST" 'select count(*) from player') players, \
-$(sqlite3 "$DEST" 'select count(*) from question') questions)"
-  else
-    echo "WARNING: the downloaded database did not pass its integrity check" >&2
-    exit 1
-  fi
+# A dump you have never read is a hope, not a backup.
+if pg_restore --list "$DEST" > /dev/null 2>&1; then
+  TABLES=$(pg_restore --list "$DEST" | grep -c "TABLE DATA" || true)
+  echo "Verified: readable archive containing $TABLES table(s) of data."
 else
-  echo "Note: install sqlite3 to have this script verify the backup."
+  echo "WARNING: the dump could not be read back by pg_restore" >&2
+  exit 1
 fi
+
+echo
+echo "Restore with:"
+echo "  pg_restore --clean --if-exists --no-owner --dbname=\"\$DATABASE_URL\" \"$DEST\""

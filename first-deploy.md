@@ -38,10 +38,12 @@ Azure portal, because the portal and the `.tf` files would drift apart.
 | Container Registry (ACR) | Your private Docker Hub | ~5 €/mo |
 | App Service Plan | The rented VM | ~13 €/mo (B1) |
 | Linux Web App | Runs your container on that VM | included |
+| PostgreSQL Flexible Server | Managed database, burstable B1ms + 32 GB | ~18 €/mo |
 | Notification Hub | Provisioned but unused — push goes via Expo | free tier |
-| `/home` file share | Persistent disk holding `christduell.db` | pennies |
 
-Roughly **20 €/month**. Deleting the resource group deletes all of it.
+Roughly **36 €/month** excluding VAT. Deleting the resource group deletes all of it — except
+that the database server and its database carry `prevent_destroy`, so Terraform refuses to
+replace them by accident.
 
 ---
 
@@ -93,6 +95,10 @@ cors_origins    = ""               # fill in once the web build has a URL
 billing_provider = "none"          # Stripe comes later
 push_enabled     = false           # needs an EAS project id first
 ```
+
+The database password is not in here: Terraform generates it and injects the finished
+`DATABASE_URL` into the Web App. Read it back with `terraform output -raw database_url` when
+you need `pg_dump`.
 
 **Why `nginx:latest`?** Chicken and egg: the Web App needs an image to run, but your registry
 does not exist yet and holds nothing. So the first apply boots a placeholder, and step 5
@@ -213,7 +219,8 @@ so pick the older tag in the Web App's Deployment Center.
 ## After the first deploy
 
 - [ ] Custom domain + certificate (`*.azurewebsites.net` is fine for a beta, not a launch)
-- [ ] Schedule `scripts/backup-db.sh` — the SQLite file has no managed backup behind it
+- [ ] Schedule `scripts/backup-db.sh` — Azure's automatic backups already cover disaster
+      recovery, so this is the off-site copy you keep yourself
 - [ ] Schedule `make maintenance` daily (downgrades lapsed subscriptions)
 - [ ] Add uptime monitoring against `/health`
 - [ ] Only then: Stripe (`billing_provider = "stripe"`) and push (`push_enabled = true`)
@@ -226,13 +233,14 @@ Two things deliberately left alone for now, both listed in `todos.md`:
 
 ## If a database already exists
 
-Not your case today — a fresh deployment creates and migrates its database on first boot with
-no action from you. But if you ever restore a `christduell.db` that predates Alembic, tell
-Alembic where it stands before upgrading, or it will try to create tables that are already
-there:
+Not your case today — a fresh `terraform apply` creates an empty Postgres and the container
+migrates it on first boot. You still need to seed the questions once (step 6).
+
+Should you ever restore a database that predates Alembic, tell Alembic where it stands before
+upgrading, or it will try to create tables that are already there:
 
 ```sh
 alembic stamp 0001 && alembic upgrade head
 ```
 
-Back it up first with `scripts/backup-db.sh`.
+Take a backup first (`scripts/backup-db.sh`).

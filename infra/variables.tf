@@ -27,6 +27,30 @@ variable "app_service_sku" {
   default     = "B1"
 }
 
+variable "postgres_admin_username" {
+  description = "Administrator login for the PostgreSQL flexible server."
+  type        = string
+  default     = "christduell_admin"
+}
+
+variable "postgres_sku" {
+  description = "SKU for the PostgreSQL flexible server. B_Standard_B1ms is the cheapest burstable tier."
+  type        = string
+  default     = "B_Standard_B1ms"
+}
+
+variable "postgres_storage_mb" {
+  description = "Provisioned storage. 32 GB is the smallest tier; backups up to this size are included."
+  type        = number
+  default     = 32768
+}
+
+variable "postgres_backup_retention_days" {
+  description = "Days of point-in-time restore to keep (7-35). Included in the price."
+  type        = number
+  default     = 14
+}
+
 variable "cors_origins" {
   description = "Comma-separated browser origins allowed to call the API (the Expo web build's URL)."
   type        = string

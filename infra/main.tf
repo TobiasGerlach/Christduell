@@ -17,6 +17,14 @@ resource "random_password" "secret_key" {
   special = false
 }
 
+# Database credentials: generated rather than typed into a tfvars file that
+# then has to be kept secret. Both live in Terraform state, so keep state remote
+# and access-controlled.
+resource "random_password" "postgres" {
+  length  = 40
+  special = false
+}
+
 resource "azurerm_resource_group" "main" {
   name     = "${local.name_prefix}-rg"
   location = var.location
@@ -30,6 +38,60 @@ resource "azurerm_container_registry" "main" {
   location            = azurerm_resource_group.main.location
   sku                 = "Basic"
   admin_enabled       = true
+}
+
+# --- Database ----------------------------------------------------------------
+#
+# SQLite on the App Service file share was the earlier design. It is a single
+# writer over an SMB mount, which is unsafe the moment two containers overlap —
+# and they do on every deploy. Managed Postgres also brings automatic backups
+# with point-in-time restore, which the file share had no equivalent for.
+
+resource "azurerm_postgresql_flexible_server" "main" {
+  name                = "${local.name_prefix}-${random_string.suffix.result}-pg"
+  resource_group_name = azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
+  version             = "16"
+
+  administrator_login    = var.postgres_admin_username
+  administrator_password = random_password.postgres.result
+
+  sku_name   = var.postgres_sku
+  storage_mb = var.postgres_storage_mb
+  zone       = "1"
+
+  # Reachable from the Web App, narrowed by the firewall rule below. A private
+  # endpoint would be tighter but needs a VNet the App Service is integrated
+  # with — worth doing once there is more than one service to connect.
+  public_network_access_enabled = true
+
+  backup_retention_days        = var.postgres_backup_retention_days
+  geo_redundant_backup_enabled = false
+
+  lifecycle {
+    # Losing the database because a name changed is not a recoverable mistake.
+    prevent_destroy = true
+  }
+}
+
+resource "azurerm_postgresql_flexible_server_database" "main" {
+  name      = "${var.project}_${var.environment}"
+  server_id = azurerm_postgresql_flexible_server.main.id
+  collation = "en_US.utf8"
+  charset   = "utf8"
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+# 0.0.0.0 is Azure's sentinel for "other Azure services", not for the whole
+# internet — it lets the Web App connect without opening the server publicly.
+resource "azurerm_postgresql_flexible_server_firewall_rule" "allow_azure_services" {
+  name             = "AllowAzureServices"
+  server_id        = azurerm_postgresql_flexible_server.main.id
+  start_ip_address = "0.0.0.0"
+  end_ip_address   = "0.0.0.0"
 }
 
 # --- Backend compute (Web App for Containers) -------------------------------
@@ -71,8 +133,18 @@ resource "azurerm_linux_web_app" "backend" {
   }
 
   app_settings = {
-    ENVIRONMENT                              = var.environment
-    DATABASE_URL                             = "sqlite:////home/christduell.db"
+    ENVIRONMENT = var.environment
+    DATABASE_URL = join("", [
+      "postgresql+psycopg://",
+      var.postgres_admin_username,
+      ":",
+      urlencode(random_password.postgres.result),
+      "@",
+      azurerm_postgresql_flexible_server.main.fqdn,
+      ":5432/",
+      azurerm_postgresql_flexible_server_database.main.name,
+      "?sslmode=require",
+    ])
     SECRET_KEY                               = random_password.secret_key.result
     CORS_ORIGINS                             = var.cors_origins
     AZURE_NOTIFICATION_HUB_NAME              = azurerm_notification_hub.main.name
@@ -86,8 +158,6 @@ resource "azurerm_linux_web_app" "backend" {
     BILLING_SUCCESS_URL                      = var.billing_success_url
     BILLING_CANCEL_URL                       = var.billing_cancel_url
     WEBSITES_PORT                            = "8000"
-    # Mount /home as persistent Azure Files storage so the SQLite DB survives restarts.
-    WEBSITES_ENABLE_APP_SERVICE_STORAGE = "true"
   }
 
   lifecycle {

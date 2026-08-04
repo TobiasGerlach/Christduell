@@ -3,7 +3,7 @@
 
 .DEFAULT_GOAL := help
 .PHONY: help setup backend backend-slow frontend web seed migrate migration reset-db \
-        test test-backend test-frontend lint fmt check smoke maintenance clean \
+        test test-backend test-postgres test-frontend lint fmt check smoke maintenance clean \
         review apply-review demo-duels play reports
 
 BACKEND := backend
@@ -88,6 +88,9 @@ test: test-backend test-frontend ## Run all tests
 
 test-backend: ## Run the backend test suite
 	cd $(BACKEND) && uv run pytest -q
+
+test-postgres: ## Run the backend suite against a throwaway PostgreSQL
+	./scripts/test-postgres.sh
 
 test-frontend: ## Typecheck and unit-test the app
 	cd $(FRONTEND) && npx tsc --noEmit

@@ -1,3 +1,4 @@
+import os
 from types import SimpleNamespace
 
 import pytest
@@ -12,15 +13,29 @@ from app.models.domain import Category
 from app.services import push
 from tests.factories import PlayerClient, make_player
 
+# Set TEST_DATABASE_URL to run the whole suite against a real Postgres:
+#   TEST_DATABASE_URL=postgresql+psycopg://user@localhost/christduell_test uv run pytest
+# Without it, tests use an in-memory SQLite, which is far quicker.
+TEST_DATABASE_URL = os.environ.get("TEST_DATABASE_URL")
+
 
 @pytest.fixture(name="session")
 def session_fixture():
-    engine = create_engine(
-        "sqlite://", connect_args={"check_same_thread": False}, poolclass=StaticPool
-    )
-    SQLModel.metadata.create_all(engine)
+    if TEST_DATABASE_URL:
+        engine = create_engine(TEST_DATABASE_URL)
+        # Each test starts from an empty schema so ordering can't matter.
+        SQLModel.metadata.drop_all(engine)
+        SQLModel.metadata.create_all(engine)
+    else:
+        engine = create_engine(
+            "sqlite://", connect_args={"check_same_thread": False}, poolclass=StaticPool
+        )
+        SQLModel.metadata.create_all(engine)
+
     with Session(engine) as session:
         yield session
+
+    engine.dispose()
 
 
 @pytest.fixture(name="client")

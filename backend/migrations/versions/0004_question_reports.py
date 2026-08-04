@@ -70,3 +70,5 @@ def downgrade() -> None:
         batch_op.drop_index(batch_op.f('ix_questionreport_player_id'))
 
     op.drop_table('questionreport')
+    for enum in (REASON_ENUM, STATUS_ENUM):
+        enum.drop(op.get_bind(), checkfirst=True)

@@ -10,10 +10,13 @@ class Settings(BaseSettings):
     app_name: str = "Christduell API"
     environment: str = "local"
     database_url: str = "sqlite:///./christduell.db"
-    # Run `alembic upgrade head` on startup. Correct for a single-instance
-    # deployment; turn it off if several instances ever boot concurrently and
-    # run migrations as a separate deploy step instead.
+    # Run `alembic upgrade head` on startup. On Postgres this is guarded by an
+    # advisory lock, so overlapping instances queue rather than race.
     auto_migrate: bool = True
+    # Connection pool, Postgres only. The default App Service plan is small and
+    # Postgres burstable tiers cap connections, so stay modest.
+    db_pool_size: int = 5
+    db_max_overflow: int = 5
 
     # --- Auth -------------------------------------------------------------
     # MUST be overridden outside local dev — `create_app` refuses to boot with

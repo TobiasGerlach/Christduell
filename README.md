@@ -92,19 +92,32 @@ research and billing flows, then deletes the accounts. Point it at a deployment 
 
 ### Database migrations
 
-Schema changes go through Alembic; the app runs `alembic upgrade head` on startup.
+Schema changes go through Alembic; the app runs `alembic upgrade head` on startup (on Postgres
+it takes an advisory lock first, so overlapping deploys queue instead of racing).
 
 ```sh
 make migration m="add something"   # generate from model changes
 make migrate                       # apply
 ```
 
+### Postgres
+
+Development uses SQLite for speed; production runs PostgreSQL. Because those differ, the test
+suite runs against both — a migration that works on one and not the other is a real failure
+mode, not a hypothetical one:
+
+```sh
+make test-postgres    # starts a throwaway Postgres and runs the whole suite against it
+```
+
+CI runs the suite twice for the same reason.
+
 ## Stack
 
 | Layer        | Choice                                   |
 |--------------|------------------------------------------|
 | Backend      | FastAPI + uv, deployed to Azure          |
-| Database     | SQLite (WAL mode) on Azure Files; local SQLite in dev |
+| Database     | PostgreSQL 16 (Azure Flexible Server); SQLite locally |
 | Frontend     | Expo / React Native (TypeScript)         |
 | Push         | Expo Notifications / Azure Notification Hubs |
 | Infra        | Terraform (Azure)                        |

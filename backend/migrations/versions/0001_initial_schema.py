@@ -21,6 +21,8 @@ down_revision: str | None = None
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
+SUBSCRIPTION_TIER_ENUM = sa.Enum("RESEARCH", "PAID", name="subscriptiontier")
+DUEL_STATUS_ENUM = sa.Enum("PENDING", "ACTIVE", "FINISHED", "DECLINED", name="duelstatus")
 CATEGORY_ENUM = sa.Enum(
     "OLD_TESTAMENT",
     "NEW_TESTAMENT",
@@ -47,11 +49,7 @@ def upgrade() -> None:
         sa.Column("email", sqlmodel.sql.sqltypes.AutoString(), nullable=False),
         sa.Column("push_token", sqlmodel.sql.sqltypes.AutoString(), nullable=True),
         sa.Column("rating", sa.Float(), nullable=False),
-        sa.Column(
-            "subscription_tier",
-            sa.Enum("RESEARCH", "PAID", name="subscriptiontier"),
-            nullable=False,
-        ),
+        sa.Column("subscription_tier", SUBSCRIPTION_TIER_ENUM, nullable=False),
         sa.Column("subscription_valid_until", sa.DateTime(), nullable=True),
         sa.Column("created_at", sa.DateTime(), nullable=False),
         sa.PrimaryKeyConstraint("id"),
@@ -75,11 +73,7 @@ def upgrade() -> None:
         sa.Column("id", sa.Integer(), nullable=False),
         sa.Column("challenger_id", sa.Integer(), nullable=False),
         sa.Column("opponent_id", sa.Integer(), nullable=False),
-        sa.Column(
-            "status",
-            sa.Enum("PENDING", "ACTIVE", "FINISHED", "DECLINED", name="duelstatus"),
-            nullable=False,
-        ),
+        sa.Column("status", DUEL_STATUS_ENUM, nullable=False),
         sa.Column("created_at", sa.DateTime(), nullable=False),
         sa.Column("finished_at", sa.DateTime(), nullable=True),
         sa.ForeignKeyConstraint(["challenger_id"], ["player.id"]),
@@ -157,3 +151,9 @@ def downgrade() -> None:
     op.drop_table("duel")
     op.drop_table("question")
     op.drop_table("player")
+    # Postgres keeps enum types after their tables are dropped, so a downgrade
+    # followed by an upgrade would fail on "type already exists". A no-op on
+    # SQLite, which stores enums as plain text.
+    bind = op.get_bind()
+    for enum in (CATEGORY_ENUM, DUEL_STATUS_ENUM, SUBSCRIPTION_TIER_ENUM):
+        enum.drop(bind, checkfirst=True)

@@ -25,6 +25,10 @@ down_revision: str | None = "0001"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
+QUESTIONNAIRE_TYPE_ENUM = sa.Enum(
+    "FAITH_BACKGROUND", "ADHD_SCREENER", "AUTISM_SCREENER", name="questionnairetype"
+)
+
 
 def upgrade() -> None:
     with op.batch_alter_table("player", schema=None) as batch_op:
@@ -36,9 +40,10 @@ def upgrade() -> None:
                 "subscription_cancel_at_period_end",
                 sa.Boolean(),
                 nullable=False,
-                # SQLite cannot add a NOT NULL column without a default for the
-                # rows that already exist.
-                server_default=sa.text("0"),
+                # A NOT NULL column needs a default for the rows that already
+                # exist. sa.false() renders per dialect — Postgres rejects the
+                # integer literal 0 for a boolean column.
+                server_default=sa.false(),
             )
         )
         batch_op.add_column(
@@ -77,13 +82,7 @@ def upgrade() -> None:
         "questionnairecompletion",
         sa.Column("id", sa.Integer(), nullable=False),
         sa.Column("research_uuid", sqlmodel.sql.sqltypes.AutoString(), nullable=False),
-        sa.Column(
-            "questionnaire_type",
-            sa.Enum(
-                "FAITH_BACKGROUND", "ADHD_SCREENER", "AUTISM_SCREENER", name="questionnairetype"
-            ),
-            nullable=False,
-        ),
+        sa.Column("questionnaire_type", QUESTIONNAIRE_TYPE_ENUM, nullable=False),
         sa.Column("started_at", sa.DateTime(), nullable=False),
         sa.Column("completed_at", sa.DateTime(), nullable=True),
         sa.PrimaryKeyConstraint("id"),
@@ -113,6 +112,7 @@ def downgrade() -> None:
     op.drop_table("questionnaireanswer")
     op.drop_table("questionnairecompletion")
     op.drop_table("researchconsent")
+    QUESTIONNAIRE_TYPE_ENUM.drop(op.get_bind(), checkfirst=True)
     with op.batch_alter_table("player", schema=None) as batch_op:
         batch_op.drop_index(batch_op.f("ix_player_billing_subscription_id"))
         batch_op.drop_index(batch_op.f("ix_player_billing_customer_id"))

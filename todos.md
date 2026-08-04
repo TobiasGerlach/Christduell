@@ -131,8 +131,9 @@ deleting the account withdraws consent automatically.
       plays a full duel, deletes them again).
 - [ ] Custom domain + certificate **(you)** — `*.azurewebsites.net` is fine for a beta, not for
       a launch.
-- [ ] Schedule `scripts/backup-db.sh` (cron/GitHub Action). The SQLite file on App Service
-      Files has no managed backup behind it.
+- [x] Backups: Azure keeps automatic Postgres backups with 14 days of point-in-time restore.
+      `scripts/backup-db.sh` takes an extra `pg_dump` you hold yourself — worth scheduling, but
+      no longer the only thing standing between you and total data loss.
 - [ ] Schedule `make maintenance` daily — it downgrades lapsed subscriptions.
 
 ---
@@ -202,9 +203,9 @@ Terraform rejects it and the app refuses to boot with it outside local.
       hash in the not-found branch.
 - [ ] **`GET /duels` runs a handful of queries per duel** (two display names, two score
       aggregates). Fine at a few dozen duels per player, worth batching before it is thousands.
-- [ ] **The container runs as root.** Deliberate for now — App Service mounts `/home` as root,
-      and a non-root user would need the mount permissions sorted out first. Revisit with the
-      Postgres move, not before launch.
+- [ ] **The container runs as root.** Now that no file share is involved, a non-root user is
+      straightforward — one `USER` line in the Dockerfile plus a rebuild. Small hardening, do it
+      when convenient.
 - [ ] **The Notification Hub in Terraform is unused** — push goes through Expo. Free tier, so
       it costs nothing, but delete it if you settle on Expo for good.
 - [ ] Sentry (or equivalent) in both backend and app — right now a crash in production is
@@ -214,9 +215,11 @@ Terraform rejects it and the app refuses to boot with it outside local.
       individually. Fine for a beta; add refresh tokens + revocation before scale.
 - [ ] Expo push receipts: `DeviceNotRegistered` tokens are logged but never cleared from
       `player.push_token` (`backend/app/services/push.py:96`).
-- [ ] Load-sanity: SQLite on Azure Files is **single-writer**. Do not scale the App Service
-      past one instance without moving to Postgres — `AUTO_MIGRATE` on multiple booting
-      instances would also race.
+- [x] The database is managed **PostgreSQL 16**, so concurrent writers, scaling the App Service
+      out, and point-in-time restore are all fine. Startup migrations take a Postgres advisory
+      lock, so overlapping deploys queue instead of racing.
+- [ ] If you do scale past one instance, revisit the push executor (in-process threads) and
+      consider moving migrations out of startup into a deploy step.
 - [ ] Legal/consent copy in `ResearchConsentScreen.tsx` is a plain-language summary written by
       an engineer. Replace with the text your lawyer approves, and bump `consent_version`
       (`backend/app/models/domain.py`) whenever it changes.
