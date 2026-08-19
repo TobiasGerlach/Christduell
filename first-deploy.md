@@ -91,7 +91,7 @@ Edit `terraform.tfvars`:
 
 ```hcl
 container_image = "nginx:latest"   # see below
-cors_origins    = ""               # fill in once the web build has a URL
+cors_origins    = ""               # stays empty: the API serves the web app itself
 billing_provider = "none"          # Stripe comes later
 push_enabled     = false           # needs an EAS project id first
 ```
@@ -131,17 +131,21 @@ The app is live but running nginx. That is expected.
 
 ## Step 4 — check the image builds
 
-The container applies database migrations on boot, so it must contain `alembic.ini` and
-`migrations/`. Build it once locally before trusting the pipeline:
+The image contains both halves of the app: it compiles the Expo **web frontend** in a first
+build stage and the API serves those files at `/`, so the URL you deploy is also the URL your
+players open. It also applies database migrations on boot, so it must contain `alembic.ini`
+and `migrations/`. Build it once locally before trusting the pipeline — note it builds from
+the **repo root**, not `backend/`:
 
 ```sh
-cd backend
-docker build -t christduell-backend:test .
+docker build -f backend/Dockerfile -t christduell-backend:test .
 docker run --rm -p 8000:8000 -e ENVIRONMENT=local christduell-backend:test
 curl localhost:8000/health     # {"status":"ok"}
+open http://localhost:8000     # the app itself, served by the container
 ```
 
-If the log says `Path doesn't exist: /app/migrations`, the Dockerfile lost its `COPY` lines.
+The first build takes several minutes (it runs `npm ci` and the Expo export). If the log says
+`Path doesn't exist: /app/migrations`, the Dockerfile lost its `COPY` lines.
 
 ---
 
@@ -181,6 +185,9 @@ curl https://<app>.azurewebsites.net/health
 BASE_URL=https://<app>.azurewebsites.net make smoke
 ```
 
+Note: the smoke test needs questions in the database, so seed first (below) if the duel
+checks fail on a fresh deployment.
+
 The smoke test registers two throwaway accounts, plays a complete eight-round duel, walks the
 research and billing flows, then deletes the accounts. 29 checks. If they pass, the deployment
 is genuinely working — not just responding.
@@ -195,6 +202,10 @@ python -m app.db.seed
 > `app.db.seed` also creates the two demo players (`anna@` / `tobias@example.com`) with a
 > known password. Delete them in production, or edit `SEED_PLAYERS` first.
 
+Finally, open `https://<app>.azurewebsites.net` in a browser. That is the whole app — the
+container serves the compiled web frontend at `/` and the API underneath it. **This URL is
+what you send your beta testers.** No install, no app store; it works in any phone browser.
+
 ---
 
 ## When something breaks
@@ -207,7 +218,7 @@ az webapp log tail --resource-group christduell-production-rg --name <app>
 |---|---|
 | Container never starts | Missing `alembic.ini`/`migrations/` in the image (step 4) |
 | `RuntimeError: Refusing to start` | `SECRET_KEY` or `BILLING_PROVIDER` misconfigured — the app blocks unsafe production settings on purpose |
-| App responds, browser blocked | `cors_origins` does not match the web build's origin exactly (scheme + host + port) |
+| App responds, browser blocked by CORS | Only possible if the web build is hosted on a *different* origin than the API — then `cors_origins` must match it exactly (scheme + host + port). Served from the API itself, CORS never applies |
 | 502 for the first ~2 minutes | Normal cold start after a deploy |
 | ACR push denied | `admin_enabled` off, or the wrong `ACR_PASSWORD` |
 

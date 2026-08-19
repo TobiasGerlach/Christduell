@@ -1,7 +1,10 @@
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.api.routes import (
     auth,
@@ -23,6 +26,19 @@ DEFAULT_SECRET_KEY = "dev-only-insecure-secret-change-me"
 async def lifespan(app: FastAPI):
     init_db()
     yield
+
+
+class SpaStaticFiles(StaticFiles):
+    """Serves the Expo web export, answering unknown extension-less paths with
+    index.html so a reload inside the single-page app does not 404."""
+
+    async def get_response(self, path: str, scope):  # type: ignore[override]
+        try:
+            return await super().get_response(path, scope)
+        except StarletteHTTPException as exc:
+            if exc.status_code == 404 and "." not in path.rsplit("/", 1)[-1]:
+                return await super().get_response("index.html", scope)
+            raise
 
 
 def _check_production_config(settings: Settings) -> None:
@@ -71,9 +87,10 @@ def create_app() -> FastAPI:
 
     app = FastAPI(title=settings.app_name, lifespan=lifespan)
 
-    # The Expo web build runs on a different origin than the API, so the browser
-    # blocks its fetches without CORS. Locally any origin is fine; deployed, only
-    # the origins listed in CORS_ORIGINS are allowed.
+    # In production the API serves the web build itself (see the mount below),
+    # so requests are same-origin and CORS never applies. CORS_ORIGINS only
+    # matters if the web build is ever hosted elsewhere; locally the Expo dev
+    # server on :8081 is a different origin, so any origin is allowed.
     allowed_origins = ["*"] if settings.environment == "local" else settings.cors_origins
     if allowed_origins:
         app.add_middleware(
@@ -91,6 +108,12 @@ def create_app() -> FastAPI:
     app.include_router(players.router)
     app.include_router(questions.router)
     app.include_router(research.router)
+
+    # Mounted last so every API route above wins; anything else falls through
+    # to the static files. Absent directory = API-only mode (local dev).
+    web_build = Path(settings.web_build_dir)
+    if web_build.is_dir():
+        app.mount("/", SpaStaticFiles(directory=web_build, html=True), name="web")
 
     return app
 

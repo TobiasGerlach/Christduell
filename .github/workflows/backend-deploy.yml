@@ -39,7 +39,10 @@ jobs:
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
-          context: backend
+          # Repo-root context: the Dockerfile also compiles the Expo web app
+          # from frontend/ and bakes it into the image.
+          context: .
+          file: backend/Dockerfile
           push: true
           tags: |
             ${{ secrets.ACR_LOGIN_SERVER }}/christduell-backend:${{ github.sha }}

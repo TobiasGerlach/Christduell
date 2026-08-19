@@ -50,8 +50,17 @@ class Settings(BaseSettings):
     question_report_retire_threshold: int = 3
 
     # --- CORS -------------------------------------------------------------
-    # Comma-separated list of allowed browser origins for the Expo web build.
+    # Comma-separated list of allowed browser origins. Only needed if the web
+    # build is hosted somewhere other than this API — the container serves the
+    # Expo web export itself (see web_build_dir), and same-origin requests
+    # never involve CORS.
     cors_origins: list[str] = []
+
+    # --- Web build --------------------------------------------------------
+    # Directory containing the Expo web export (`npx expo export --platform
+    # web`). If it exists, the API serves it at "/"; if not (local dev, where
+    # `make web` runs the Expo dev server instead), the API serves JSON only.
+    web_build_dir: str = "webbuild"
 
     # --- Push notifications ----------------------------------------------
     push_enabled: bool = False

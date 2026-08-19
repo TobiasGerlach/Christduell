@@ -1,11 +1,16 @@
 import Constants from "expo-constants";
+import { Platform } from "react-native";
 
-// EXPO_PUBLIC_* variables are inlined at build time, which is how a production
-// build points at the deployed API without editing app.json.
+// EXPO_PUBLIC_* variables are inlined at build time, which is how a native
+// production build points at the deployed API without editing app.json.
+// A production *web* build needs no URL at all: the API container serves the
+// web export itself, so relative paths ("" prefix) hit the same origin.
+// Everything else (dev servers, Expo Go) falls back to localhost/app.json.
 const API_BASE_URL: string =
   process.env.EXPO_PUBLIC_API_URL ??
-  Constants.expoConfig?.extra?.apiBaseUrl ??
-  "http://localhost:8000";
+  (Platform.OS === "web" && !__DEV__
+    ? ""
+    : (Constants.expoConfig?.extra?.apiBaseUrl ?? "http://localhost:8000"));
 
 export class ApiError extends Error {
   constructor(

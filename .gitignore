@@ -43,3 +43,6 @@ web-build/
 
 # Generated proofreading page (rebuild with 'make review')
 scripts/review/review.html
+
+# Production web export served by the backend (make web-export)
+backend/webbuild/

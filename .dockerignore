@@ -1,0 +1,22 @@
+# The backend image builds from the repo root (see backend/Dockerfile).
+# Keep the context small: only backend/ and frontend/ sources matter.
+.git
+infra
+scripts
+docs
+*.md
+Makefile
+
+**/node_modules
+**/.expo
+**/dist
+**/web-build
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+backend/webbuild
+backend/*.db
+backend/*.db-*
+**/.env
+**/.env.*

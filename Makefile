@@ -2,7 +2,7 @@
 # Run `make` (or `make help`) for the list.
 
 .DEFAULT_GOAL := help
-.PHONY: help setup backend backend-slow frontend web seed migrate migration reset-db \
+.PHONY: help setup backend backend-slow frontend web web-export seed migrate migration reset-db \
         test test-backend test-postgres test-frontend lint fmt check smoke maintenance clean \
         review apply-review demo-duels play reports reset-password
 
@@ -30,6 +30,9 @@ frontend: ## Start Expo (scan the QR code with Expo Go)
 
 web: ## Start the Expo web build at http://localhost:8081
 	cd $(FRONTEND) && npx expo start --web
+
+web-export: ## Build the production web app; `make backend` then serves it at :8000
+	cd $(FRONTEND) && npx expo export --platform web --output-dir ../$(BACKEND)/webbuild
 
 # --- Database ---------------------------------------------------------------
 

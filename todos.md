@@ -20,7 +20,9 @@ password-reset stopgap. What remains is yours:
       screeners.
 - [ ] **Leave `billing_provider = "none"`** (also the default) — free beta, no Widerruf/AGB
       machinery needed yet.
-- [ ] Deploy per `first-deploy.md`, then `BASE_URL=... make smoke`.
+- [ ] Deploy per `first-deploy.md`, then `BASE_URL=... make smoke`. The container serves the
+      web app itself at `/`, so distributing the beta = sending testers the app URL — no
+      separate frontend hosting, no app store.
 - [ ] Schedule `make maintenance` daily — it now also closes abandoned duels (3 days without a
       move; `DUEL_INACTIVITY_EXPIRY_DAYS` to change).
 - [ ] When someone forgets their password: `make reset-password email=...` against the
@@ -138,7 +140,9 @@ deleting the account withdraws consent automatically.
 
 - [ ] `cd infra && terraform apply` — now provisions HTTPS-only, always-on, a health check,
       a generated `SECRET_KEY`, and passes billing/push settings through.
-- [ ] Set `cors_origins` to the web build's real origin, or the browser blocks every request.
+- [x] The image now compiles the Expo web app and the API serves it at `/` — one URL for
+      everything, and `cors_origins` can stay empty (same origin, CORS never applies). Only
+      set it if the web build ever moves to its own domain.
 - [ ] Set the GitHub repo secrets (`ACR_LOGIN_SERVER`, `ACR_USERNAME`, `ACR_PASSWORD`,
       `AZURE_CREDENTIALS`, `AZURE_WEBAPP_NAME`) and run **Backend Deploy** once by hand — the
       deploy workflow has never run.
