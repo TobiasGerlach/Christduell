@@ -18,9 +18,15 @@ import { useAuth } from "../auth/AuthContext";
 type Mode = "login" | "register";
 
 // Set at build time; without them the screen falls back to honest beta wording
-// instead of asserting consent to documents that do not exist.
+// instead of asserting consent to documents that do not exist. A production
+// web build defaults to the pages the API serves on the same origin; native
+// builds need absolute URLs via the env vars.
+const isProductionWeb = Platform.OS === "web" && !__DEV__;
 const TERMS_URL = process.env.EXPO_PUBLIC_TERMS_URL ?? "";
-const PRIVACY_URL = process.env.EXPO_PUBLIC_PRIVACY_URL ?? "";
+const PRIVACY_URL =
+  process.env.EXPO_PUBLIC_PRIVACY_URL ?? (isProductionWeb ? "/datenschutz" : "");
+const IMPRINT_URL =
+  process.env.EXPO_PUBLIC_IMPRINT_URL ?? (isProductionWeb ? "/impressum" : "");
 
 export function LoginScreen() {
   const { login, register } = useAuth();
@@ -139,6 +145,16 @@ export function LoginScreen() {
               </Text>{" "}
               zu.
             </Text>
+          ) : PRIVACY_URL ? (
+            // No terms yet (free beta), but the privacy information duty
+            // (Art. 13 GDPR) is met by linking the Datenschutzerklärung.
+            <Text style={styles.legalText}>
+              Wie deine Daten verarbeitet werden, steht in der{" "}
+              <Text style={styles.legalLink} onPress={() => Linking.openURL(PRIVACY_URL)}>
+                Datenschutzerklärung
+              </Text>
+              .
+            </Text>
           ) : (
             // No links configured yet: do not claim agreement to documents that
             // are not there. The organiser hands the information out instead.
@@ -147,6 +163,13 @@ export function LoginScreen() {
               deiner Ansprechperson.
             </Text>
           )}
+          {IMPRINT_URL ? (
+            <Text style={[styles.legalText, styles.imprintLine]}>
+              <Text style={styles.legalLink} onPress={() => Linking.openURL(IMPRINT_URL)}>
+                Impressum
+              </Text>
+            </Text>
+          ) : null}
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
@@ -180,6 +203,7 @@ const styles = StyleSheet.create({
   ageRow: { flexDirection: "row", alignItems: "center", gap: 10 },
   ageLabel: { flex: 1, fontSize: 12, color: "#5B5B5B", lineHeight: 17 },
   legalBox: { marginTop: 24 },
+  imprintLine: { marginTop: 8 },
   legalLink: { color: "#6750A4", textDecorationLine: "underline" },
   legalText: { fontSize: 12, color: "#7A7A7A", textAlign: "center", lineHeight: 18 },
 });

@@ -11,6 +11,7 @@ from app.api.routes import (
     billing,
     duels,
     health,
+    legal,
     notifications,
     players,
     questions,
@@ -69,6 +70,13 @@ def _check_production_config(settings: Settings) -> None:
             if not value:
                 problems.append(f"BILLING_PROVIDER=stripe but {name} is not set")
 
+    if unfilled := legal.unfilled_placeholder_pages():
+        # Deploying an Impressum that reads "[[VORNAME NACHNAME]]" satisfies
+        # neither § 5 DDG nor anyone reading it — fill in the real details.
+        problems.append(
+            "legal pages still contain [[...]] placeholders: " + ", ".join(unfilled)
+        )
+
     if settings.push_enabled and not settings.cors_origins and settings.environment != "local":
         # Not fatal on its own, but a deployed API with no allowed origin cannot
         # serve the web build at all — worth failing early rather than debugging
@@ -101,6 +109,7 @@ def create_app() -> FastAPI:
         )
 
     app.include_router(health.router)
+    app.include_router(legal.router)
     app.include_router(auth.router)
     app.include_router(billing.router)
     app.include_router(duels.router)

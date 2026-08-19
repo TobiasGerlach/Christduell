@@ -9,10 +9,13 @@ login/register rate limits, 16+/parental-consent confirmation at registration, o
 challenge per pair, demo accounts only seeded locally, `make reset-password` as the
 password-reset stopgap. What remains is yours:
 
-- [ ] **Impressum + Datenschutzerklärung** — required for the beta, not just launch (§5 DDG,
-      Art. 13 GDPR). Host them, then set `EXPO_PUBLIC_TERMS_URL` / `EXPO_PUBLIC_PRIVACY_URL`
-      for the web build; without them the login screen shows neutral beta wording and points to
-      you as the organiser.
+- [ ] **Impressum + Datenschutzerklärung: fill in the `[[...]]` placeholders.** Both pages
+      are drafted for the beta configuration (no research, no billing, no push, no tracking)
+      in `backend/app/static/legal/` and served by the API at `/impressum` and
+      `/datenschutz`; the login screen links them automatically on the production web build.
+      Your name, address, contact e-mail and the date are `[[...]]` placeholders — the app
+      **refuses to start in production** until they are filled. The texts are an engineer's
+      draft of standard wording, not legal advice; worth a once-over by someone qualified.
 - [ ] **Under-16s**: the registration checkbox covers "16+ or guardians agree" — collect the
       parental consent on paper for the Konfirmanden. Keep the sheets.
 - [ ] **Leave `research_enabled = false`** (the Terraform default) until a lawyer has approved
@@ -106,10 +109,13 @@ Whichever you choose, §1 and §2 are mandatory.
 
 ### 1.3 Legal pages **(you — required before taking money in Germany)**
 
-- [ ] **Impressum** (§5 DDG)
-- [ ] **Datenschutzerklärung** — must cover: account data, duel data, push tokens, the research
-      questionnaires (incl. Art. 9 health data), Stripe as processor, Azure as host, retention
-      periods, and the rights under Art. 15–21 GDPR.
+- [x] **Impressum** (§5 DDG) — drafted in `backend/app/static/legal/`, served at
+      `/impressum`; fill the `[[...]]` placeholders (see the beta section above).
+- [ ] **Datenschutzerklärung** — a beta-scope version exists at `/datenschutz` (account
+      data, duel data, Azure as host, retention, Art. 15–21 rights; explicitly states that
+      research, billing and push are off). **Before enabling** push tokens, the research
+      questionnaires (incl. Art. 9 health data) or Stripe as processor, it must be extended —
+      the page says so itself in Ziffer 6.
 - [ ] **AGB** — subscription terms, auto-renewal, cancellation.
 - [ ] **Widerrufsbelehrung** + the "Jetzt kaufen"-style button labelling for consumer
       subscriptions.

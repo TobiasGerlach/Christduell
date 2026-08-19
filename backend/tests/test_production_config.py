@@ -6,8 +6,17 @@ of development.
 
 import pytest
 
+from app.api.routes import legal
 from app.core.config import Settings
 from app.main import DEFAULT_SECRET_KEY, _check_production_config
+
+
+@pytest.fixture(autouse=True)
+def filled_legal_pages(monkeypatch):
+    """The repo ships the legal pages with [[...]] placeholders, which would
+    fail every production check here; that concern has its own tests in
+    test_legal.py."""
+    monkeypatch.setattr(legal, "unfilled_placeholder_pages", lambda: [])
 
 
 def production(**overrides) -> Settings:
