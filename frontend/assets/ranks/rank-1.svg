@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+      <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFDF7E"/><stop offset="1" stop-color="#F8C64B"/>
+      </linearGradient>
+      <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#E8EDF5"/><stop offset="1" stop-color="#AEB9CC"/>
+      </linearGradient>
+      <linearGradient id="goldarmor" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFE082"/><stop offset="1" stop-color="#E8A61A"/>
+      </linearGradient>
+      <linearGradient id="leather" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#B07B4F"/><stop offset="1" stop-color="#8A5A2E"/>
+      </linearGradient>
+    </defs>
+<circle cx="256" cy="256" r="230" fill="#F4F1FB"/><circle cx="256" cy="256" r="230" fill="none" stroke="#9E9E9E" stroke-width="18"/>
+<path d="M110 470 C 130 380 190 350 256 350 C 322 350 382 380 402 470 Z" fill="#CFCFCF"/>
+<circle cx="256" cy="252" r="148" fill="url(#face)" stroke="#B8860B" stroke-width="8"/>
+<circle cx="205" cy="235" r="16" fill="#3E2723"/><circle cx="307" cy="235" r="16" fill="#3E2723"/>
+<path d="M196 295 Q 256 345 316 295" stroke="#3E2723" stroke-width="14" fill="none" stroke-linecap="round"/>
+<circle cx="180" cy="278" r="18" fill="#F5A25D" opacity="0.55"/><circle cx="332" cy="278" r="18" fill="#F5A25D" opacity="0.55"/>
+<g fill="#FFFFFF" stroke="#D7CCC8" stroke-width="5"><circle cx="226" cy="122" r="24"/><circle cx="258" cy="112" r="26"/><circle cx="290" cy="124" r="22"/></g>
+</svg>

@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Animated, Easing, Pressable, StyleSheet, Text } from "react-native";
+import type { ImageSourcePropType } from "react-native";
 
 import { useAuth } from "../auth/AuthContext";
 import { loadValue, saveValue } from "../auth/storage";
-import { formatRank } from "../lib/rank";
+import { formatRank, rankImage } from "../lib/rank";
 
 // Celebrates every climb on the ladder: a division step gets the small
 // wording, a whole new rank the big one. The last celebrated ladder_step is
@@ -14,7 +15,7 @@ const CONFETTI = ["🎉", "✨", "⭐", "🎊", "💜", "✨", "🎉", "⭐", "�
 const SHOW_MS = 4200;
 
 interface Celebration {
-  emoji: string;
+  image: ImageSourcePropType;
   title: string;
   rankLabel: string;
 }
@@ -109,7 +110,7 @@ export function RankUpCelebration() {
 
       const newRank = account.rank_division === 5 || Math.floor(previous / 5) < Math.floor(account.ladder_step / 5);
       setCelebration({
-        emoji: account.rank_emoji,
+        image: rankImage(account.rank),
         title: newRank ? "NEUER RANG!" : "AUFSTIEG!",
         rankLabel: formatRank(account.rank, account.rank_division),
       });
@@ -141,9 +142,10 @@ export function RankUpCelebration() {
         {CONFETTI.map((_, i) => (
           <ConfettiPiece key={i} index={i} />
         ))}
-        <Animated.Text style={[styles.emoji, { transform: [{ scale: emojiScale }] }]}>
-          {celebration.emoji}
-        </Animated.Text>
+        <Animated.Image
+          source={celebration.image}
+          style={[styles.badge, { transform: [{ scale: emojiScale }] }]}
+        />
         <Text style={styles.title}>{celebration.title}</Text>
         <Text style={styles.rankLabel}>{celebration.rankLabel}</Text>
         <Text style={styles.hint}>Tippen zum Schließen</Text>
@@ -164,7 +166,7 @@ const styles = StyleSheet.create({
   },
   fill: { flex: 1, alignItems: "center", justifyContent: "center", gap: 12, overflow: "hidden" },
   confetti: { position: "absolute", top: 0, fontSize: 26 },
-  emoji: { fontSize: 96 },
+  badge: { width: 160, height: 160 },
   title: { color: "#FFD75E", fontSize: 28, fontWeight: "800", letterSpacing: 3 },
   rankLabel: { color: "#FFFFFF", fontSize: 22, fontWeight: "700" },
   hint: { color: "#B9A8E8", fontSize: 13, marginTop: 24 },

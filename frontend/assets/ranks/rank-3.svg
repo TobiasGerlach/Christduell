@@ -1,0 +1,26 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs>
+      <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFDF7E"/><stop offset="1" stop-color="#F8C64B"/>
+      </linearGradient>
+      <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#E8EDF5"/><stop offset="1" stop-color="#AEB9CC"/>
+      </linearGradient>
+      <linearGradient id="goldarmor" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFE082"/><stop offset="1" stop-color="#E8A61A"/>
+      </linearGradient>
+      <linearGradient id="leather" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#B07B4F"/><stop offset="1" stop-color="#8A5A2E"/>
+      </linearGradient>
+    </defs>
+<circle cx="256" cy="256" r="230" fill="#F4F1FB"/><circle cx="256" cy="256" r="230" fill="none" stroke="#78909C" stroke-width="18"/>
+<path d="M110 470 C 130 380 190 350 256 350 C 322 350 382 380 402 470 Z" fill="#7A8B99"/>
+<ellipse cx="128" cy="392" rx="58" ry="42" fill="url(#leather)" stroke="#5D4037" stroke-width="8"/>
+<ellipse cx="384" cy="392" rx="58" ry="42" fill="url(#leather)" stroke="#5D4037" stroke-width="8"/>
+<circle cx="256" cy="252" r="148" fill="url(#face)" stroke="#B8860B" stroke-width="8"/>
+<circle cx="205" cy="235" r="16" fill="#3E2723"/><circle cx="307" cy="235" r="16" fill="#3E2723"/>
+<path d="M196 295 Q 256 345 316 295" stroke="#3E2723" stroke-width="14" fill="none" stroke-linecap="round"/>
+<circle cx="180" cy="278" r="18" fill="#F5A25D" opacity="0.55"/><circle cx="332" cy="278" r="18" fill="#F5A25D" opacity="0.55"/>
+<path d="M100 260 C 100 120 170 78 256 78 C 342 78 412 120 412 260 C 412 200 380 150 256 150 C 132 150 100 200 100 260 Z" fill="url(#leather)" stroke="#5D4037" stroke-width="8"/>
+<g transform="translate(352 132) scale(0.9)"><path d="M0 0 C 18 -18 44 -16 50 2 C 40 6 34 6 28 4 C 30 16 20 26 4 26 C 12 18 12 10 8 6 C 4 10 -6 10 -14 4 C -8 2 -4 0 0 0 Z" fill="#FFFFFF" stroke="#90A4AE" stroke-width="5"/></g>
+</svg>

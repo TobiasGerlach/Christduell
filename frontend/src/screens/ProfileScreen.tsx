@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import {
   Alert,
+  Image,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -12,7 +13,7 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { authApi } from "../api/auth";
 import { useAuth } from "../auth/AuthContext";
-import { formatRank } from "../lib/rank";
+import { formatRank, rankImage } from "../lib/rank";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Profile">;
@@ -60,9 +61,8 @@ export function ProfileScreen({ navigation }: Props) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.rank}>
-        {account.rank_emoji} {formatRank(account.rank, account.rank_division)}
-      </Text>
+        <Image source={rankImage(account.rank)} style={styles.rankBadge} />
+      <Text style={styles.rank}>{formatRank(account.rank, account.rank_division)}</Text>
         <Text style={styles.rating}>{Math.round(account.rating)} Punkte</Text>
         <Text style={styles.email}>{account.email}</Text>
       </View>
@@ -101,6 +101,7 @@ export function ProfileScreen({ navigation }: Props) {
 
 const styles = StyleSheet.create({
   container: { padding: 20, gap: 10 },
+  rankBadge: { width: 120, height: 120, alignSelf: "center" },
   card: { backgroundColor: "#EDE7F6", borderRadius: 12, padding: 16, marginBottom: 8 },
   rank: { fontSize: 20, fontWeight: "700" },
   rating: { color: "#4A4A4A", marginTop: 2 },

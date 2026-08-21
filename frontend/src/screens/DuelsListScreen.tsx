@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, Alert, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, FlatList, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { DuelSummary, duelsApi } from "../api/duels";
 import { QuestionnaireType, researchApi } from "../api/research";
 import { useAccount, useAuth } from "../auth/AuthContext";
-import { formatRank } from "../lib/rank";
+import { formatRank, rankImage } from "../lib/rank";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "DuelsList">;
@@ -129,10 +129,8 @@ export function DuelsListScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
       <Pressable style={styles.profileBadge} onPress={() => navigation.navigate("Profile")}>
-        <View style={styles.profileNameRow}>
-          <Text style={styles.profileEmoji}>{account.rank_emoji}</Text>
-          <Text style={styles.profileName}>{account.display_name}</Text>
-        </View>
+        <Image source={rankImage(account.rank)} style={styles.rankBadge} />
+        <Text style={styles.profileName}>{account.display_name}</Text>
         <Text style={styles.profileRank}>
           {formatRank(account.rank, account.rank_division)} · {Math.round(account.rating)}
         </Text>
@@ -192,17 +190,15 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 16 },
   center: { flex: 1, alignItems: "center", justifyContent: "center" },
   profileBadge: {
-    flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#EDE7F6",
     borderRadius: 12,
     padding: 12,
     marginBottom: 12,
+    gap: 2,
   },
-  profileNameRow: { flexDirection: "row", alignItems: "center", gap: 8 },
-  profileEmoji: { fontSize: 24 },
-  profileName: { fontSize: 16, fontWeight: "700" },
+  rankBadge: { width: 96, height: 96, marginBottom: 4 },
+  profileName: { fontSize: 17, fontWeight: "700" },
   profileRank: { color: "#5B5B5B" },
   questionnaireBanner: {
     backgroundColor: "#FFF3E0",

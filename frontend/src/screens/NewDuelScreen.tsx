@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
+  Image,
   Pressable,
   StyleSheet,
   Text,
@@ -12,7 +13,7 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { duelsApi } from "../api/duels";
 import { PlayerProfile, playersApi } from "../api/players";
-import { formatRank } from "../lib/rank";
+import { formatRank, rankImage } from "../lib/rank";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "NewDuel">;
@@ -101,10 +102,13 @@ export function NewDuelScreen({ navigation }: Props) {
             disabled={challenging}
             onPress={() => startDuel(() => duelsApi.challengePlayer(item.id))}
           >
-            <Text style={styles.cardTitle}>{item.display_name}</Text>
-            <Text style={styles.cardSubtitle}>
-              {item.rank_emoji} {formatRank(item.rank, item.rank_division)} · {Math.round(item.rating)}
-            </Text>
+            <Image source={rankImage(item.rank)} style={styles.rowBadge} />
+            <View style={styles.rowText}>
+              <Text style={styles.cardTitle}>{item.display_name}</Text>
+              <Text style={styles.cardSubtitle}>
+                {formatRank(item.rank, item.rank_division)} · {Math.round(item.rating)}
+              </Text>
+            </View>
           </Pressable>
         )}
       />
@@ -148,7 +152,9 @@ const styles = StyleSheet.create({
   },
   searchLabel: { color: "#FFFFFF", fontWeight: "600" },
   list: { gap: 12, paddingTop: 16 },
-  card: { backgroundColor: "#F4F1FB", borderRadius: 12, padding: 16 },
+  card: { backgroundColor: "#F4F1FB", borderRadius: 12, padding: 16 , flexDirection: "row", alignItems: "center", gap: 12 },
+  rowBadge: { width: 44, height: 44 },
+  rowText: { flex: 1 },
   cardTitle: { fontSize: 16, fontWeight: "600" },
   cardSubtitle: { marginTop: 4, color: "#5B5B5B" },
   empty: { textAlign: "center", marginTop: 32, color: "#5B5B5B" },
