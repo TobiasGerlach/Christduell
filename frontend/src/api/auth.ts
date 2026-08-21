@@ -8,6 +8,7 @@ export interface Account {
   email: string;
   rating: number;
   rank: string;
+  rank_emoji: string;
   subscription_tier: SubscriptionTier;
   subscription_active: boolean;
   subscription_valid_until: string | null;

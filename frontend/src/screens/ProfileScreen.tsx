@@ -59,7 +59,9 @@ export function ProfileScreen({ navigation }: Props) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.rank}>{account.rank}</Text>
+        <Text style={styles.rank}>
+        {account.rank_emoji} {account.rank}
+      </Text>
         <Text style={styles.rating}>{Math.round(account.rating)} Punkte</Text>
         <Text style={styles.email}>{account.email}</Text>
       </View>

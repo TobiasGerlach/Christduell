@@ -124,7 +124,10 @@ export function DuelsListScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
       <Pressable style={styles.profileBadge} onPress={() => navigation.navigate("Profile")}>
-        <Text style={styles.profileName}>{account.display_name}</Text>
+        <View style={styles.profileNameRow}>
+          <Text style={styles.profileEmoji}>{account.rank_emoji}</Text>
+          <Text style={styles.profileName}>{account.display_name}</Text>
+        </View>
         <Text style={styles.profileRank}>
           {account.rank} · {Math.round(account.rating)}
         </Text>
@@ -192,6 +195,8 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 12,
   },
+  profileNameRow: { flexDirection: "row", alignItems: "center", gap: 8 },
+  profileEmoji: { fontSize: 24 },
   profileName: { fontSize: 16, fontWeight: "700" },
   profileRank: { color: "#5B5B5B" },
   questionnaireBanner: {

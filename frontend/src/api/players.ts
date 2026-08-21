@@ -5,6 +5,7 @@ export interface PlayerProfile {
   display_name: string;
   rating: number;
   rank: string;
+  rank_emoji: string;
 }
 
 export const playersApi = {

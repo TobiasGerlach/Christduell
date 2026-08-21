@@ -14,6 +14,22 @@ RANK_THRESHOLDS: list[tuple[float, str]] = [
 ]
 
 
+# One emoji per rank, shown next to the name everywhere a rank appears. The
+# ladder tells a story: lost sheep -> seeker -> dove (conversion) -> fish
+# (disciple) -> crown (apostle).
+RANK_EMOJIS: dict[str, str] = {
+    "Ketzer": "🐑",       # sheep (the lost one)
+    "Heide": "🧭",        # compass (still searching)
+    "Umgekehrter": "🕊️",  # dove
+    "Jünger": "🐟",  # fish
+    "Apostel": "👑",      # crown
+}
+
+
+def emoji_for_rank(rank: str) -> str:
+    return RANK_EMOJIS.get(rank, "")
+
+
 def rank_for_rating(rating: float) -> str:
     for upper_bound, name in RANK_THRESHOLDS:
         if rating < upper_bound:

@@ -102,7 +102,7 @@ export function NewDuelScreen({ navigation }: Props) {
           >
             <Text style={styles.cardTitle}>{item.display_name}</Text>
             <Text style={styles.cardSubtitle}>
-              {item.rank} · {Math.round(item.rating)}
+              {item.rank_emoji} {item.rank} · {Math.round(item.rating)}
             </Text>
           </Pressable>
         )}
