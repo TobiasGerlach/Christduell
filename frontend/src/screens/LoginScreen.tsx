@@ -13,7 +13,11 @@ import {
   View,
 } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
 import { useAuth } from "../auth/AuthContext";
+import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Mode = "login" | "register";
 
@@ -29,6 +33,7 @@ const IMPRINT_URL =
   process.env.EXPO_PUBLIC_IMPRINT_URL ?? (isProductionWeb ? "/impressum" : "");
 
 export function LoginScreen() {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const { login, register } = useAuth();
   const [mode, setMode] = useState<Mode>("login");
   const [displayName, setDisplayName] = useState("");
@@ -96,6 +101,12 @@ export function LoginScreen() {
           autoComplete={mode === "register" ? "new-password" : "current-password"}
           onSubmitEditing={submit}
         />
+
+        {mode === "login" && (
+          <Pressable onPress={() => navigation.navigate("ForgotPassword")}>
+            <Text style={styles.forgotLink}>Passwort vergessen?</Text>
+          </Pressable>
+        )}
 
         {mode === "register" && (
           <Pressable
@@ -203,6 +214,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   primaryLabel: { color: "#FFFFFF", fontWeight: "600", fontSize: 16 },
+  forgotLink: { color: "#6750A4", fontSize: 13, textAlign: "right" },
   switchMode: { textAlign: "center", color: "#6750A4", marginTop: 8 },
   error: { color: "#B00020" },
   ageRow: { flexDirection: "row", alignItems: "center", gap: 10 },

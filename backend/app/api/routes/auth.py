@@ -9,7 +9,14 @@ from sqlmodel import Session, select
 from app.api.deps import CurrentPlayer
 from app.core.config import get_settings
 from app.core.ratelimit import limiter
-from app.core.security import create_access_token, hash_password, verify_password
+from app.core.security import (
+    create_access_token,
+    create_password_reset_token,
+    decode_password_reset_token,
+    hash_password,
+    verify_password,
+)
+from app.services import email as email_service
 from app.core.time import utcnow
 from app.db.session import SessionDep
 from app.models.domain import Player, ResearchConsent, SubscriptionTier
@@ -228,5 +235,70 @@ def delete_account(player: CurrentPlayer, session: SessionDep) -> None:
     player.password_hash = None
     player.push_token = None
     player.deleted_at = utcnow()
+    session.add(player)
+    session.commit()
+
+
+class ForgotPasswordRequest(BaseModel):
+    email: EmailStr
+
+
+class ResetPasswordRequest(BaseModel):
+    token: str
+    new_password: str = Field(min_length=MIN_PASSWORD_LENGTH, max_length=128)
+
+
+@router.post("/forgot-password", status_code=204)
+def forgot_password(
+    payload: ForgotPasswordRequest, request: Request, session: SessionDep
+) -> None:
+    """Emails a reset link. Always 204 — the response never reveals whether
+    the address has an account (same reasoning as the login error)."""
+    settings = get_settings()
+    key = f"forgot:{_client_ip(request)}"
+    if limiter.blocked(key, settings.register_rate_limit_attempts,
+                       settings.register_rate_limit_window_seconds):
+        raise _TOO_MANY_ATTEMPTS
+    limiter.record(key, settings.register_rate_limit_window_seconds)
+
+    player = find_by_email(session, payload.email)
+    if player is None or player.deleted_at is not None:
+        return
+
+    token = create_password_reset_token(player.id, player.password_hash)
+    base = settings.public_base_url.rstrip("/") or str(request.base_url).rstrip("/")
+    link = f"{base}/passwort-zuruecksetzen?token={token}"
+    email_service.send(
+        to=player.email,
+        subject="Christduell — Passwort zurücksetzen",
+        body=(
+            f"Hallo {player.display_name},\n\n"
+            f"jemand (hoffentlich du) möchte dein Christduell-Passwort zurücksetzen.\n"
+            f"Der Link ist 60 Minuten gültig:\n\n{link}\n\n"
+            f"Wenn du das nicht warst, kannst du diese E-Mail ignorieren — "
+            f"dein Passwort bleibt unverändert.\n"
+        ),
+    )
+
+
+@router.post("/reset-password", status_code=204)
+def reset_password(payload: ResetPasswordRequest, session: SessionDep) -> None:
+    """Sets a new password from an emailed token. Tokens are single-use: they
+    fingerprint the current hash, so the first successful reset kills them."""
+
+    def lookup(player_id: int) -> str | None:
+        player = session.get(Player, player_id)
+        if player is None or player.deleted_at is not None:
+            return None
+        return player.password_hash
+
+    player_id = decode_password_reset_token(payload.token, lookup)
+    if player_id is None:
+        raise HTTPException(
+            status_code=400,
+            detail="Der Link ist abgelaufen oder wurde schon benutzt. Fordere einen neuen an.",
+        )
+    player = session.get(Player, player_id)
+    player.password_hash = hash_password(payload.new_password)
     session.add(player)
     session.commit()

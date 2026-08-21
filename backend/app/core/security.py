@@ -1,3 +1,4 @@
+import hashlib
 from datetime import timedelta
 
 import jwt
@@ -45,3 +46,50 @@ def decode_access_token(token: str) -> int | None:
         return int(subject)
     except (TypeError, ValueError):
         return None
+
+
+# --- Password reset tokens -------------------------------------------------
+# Stateless single-use: the token carries a fingerprint of the *current*
+# password hash. Once the password changes the fingerprint no longer matches,
+# so a used (or outdated) token dies without any server-side bookkeeping.
+
+RESET_TOKEN_EXPIRE_MINUTES = 60
+
+
+def _hash_fingerprint(password_hash: str | None) -> str:
+    return hashlib.sha256((password_hash or "none").encode()).hexdigest()[:16]
+
+
+def create_password_reset_token(player_id: int, password_hash: str | None) -> str:
+    settings = get_settings()
+    issued_at = utcnow()
+    payload = {
+        "sub": str(player_id),
+        "typ": "pwreset",
+        "fph": _hash_fingerprint(password_hash),
+        "iat": issued_at,
+        "exp": issued_at + timedelta(minutes=RESET_TOKEN_EXPIRE_MINUTES),
+    }
+    return jwt.encode(payload, settings.secret_key, algorithm=ALGORITHM)
+
+
+def decode_password_reset_token(token: str, current_password_hash_lookup) -> int | None:
+    """Returns the player id, or None if invalid/expired/already used.
+
+    `current_password_hash_lookup(player_id) -> str | None` fetches the hash to
+    check the single-use fingerprint against.
+    """
+    settings = get_settings()
+    try:
+        payload = jwt.decode(token, settings.secret_key, algorithms=[ALGORITHM])
+    except jwt.PyJWTError:
+        return None
+    if payload.get("typ") != "pwreset":
+        return None
+    try:
+        player_id = int(payload.get("sub"))
+    except (TypeError, ValueError):
+        return None
+    if payload.get("fph") != _hash_fingerprint(current_password_hash_lookup(player_id)):
+        return None
+    return player_id

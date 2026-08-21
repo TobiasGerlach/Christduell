@@ -76,6 +76,21 @@ class Settings(BaseSettings):
     @property
     def web_push_enabled(self) -> bool:
         return bool(self.vapid_public_key and self.vapid_private_key)
+
+    # Outgoing email (password resets). Any authenticated SMTP mailbox works —
+    # a Strato/IONOS/… mailbox is fine at beta volume. Configured = enabled.
+    smtp_host: str = ""
+    smtp_port: int = 587
+    smtp_username: str = ""
+    smtp_password: str = ""
+    smtp_from: str = ""
+    # Absolute origin used in emailed links, e.g. the app URL. Falls back to
+    # the request's own origin when empty.
+    public_base_url: str = ""
+
+    @property
+    def email_enabled(self) -> bool:
+        return bool(self.smtp_host and self.smtp_from)
     expo_access_token: str | None = None
     expo_push_url: str = "https://exp.host/--/api/v2/push/send"
     azure_notification_hub_connection_string: str | None = None

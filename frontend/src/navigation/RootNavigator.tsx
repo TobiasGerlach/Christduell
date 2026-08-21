@@ -1,4 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
+import type { LinkingOptions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
@@ -7,16 +8,20 @@ import { CategoryPickerScreen } from "../screens/CategoryPickerScreen";
 import { DuelHistoryScreen } from "../screens/DuelHistoryScreen";
 import { DuelScreen } from "../screens/DuelScreen";
 import { DuelsListScreen } from "../screens/DuelsListScreen";
+import { ForgotPasswordScreen } from "../screens/ForgotPasswordScreen";
 import { LoginScreen } from "../screens/LoginScreen";
 import { NewDuelScreen } from "../screens/NewDuelScreen";
 import { PlayQuestionScreen } from "../screens/PlayQuestionScreen";
 import { ProfileScreen } from "../screens/ProfileScreen";
 import { QuestionnaireScreen } from "../screens/QuestionnaireScreen";
+import { ResetPasswordScreen } from "../screens/ResetPasswordScreen";
 import { ResearchConsentScreen } from "../screens/ResearchConsentScreen";
 import { SubscriptionScreen } from "../screens/SubscriptionScreen";
 
 export type RootStackParamList = {
   Login: undefined;
+  ForgotPassword: undefined;
+  ResetPassword: { token?: string } | undefined;
   DuelsList: undefined;
   NewDuel: undefined;
   Duel: { duelId: number };
@@ -31,6 +36,17 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+// Web URLs for the unauthenticated flows — the emailed reset link
+// (/passwort-zuruecksetzen?token=…) must open its screen directly.
+const linking: LinkingOptions<RootStackParamList> = {
+  prefixes: [],
+  config: {
+    screens: {
+      ResetPassword: "passwort-zuruecksetzen",
+    },
+  },
+};
+
 export function RootNavigator() {
   const { account, initialising } = useAuth();
 
@@ -43,16 +59,28 @@ export function RootNavigator() {
   }
 
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <Stack.Navigator>
         {account === null ? (
           // Everything behind the gate assumes an authenticated player, so the
           // authenticated screens are not even mounted while logged out.
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
+          <>
+            <Stack.Screen
+              name="Login"
+              component={LoginScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ForgotPassword"
+              component={ForgotPasswordScreen}
+              options={{ title: "Passwort vergessen" }}
+            />
+            <Stack.Screen
+              name="ResetPassword"
+              component={ResetPasswordScreen}
+              options={{ title: "Neues Passwort" }}
+            />
+          </>
         ) : (
           <>
             <Stack.Screen

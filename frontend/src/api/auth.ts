@@ -24,6 +24,11 @@ export interface TokenResponse {
 }
 
 export const authApi = {
+  forgotPassword: (email: string) => api.post<void>("/auth/forgot-password", { email }),
+
+  resetPassword: (token: string, newPassword: string) =>
+    api.post<void>("/auth/reset-password", { token, new_password: newPassword }),
+
   register: (displayName: string, email: string, password: string, minAgeConfirmed: boolean) =>
     api.post<TokenResponse>("/auth/register", {
       display_name: displayName,

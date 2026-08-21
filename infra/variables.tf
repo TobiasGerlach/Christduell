@@ -137,3 +137,34 @@ variable "vapid_subject" {
   type        = string
   default     = "mailto:me@tobias-gerlach.de"
 }
+
+variable "smtp_host" {
+  description = "SMTP server for outgoing mail (password resets). Empty disables email."
+  type        = string
+  default     = ""
+}
+
+variable "smtp_port" {
+  description = "SMTP port: 465 = SSL, 587 = STARTTLS."
+  type        = number
+  default     = 587
+}
+
+variable "smtp_username" {
+  description = "SMTP login (usually the full mailbox address)."
+  type        = string
+  default     = ""
+}
+
+variable "smtp_password" {
+  description = "SMTP password."
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
+variable "smtp_from" {
+  description = "From address on outgoing mail."
+  type        = string
+  default     = ""
+}

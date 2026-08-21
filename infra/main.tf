@@ -157,6 +157,12 @@ resource "azurerm_linux_web_app" "backend" {
     VAPID_PUBLIC_KEY                         = var.vapid_public_key
     VAPID_PRIVATE_KEY                        = var.vapid_private_key
     VAPID_SUBJECT                            = var.vapid_subject
+    SMTP_HOST                                = var.smtp_host
+    SMTP_PORT                                = tostring(var.smtp_port)
+    SMTP_USERNAME                            = var.smtp_username
+    SMTP_PASSWORD                            = var.smtp_password
+    SMTP_FROM                                = var.smtp_from
+    PUBLIC_BASE_URL                          = "https://${var.project}-${var.environment}-api.azurewebsites.net"
     RESEARCH_ENABLED                         = tostring(var.research_enabled)
     EXPO_ACCESS_TOKEN                        = var.expo_access_token
     BILLING_PROVIDER                         = var.billing_provider
