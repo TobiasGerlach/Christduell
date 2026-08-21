@@ -58,7 +58,9 @@ resource "azurerm_postgresql_flexible_server" "main" {
 
   sku_name   = var.postgres_sku
   storage_mb = var.postgres_storage_mb
-  zone       = "1"
+  # Never let the disk (and the bill) grow on its own; resize deliberately instead.
+  auto_grow_enabled = false
+  zone              = "1"
 
   # Reachable from the Web App, narrowed by the firewall rule below. A private
   # endpoint would be tighter but needs a VNet the App Service is integrated
@@ -115,12 +117,14 @@ resource "azurerm_linux_web_app" "backend" {
 
   site_config {
     container_registry_use_managed_identity = true
-    # Without this the app is unloaded when idle; with a SQLite file in WAL mode
-    # a cold start on every first request is both slow and needless churn.
-    always_on           = true
-    health_check_path   = "/health"
-    minimum_tls_version = "1.2"
-    ftps_state          = "Disabled"
+    # Without this the app is unloaded when idle and every first request pays a
+    # cold start.
+    always_on         = true
+    health_check_path = "/health"
+    # Minutes an instance may fail /health before App Service recycles it (provider requires it alongside the path).
+    health_check_eviction_time_in_min = 2
+    minimum_tls_version               = "1.2"
+    ftps_state                        = "Disabled"
 
     application_stack {
       docker_image_name   = var.container_image
