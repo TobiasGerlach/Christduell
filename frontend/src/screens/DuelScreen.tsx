@@ -73,7 +73,14 @@ export function DuelScreen({ route, navigation }: Props) {
         {state.challenger_score} – {state.opponent_score}
       </Text>
 
-      {state.action === "finished" && <Text style={styles.status}>DUELL BEENDET</Text>}
+      {state.action === "finished" && (
+        <>
+          <Text style={styles.status}>DUELL BEENDET</Text>
+          <Pressable style={styles.actionButton} onPress={() => navigation.popToTop()}>
+            <Text style={styles.actionButtonLabel}>Zurück zur Übersicht</Text>
+          </Pressable>
+        </>
+      )}
 
       {state.action === "pick_category" && isMyTurn && (
         <Pressable

@@ -14,6 +14,9 @@ export interface DuelSummary {
   opponent_score: number;
   created_at: string;
   finished_at: string | null;
+  action: DuelAction;
+  acting_player_id: number | null;
+  position: number | null;
 }
 
 export interface DuelStateResponse {

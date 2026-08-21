@@ -93,6 +93,12 @@ class DuelSummary(BaseModel):
     opponent_score: int
     created_at: datetime
     finished_at: datetime | None
+    # Enough turn state for the list screen to show "whose move is it" without
+    # one /state request per duel: what happens next, who acts, and how far
+    # into the current round's questions they are.
+    action: DuelAction
+    acting_player_id: int | None
+    position: int | None
 
 
 class DuelStateResponse(BaseModel):
@@ -219,7 +225,11 @@ def _display_name(session: Session, player_id: int) -> str:
 
 def _to_summary(session: Session, duel: Duel) -> DuelSummary:
     challenger_score, opponent_score = compute_duel_scores(session, duel)
+    state = compute_duel_state(session, duel)
     return DuelSummary(
+        action=state.action,
+        acting_player_id=state.acting_player_id,
+        position=state.position,
         id=duel.id,
         challenger_id=duel.challenger_id,
         opponent_id=duel.opponent_id,

@@ -14,7 +14,7 @@ RUN npm ci
 COPY frontend/ ./
 # No EXPO_PUBLIC_API_URL: a production web build defaults to same-origin
 # relative URLs (see src/api/client.ts), because this image serves both.
-RUN npx expo export --platform web
+RUN npx expo export --platform web && node scripts/inject-pwa.mjs dist
 
 # --- Stage 2: the API image ---------------------------------------------------
 FROM python:3.12-slim AS base

@@ -9,6 +9,13 @@ import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "DuelsList">;
 
+// The list is the de-facto home screen, so it refreshes itself: an opponent's
+// move should appear without the player knowing about pull-to-refresh.
+const LIST_POLL_INTERVAL_MS = 15000;
+
+type TurnIndicator = { color: string; label: string } | null;
+
+
 export function DuelsListScreen({ navigation }: Props) {
   const account = useAccount();
   const [duels, setDuels] = useState<DuelSummary[]>([]);
@@ -38,6 +45,29 @@ export function DuelsListScreen({ navigation }: Props) {
   }, [load]);
 
   useEffect(() => navigation.addListener("focus", load), [navigation, load]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Keep polling only while this screen is the visible one; deeper screens
+      // (an open duel) poll for themselves.
+      if (navigation.isFocused()) load();
+    }, LIST_POLL_INTERVAL_MS);
+    return () => clearInterval(interval);
+  }, [navigation, load]);
+
+  const indicatorFor = useCallback(
+    (duel: DuelSummary): TurnIndicator => {
+      if (duel.status === "finished") return null;
+      if (duel.acting_player_id === account.id) {
+        const midRound = duel.action === "answer_question" && (duel.position ?? 1) > 1;
+        return midRound
+          ? { color: "#EF6C00", label: "Angefangen – weiterspielen!" }
+          : { color: "#2E7D32", label: "Du bist dran" };
+      }
+      return { color: "#C62828", label: "Gegner ist dran" };
+    },
+    [account.id],
+  );
 
   const decline = useCallback(
     (duel: DuelSummary) => {
@@ -126,14 +156,21 @@ export function DuelsListScreen({ navigation }: Props) {
         renderItem={({ item }) => {
           const { opponentName, line } = describe(item);
           const canDecline = item.status === "pending" && item.opponent_id === account.id;
+          const indicator = indicatorFor(item);
           return (
             <Pressable
               style={styles.card}
               onPress={() => navigation.navigate("Duel", { duelId: item.id })}
               onLongPress={canDecline ? () => decline(item) : undefined}
             >
-              <Text style={styles.cardTitle}>gegen {opponentName}</Text>
+              <View style={styles.cardHeader}>
+                <Text style={styles.cardTitle}>gegen {opponentName}</Text>
+                {indicator && <View style={[styles.turnDot, { backgroundColor: indicator.color }]} />}
+              </View>
               <Text style={styles.cardSubtitle}>{line}</Text>
+              {indicator && (
+                <Text style={[styles.turnLabel, { color: indicator.color }]}>{indicator.label}</Text>
+              )}
               {canDecline && <Text style={styles.cardHint}>Lange drücken zum Ablehnen</Text>}
             </Pressable>
           );
@@ -175,6 +212,9 @@ const styles = StyleSheet.create({
   startButtonLabel: { color: "#FFFFFF", fontWeight: "600" },
   list: { gap: 12 },
   card: { backgroundColor: "#F4F1FB", borderRadius: 12, padding: 16 },
+  cardHeader: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  turnDot: { width: 12, height: 12, borderRadius: 6 },
+  turnLabel: { marginTop: 6, fontSize: 13, fontWeight: "600" },
   cardTitle: { fontSize: 16, fontWeight: "600" },
   cardSubtitle: { marginTop: 4, color: "#5B5B5B" },
   cardHint: { marginTop: 6, fontSize: 11, color: "#9A9A9A" },

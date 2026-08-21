@@ -33,6 +33,7 @@ web: ## Start the Expo web build at http://localhost:8081
 
 web-export: ## Build the production web app; `make backend` then serves it at :8000
 	cd $(FRONTEND) && npx expo export --platform web --output-dir ../$(BACKEND)/webbuild
+	cd $(FRONTEND) && node scripts/inject-pwa.mjs ../$(BACKEND)/webbuild
 
 # --- Database ---------------------------------------------------------------
 
