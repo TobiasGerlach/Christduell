@@ -6,6 +6,8 @@ export interface PlayerProfile {
   rating: number;
   rank: string;
   rank_emoji: string;
+  rank_division: number;
+  ladder_step: number;
 }
 
 export const playersApi = {

@@ -5,7 +5,12 @@ from sqlmodel import col, or_, select
 from app.api.deps import CurrentPlayer
 from app.db.session import SessionDep
 from app.models.domain import Player
-from app.services.rating import emoji_for_rank, rank_for_rating
+from app.services.rating import (
+    division_for_rating,
+    emoji_for_rank,
+    ladder_step_for_rating,
+    rank_for_rating,
+)
 
 router = APIRouter(prefix="/players", tags=["players"])
 
@@ -30,6 +35,8 @@ class PlayerProfile(BaseModel):
     rating: float
     rank: str
     rank_emoji: str
+    rank_division: int
+    ladder_step: int
 
 
 @router.get("/search", response_model=list[PlayerProfile])
@@ -78,4 +85,6 @@ def _to_profile(player: Player) -> PlayerProfile:
         rating=player.rating,
         rank=rank_for_rating(player.rating),
         rank_emoji=emoji_for_rank(rank_for_rating(player.rating)),
+        rank_division=division_for_rating(player.rating),
+        ladder_step=ladder_step_for_rating(player.rating),
     )

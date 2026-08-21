@@ -12,6 +12,7 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { authApi } from "../api/auth";
 import { useAuth } from "../auth/AuthContext";
+import { formatRank } from "../lib/rank";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Profile">;
@@ -60,7 +61,7 @@ export function ProfileScreen({ navigation }: Props) {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.card}>
         <Text style={styles.rank}>
-        {account.rank_emoji} {account.rank}
+        {account.rank_emoji} {formatRank(account.rank, account.rank_division)}
       </Text>
         <Text style={styles.rating}>{Math.round(account.rating)} Punkte</Text>
         <Text style={styles.email}>{account.email}</Text>

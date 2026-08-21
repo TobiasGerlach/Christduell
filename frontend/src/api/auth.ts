@@ -9,6 +9,8 @@ export interface Account {
   rating: number;
   rank: string;
   rank_emoji: string;
+  rank_division: number;
+  ladder_step: number;
   subscription_tier: SubscriptionTier;
   subscription_active: boolean;
   subscription_valid_until: string | null;

@@ -4,7 +4,8 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { DuelSummary, duelsApi } from "../api/duels";
 import { QuestionnaireType, researchApi } from "../api/research";
-import { useAccount } from "../auth/AuthContext";
+import { useAccount, useAuth } from "../auth/AuthContext";
+import { formatRank } from "../lib/rank";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "DuelsList">;
@@ -18,6 +19,7 @@ type TurnIndicator = { color: string; label: string } | null;
 
 export function DuelsListScreen({ navigation }: Props) {
   const account = useAccount();
+  const { refresh } = useAuth();
   const [duels, setDuels] = useState<DuelSummary[]>([]);
   const [dueQuestionnaire, setDueQuestionnaire] = useState<QuestionnaireType | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -30,6 +32,9 @@ export function DuelsListScreen({ navigation }: Props) {
         duelsApi.list(),
         // A pending questionnaire is not worth failing the whole screen over.
         researchApi.getCurrentQuestionnaire().catch(() => null),
+        // Rating and rank move with every answered question; refreshing here is
+        // also what lets the rank-up celebration notice a climb.
+        refresh().catch(() => undefined),
       ]);
       setDuels(duelsResult);
       setDueQuestionnaire(questionnaire?.due_questionnaire ?? null);
@@ -38,7 +43,7 @@ export function DuelsListScreen({ navigation }: Props) {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [refresh]);
 
   useEffect(() => {
     load();
@@ -129,7 +134,7 @@ export function DuelsListScreen({ navigation }: Props) {
           <Text style={styles.profileName}>{account.display_name}</Text>
         </View>
         <Text style={styles.profileRank}>
-          {account.rank} · {Math.round(account.rating)}
+          {formatRank(account.rank, account.rank_division)} · {Math.round(account.rating)}
         </Text>
       </Pressable>
 

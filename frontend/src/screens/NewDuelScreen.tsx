@@ -12,6 +12,7 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { duelsApi } from "../api/duels";
 import { PlayerProfile, playersApi } from "../api/players";
+import { formatRank } from "../lib/rank";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "NewDuel">;
@@ -102,7 +103,7 @@ export function NewDuelScreen({ navigation }: Props) {
           >
             <Text style={styles.cardTitle}>{item.display_name}</Text>
             <Text style={styles.cardSubtitle}>
-              {item.rank_emoji} {item.rank} · {Math.round(item.rating)}
+              {item.rank_emoji} {formatRank(item.rank, item.rank_division)} · {Math.round(item.rating)}
             </Text>
           </Pressable>
         )}

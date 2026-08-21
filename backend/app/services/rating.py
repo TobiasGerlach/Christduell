@@ -30,6 +30,42 @@ def emoji_for_rank(rank: str) -> str:
     return RANK_EMOJIS.get(rank, "")
 
 
+# Each rank splits into five divisions, V (entry) up to I (about to rank up),
+# league-style. The open-ended outer bands get nominal walls so a division can
+# be computed: below 700 stays Ketzer V, above 1650 stays Apostel I.
+RANK_DIVISION_BANDS: dict[str, tuple[float, float]] = {
+    "Ketzer": (700.0, 900.0),
+    "Heide": (900.0, 1050.0),
+    "Umgekehrter": (1050.0, 1200.0),
+    "Jünger": (1200.0, 1400.0),
+    "Apostel": (1400.0, 1650.0),
+}
+
+RANK_ORDER = [name for _, name in RANK_THRESHOLDS]
+
+
+def division_for_rating(rating: float) -> int:
+    """5 = just entered the rank, 1 = one step from the next rank."""
+    rank = rank_for_rating(rating)
+    lower, upper = RANK_DIVISION_BANDS[rank]
+    if rating < lower:
+        return 5
+    if rating >= upper:
+        return 1
+    fifth = (upper - lower) / 5.0
+    return 5 - int((rating - lower) / fifth)
+
+
+def ladder_step_for_rating(rating: float) -> int:
+    """Absolute rung on the whole ladder, 0 (Ketzer V) .. 24 (Apostel I).
+
+    Exists so a client can detect "the player climbed" with a single integer
+    comparison instead of re-deriving rank order.
+    """
+    rank = rank_for_rating(rating)
+    return RANK_ORDER.index(rank) * 5 + (5 - division_for_rating(rating))
+
+
 def rank_for_rating(rating: float) -> str:
     for upper_bound, name in RANK_THRESHOLDS:
         if rating < upper_bound:

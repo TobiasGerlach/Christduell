@@ -13,7 +13,12 @@ from app.core.security import create_access_token, hash_password, verify_passwor
 from app.core.time import utcnow
 from app.db.session import SessionDep
 from app.models.domain import Player, ResearchConsent, SubscriptionTier
-from app.services.rating import emoji_for_rank, rank_for_rating
+from app.services.rating import (
+    division_for_rating,
+    emoji_for_rank,
+    ladder_step_for_rating,
+    rank_for_rating,
+)
 from app.services.subscriptions import is_subscription_active
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -56,6 +61,8 @@ class AccountResponse(BaseModel):
     rating: float
     rank: str
     rank_emoji: str
+    rank_division: int
+    ladder_step: int
     subscription_tier: SubscriptionTier
     subscription_active: bool
     subscription_valid_until: datetime | None
@@ -76,6 +83,8 @@ def to_account(player: Player) -> AccountResponse:
         rating=player.rating,
         rank=rank_for_rating(player.rating),
         rank_emoji=emoji_for_rank(rank_for_rating(player.rating)),
+        rank_division=division_for_rating(player.rating),
+        ladder_step=ladder_step_for_rating(player.rating),
         subscription_tier=player.subscription_tier,
         subscription_active=is_subscription_active(player),
         subscription_valid_until=player.subscription_valid_until,

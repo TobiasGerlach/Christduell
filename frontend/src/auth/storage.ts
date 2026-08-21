@@ -39,3 +39,23 @@ export async function clearToken(): Promise<void> {
   }
   await SecureStore.deleteItemAsync(tokenKey());
 }
+
+/**
+ * Small non-secret values (e.g. the last celebrated ladder step). localStorage
+ * on web, SecureStore on native — not because it is sensitive, but because it
+ * is the one persistent store already in the bundle.
+ */
+export async function saveValue(key: string, value: string): Promise<void> {
+  if (Platform.OS === "web") {
+    window.localStorage.setItem(`christduell.${key}`, value);
+    return;
+  }
+  await SecureStore.setItemAsync(`christduell.${key.replace(/[^A-Za-z0-9._-]/g, "_")}`, value);
+}
+
+export async function loadValue(key: string): Promise<string | null> {
+  if (Platform.OS === "web") {
+    return window.localStorage.getItem(`christduell.${key}`);
+  }
+  return SecureStore.getItemAsync(`christduell.${key.replace(/[^A-Za-z0-9._-]/g, "_")}`);
+}
