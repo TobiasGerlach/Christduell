@@ -21,6 +21,10 @@ export interface DuelSummary {
 
 export interface DuelStateResponse {
   duel_id: number;
+  challenger_id: number;
+  opponent_id: number;
+  challenger_display_name: string;
+  opponent_display_name: string;
   status: DuelStatus;
   action: DuelAction;
   acting_player_id: number | null;

@@ -72,14 +72,21 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
     if (!result) return;
     if (position < 3) {
       navigation.replace("PlayQuestion", { duelId, roundId, position: position + 1 });
-    } else if (result.duel_finished) {
-      // Nothing left to do in this duel — drop the whole question/category
-      // stack so "back" can't resurrect a finished question screen.
-      navigation.reset({ index: 0, routes: [{ name: "DuelsList" }] });
-    } else {
-      navigation.navigate("Duel", { duelId });
+      return;
     }
+    // Round done: always show the duel screen (with the labelled score — on a
+    // finished duel that is the final result, which players should actually
+    // see). Reset the stack so a single "back" lands on the overview instead
+    // of replaying the question screens.
+    navigation.reset({
+      index: 1,
+      routes: [{ name: "DuelsList" }, { name: "Duel", params: { duelId } }],
+    });
   }, [result, position, duelId, roundId, navigation]);
+
+  const toOverview = useCallback(() => {
+    navigation.reset({ index: 0, routes: [{ name: "DuelsList" }] });
+  }, [navigation]);
 
   if (error) {
     return (
@@ -133,9 +140,14 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
           </Pressable>
           <Pressable style={styles.continueButton} onPress={proceed}>
             <Text style={styles.continueButtonLabel}>
-              {position < 3 ? "Weiter" : "Zurück zum Duell"}
+              {position < 3 ? "Weiter" : "Zum Ergebnis"}
             </Text>
           </Pressable>
+          {position >= 3 && (
+            <Pressable onPress={toOverview}>
+              <Text style={styles.overviewLink}>Zur Übersicht</Text>
+            </Pressable>
+          )}
         </View>
       )}
 
@@ -180,5 +192,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
   },
   continueButtonLabel: { color: "#FFFFFF", fontWeight: "600" },
+  overviewLink: { color: "#6750A4", fontWeight: "600" },
   error: { color: "#B00020" },
 });

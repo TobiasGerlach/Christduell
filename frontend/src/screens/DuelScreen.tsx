@@ -66,12 +66,31 @@ export function DuelScreen({ route, navigation }: Props) {
   }
 
   const isMyTurn = state.acting_player_id === account.id;
+  const isChallenger = state.challenger_id === account.id;
+  const ownScore = isChallenger ? state.challenger_score : state.opponent_score;
+  const otherScore = isChallenger ? state.opponent_score : state.challenger_score;
+  const opponentName = isChallenger
+    ? state.opponent_display_name
+    : state.challenger_display_name;
+  const leading = ownScore > otherScore ? "own" : ownScore < otherScore ? "other" : null;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.score}>
-        {state.challenger_score} – {state.opponent_score}
-      </Text>
+      <View style={styles.scoreboard}>
+        <View style={styles.scoreSide}>
+          <Text style={styles.scoreName}>Du</Text>
+          <Text style={[styles.score, leading === "own" && styles.scoreLeading]}>{ownScore}</Text>
+        </View>
+        <Text style={styles.scoreColon}>:</Text>
+        <View style={styles.scoreSide}>
+          <Text style={styles.scoreName} numberOfLines={1}>
+            {opponentName}
+          </Text>
+          <Text style={[styles.score, leading === "other" && styles.scoreLeading]}>
+            {otherScore}
+          </Text>
+        </View>
+      </View>
 
       {state.action === "finished" && (
         <>
@@ -124,6 +143,12 @@ export function DuelScreen({ route, navigation }: Props) {
       >
         <Text style={styles.historyButtonLabel}>Verlauf ansehen</Text>
       </Pressable>
+
+      {state.action !== "finished" && (
+        <Pressable onPress={() => navigation.popToTop()}>
+          <Text style={styles.overviewLink}>Zur Übersicht</Text>
+        </Pressable>
+      )}
     </View>
   );
 }
@@ -132,7 +157,13 @@ const styles = StyleSheet.create({
   container: { flex: 1, alignItems: "center", justifyContent: "center", gap: 16, padding: 24 },
   center: { flex: 1, alignItems: "center", justifyContent: "center" },
   waiting: { alignItems: "center", gap: 8 },
+  scoreboard: { flexDirection: "row", alignItems: "flex-end", gap: 20 },
+  scoreSide: { alignItems: "center", gap: 4, maxWidth: 130 },
+  scoreName: { color: "#5B5B5B", fontSize: 14, fontWeight: "600" },
   score: { fontSize: 40, fontWeight: "700" },
+  scoreColon: { fontSize: 32, fontWeight: "700", color: "#9A9A9A", paddingBottom: 2 },
+  scoreLeading: { color: "#2E7D32" },
+  overviewLink: { color: "#6750A4", fontWeight: "600", marginTop: 4 },
   status: { color: "#5B5B5B", letterSpacing: 1 },
   actionButton: {
     backgroundColor: "#6750A4",

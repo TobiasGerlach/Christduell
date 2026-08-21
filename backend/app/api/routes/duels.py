@@ -103,6 +103,12 @@ class DuelSummary(BaseModel):
 
 class DuelStateResponse(BaseModel):
     duel_id: int
+    # Who is who, so clients can label the score ("Du 5 : 3 Anna") instead of
+    # showing two anonymous numbers.
+    challenger_id: int
+    opponent_id: int
+    challenger_display_name: str
+    opponent_display_name: str
     status: DuelStatus
     action: DuelAction
     acting_player_id: int | None
@@ -248,6 +254,10 @@ def _to_state_response(session: Session, duel: Duel) -> DuelStateResponse:
     challenger_score, opponent_score = compute_duel_scores(session, duel)
     return DuelStateResponse(
         duel_id=duel.id,
+        challenger_id=duel.challenger_id,
+        opponent_id=duel.opponent_id,
+        challenger_display_name=_display_name(session, duel.challenger_id),
+        opponent_display_name=_display_name(session, duel.opponent_id),
         status=duel.status,
         action=state.action,
         acting_player_id=state.acting_player_id,
