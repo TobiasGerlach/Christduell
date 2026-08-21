@@ -1,7 +1,8 @@
 from functools import lru_cache
+from typing import Annotated
 
 from pydantic import field_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -54,7 +55,9 @@ class Settings(BaseSettings):
     # build is hosted somewhere other than this API — the container serves the
     # Expo web export itself (see web_build_dir), and same-origin requests
     # never involve CORS.
-    cors_origins: list[str] = []
+    # NoDecode: the env source must not JSON-decode this; _split_origins parses
+    # the raw comma-separated string (an empty string means no extra origins).
+    cors_origins: Annotated[list[str], NoDecode] = []
 
     # --- Web build --------------------------------------------------------
     # Directory containing the Expo web export (`npx expo export --platform
