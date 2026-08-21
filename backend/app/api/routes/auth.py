@@ -16,10 +16,10 @@ from app.core.security import (
     hash_password,
     verify_password,
 )
-from app.services import email as email_service
 from app.core.time import utcnow
 from app.db.session import SessionDep
 from app.models.domain import Player, ResearchConsent, SubscriptionTier
+from app.services import email as email_service
 from app.services.rating import (
     division_for_rating,
     emoji_for_rank,
