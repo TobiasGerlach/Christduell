@@ -59,7 +59,7 @@ export function LoginScreen() {
       style={styles.flex}
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <Text style={styles.title}>Christduell</Text>
         <Text style={styles.subtitle}>
           {mode === "login" ? "Willkommen zurück!" : "Konto erstellen und loslegen"}
@@ -98,13 +98,18 @@ export function LoginScreen() {
         />
 
         {mode === "register" && (
-          <View style={styles.ageRow}>
+          <Pressable
+            style={styles.ageRow}
+            onPress={() => setAgeConfirmed((value) => !value)}
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: ageConfirmed }}
+          >
             <Switch value={ageConfirmed} onValueChange={setAgeConfirmed} />
             <Text style={styles.ageLabel}>
               Ich bin mindestens 16 Jahre alt, oder meine Erziehungsberechtigten sind mit der
               Nutzung einverstanden.
             </Text>
-          </View>
+          </Pressable>
         )}
 
         {error && <Text style={styles.error}>{error}</Text>}
