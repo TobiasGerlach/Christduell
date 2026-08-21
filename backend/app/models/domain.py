@@ -35,6 +35,19 @@ class SubscriptionTier(StrEnum):
     PAID = "paid"          # €5/month, no questionnaires required
 
 
+class WebPushSubscription(SQLModel, table=True):
+    """One browser's Web Push endpoint. A player can have several (phone +
+    laptop); an endpoint identifies a browser profile, not a person, so it
+    moves to whoever is signed in on that browser."""
+
+    id: int | None = Field(default=None, primary_key=True)
+    player_id: int = Field(foreign_key="player.id", index=True)
+    endpoint: str = Field(unique=True, index=True)
+    p256dh: str
+    auth: str
+    created_at: datetime = Field(default_factory=utcnow)
+
+
 class Player(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     display_name: str

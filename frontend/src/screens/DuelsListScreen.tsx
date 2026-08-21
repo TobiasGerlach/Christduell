@@ -5,6 +5,8 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { DuelSummary, duelsApi } from "../api/duels";
 import { QuestionnaireType, researchApi } from "../api/research";
 import { useAccount, useAuth } from "../auth/AuthContext";
+import { loadValue, saveValue } from "../auth/storage";
+import { canOfferWebPush, enableWebPush } from "../notifications/webPush";
 import { formatRank, rankImage } from "../lib/rank";
 import type { RootStackParamList } from "../navigation/RootNavigator";
 
@@ -24,6 +26,7 @@ export function DuelsListScreen({ navigation }: Props) {
   const [dueQuestionnaire, setDueQuestionnaire] = useState<QuestionnaireType | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [offerPush, setOfferPush] = useState(false);
 
   const load = useCallback(async () => {
     try {
@@ -50,6 +53,33 @@ export function DuelsListScreen({ navigation }: Props) {
   }, [load]);
 
   useEffect(() => navigation.addListener("focus", load), [navigation, load]);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      if ((await loadValue("webPushDismissed")) === "yes") return;
+      const possible = await canOfferWebPush();
+      if (!cancelled) setOfferPush(possible);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const activatePush = useCallback(async () => {
+    try {
+      const enabled = await enableWebPush();
+      if (enabled) setOfferPush(false);
+    } catch {
+      // Push staying off is not worth an error state on the home screen.
+      setOfferPush(false);
+    }
+  }, []);
+
+  const dismissPush = useCallback(async () => {
+    setOfferPush(false);
+    await saveValue("webPushDismissed", "yes");
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -148,6 +178,22 @@ export function DuelsListScreen({ navigation }: Props) {
         </Pressable>
       )}
 
+      {offerPush && (
+        <View style={styles.pushBanner}>
+          <Text style={styles.pushBannerText}>
+            Erfahre sofort, wenn du dran bist — auch bei geschlossener App.
+          </Text>
+          <View style={styles.pushBannerButtons}>
+            <Pressable style={styles.pushBannerButton} onPress={activatePush}>
+              <Text style={styles.pushBannerButtonLabel}>Benachrichtigungen an</Text>
+            </Pressable>
+            <Pressable onPress={dismissPush}>
+              <Text style={styles.pushBannerDismiss}>Später</Text>
+            </Pressable>
+          </View>
+        </View>
+      )}
+
       <Pressable style={styles.startButton} onPress={() => navigation.navigate("NewDuel")}>
         <Text style={styles.startButtonLabel}>Neues Duell</Text>
       </Pressable>
@@ -208,6 +254,23 @@ const styles = StyleSheet.create({
   },
   bannerTitle: { fontWeight: "700", color: "#8A5A00" },
   bannerBody: { color: "#8A5A00", marginTop: 2, fontSize: 13 },
+  pushBanner: {
+    backgroundColor: "#E8F5E9",
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 12,
+    gap: 8,
+  },
+  pushBannerText: { color: "#1B5E20", fontSize: 13 },
+  pushBannerButtons: { flexDirection: "row", alignItems: "center", gap: 16 },
+  pushBannerButton: {
+    backgroundColor: "#2E7D32",
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+  },
+  pushBannerButtonLabel: { color: "#FFFFFF", fontWeight: "600", fontSize: 13 },
+  pushBannerDismiss: { color: "#5B5B5B", fontSize: 13 },
   startButton: {
     backgroundColor: "#6750A4",
     borderRadius: 12,

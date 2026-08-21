@@ -118,3 +118,22 @@ variable "billing_cancel_url" {
   type        = string
   default     = ""
 }
+
+variable "vapid_public_key" {
+  description = "VAPID public key for Web Push (base64url). Empty disables Web Push."
+  type        = string
+  default     = ""
+}
+
+variable "vapid_private_key" {
+  description = "VAPID private key for Web Push (base64url). Empty disables Web Push."
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
+variable "vapid_subject" {
+  description = "VAPID subject (mailto: contact) sent with each Web Push."
+  type        = string
+  default     = "mailto:me@tobias-gerlach.de"
+}

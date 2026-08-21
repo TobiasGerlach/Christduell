@@ -10,7 +10,7 @@ import logging
 from sqlmodel import Session
 
 from app.models.domain import Duel, Player
-from app.services import push
+from app.services import push, web_push
 from app.services.duel_state import compute_duel_scores
 
 logger = logging.getLogger(__name__)
@@ -26,32 +26,22 @@ def _player(session: Session, player_id: int) -> Player | None:
 def notify_challenged(opponent: Player, challenger: Player, duel: Duel) -> None:
     if opponent.deleted_at is not None:
         return
-    push.send(
-        [
-            push.PushMessage(
-                to=opponent.push_token,
-                title="Neue Herausforderung",
-                body=f"{challenger.display_name} fordert dich zum Duell heraus!",
-                data={"type": "duel_challenge", "duelId": duel.id},
-            )
-        ]
-    )
+    title = "Neue Herausforderung"
+    body = f"{challenger.display_name} fordert dich zum Duell heraus!"
+    data = {"type": "duel_challenge", "duelId": duel.id}
+    push.send([push.PushMessage(to=opponent.push_token, title=title, body=body, data=data)])
+    web_push.send_to_player(opponent.id, title, body, data)
 
 
 def notify_your_turn(session: Session, duel: Duel, player_id: int, opponent: Player) -> None:
     player = _player(session, player_id)
     if player is None:
         return
-    push.send(
-        [
-            push.PushMessage(
-                to=player.push_token,
-                title="Du bist dran",
-                body=f"{opponent.display_name} hat gespielt — jetzt bist du am Zug.",
-                data={"type": "duel_turn", "duelId": duel.id},
-            )
-        ]
-    )
+    title = "Du bist dran"
+    body = f"{opponent.display_name} hat gespielt — jetzt bist du am Zug."
+    data = {"type": "duel_turn", "duelId": duel.id}
+    push.send([push.PushMessage(to=player.push_token, title=title, body=body, data=data)])
+    web_push.send_to_player(player.id, title, body, data)
 
 
 def notify_duel_finished(session: Session, duel: Duel) -> None:
@@ -71,13 +61,10 @@ def notify_duel_finished(session: Session, duel: Duel) -> None:
             body = f"Du hast verloren — {own_score}:{other_score}."
         else:
             body = f"Unentschieden — {own_score}:{other_score}."
+        data = {"type": "duel_finished", "duelId": duel.id}
         messages.append(
-            push.PushMessage(
-                to=player.push_token,
-                title="Duell beendet",
-                body=body,
-                data={"type": "duel_finished", "duelId": duel.id},
-            )
+            push.PushMessage(to=player.push_token, title="Duell beendet", body=body, data=data)
         )
+        web_push.send_to_player(player.id, "Duell beendet", body, data)
 
     push.send(messages)

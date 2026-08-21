@@ -67,6 +67,15 @@ class Settings(BaseSettings):
 
     # --- Push notifications ----------------------------------------------
     push_enabled: bool = False
+    # Web Push (browsers, incl. installed PWAs). Enabled by simply configuring
+    # the VAPID key pair — separate from push_enabled, which gates Expo/native.
+    vapid_public_key: str = ""
+    vapid_private_key: str = ""
+    vapid_subject: str = "mailto:me@tobias-gerlach.de"
+
+    @property
+    def web_push_enabled(self) -> bool:
+        return bool(self.vapid_public_key and self.vapid_private_key)
     expo_access_token: str | None = None
     expo_push_url: str = "https://exp.host/--/api/v2/push/send"
     azure_notification_hub_connection_string: str | None = None

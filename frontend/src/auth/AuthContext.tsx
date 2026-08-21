@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Account, authApi } from "../api/auth";
 import { api, setAccessToken, setUnauthorizedHandler } from "../api/client";
 import { registerForPushNotifications } from "../notifications/registerForPushNotifications";
+import { disableWebPush } from "../notifications/webPush";
 import { DEV_PASSWORD, DEV_PLAYERS, currentDevPlayer } from "./devPlayers";
 import { clearToken, loadToken, saveToken } from "./storage";
 
@@ -117,6 +118,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const logout = useCallback(async () => {
     // Stop this device from receiving duel pushes meant for the person logging out.
     await api.delete("/notifications/register-token").catch(() => undefined);
+    await disableWebPush();
     await forgetSession();
   }, [forgetSession]);
 
