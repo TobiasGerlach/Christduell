@@ -1,0 +1,61 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B6EE8"/>
+      <stop offset="1" stop-color="#5B3CC4"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EDE7FA"/>
+    </linearGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E8ECF5"/>
+      <stop offset="0.5" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#C9D2E3"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD75E"/>
+      <stop offset="1" stop-color="#F0A818"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!-- playful sparkles -->
+  <g fill="#FFD75E" opacity="0.9">
+    <path d="M170 200 l14 34 34 14 -34 14 -14 34 -14 -34 -34 -14 34 -14 z"/>
+    <path d="M850 180 l11 27 27 11 -27 11 -11 27 -11 -27 -27 -11 27 -11 z"/>
+    <path d="M860 800 l12 29 29 12 -29 12 -12 29 -12 -29 -29 -12 29 -12 z"/>
+    <path d="M160 810 l9 22 22 9 -22 9 -9 22 -9 -22 -22 -9 22 -9 z"/>
+  </g>
+
+  <!-- crossed swords, behind the shield -->
+  <g>
+    <g transform="rotate(45 512 512)">
+      <polygon points="512,80 543,120 543,600 481,600 481,120" fill="url(#blade)"/>
+      <rect x="437" y="600" width="150" height="42" rx="21" fill="url(#gold)"/>
+      <rect x="489" y="642" width="46" height="140" rx="20" fill="#8A5A16"/>
+      <circle cx="512" cy="806" r="38" fill="url(#gold)"/>
+    </g>
+    <g transform="rotate(-45 512 512)">
+      <polygon points="512,80 543,120 543,600 481,600 481,120" fill="url(#blade)"/>
+      <rect x="437" y="600" width="150" height="42" rx="21" fill="url(#gold)"/>
+      <rect x="489" y="642" width="46" height="140" rx="20" fill="#8A5A16"/>
+      <circle cx="512" cy="806" r="38" fill="url(#gold)"/>
+    </g>
+  </g>
+
+  <!-- shield -->
+  <path d="M512 240
+           C 585 292 668 314 748 318
+           C 748 520 736 656 512 788
+           C 288 656 276 520 276 318
+           C 356 314 439 292 512 240 Z"
+        fill="url(#shield)" stroke="#4A2FA8" stroke-width="26" stroke-linejoin="round"/>
+
+  <!-- cross on the shield -->
+  <g fill="#5B3CC4">
+    <rect x="466" y="348" width="92" height="344" rx="26"/>
+    <rect x="380" y="424" width="264" height="88" rx="26"/>
+  </g>
+</svg>
