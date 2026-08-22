@@ -60,6 +60,8 @@ export interface AnswerResult {
   correct_choice_index: number;
   round_revealed: boolean;
   duel_finished: boolean;
+  opponent_choice_index: number | null;
+  opponent_is_timeout: boolean | null;
 }
 
 export interface DuelHistoryAnswer {

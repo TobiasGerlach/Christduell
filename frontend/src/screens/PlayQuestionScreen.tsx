@@ -112,6 +112,9 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
       {question.choices.map((choice, index) => {
         const isCorrectChoice = result != null && index === result.correct_choice_index;
         const isWrongSelection = result != null && selected === index && !result.is_correct;
+        // Only ever set after our own answer is in — the server withholds it
+        // until then, so peeking is impossible.
+        const isOpponentChoice = result != null && index === result.opponent_choice_index;
         return (
           <Pressable
             key={index}
@@ -123,7 +126,10 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
             onPress={() => submit(index)}
             disabled={selected !== null}
           >
-            <Text style={styles.choiceLabel}>{choice}</Text>
+            <View style={styles.choiceRow}>
+              <Text style={styles.choiceLabel}>{choice}</Text>
+              {isOpponentChoice && <Text style={styles.opponentTag}>⚔️ Gegner</Text>}
+            </View>
           </Pressable>
         );
       })}
@@ -133,6 +139,9 @@ export function PlayQuestionScreen({ route, navigation }: Props) {
           <Text style={result.is_correct ? styles.feedbackCorrect : styles.feedbackWrong}>
             {result.is_timeout ? "Zeit abgelaufen!" : result.is_correct ? "Richtig!" : "Leider falsch."}
           </Text>
+          {result.opponent_is_timeout === true && (
+            <Text style={styles.opponentInfo}>⚔️ Dein Gegner hat die Zeit überschritten.</Text>
+          )}
           {result.explanation && <Text style={styles.explanation}>{result.explanation}</Text>}
           {result.reference && <Text style={styles.reference}>{result.reference}</Text>}
           <Pressable onPress={() => setReporting(true)}>
@@ -181,7 +190,10 @@ const styles = StyleSheet.create({
   },
   choiceCorrect: { backgroundColor: "#C8E6C9" },
   choiceWrong: { backgroundColor: "#FFCDD2" },
-  choiceLabel: { fontSize: 16 },
+  choiceRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8 },
+  choiceLabel: { fontSize: 16, flexShrink: 1 },
+  opponentTag: { fontSize: 12, fontWeight: "700", color: "#6750A4" },
+  opponentInfo: { color: "#5B5B5B", fontSize: 13 },
   feedback: { marginTop: 16, alignItems: "center", gap: 12 },
   feedbackCorrect: { color: "#2E7D32", fontSize: 18, fontWeight: "700" },
   feedbackWrong: { color: "#B00020", fontSize: 18, fontWeight: "700" },

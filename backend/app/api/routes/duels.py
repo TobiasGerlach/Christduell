@@ -152,6 +152,12 @@ class AnswerResult(BaseModel):
     explanation: str | None
     round_revealed: bool
     duel_finished: bool
+    # What the opponent picked on this question — only present when they
+    # answered before us (i.e. we are the second responder). None on both
+    # fields means "opponent hasn't played this question yet". Safe to return
+    # here because our own answer is already locked in.
+    opponent_choice_index: int | None = None
+    opponent_is_timeout: bool | None = None
 
 
 class DuelHistoryAnswer(BaseModel):
@@ -643,6 +649,20 @@ def submit_answer(
                 session.add(duel)
         session.add(duel_round)
 
+    # The opponent's pick on the same question, if they already played it.
+    # Revealed only now that our own answer is committed.
+    opponent_id = (
+        duel.opponent_id if player.id == duel.challenger_id else duel.challenger_id
+    )
+    opponent_answer = session.exec(
+        select(DuelAnswer).where(
+            DuelAnswer.round_id == round_id,
+            DuelAnswer.question_id == question.id,
+            DuelAnswer.player_id == opponent_id,
+            DuelAnswer.answered_at.is_not(None),
+        )
+    ).first()
+
     session.commit()
 
     if duel_finished:
@@ -662,6 +682,8 @@ def submit_answer(
         explanation=question.explanation,
         round_revealed=round_revealed,
         duel_finished=duel_finished,
+        opponent_choice_index=opponent_answer.selected_choice_index if opponent_answer else None,
+        opponent_is_timeout=opponent_answer.is_timeout if opponent_answer else None,
     )
 
 
